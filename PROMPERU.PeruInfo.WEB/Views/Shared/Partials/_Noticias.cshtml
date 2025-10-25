@@ -1,0 +1,76 @@
+﻿@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model List<PublicacionBE>
+
+@{
+    string culture = ViewBag.Culture;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<section class="container-noticias-home">
+    <div class="content-noticias-home blockv3-container">
+
+        <div class="noticias-subtitle" data-aos="zoom-in" data-aos-duration="1500">
+            <h4>@Resource.noticias</h4>
+        </div>
+
+        <div class="contenedor-noticas-cards">
+
+            <div class="contenedor-cards" data-aos="zoom-in">
+
+                @foreach (PublicacionBE item in Model.Take(6).ToList())
+                {
+                    <div class="contenedor-card-noticia categoria-@item.CategoriaColor">
+                        <a href="/@culture/@item.CategoriaSlug/@Resource.link_noticias/@item.CategoriaId/@item.SubcategoriaId/@item.Slug">
+                            <div class="logo-card">
+                                <img src="@strUrl/archivos/publicacion/@item.Imagen" alt="@item.AltImagen">
+                            </div>
+
+                            <div class="content-card-info title-turismo">
+
+                                <h3>@item.CategoriaNombre.ToUpper()</h3>
+
+                                <div class="info-card">
+                                    <p>@item.Resumen</p>
+                                </div>
+                            </div>
+
+                        </a>
+                    </div>
+                }
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="contenedor-slider-noticia">
+        <div class="slider-noticia">
+            @foreach (PublicacionBE item in Model.Take(6).ToList())
+            {
+                <div class="item-card-noticia">
+                    <div class="contenedor-card-noticia">
+                        <a href="/@culture/@item.CategoriaSlug/@Resource.link_noticias/@item.CategoriaId/@item.SubcategoriaId/@item.Slug">
+                            <div class="logo-card">
+                                <img src="@strUrl/archivos/publicacion/@item.Imagen" alt="@item.AltImagen">
+                            </div>
+
+                            <div class="content-card-info title-turismo">
+                                <div class="title-card">
+                                    <h3>@item.CategoriaNombre.ToUpper()</h3>
+                                </div>
+                                <div class="info-card">
+                                    <p>@item.Resumen</p>
+                                </div>
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

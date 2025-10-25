@@ -1,0 +1,102 @@
+﻿@using System.Configuration
+@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model List<PaginaBE>
+
+@{
+    string culture = ViewBag.Culture;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+
+    int idioma = culture == "es-pe" ? 1 : 2;
+}
+
+<footer class="footer-peru-info">
+    <div class="contenedor-footer-peru-info blockv3-container">
+        <nav class="contenedor-listas-footer">
+            @foreach (PaginaBE item in Model.Where(x => x.IdPadre == 0 && x.Nombre != "Recursos").ToList())
+            {
+                <ul class="contenedor-menu-lista">
+                    <li class="title-menu-lista">
+                        <div>
+                            @if (!string.IsNullOrEmpty(item.LinkExterno))
+                            {
+                                <a href="@item.LinkExterno" target="_blank">@item.Nombre.ToUpper()</a>
+                            }
+                            else
+                            {
+                                <a href="javascript:void(0);">@item.Nombre.ToUpper()</a>
+                            }
+                        </div>
+                    </li>
+                    <li class="menu-lista">
+                        <ul>
+                            @foreach (PaginaBE subitem in Model.Where(x => x.IdPadre == item.Id))
+                            {
+                                <li>
+                                    <a href="@Html.Raw(!string.IsNullOrEmpty(subitem.LinkExterno) ? $"{subitem.LinkExterno}" : $"/{culture}/{subitem.Slug}" )"
+                                       @Html.Raw(!string.IsNullOrEmpty(subitem.LinkExterno) ? "target='_blank'" : "")>@subitem.Nombre</a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            }
+        </nav>
+
+        <nav class="contenedor-menu-mobile-desplegable">
+            @foreach (PaginaBE item in Model.Where(x => x.IdPadre == 0 && x.Nombre != "Recursos").ToList())
+            {
+                <ul class="contenedor-menu-lista-mobile">
+                    <!-- <div class="title-menu-lista icon-flecha-lista"> -->
+                    <li class="title-menu-lista">
+                        <div class="icon-title">
+                            @*<img src="@strUrl/img/plantilla-categoria/footer/icon-down.png" alt="">*@
+                            <span class="sprite bg-icon_down"></span>
+                        </div>
+                        <div>
+                            @if (!string.IsNullOrEmpty(item.LinkExterno))
+                            {
+                                <a href="@item.LinkExterno" target="_blank">@item.Nombre.ToUpper()</a>
+                            }
+                            else
+                            {
+                                <a>@item.Nombre.ToUpper()</a>
+                            }
+
+                        </div>
+                    </li>
+                    <!-- <ul class="menu-lista-mobile mostrar-menu-lista-mobile"> -->
+                    <li class="menu-lista-mobile">
+                        <ul>
+                            @foreach (PaginaBE subitem in Model.Where(x => x.IdPadre == item.Id))
+                            {
+                                <li>
+                                    <a href="@Html.Raw(!string.IsNullOrEmpty(subitem.LinkExterno) ? $"{subitem.LinkExterno}" : $"/{culture}/{subitem.Slug}" )"
+                                       @Html.Raw(!string.IsNullOrEmpty(subitem.LinkExterno) ? "target='_blank'" : "")>@subitem.Nombre</a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            }
+        </nav>
+
+        <div class="contenedor-logos-footer">
+            <div class="content-logo-ministerio">
+                <img src="@strUrl/img/plantilla-categoria/footer/logo-ministerio.png" alt="@(idioma == 1 ? "Logo Mincetur" : "Mincetur Logo")">
+            </div>
+            <div class="contenedor-terminos-privacidad">
+                <a href="/@culture/@Resource.slug_terminos_condiciones">@Resource.terminos_condiciones</a>
+                <span>|</span>
+                <a href="/@culture/@Resource.slug_aviso_privacidad">@Resource.aviso_privacidad</a>
+            </div>
+            <div class="content-logos-promperu-peru">
+                <img src="@strUrl/img/plantilla-categoria/footer/logo-promperu.png" alt="@(idioma == 1 ? "Logo PROMPERÚ" : "PROMPERU Logo")">
+                <img src="@strUrl/img/plantilla-categoria/footer/logo-peru-rojo.png" alt="@(idioma == 1 ? "Logo Marca Perú en Rojo" : "Peru Brand Logo in red")">
+            </div>
+        </div>
+    </div>
+</footer>

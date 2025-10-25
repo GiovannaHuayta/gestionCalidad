@@ -1,0 +1,20 @@
+@using PROMPERU.PeruInfo.Domain.Entities
+@model List<IdiomaBE>
+
+@{
+    IdiomaBE last = Model.Last();
+}
+
+<div class="container-selector-idioma">
+    <div class="content-selector-idioma">
+        @foreach (IdiomaBE item in Model)
+        {
+            <a href="/@item.Slug/">@item.Prefijo.ToUpper()</a>
+            
+            if (!item.Equals(last))
+            {
+                <hr>
+            }
+        }
+    </div>
+</div>

@@ -1,0 +1,460 @@
+// @import 'model/slick.scss';
+@import 'model/_config.scss';
+@import 'model/_reset.scss';
+@import 'model/_font.scss';
+
+
+// ********** ********** MI ********** **********
+
+// BLOCK HEADER
+.header-peru-info{
+
+    .contenedor-header-peru-info{
+
+        .contenedor-logo-peru{
+        }
+
+        .contenedor-menu-header{
+            .lista-menu-header{
+                .item-lista-menu{
+                    .link-item-menu{
+                        color: #8A8A8A;
+                    }
+                    .content-icon-lista{
+                        .icon-lista-buscar{
+                            &:first-child{
+                                display: none;
+                            }
+                            &:last-child{
+                                display: block;
+                            }
+                        }
+                        .icon-lista-idioma{
+                            &:first-child{
+                                display: none;
+                            }
+                            &:last-child{
+                                display: block;
+                            }
+                        }
+                        .icon-lista-barras{
+                            &:first-child{
+                                display: none;
+                            }
+                            &:last-child{
+                                display: block;
+                            }
+                        }
+                    }
+                    .content-cantidad-alertas{
+                    }
+                    .container-selector-idioma{
+                    }
+                }
+            }
+        }
+
+    }
+    
+    .menu-lateral{
+    }
+}
+// /BLOCK HEADER
+
+
+
+// ALINEAR-IZQUIERDA
+.alinear-izquierda{
+    margin-right: 50%;
+    text-align: right;
+    label{
+        border-radius: 7px 0 0 7px;
+    }
+    .box-nombre-premio{
+        justify-content: flex-end;
+    } 
+    @include respondto(minxs) {
+        margin-right: 0;
+        text-align: center;
+        label{
+            border-radius: 7px 7px 7px 7px;
+        }
+        .box-nombre-premio-mobile{
+            flex-direction: column;
+            .title-premio{
+                padding-bottom: 12px;
+            }
+        } 
+    }
+    @include respondto(maxxs) {
+        margin-right: 0;
+        text-align: center;
+        label{
+            border-radius: 7px 7px 7px 7px;
+        }
+        .box-nombre-premio-mobile{
+            flex-direction: column;
+            .title-premio{
+                padding-bottom: 12px;
+            }
+        } 
+    }
+    @include respondto(sm) {
+    }
+    @include respondto(md) {
+    }
+    @include respondto(lg) {
+    }
+    @include respondto(xlg) {
+    }  
+    
+}
+// ALINEAR-IZQUIERDA
+
+// ALINEAR-DERECHA
+.alinear-derecha{
+    margin-left: 50%;
+    text-align: left;
+    label{
+        border-radius: 0 7px 7px 0;
+    }
+    .box-nombre-premio{
+        .title-premio{
+            order: 1;
+        }
+    }
+    @include respondto(minxs) {
+        margin-left: 0;
+        text-align: center;
+        label{
+            border-radius: 7px 7px 7px 7px;
+        }
+        .box-nombre-premio-mobile{
+            flex-direction: column-reverse;
+            .logo-premio{
+                margin-bottom: 12px;
+            }
+        }
+    }
+    @include respondto(maxxs) {
+        margin-left: 0;
+        text-align: center;
+        label{
+            border-radius: 7px 7px 7px 7px;
+        }
+        .box-nombre-premio-mobile{
+            flex-direction: column-reverse;
+            .logo-premio{
+                margin-bottom: 12px;
+            }
+        }
+    }
+    @include respondto(sm) {
+    }
+    @include respondto(md) {
+    }
+    @include respondto(lg) {
+    }
+    @include respondto(xlg) {
+    }
+}
+// ALINEAR-DERECHA
+
+// .subir-caja{
+//     margin-top: -48px;
+// }
+
+
+
+// BLOCK PREMIOS-HONORES
+.contenedor-premios-honores{
+    width: 100%;
+    .content-premios-honores{
+        width: 95%;
+        max-width: 1200px;
+        padding: 160px 0;
+        margin-left: auto;
+        margin-right: auto;
+        @include respondto(minxs) {
+            padding: 107px 0;
+        }
+        @include respondto(maxxs) {
+            padding: 107px 0;
+        }
+        @include respondto(sm) {
+        }
+        @include respondto(md) {
+        }
+        @include respondto(lg) {
+        }
+        @include respondto(xlg) {
+        }
+        h1{
+            font-family: $font-breePeru;
+            font-weight: 700;
+            font-size: 40px;
+            color: #D52B1E;
+            text-align: center;
+            padding-bottom: 39px;
+            @include respondto(minxs) {
+                font-size: 37.7px;
+            }
+            @include respondto(maxxs) {
+                font-size: 37.7px;
+            }
+            @include respondto(sm) {
+                background-color: aqua;
+            }
+            @include respondto(md) {
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+            span{
+                font-family: $font-clanOt;
+                font-weight: 700;
+                font-size: 40.7px;
+                @include respondto(minxs) {
+                    font-size: 38px;
+                }
+                @include respondto(maxxs) {
+                    font-size: 38px;
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+        .contenedor-premios-tiempo{
+            width: 100%;
+            min-height: 50vh;
+            position: relative;
+            .linea-divisora-tiempo{
+                position: absolute;
+                top: 0;
+                left: 49.795%;
+                width: .405%;
+                height: 100%;
+                background-color: #D52B1E;
+                @include respondto(minxs) {
+                    display: none;
+                }
+                @include respondto(maxxs) {
+                    display: none;
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+
+            .box-btn-anio{
+                margin-bottom: 96px;
+
+                // &.izquierda{
+                //     margin-right: 50%;
+                //     text-align: right;
+                //     label{
+                //         border-radius: 7px 0 0 7px;
+                //     }   
+                // }
+                // &.derecha{
+                //     margin-left: 50%;
+                //     text-align: left;
+                //     label{
+                //         border-radius: 0 7px 7px 0;
+                //     }
+                // }
+
+                label{
+                    width: 121px;
+                    height: 58px;
+                    background-color: #D52B1E;
+                    font-family: $font-breePeru;
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 58px;
+                    padding: 1px 36px 0 36px;
+                    color: #ffffff;
+                    display: inline-block;
+                }
+
+            }
+            .contenedor-item-premios{
+                padding: 0 16px;
+                margin-bottom: 16px;
+
+                margin-top: -48px;
+
+                @include respondto(minxs) {
+                    margin-bottom: 70px;
+                    margin-top: 0;
+                }
+                @include respondto(maxxs) {
+                    margin-bottom: 48px;
+                    margin-top: 0;
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+
+                .box-nombre-premio,
+                .box-nombre-premio-mobile{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 16px;
+                    @include respondto(minxs) {
+                        margin-bottom: 14px;
+                    }
+                    @include respondto(maxxs) {
+                        margin-bottom: 14px;
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                    .title-premio{
+                        h3{
+                            font-family: $font-breePeru;
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 19px;
+                            color: #FFAC26;
+                            padding: 0 16px;
+                            @include respondto(minxs) {
+                                width: 100%;
+                                padding: 0;
+                            }
+                            @include respondto(maxxs) {
+                                width: 100%;
+                                padding: 0;
+                                br {
+                                    display: none;
+                                }
+                            }
+                            @include respondto(sm) {
+                            }
+                            @include respondto(md) {
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+                        }
+                    }
+                    .logo-premio{
+                        width: 96px;
+                        height: 96px;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+                .box-nombre-premio{
+                    @include respondto(minxs) {
+                        display: none;
+                    }
+                    @include respondto(maxxs) {
+                        display: none;
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                }
+                .box-nombre-premio-mobile{
+                    @include respondto(minxs) {
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                        display: none;
+                    }
+                    @include respondto(md) {
+                        display: none;
+                    }
+                    @include respondto(lg) {
+                        display: none;
+                    }
+                    @include respondto(xlg) {
+                        display: none;
+                    }
+                    .title-premio{
+                        h3{}
+                    }
+                    .logo-premio{}
+                }
+
+                .box-nombre-organizador{
+                    .content-box-organizador{
+                        padding-bottom: 5px;
+                        h4{
+                            font-family: $font-breePeru;
+                            font-weight: 700;
+                            font-size: 17.3px;
+                            line-height: 20px;
+                            color: #D52B1E;
+                        }
+                        p{
+                            font-family: $font-breePeru;
+                            font-weight: 500;
+                            font-size: 15.7px;
+                            line-height: 19px;
+                            color: #B1B1B1;
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+    }
+}
+// BLOCK PREMIOS-HONORES
+
+
+
+
+
+
+// ********** ********** /MI ********** **********
+
+
+
+
+
+
+
+
+
+
+// ********** ********** MA ********** **********
+
+
+// ********** ********** /MA ********** **********

@@ -1,0 +1,67 @@
+﻿@using System.Configuration;
+@{ ViewBag.Title = "Usuarios";
+    Layout = null;
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"]; }
+
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <title>Perú.Info - PROMPERÚ</title>
+    <meta name="robots" content="noindex,nofollow,noodp,noarchive,NOSNIPPET">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="">
+    <link rel="icon" href="@vDominioAbsoluto/img/iconos/icon.png">
+    <link href="@vDominioAbsoluto/iconmoon/iconmoon.css" rel="stylesheet">
+    <link href="@vDominioAbsoluto/css/style.css" rel="stylesheet">
+    <link href="@vDominioAbsoluto/css/apprise.css" rel="stylesheet">
+    <script src="@vDominioAbsoluto/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="@vDominioAbsoluto/Scripts/helper.js"></script>
+    <script src="@vDominioAbsoluto/Scripts/apprise.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="l-contents header-cont">
+                <div class="header-logo header-logo-center">
+                    <div class="marcaperu">
+                        <img src="@vDominioAbsoluto/img/logos/LogoMarcaPeru.svg" style="width:90px" alt="Marca Perú">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <div class="mv-background">
+
+            <div class="l-contents flex-index">
+                <div class="login-index">
+                    <div class="login-title">
+                        <h1 class="login-title-h1">Peru.Info</h1>
+                    </div>
+                    <div class="login-content">
+                        <form action="@Url.Action("Login", "Usuario")" method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="login-h1">Iniciar Sesión</div>
+                            <p class="login-p"></p>
+                            <div class="login-input">
+                                <label><i class="fa fa-envelope"></i></label>
+                                <input id="txtUsuario" name="correo" type="email" placeholder="Correo Electrónico" value="">
+                            </div>
+                            <div class="login-input">
+                                <label><i class="fa fa-lock"></i></label>
+                                <input id="txtContrasenia" name="contrasenia" type="password" autocomplete="off" placeholder="Contraseña" value="">
+                                <label id="lblmensaje" style="display: none; color: #DC4A4F; font-weight: bold; padding-bottom: 6px"></label>
+                            </div>
+
+                            <button id="btnIngresar" type="submit" value="Ingresar" class="input-submit">Ingresar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

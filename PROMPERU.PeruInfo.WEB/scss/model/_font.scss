@@ -1,0 +1,101 @@
+// @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900');
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+
+
+// Default
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+// @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900');
+
+
+
+/* ClanOt */
+@font-face {
+    font-family: 'ClanOt';
+    font-weight: 400;
+    font-style: normal;
+    src: local('clanOt 400'), local('clanOt-400'), url('../fonts/font-clan/clanOt-400.otf') format('opentype');
+}
+@font-face {
+    font-family: 'ClanOt';
+    font-style: normal;
+    font-weight: 500;
+    src: local('clanOt 500'), local('clanOt-500'), url('../fonts/font-clan/clanOt-500.otf') format('opentype');
+}
+@font-face {
+    font-family: 'ClanOt';
+    font-style: normal;
+    font-weight: 700;
+    src: local('clanOt 700'), local('clanOt-700'), url('../fonts/font-clan/clanOt-700.otf') format('opentype');
+}
+@font-face {
+    font-family: 'ClanOt';
+    font-style: normal;
+    font-weight: 900;
+    src: local('clanOt 900'), local('clanOt-900'), url('../fonts/font-clan/clanOt-900.otf') format('opentype');
+}
+
+
+/* Bree */
+@font-face {
+    font-family: 'BreePeru';
+    font-style: normal;
+    font-weight: 400;
+    src: local('bree 400'), local('bree-400'), url('../fonts/font-bree/breeperu_light.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BreePeru';
+    font-style: italic;
+    font-weight: 400;
+    src: local('bree 400'), local('bree-400'), url('../fonts/font-bree/breeperu_lightoblique.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BreePeru';
+    font-style: normal;
+    font-weight: 500;
+    src: local('bree 500'), local('bree-500'), url('../fonts/font-bree/breeperu_regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BreePeru';
+    font-style: italic;
+    font-weight: 500;
+    src: local('bree 500'), local('bree-500'), url('../fonts/font-bree/breeperu_regularoblique.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BreePeru';
+    font-style: normal;
+    font-weight: 700;
+    src: local('bree 700'), local('bree-700'), url('../fonts/font-bree/breeperu_bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'BreePeru';
+    font-style: italic;
+    font-weight: 700;
+    src: local('bree 700'), local('bree-700'), url('../fonts/font-bree/breeperu_boldoblique.otf') format('opentype');
+}
+
+
+/* Roboto */
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-style: normal;
+    src: local('roboto 300'), local('roboto-300'), url('../fonts/font-roboto/roboto-light.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-style: normal;
+    src: local('roboto 400'), local('roboto-400'), url('../fonts/font-roboto/roboto-regular.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: local('roboto 500'), local('roboto-500'), url('../fonts/font-roboto/roboto-medium.ttf') format('opentype');
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('roboto 700'), local('roboto-700'), url('../fonts/font-roboto/roboto-bold.ttf') format('opentype');
+}

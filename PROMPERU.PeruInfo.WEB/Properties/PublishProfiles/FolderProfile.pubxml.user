@@ -1,0 +1,1521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\DEPLOY\peru.info\web</_PublishTargetUrl>
+    <History>True|2025-02-11T16:04:14.7244535Z||;True|2025-02-11T11:01:34.2495012-05:00||;True|2025-02-11T10:53:14.3826415-05:00||;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.pdb">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="bin/en-us/PROMPERU.PeruInfo.WEB.resources.dll">
+      <publishTime>02/11/2025 10:53:11</publishTime>
+    </File>
+    <File Include="bin/es-pe/PROMPERU.PeruInfo.WEB.resources.dll">
+      <publishTime>02/11/2025 10:53:11</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>02/11/2025 10:43:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/PROMPERU.PeruInfo.ApplicationService.dll">
+      <publishTime>02/11/2025 10:53:10</publishTime>
+    </File>
+    <File Include="bin/PROMPERU.PeruInfo.ApplicationService.pdb">
+      <publishTime>02/11/2025 10:53:10</publishTime>
+    </File>
+    <File Include="bin/PROMPERU.PeruInfo.Domain.dll">
+      <publishTime>02/11/2025 10:53:10</publishTime>
+    </File>
+    <File Include="bin/PROMPERU.PeruInfo.Domain.pdb">
+      <publishTime>02/11/2025 10:53:10</publishTime>
+    </File>
+    <File Include="bin/PROMPERU.PeruInfo.Infra.Data.dll">
+      <publishTime>02/11/2025 10:53:10</publishTime>
+    </File>
+    <File Include="bin/PROMPERU.PeruInfo.Infra.Data.pdb">
+      <publishTime>02/11/2025 10:53:10</publishTime>
+    </File>
+    <File Include="bin/PROMPERU.PeruInfo.WEB.dll">
+      <publishTime>02/11/2025 10:53:11</publishTime>
+    </File>
+    <File Include="bin/PROMPERU.PeruInfo.WEB.pdb">
+      <publishTime>02/11/2025 10:53:11</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe.config">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Managed.Core.targets">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Buffers.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Memory.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Numerics.Vectors.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Text.Encoding.CodePages.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Threading.Tasks.Extensions.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.CompilerServices.Unsafe.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="bin/Unity.Abstractions.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/Unity.Abstractions.pdb">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/Unity.Container.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/Unity.Container.pdb">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/Unity.Mvc5.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>02/11/2025 10:43:49</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.min.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.min.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-grid.rtl.min.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.min.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.min.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-reboot.rtl.min.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.min.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.min.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.min.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap-utilities.rtl.min.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.min.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/bootstrap.rtl.min.css.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Content/templates/mail/mail_contacto.txt">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="css/01.home.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/03.plantilla-e.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/04.contacto.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/05.apps.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/06.covid.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/10.premios.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/13.plantilla-c.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/20.restaurantes-del-mundo.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/aos.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/images/ui-icons_444444_256x240.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/images/ui-icons_555555_256x240.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/images/ui-icons_777620_256x240.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/images/ui-icons_777777_256x240.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/images/ui-icons_cc0000_256x240.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/images/ui-icons_ffffff_256x240.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/jquery-ui.min.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/peru-info.components.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/plantilla-categoria.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/plantilla-detalle-embajador.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/plantilla-embajadores.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/plantilla-notas-noticias.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/plantilla-resultado-busqueda.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="css/plantilla-subcategoria.css">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-bree/breeperu_bold.otf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-bree/breeperu_boldoblique.otf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-bree/breeperu_light.otf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-bree/breeperu_lightoblique.otf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-bree/breeperu_regular.otf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-bree/breeperu_regularoblique.otf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-clan/clanOt-400.otf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-clan/clanOt-500.otf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-clan/clanOt-700.otf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-clan/clanOt-900.otf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-roboto/roboto-bold.ttf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-roboto/roboto-light.ttf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-roboto/roboto-medium.ttf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="fonts/font-roboto/roboto-regular.ttf">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="img/03.plantilla-e/banner-cacao.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/03.plantilla-e/banner-lambayeque.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/03.plantilla-e/banner-pacay.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/03.plantilla-e/banner-pastel-papa.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/03.plantilla-e/banner-zampona.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/03.plantilla-e/left-arrow.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/03.plantilla-e/right-arrow.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/06.covid/flecha-derecha.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/06.covid/flecha-izquierda.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/06.covid/icon-buscar.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/06.covid/icon-descargar.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/06.covid/icon-select.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/06.covid/logo-banner-covid.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/apap-2012-peru-nebraska.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/ciudadanos-dia-promperu.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/comunicacion-publicitaria-peru-nebraska.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/comunicacion-publicitaria-sabor-victoria.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/creatividad-empresarial-casa-turismo.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/creatividad-empresarial-peru-nebraska.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/creatividad-empresarial-ytqp.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/festival-cannes-lions.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/fiap-festival-iberoamerico.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/fip-recordaras.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/golden-city-gate.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/icons-header/Buscar.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/icons-header/logo-peru-rojo.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/icons-header/Menu H.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/icons-header/Vector.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/indecopi-promperu.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/international-eco-tourismfilm2018.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/istanbul-tourism.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/marketing-territorio-recordaras.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/new-7-wonders.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/ng-traveller-reader.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/ny-festival-words.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/oea-gastronomia-peruana.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/ojo-de-iberoamerica.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/patwa-international-berlin.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/premio-amauta-aldi.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/premio-anda.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/premio-digi-iab.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/premio-digi-new.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/premio-excelencias-2017.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/premio-ideas-apap-oro.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/premio-ideas-apap-plata.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/premio-interlat.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/premios-effie.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/publicidad-ojo-america.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/pucp-premio-ardilla.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/razon-espana-premio-turismo.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/robb-report-premiacion.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/tourfilm-riga2018.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/us-international-film.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/veliko-tarnovo-bulgaria.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/wanderlust-reader-travel.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/webby-awards.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/world-travel-awards-2016.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/world-travel-awards.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/world-travel-reconocimiento.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/youtube-video-excellence.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/10.premios/zagreb-tourtfilm-festival.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/13.plantilla-c/galeria-foto-1.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/13.plantilla-c/galeria-foto-2.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/13.plantilla-c/galeria-foto-3.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/13.plantilla-c/galeria-foto-4.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/13.plantilla-c/icon-play.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/13.plantilla-c/logo-pc.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/13.plantilla-c/mini-cocina.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/13.plantilla-c/mini-peru-dedicado.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/13.plantilla-c/mini-textiles.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/20.restaurantes-del-mundo/icon-select-1.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/20.restaurantes-del-mundo/icon-select.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/20.restaurantes-del-mundo/logo-banner.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/20.restaurantes-del-mundo/logo-card.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/apps/app_habla-quechua.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/apps/app_peru-brochure.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/apps/app_pisco-spirit-of-peru.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/apps/banner-apps.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/apps/btn-googleplay.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/apps/btn_appstore.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/contacto/banner-contacto.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/favicon_PeruInfo.ico">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/banner/icon-arrow-left.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/banner/icon-arrow-right.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/banner/icon-bajar.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/banner/logo-banner-alpaca.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/banner/logo-banner-cafe.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/banner/logo-banner-copas.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/banner/logo-banner-copas.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/banner/logo-banner-safe-travels.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/banner/logo-banner-superfoods.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/btn-flecha_derecha.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/btn-flecha_izquierda.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/icon-left.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/icon-right.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/imagen-blog-1.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/imagen-blog-2.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/imagen-blog-3.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/imagen-blog-4.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/imagen-borde-amarillo.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/imagen-borde-azul.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/imagen-borde-rojo.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/blog-peru/reloj.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/categorias/logo-comercio-exterior.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/categorias/logo-dibujos.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/categorias/logo-gastronomia.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/categorias/logo-inversiones.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/categorias/logo-talento.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/categorias/logo-turismo.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/Facebook.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/fondo_discover.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/fb.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/ico-campana.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/ico-flecha_derecha.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/ico-flecha_izquierda.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/icon-alerta.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/icon-bars-gris.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/icon-bars.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/icon-buscar-gris.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/icon-buscar.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/icon-cerrar.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/icon-idioma-gris.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/icon-idioma.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/ig.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/logo-peru-gris.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/logo-peru-gris.svg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/logo-peru.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/pint.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/tw.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/Vector.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/header/yt.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/Instagram.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/noticias/imagen-noticia-1.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/noticias/imagen-noticia-2.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/noticias/imagen-noticia-3.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/noticias/imagen-noticia-4.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/redes-sociales/icon-facebook-m.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/redes-sociales/icon-facebook.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/redes-sociales/icon-instagram-m.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/redes-sociales/icon-instagram.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/redes-sociales/icon-pinterest-m.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/redes-sociales/icon-tik-tok.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/redes-sociales/icon-twitter-m.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/redes-sociales/icon-twitter.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/redes-sociales/icon-youtube-m.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/redes-sociales/icon-youtube.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/Tik Tok.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/Twitter.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/home/Youtube.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/banner/d_banner-gastronomia.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/banner/logo-banner-gastronomia.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/banner/m_banner-gastronomia.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/footer/icon-down.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/footer/logo-ministerio.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/footer/logo-peru-rojo.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/footer/logo-promperu.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/footer/m_icons-decorator.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/icons-decorator/icon-decorator-1.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/icons-decorator/icon-decorator-2.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/icons-decorator/icon-decorator-3.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/icons-decorator/icon-decorator-4.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/icons-decorator/icon-decorator-5.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/icons-decorator/icon-decorator-6.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/icons-decorator/icon-decorator-7.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/icons-decorator/icon-decorator-8.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/instituciones/exportemos.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/instituciones/icon-bcr.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/instituciones/icon-in-peru.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/instituciones/icon-pro-inversion.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/instituciones/icon-superintendencia.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/instituciones/infocenter.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/instituciones/peru_market.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/principal-info/arrow-diagonal.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/principal-info/logo-productos-oriundos.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/principal-info/logo-reconocimientos.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/principal-info/logo-regiones.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/principal-info/logo-restaurantes.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/slider-categoria/d_logo-generacion-causa.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/slider-categoria/d_logo-invest-peru.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/slider-categoria/icon-arrow-left.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/slider-categoria/icon-arrow-right.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/slider-categoria/m_logo-generacion-causa.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/slider-noticias/slider-noticias-1.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/slider-noticias/slider-noticias-2.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/slider-noticias/slider-noticias-3.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/slider-noticias/slider-noticias-4.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-categoria/slider-noticias/slider-noticias-5.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-detalle-embajador/d_banner-detalle.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-detalle-embajador/icon-face.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-detalle-embajador/icon-twitter.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-detalle-embajador/m_banner-detalle.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/banner/d_banner-embajadores.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/banner/m_banner-embajadores.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-arrow-right-red.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-arrow-right.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-buscar.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-desplegar.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-gris-actuacion.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-gris-artista.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-gris-ciencia.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-gris-cine.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-gris-deporte.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-gris-gastronomia.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-gris-literatura.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-gris-moda.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-gris-musica.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-gris-turismo.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/buscar-filtros/icon-todos.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/arrow-diagonal.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/icon-blanco-actuacion.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/icon-blanco-artista.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/icon-blanco-ciencia.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/icon-blanco-cine.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/icon-blanco-deporte.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/icon-blanco-gastronomia.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/icon-blanco-literatura.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/icon-blanco-moda.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/icon-blanco-musica.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/icon-blanco-turismo.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/card-logo-icon/logo-card.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/icon-arrow.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/lupa-buscar.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/mas-visto/icon-play.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/mas-visto/logo-slider-mini.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/mas-visto/peru-dedicado-agroindustria-mini.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-embajadores/mas-visto/peru-dedicado-gastronomia-mini.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/banner/d_banner-header.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/banner/m_banner-header.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/cards-notas/logo-card-1.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/cards-notas/logo-card-2.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/descubre-mas/d_logo-descubre.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/descubre-mas/m_logo-descubre.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/icon-arrow-left.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/icon-arrow.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/icon-gnews.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/img-notas/img-nota.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/rrss/icon-rrss-face.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/rrss/icon-rrss-linkedin.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/rrss/icon-rrss-twitter.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/rrss/icon-rrss-wtsp.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-notas-noticias/rrss/icon-to-share.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/buscador-modal/card-noticia-1.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/buscador-modal/card-noticia-2.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/buscador-modal/card-noticia-3.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/buscador-modal/d_banner-buscador.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/buscador-modal/icon-buscador.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/buscador-modal/icon-cerrar-buscador.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/buscador-modal/logo-blog-1.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/buscador-modal/logo-blog-2.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/buscador-modal/logo-blog-3.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/comunicado_modal.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/d_banner-resultado.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/icon-arrow-bottom.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/icon-calendar.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/logo-card-2.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/logo-card-3.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/logo-card.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-resultado-busqueda/m_banner-resultado.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-subcategoria/banner/d_banner-restaurantes.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-subcategoria/banner/m_banner-restaurantes.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-subcategoria/slider-categoria/d_logo-generacion-causa.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-subcategoria/slider-categoria/d_logo-invest-peru.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-subcategoria/slider-categoria/icon-arrow-left.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-subcategoria/slider-categoria/icon-arrow-right.png">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-subcategoria/slider-categoria/m_logo-generacion-causa.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/plantilla-subcategoria/slider-unilinea/logo-card.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="img/share-peruinfo.jpg">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/01.home.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/03.plantilla-e.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/04.contacto.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/05.apps.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/06.covid.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/10.premios.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/13.plantilla-c.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/20.restaurantes-del-mundo.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/aos.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/fullpage.min.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/jquery-ui.min.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/jquery.min.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/peru-info.components.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/plantilla-categoria.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/plantilla-embajadores.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/plantilla-notas-noticias.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/plantilla-resultado-busqueda.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/plantilla-subcategoria.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/search.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="js/slick.min.js">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="log4net.config">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="robots.txt">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.js.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.bundle.min.js.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.js.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.min.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.esm.min.js.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.6.0.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.6.0.min.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.6.0.min.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.6.0.slim.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.6.0.slim.min.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.6.0.slim.min.map">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>02/11/2025 10:43:46</publishTime>
+    </File>
+    <File Include="scss/01.home.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/03.plantilla-e.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/04.contacto.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/05.apps.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/06.covid.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/10.premios.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/13.plantilla-c.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/20.restaurantes-del-mundo.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/model/config/_constants.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/model/config/_mixins.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/model/slick.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/model/_config.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/model/_font.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/model/_reset.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/peru-info.components.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/plantilla-categoria.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/plantilla-detalle-embajador.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/plantilla-embajadores.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/plantilla-notas-noticias.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/plantilla-resultado-busqueda.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="scss/plantilla-subcategoria.scss">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="sitemap-en.xml">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="sitemap-pe.xml">
+      <publishTime>02/11/2025 10:43:48</publishTime>
+    </File>
+    <File Include="Views/Apps/Index.cshtml">
+      <publishTime>02/11/2025 11:01:22</publishTime>
+    </File>
+    <File Include="Views/Busqueda/Index.cshtml">
+      <publishTime>02/11/2025 11:01:19</publishTime>
+    </File>
+    <File Include="Views/Campania/Index.cshtml">
+      <publishTime>02/11/2025 11:01:15</publishTime>
+    </File>
+    <File Include="Views/Categoria/Index.cshtml">
+      <publishTime>02/11/2025 11:01:10</publishTime>
+    </File>
+    <File Include="Views/Comunicados/Index.cshtml">
+      <publishTime>02/11/2025 11:01:08</publishTime>
+    </File>
+    <File Include="Views/Contacto/Index.cshtml">
+      <publishTime>02/11/2025 11:01:05</publishTime>
+    </File>
+    <File Include="Views/Embajadores/Detalle.cshtml">
+      <publishTime>02/11/2025 11:00:57</publishTime>
+    </File>
+    <File Include="Views/Embajadores/Index.cshtml">
+      <publishTime>02/11/2025 11:01:01</publishTime>
+    </File>
+    <File Include="Views/Error/Index.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Premios/Index.cshtml">
+      <publishTime>02/11/2025 11:00:33</publishTime>
+    </File>
+    <File Include="Views/Privacidad/Index.cshtml">
+      <publishTime>02/11/2025 11:00:30</publishTime>
+    </File>
+    <File Include="Views/Publicacion/Index.cshtml">
+      <publishTime>02/11/2025 11:00:27</publishTime>
+    </File>
+    <File Include="Views/Restaurantes/Index.cshtml">
+      <publishTime>02/11/2025 11:00:24</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_AlertModal.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_Blog.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_Footer.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_HeaderMenu.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_LanguageMenu.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_ModalsHeader.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_Noticias.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_NoticiasInterna.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_PageMenu.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_RedesSociales.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_Relacionados.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_RelacionadosCategoria.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/Shared/Partials/_WidgetsLayout.cshtml">
+      <publishTime>02/11/2025 10:59:28</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>02/11/2025 11:04:07</publishTime>
+    </File>
+    <File Include="Views/Subcategoria/Index.cshtml">
+      <publishTime>02/11/2025 11:00:19</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>02/11/2025 10:43:47</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>02/11/2025 10:53:12</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

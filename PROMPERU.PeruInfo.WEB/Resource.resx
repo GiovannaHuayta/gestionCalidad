@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="noticias" xml:space="preserve">
+    <value>Noticias</value>
+  </data>
+  <data name="blog" xml:space="preserve">
+    <value>Blog Perú</value>
+  </data>
+  <data name="categorias" xml:space="preserve">
+    <value>CATEGORÍAS</value>
+  </data>
+  <data name="sociales" xml:space="preserve">
+    <value>Me gusta Perú</value>
+  </data>
+  <data name="link_licenciatarios_texto" xml:space="preserve">
+    <value>Solicita el uso de la marca Perú  y marcas sectoriales</value>
+  </data>
+  <data name="link_licenciatarios_url" xml:space="preserve">
+    <value>https://peru.info/es-pe/licenciatarios</value>
+  </data>
+  <data name="ver_mas" xml:space="preserve">
+    <value>Ver más</value>
+  </data>
+  <data name="ver_menos" xml:space="preserve">
+    <value>Ver menos</value>
+  </data>
+  <data name="terminos_condiciones" xml:space="preserve">
+    <value>Términos y condiciones</value>
+  </data>
+  <data name="aviso_privacidad" xml:space="preserve">
+    <value>Aviso de Privacidad</value>
+  </data>
+  <data name="slug_terminos_condiciones" xml:space="preserve">
+    <value>terminos-y-condiciones</value>
+  </data>
+  <data name="slug_aviso_privacidad" xml:space="preserve">
+    <value>aviso-de-privacidad</value>
+  </data>
+  <data name="buscar" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="buscar_texto" xml:space="preserve">
+    <value>Encuentra lo que buscas</value>
+  </data>
+  <data name="buscar_alt" xml:space="preserve">
+    <value>Busca por categoría, subcategoría o término específicor</value>
+  </data>
+  <data name="buscar_texto_alt" xml:space="preserve">
+    <value>Ingresa la palabra clave</value>
+  </data>
+  <data name="buscar_filtros" xml:space="preserve">
+    <value>Filtros de búsqueda</value>
+  </data>
+  <data name="buscar_pais" xml:space="preserve">
+    <value>Búsqueda por país</value>
+  </data>
+  <data name="consulta_subtitulo_1" xml:space="preserve">
+    <value>Si tienes alguna duda escríbenos a</value>
+  </data>
+  <data name="consulta_subtitulo_2" xml:space="preserve">
+    <value>o llena el siguiente formulario</value>
+  </data>
+  <data name="consulta_titulo" xml:space="preserve">
+    <value>Déjanos tu consulta</value>
+  </data>
+  <data name="txt_nombres" xml:space="preserve">
+    <value>Nombres</value>
+  </data>
+  <data name="txt_last_name" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
+  <data name="txt_correo" xml:space="preserve">
+    <value>Correo Electrónico</value>
+  </data>
+  <data name="txt_mensaje" xml:space="preserve">
+    <value>Cuéntanos, ¿Cuál es tu consulta?</value>
+  </data>
+  <data name="lbl_terminos" xml:space="preserve">
+    <value>Al hacer clic en enviar estás aceptando nuestros</value>
+  </data>
+  <data name="btn_enviar" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="campo_requerido" xml:space="preserve">
+    <value>Campo requerido</value>
+  </data>
+  <data name="filtrar_busqueda" xml:space="preserve">
+    <value>Filtra tu búsqueda</value>
+  </data>
+  <data name="filtrar_busqueda_todos" xml:space="preserve">
+    <value>Todas las categorías</value>
+  </data>
+  <data name="buscar_para" xml:space="preserve">
+    <value>Resultado para</value>
+  </data>
+  <data name="buscar_por_nombre" xml:space="preserve">
+    <value>Busca por nombre</value>
+  </data>
+  <data name="seo_titulo_home" xml:space="preserve">
+    <value>Perú Info | Portal oficial de la Marca Perú</value>
+  </data>
+  <data name="seo_descripcion_home" xml:space="preserve">
+    <value>Últimas noticias e información oficial de Perú como MARCA PAÍS. Conoce más sobre: Turismo, Gastronomía, Comercio Exterior, Inversiones y Talento del Perú.</value>
+  </data>
+  <data name="seo_keywords_home" xml:space="preserve">
+    <value>Marca Perú, Marca País, PROMPERÚ, Turismo, Gastronomía, Importacion y Exportacion</value>
+  </data>
+  <data name="seo_titulo_premios" xml:space="preserve">
+    <value>Premios  &amp; Honores | Marca Perú | Perú Info</value>
+  </data>
+  <data name="seo_descripcion_premios" xml:space="preserve">
+    <value>Conoce los reconocimientos internacionales de la Marca Perú en Turismo, Gastronomía, Imagen Corporativa, Marketing Promocional y más.</value>
+  </data>
+  <data name="seo_keywords_premios" xml:space="preserve">
+    <value>Marca Perú, Marca País, Turismo, Gastronomía, Imagen Corporativa, Marketing Promocional</value>
+  </data>
+  <data name="seo_titulo_campana" xml:space="preserve">
+    <value>Campañas de la Marca Perú | Perú Info</value>
+  </data>
+  <data name="seo_descripcion_campana" xml:space="preserve">
+    <value>Conoce a los peruanos que contribuyeron a posicionar la Marca Perú entre las más reconocidas del mundo.</value>
+  </data>
+  <data name="seo_keywords_campana" xml:space="preserve">
+    <value>Embajadores, Marca Perú, Marca País</value>
+  </data>
+  <data name="seo_titulo_apps" xml:space="preserve">
+    <value>Nuestras Apps | Aplicaciones Móviles | Play Store | App Store | Perú Info</value>
+  </data>
+  <data name="seo_descripcion_apps" xml:space="preserve">
+    <value>Conoce y descarga nuestras apps oficiales desde el App Store o Play Store de tu celular: PISCO SPIRIT OF PERU, PERÚ BROCHURE, HABLA QUECHUA y más.</value>
+  </data>
+  <data name="seo_keywords_apps" xml:space="preserve">
+    <value>Apps, Aplicaciones Móviles, Play Store, App Store</value>
+  </data>
+  <data name="seo_titulo_privacidad" xml:space="preserve">
+    <value>Aviso de privacidad | Perú Info</value>
+  </data>
+  <data name="seo_descripcion_privacidad" xml:space="preserve">
+    <value>El aviso de privacidad describe las prácticas para el manejo de información personal que usa Perú Info.</value>
+  </data>
+  <data name="seo_keywords_privacidad" xml:space="preserve">
+    <value>Aviso de Privacidad, Información Personal, Datos Personales</value>
+  </data>
+  <data name="seo_titulo_terminos" xml:space="preserve">
+    <value>Términos y condiciones | Perú Info</value>
+  </data>
+  <data name="seo_descripcion_terminos" xml:space="preserve">
+    <value>Conoce las obligaciones y responsabilidades legales de uso del sitio Web de Perú Info.</value>
+  </data>
+  <data name="seo_keywords.terminos" xml:space="preserve">
+    <value>Ley aplicable, Responsabilidades Legales, Propiedad Intelectual</value>
+  </data>
+  <data name="seo_titulo_contacto" xml:space="preserve">
+    <value>Contacto de Inversiones | Perú Info</value>
+  </data>
+  <data name="seo_descripcion_contacto" xml:space="preserve">
+    <value>Si tienes alguna duda escríbenos a inversiones@promperu.gob.pe o envíanos tus datos en el siguiente formulario.</value>
+  </data>
+  <data name="seo_keywords_contacto" xml:space="preserve">
+    <value>Exportaciones Peruanas, Inversiones Extranjeras, Inversiones en el Perú</value>
+  </data>
+  <data name="seo_titulo_comunicado" xml:space="preserve">
+    <value>COVID 19 | Salud | Perú Info</value>
+  </data>
+  <data name="seo_descripcion_comunicado" xml:space="preserve">
+    <value>Encuentra información relevante, tendencias del sector salud sobre la coyuntura actual del Perú y el mundo.</value>
+  </data>
+  <data name="seo_keywords_comunicado" xml:space="preserve">
+    <value>COVID, Salud, Coronavirus, Pandemia</value>
+  </data>
+  <data name="seo_titulo_restaurante" xml:space="preserve">
+    <value>Restaurantes de Cocina Peruana en el Mundo | Perú Info</value>
+  </data>
+  <data name="seo_descripcion_restaurante" xml:space="preserve">
+    <value>La comida peruana se ha posicionado como una de las mejores gastronomías del mundo. Conoce los restaurantes peruanos más destacados en el exterior.</value>
+  </data>
+  <data name="seo_keywords_restaurante" xml:space="preserve">
+    <value>Gastronomía Peruana, Comida Peruana, Restaurantes Peruanos</value>
+  </data>
+  <data name="volver_al_inicio" xml:space="preserve">
+    <value>Volver al Inicio</value>
+  </data>
+  <data name="contenido_error" xml:space="preserve">
+    <value>&lt;p&gt;Al parecer esta página no se encuentra disponible.&lt;br&gt;&lt;br&gt;Te invitamos a visitar otros contenidos de nuestra web.&lt;/p&gt;</value>
+  </data>
+  <data name="descubre_mas" xml:space="preserve">
+    <value>Descubre más</value>
+  </data>
+  <data name="fecha_publicacion" xml:space="preserve">
+    <value>Fecha de publicación</value>
+  </data>
+  <data name="label_desde" xml:space="preserve">
+    <value>Desde</value>
+  </data>
+  <data name="label_hasta" xml:space="preserve">
+    <value>Hasta</value>
+  </data>
+  <data name="limpiar_fechas" xml:space="preserve">
+    <value>Limpiar fechas</value>
+  </data>
+  <data name="resultados_para" xml:space="preserve">
+    <value>Resultados para:</value>
+  </data>
+  <data name="texto_aplicar" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="boton_confirmacion_consulta" xml:space="preserve">
+    <value>Enviar otra consulta</value>
+  </data>
+  <data name="texto_confirmacion_consulta" xml:space="preserve">
+    <value>Te responderemos lo más pronto posible a través del correo</value>
+  </data>
+  <data name="titulo_confirmacion_consulta" xml:space="preserve">
+    <value>¡Tu consulta ha sido enviada!</value>
+  </data>
+  <data name="boton_aceptar_cookies" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="boton_cerrar_cookies" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="cookies_descubra_mas" xml:space="preserve">
+    <value>Descubra más</value>
+  </data>
+  <data name="texto_cookies" xml:space="preserve">
+    <value>Este sitio usa cookies:</value>
+  </data>
+  <data name="boton_ver_mas_noticias" xml:space="preserve">
+    <value>Ver más noticias</value>
+  </data>
+  <data name="boton_ver_noticias" xml:space="preserve">
+    <value>Ver noticia</value>
+  </data>
+  <data name="boton_volver_a_noticias" xml:space="preserve">
+    <value>Volver a noticias</value>
+  </data>
+  <data name="link_noticias" xml:space="preserve">
+    <value>noticias</value>
+  </data>
+  <data name="titulo_lo_mas_reciente" xml:space="preserve">
+    <value>Lo más reciente</value>
+  </data>
+  <data name="titulo_podria_interesarte" xml:space="preserve">
+    <value>También te podría interesar</value>
+  </data>
+  <data name="titulo_lo_mas_visto" xml:space="preserve">
+    <value>Lo más visto</value>
+  </data>
+  <data name="txt_peru_agroindustria" xml:space="preserve">
+    <value>Perú dedicado a la&lt;br /&gt;agroindustria</value>
+  </data>
+  <data name="txt_peru_gastronomia" xml:space="preserve">
+    <value>Perú dedicado a la &lt;br /&gt;gastronomía</value>
+  </data>
+  <data name="titulo_conoce_restaurantes" xml:space="preserve">
+    <value>Conoce los restaurantes peruanos en el Mundo</value>
+  </data>
+  <data name="titulo_alertas" xml:space="preserve">
+    <value>Alertas</value>
+  </data>
+</root>

@@ -1,0 +1,961 @@
+﻿@using System.Configuration
+@using PROMPERU.PeruInfo.Domain.Entities
+@model dynamic
+
+@{
+    List<CategoriaBE> categorias = Model.Categorias;
+    List<SubcategoriaBE> subcategorias = Model.Subcategorias;
+    List<PaginaBE> paginas = Model.Paginas;
+
+    string culture = ViewBag.culture;
+    string tipo = Model.TipoId;
+    string categoriaSlug = Model.CategoriaSlug;
+    int idioma = culture.ToLower() == "es-pe" ? 1 : 2;
+
+    Layout = null;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+
+@{
+    string[,] urls =
+    {
+{ @strUrl+"/es-pe/cultura-sostenible/blogperu/8", @strUrl+"/es-pe/blogperu" },
+{ @strUrl+"/es-pe/cultura-sostenible/noticias/8", @strUrl+"/es-pe/noticias" },
+{ @strUrl+"/es-pe/comercio-exterior/noticias/7", @strUrl+"/es-pe/noticias" },
+{ @strUrl+"/es-pe/marca-peru/blogperu/1", @strUrl+"/es-pe/blogperu" },
+{ @strUrl+"/es-pe/comercio-exterior/blogperu/7", @strUrl+"/es-pe/blogperu" },
+{ @strUrl+"/es-pe/gastronomia/blogperu/2", @strUrl+"/es-pe/blogperu" },
+{ @strUrl+"/es-pe/turismo/blogperu/3", @strUrl+"/es-pe/blogperu" },
+{ @strUrl+"/es-pe/talento/blogperu/6", @strUrl+"/es-pe/blogperu" },
+{ @strUrl+"/es-pe/inversiones/noticias/5", @strUrl+"/es-pe/noticias" },
+{ @strUrl+"/es-pe/marca-peru/noticias/1", @strUrl+"/es-pe/noticias" },
+{ @strUrl+"/es-pe/gastronomia/noticias/2", @strUrl+"/es-pe/noticias" },
+{ @strUrl+"/es-pe/talento/noticias/6", @strUrl+"/es-pe/noticias" },
+{ @strUrl+"/es-pe/inversiones/blogperu/5", @strUrl+"/es-pe/blogperu" },
+{ @strUrl+"/es-pe/turismo/noticias/3", @strUrl+"/es-pe/noticias" },
+{ @strUrl+"/en-us/brand-peru/news/1", @strUrl+"/en-us/news" },
+{ @strUrl+"/en-us/tourism/blogperu/3", @strUrl+"/en-us/search" },
+{ @strUrl+"/en-us/gastronomy/news/2", @strUrl+"/en-us/news" },
+{ @strUrl+"/en-us/foreign-trade/blogperu/7", @strUrl+"/en-us/search" },
+{ @strUrl+"/en-us/talent/blogperu/6", @strUrl+"/en-us/search" },
+{ @strUrl+"/en-us/investments/news/5", @strUrl+"/en-us/news" },
+{ @strUrl+"/en-us/brand-peru/blogperu/1", @strUrl+"/en-us/search" },
+{ @strUrl+"/en-us/sustainable-culture/news/8", @strUrl+"/en-us/news" },
+{ @strUrl+"/en-us/talent/news/6", @strUrl+"/en-us/news" },
+{ @strUrl+"/en-us/investments/blogperu/5", @strUrl+"/en-us/search" },
+{ @strUrl+"/en-us/foreign-trade/news/7", @strUrl+"/en-us/news" },
+{ @strUrl+"/en-us/gastronomy/blogperu/2", @strUrl+"/en-us/search" },
+{ @strUrl+"/en-us/tourism/news/3", @strUrl+"/en-us/news" }    };
+
+    var urlCanonical = "";
+    // Ejemplo de cómo recorrer el array y mostrar los valores
+    for (int i = 0; i < urls.GetLength(0); i++)
+    {
+        if (urls[i, 0] == @absoluteUrl)
+        {
+            urlCanonical = urls[i, 1];
+            break;
+        }
+    }
+
+    if (urlCanonical == string.Empty)
+    {
+        urlCanonical = @absoluteUrl;
+    }
+
+    var descripcionSeo = "";
+    var tituloSeo = "";
+
+    descripcionSeo = Resource.seo_descripcion_home;
+    tituloSeo = Resource.seo_titulo_home;
+
+    foreach (var pagina in paginas)
+    { 
+        descripcionSeo = pagina.DescripcionSeo; 
+        tituloSeo = pagina.TituloSeo; 
+    }
+
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@strUrl/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="@strUrl/css/peru-info.components.css">
+    <link rel="stylesheet" href="@strUrl/css/plantilla-resultado-busqueda.css">
+    <title>@tituloSeo</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <base href="@strUrl">
+    <link rel="shortcut icon" href="@strUrl/img/favicon_PeruInfo.ico" />
+    <link rel="canonical" href="@urlCanonical">
+    <meta name="description" content="@descripcionSeo" />
+    <meta name="author" content="Peru.info">
+    <meta name="distribution" content="global" />
+    <meta name="keywords" content="@Resource.seo_keywords_home" />
+    <meta property="og:locale" content="@culture" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@Resource.seo_titulo_home" />
+    <meta property="og:description" content="@Resource.seo_descripcion_home" />
+    <meta property="og:url" content="@absoluteUrl" />
+    <meta property="og:site_name" content="Perú Info" />
+    <meta property="og:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@Resource.seo_descripcion_home" />
+    <meta name="twitter:title" content="@Resource.seo_titulo_home" />
+    <meta name="twitter:site" content="https://twitter.com/marcaPERU" />
+    <meta name="twitter:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")" />
+    @if (idioma == 1)
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6PS60QLG"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GB6PS60QLG');
+        </script>
+    }
+    else
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5R15JNKSP"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-E5R15JNKSP');
+        </script>
+    }
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDQMLXQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Código de seguimiento de Hotjar de -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 4938555, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    @Html.Partial("~/Views/Shared/Partials/_WidgetsLayout.cshtml")
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMLXQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------------------- BLOCK HEADER ----------------------->
+    <!-- <header class="header-peru-info active-scroll-header"> -->
+    <header class="header-peru-info">
+        <div class="contenedor-header-peru-info">
+            <div class="contenedor-logo-peru">
+                <a href="/">
+                    <img src="@strUrl/img/home/header/logo-peru.png" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                    <img src="@strUrl/img/home/header/logo-peru-gris.svg" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                </a>
+            </div>
+
+            @{
+                Html.RenderAction("HeaderMenu", "Home");
+            }
+
+        </div>
+
+        <!-- <div class="menu-lateral mostrar-menu-lateral"> -->
+        @{
+            Html.RenderAction("PageMenu", "Home");
+        }
+    </header>
+    <!-------------------- /BLOCK HEADER ----------------------->
+    <!-------------------- BLOCK MODALES-HEADER ----------------------->
+    @Html.Partial("Partials/_ModalsHeader")
+
+    <!-------------------- /BLOCK MODALES-HEADER ----------------------->
+    <!-------------------- BLOCK BANNER-RESULTADO ----------------------->
+    <section class="contenedor-banner-resultado">
+        <div class="content-banner-resultado">
+            <div class="box-banner-logo">
+                <img src="@strUrl/img/plantilla-resultado-busqueda/d_banner-resultado.jpg" alt="">
+                <img src="@strUrl/img/plantilla-resultado-busqueda/m_banner-resultado.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <!-------------------- /BLOCK BANNER-RESULTADO ----------------------->
+    <main>
+
+        <!-------------------- BLOCK BUSCADOR ----------------------->
+        <section class="container-buscador-resultado">
+            <div class="content-buscador-resultado blockv3-container">
+
+                <div class="contenedor-buscador-cards">
+                    <div class="content-buscador-cards">
+
+                        <div class="contenedor-buscar-filtros">
+                            <div class="content-buscar-filtros">
+                                <div class="input-buscador">
+                                    <p>@Resource.resultados_para</p>
+                                    <div class="item-buscar">
+                                        <input id="txtBuscado" placeholder="@Resource.buscar_por_nombre">
+                                        <div class="icon-lupa">
+                                            <img src="@strUrl/img/plantilla-embajadores/lupa-buscar.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="select-tipos-categorias">
+                                    <div class="title-select">
+                                        <p>@Resource.filtrar_busqueda</p>
+                                        <div class="icon-despegable">
+                                            <img src="@strUrl/img/plantilla-embajadores/buscar-filtros/icon-desplegar.png" alt="">
+                                        </div>
+                                    </div>
+
+                                    <div class="content-items-select">
+
+                                        <div class="box-item-filtro">
+
+                                            <!-- <div class="title-todos-submenu active-item-categoria"> -->
+                                            <div class="title-todos-submenu">
+                                                <div class="icon-sector">
+
+                                                </div>
+                                                <h2 data-category-slug="">@Resource.filtrar_busqueda_todos</h2>
+                                                <div class="icon-arrow-right">
+                                                    <img src="@strUrl/img/plantilla-embajadores/buscar-filtros/icon-arrow-right.png" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" id="categorySlug" value="@categoriaSlug" />
+                                        <input type="hidden" id="subcategorySlug" />
+
+                                        @foreach (CategoriaBE categoria in categorias)
+                                        {
+                                            <div class="box-item-filtro">
+                                                <!-- <div class="title-submenu-filtro active-item-categoria"> -->
+                                                <div class="title-submenu-filtro @Html.Raw(@categoriaSlug == @categoria.Slug ? "active-item-categoria" : "")">
+                                                    <div class="icon-sector">
+                                                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M1 1L5 5L9 1" stroke="#B5B5B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                        </svg>
+                                                    </div>
+                                                    <h3 class="select-categoria" data-category-slug="@categoria.Slug">@categoria.Nombre</h3>
+                                                    <div class="icon-arrow-right">
+                                                        <img src="@strUrl/img/plantilla-embajadores/buscar-filtros/icon-arrow-right.png" alt="">
+                                                    </div>
+                                                </div>
+
+                                                <!-- <ul class="contenedor-sublista-filtros mostrar-items-submenu"> -->
+                                                <ul class="contenedor-sublista-filtros @Html.Raw(@categoriaSlug == @categoria.Slug ? "mostrar-items-submenu" : "")">
+                                                    <!-- <li class="item-subcategoria active-item-subcategoria"> -->
+                                                    @foreach (SubcategoriaBE subcategoria in subcategorias.Where(x => x.CategoriaId == categoria.Id).ToList())
+                                                    {
+                                                        <li class="item-subcategoria" data-category-slug="@categoria.Slug" data-subcategory-slug="@subcategoria.Slug">@subcategoria.Nombre</li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                        }
+                                    </div>
+
+                                    <div class="contenedor-calendars-filtro">
+                                        <p>@Resource.fecha_publicacion</p>
+                                        <div class="content-calendars-filtro">
+                                            <div class="content-box-date">
+                                                <input type="text" id="txtDesde" placeholder="@Resource.label_desde" class="active-datepicker">
+                                            </div>
+
+                                            <div class="content-box-date">
+                                                <input type="text" id="txtHasta" placeholder="@Resource.label_hasta" class="active-datepicker">
+                                            </div>
+                                        </div>
+
+                                        <div class="contenedor-btn-filtros">
+                                            <div id="apply" class="box-btn-filtro">
+                                                @Resource.texto_aplicar
+                                            </div>
+                                            <div id="clear" class="box-btn-filtro">
+                                                @Resource.limpiar_fechas
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contenedor-cards-resultado">
+
+                            <div class="loading"></div>
+
+                            <div class="box-card-inicial">
+                                <div id="contenedor-item-card-main" class="contenedor-item-card"></div>
+                            </div>
+
+                            <div id="contenedor-cards-duo-secondary" class="contenedor-cards-duo"></div>
+
+                            <div class="content-btn">
+                                <a id="loadmore" href="javascript:void(0)" class="btn-cta">@Resource.ver_mas</a>
+                                <a id="top" href="javascript:void(0)" class="btn-cta">@Resource.volver_al_inicio</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contenedor-mobile-filtros-lateral">
+            <div class="box-fondo-oscuro"></div>
+            <div class="content-mobile-filtros-lateral">
+                <div class="contenedor-title-icon-ocultar">
+                    <p>@Resource.filtrar_busqueda</p>
+                    <span class="icon-close-lateral">X</span>
+                </div>
+
+                <div class="contenedor-mobile-items-filtros">
+
+                    <div class="box-item-filtro-mobile">
+
+                        <!-- <div class="title-todos-submenu-mobile active-item-categoria"> -->
+                        <div class="title-todos-submenu-mobile">
+                            <div class="icon-sector">
+
+                            </div>
+                            <h2 data-category-slug="">@Resource.filtrar_busqueda_todos</h2>
+
+                        </div>
+                    </div>
+
+                    @foreach (CategoriaBE categoria in categorias)
+                    {
+                        <div class="box-item-filtro-mobile">
+
+                            <!-- <div class="title-submenu-filtro-mobile active-item-categoria"> -->
+                            <div class="title-submenu-filtro-mobile @Html.Raw(@categoriaSlug == @categoria.Slug ? "active-item-categoria" : "")">
+                                <div class="icon-sector">
+                                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5 5L9 1" stroke="#B5B5B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="select-categoria-mobile" data-category-slug="@categoria.Slug">@categoria.Nombre</h3>
+                            </div>
+
+                            <!-- <ul class="contenedor-sublista-filtros-mobile mostrar-items-submenu"> -->
+                            <ul class="contenedor-sublista-filtros-mobile @Html.Raw(@categoriaSlug == @categoria.Slug ? "mostrar-items-submenu" : "")">
+
+                                <!-- <li class="item-subcategoria-mobile active-item-subcategoria"> -->
+                                @foreach (SubcategoriaBE subcategoria in subcategorias.Where(x => x.CategoriaId == categoria.Id).ToList())
+                                {
+                                    <li class="item-subcategoria-mobile" data-category-slug="@categoria.Slug" data-subcategory-slug="@subcategoria.Slug">@subcategoria.Nombre</li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+
+                <div class="contenedor-mobile-calendars-filtro">
+                    <p>@Resource.fecha_publicacion</p>
+                    <div class="content-calendars-filtro">
+                        <div class="content-box-date">
+                            <input type="text" id="txtDesdeMobile" placeholder="@Resource.label_desde" class="active-datepicker">
+                        </div>
+
+                        <div class="content-box-date">
+                            <input type="text" id="txtHastaMobile" placeholder="@Resource.label_hasta" class="active-datepicker">
+                        </div>
+                    </div>
+
+                    <div class="contenedor-btn-filtros">
+                        <div id="apply-mobile" class="box-btn-filtro">
+                            @Resource.texto_aplicar
+                        </div>
+                        <div id="clear-mobile" class="box-btn-filtro">
+                            @Resource.limpiar_fechas
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-------------------- /BLOCK BUSCADOR ----------------------->
+        <!-------------------- BLOCK ICONS-DECORATOR ----------------------->
+        <section class="contenedor-icons-decorator">
+            <div class="icons-decorator blockv3-container">
+
+                <div class="box-icons icons-21">
+                    <img src="@strUrl/img/home/icons/iconos-1024.png" style="width:100% !important" alt="">
+                </div>
+
+                @*<div class="box-icons icons-21">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+            <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+            <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+            <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+            <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+            <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+            <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+            <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+        </div>*@
+
+                <div class="box-icons icons-10">
+                    <img src="@strUrl/img/home/icons/iconos-768.png" style="width:100%" alt="">
+                </div>
+                @*
+                <div class="box-icons icons-10">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+                </div>*@
+            </div>
+        </section>
+        <!-------------------- /BLOCK ICONS-DECORATOR ----------------------->
+        <!-------------------- BLOCK MAS-VISTO ----------------------->
+        <div class="seccion-mas-visto">
+            <div class="contenedor-mas-visto blockv3-container">
+                <div class="content-mas-visto">
+                    <h2>@Resource.titulo_lo_mas_visto</h2>
+
+                    <div class="contenedor-slider-syncing">
+                        <div class="contenedor-slider-top">
+                            <div class="content-slider-video">
+                                <div class="item-slider-video">
+                                    <div class="box-slider-video">
+                                        <iframe src="https://www.youtube.com/embed/og56wmIf15A?list=PLOJHK3O8vdiIKUSS6uubFdLxG9pJJOFA_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <div class="item-slider-video">
+                                    <div class="box-slider-video">
+                                        <iframe src="https://www.youtube.com/embed/YoaamFPSz6U?list=PLOJHK3O8vdiIKUSS6uubFdLxG9pJJOFA_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contenedor-slider-bottom">
+                            <div class="content-slider-bottom">
+                                <div class="item-slider-bottom">
+                                    <div class="card-slider-mini">
+                                        <div class="box-logo-mini">
+                                            <img src="@strUrl/img/plantilla-embajadores/mas-visto/peru-dedicado-agroindustria-mini.jpg" alt="">
+                                        </div>
+                                        <div class="box-txt-mini">
+                                            <h3>@Html.Raw(Resource.txt_peru_agroindustria)</h3>
+                                            <p>02 jul</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="item-slider-bottom">
+
+                                    <div class="card-slider-mini">
+                                        <div class="box-logo-mini">
+                                            <img src="@strUrl/img/plantilla-embajadores/mas-visto/peru-dedicado-gastronomia-mini.jpg" alt="">
+                                        </div>
+                                        <div class="box-txt-mini">
+                                            <h3>@Html.Raw(Resource.txt_peru_gastronomia)</h3>
+                                            <p>20 jul</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-------------------- BLOCK MAS-VISTO ----------------------->
+    </main>
+
+
+    <!-------------------- BLOCK FOOTER ----------------------->
+    @{
+        Html.RenderAction("PageMenu", "Home", new { footer = true });
+    }
+    <!-------------------- /BLOCK FOOTER ----------------------->
+
+    <style>
+        .content-btn {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .btn-cta {
+            font-family: "BreePeru", sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-align: center;
+            color: #ffffff;
+            background-color: #ff0000;
+            padding: 8px 20px;
+            border-radius: 10px;
+        }
+
+        .title-select p {
+            font-family: "BreePeru", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #b1b1b1;
+            padding-left: 9px;
+        }
+
+        .select-categoria {
+            font-family: "BreePeru", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #3e3e3e;
+            text-decoration: underline;
+            padding-right: 8px;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+        }
+
+        .title-todos-submenu h2 {
+            font-family: "BreePeru", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #3e3e3e;
+            text-decoration: underline;
+            padding-right: 8px;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+        }
+
+        .contenedor-calendars-filtro p {
+            font-family: "BreePeru", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #b1b1b1;
+            padding-left: 9px;
+            padding-bottom: 25px;
+        }
+
+        .contenedor-title-icon-ocultar p {
+            font-family: "BreePeru", sans-serif;
+            font-weight: 500;
+            font-size: 16.5px;
+            color: #ffffff;
+            line-height: 3;
+            text-transform: uppercase;
+        }
+
+        .title-todos-submenu-mobile h2 {
+            font-family: "BreePeru", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #636466;
+            text-decoration: underline;
+            padding-right: 8px;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+        }
+
+        .title-submenu-filtro-mobile h3 {
+            font-family: "BreePeru", sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            color: #636466;
+            text-decoration: underline;
+            padding-right: 8px;
+            -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+        }
+
+        .contenedor-mobile-calendars-filtro p {
+            font-size: 13px;
+            font-family: "BreePeru", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #b1b1b1;
+            padding-left: 9px;
+            padding-bottom: 15px;
+        }
+    </style>
+
+    <script>
+        let baseDomain = '@strUrl';
+    </script>
+    <script src="@strUrl/js/jquery.min.js"></script>
+    <script src="@strUrl/js/slick.min.js"></script>
+    <script src="@strUrl/js/jquery-ui.min.js"></script>
+    <script src="@strUrl/js/peru-info.components.js"></script>
+
+    <script src="@strUrl/js/plantilla-resultado-busqueda.js"></script>
+    <script>
+    let culture = "@culture";
+    let idioma = @idioma;
+    </script>
+    <script src="@strUrl/js/search.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('.content-btn').hide();
+
+        prepareDataToSearch();
+
+        $('#txtBuscado').keypress(function(event) {
+            if (event.keyCode === 13) {
+                prepareDataToSearch();
+            }
+        });
+
+        $(".title-todos-submenu, .title-todos-submenu-mobile, .select-categoria, .select-categoria-mobile").click(e => {
+            e.preventDefault();
+
+            $("#categorySlug").val($(e.target).data("categorySlug"));
+
+            prepareDataToSearch();
+        });
+
+        $(".item-subcategoria, .item-subcategoria-mobile").click(e => {
+            e.preventDefault();
+
+            $(this).toggleClass("active-item-subcategoria");
+
+            $("#categorySlug").val($(e.target).data("categorySlug"));
+            $("#subcategorySlug").val($(e.target).data("subcategorySlug"));
+
+            prepareDataToSearch();
+        });
+
+        $(".icon-lupa").click(e => {
+            e.preventDefault();
+
+            prepareDataToSearch();
+        });
+
+        $("#apply, #apply-mobile").click(e => {
+            e.preventDefault();
+
+            prepareDataToSearch();
+
+            $(".contenedor-mobile-filtros-lateral").removeClass("mostrar-filtros-lateral");
+        });
+        $("#clear, #clear-mobile").click(e => {
+            e.preventDefault();
+
+            $("#txtDesde,#txtHasta,#txtDesdeMobile,#txtHastaMobile").val("");
+        });
+    });
+
+    function prepareDataToSearch() {
+        let desde = null;
+
+        let category = null;
+        let subcategory = null;
+
+        if ($("#categorySlug").val() !== undefined && $("#categorySlug").val() !== "") {
+            category = $("#categorySlug").val();
+        }
+
+        if ($("#subcategorySlug").val() !== undefined && $("#subcategorySlug").val() !== "") {
+            subcategory = $("#subcategorySlug").val();
+        }
+
+        if ($("#txtDesde").val() != undefined && $("#txtDesde").val() !== '') {
+            desde = setDateToFilter($("#txtDesde").val());
+        }
+
+        if ($("#txtDesdeMobile").val() != undefined && $("#txtDesdeMobile").val() !== '') {
+            desde = setDateToFilter($("#txtDesdeMobile").val());
+        }
+
+        let buscado = null;
+
+        if ($("#txtBuscado").val() !== undefined && $("#txtBuscado").val() !== "") {
+            buscado = $("#txtBuscado").val();
+        }
+
+        let hasta = null;
+
+        if ($("#txtHasta").val() != undefined && $("#txtHasta").val() !== '') {
+            hasta = setDateToFilter($("#txtHasta").val());
+        }
+        if ($("#txtHastaMobile").val() != undefined && $("#txtHastaMobile").val() !== '') {
+            hasta = setDateToFilter($("#txtHastaMobile").val());
+        }
+
+        callDataFromApi(buscado, category, subcategory, desde, hasta);
+
+        $("#categorySlug").val("");
+        $("#subcategorySlug").val("");
+    }
+
+    function setDateToFilter(fecha) {
+        const fechaParts = fecha.split("/");
+
+        return `${fechaParts[2]}-${fechaParts[0]}-${fechaParts[1]}`;
+    }
+
+    function callDataFromApi(buscado = null, category = null, subcategory = null, desde = null, hasta = null) {
+
+        let url = `@strUrl/@culture/api/publicacion?idioma=@idioma&tipo=@tipo`;
+
+
+        if (buscado !== null) {
+            url = `${url}&buscado=${buscado}`;
+        }
+
+        if (desde !== null && hasta !== null) {
+            url = `${url}&inicio=${desde}&fin=${hasta}`;
+        }
+
+        if (category !== null) {
+            url = `${url}&categoria=${category}`;
+        }
+
+        if (subcategory !== null && subcategory !== "") {
+            url = `${url}&subcategoria=${subcategory}`;
+        }
+
+        $.ajax({
+            url: url,
+            success: result => {
+                fillDataFromApi(result);
+                $('.loading').hide();
+                $('.content-btn').show();
+            }
+        });
+    }
+
+    function fillDataFromApi(result) {
+        $("#contenedor-item-card-main, #contenedor-cards-duo-secondary").html('');
+
+        result.data.slice(0, 1).map(item => {
+            const parts = item.FechaPublicacion.split("T")[0].split("-");
+            var publish = new Date(parts[0], parts[1] - 1, parts[2]);
+
+            $("#contenedor-item-card-main").append(
+                `<a href="/@culture/${item.CategoriaSlug}/@Resource.link_noticias/${item.CategoriaId}/${item.SubcategoriaId}/${item.Slug}" class="content-item-card">
+                            <div class="card-logo">
+                                <img src="@strUrl/archivos/publicacion/${item.Imagen}" alt="${item.AltImagen}">
+                            </div>
+                            <div class="card-txt">
+                                <span>${formatDate(publish)}</span>
+                                <h2>${item.Titulo}</h2>
+                            </div>
+                        </a>`
+            );
+
+
+        });
+
+        const size = 2;
+
+        for (let i = 1; i < result.data.length; i += size) {
+            const items = [];
+
+            result.data.slice(i, i + size).map(item => {
+
+                const parts = item.FechaPublicacion.split("T")[0].split("-");
+                const publish = new Date(parts[0], parts[1] - 1, parts[2]);
+
+                items.push(`<div class="contenedor-item-card">
+                                        <a href="/@culture/${item.CategoriaSlug}/@Resource.link_noticias/${item.CategoriaId}/${item.SubcategoriaId}/${item.Slug}" class="content-item-card">
+                                            <div class="card-logo">
+                                                ${item.Imagen ? `<img src="@strUrl/archivos/publicacion/${item.Imagen}" alt="${item.AltImagen}">`:''}
+                                            </div>
+                                            <div class="card-txt">
+                                                <span>${formatDate(publish)}</span>
+                                                <h2>${item.Titulo}</h2>
+                                            </div>
+                                        </a>
+                                    </div>`);
+
+            });
+
+            $("#contenedor-cards-duo-secondary").append(`<div class="box-two-cards">${items.join('')}</div>`);
+
+
+            $('.contenedor-cards-resultado .box-two-cards').hide();
+            $('.contenedor-cards-resultado #top').hide();
+            $('.contenedor-cards-resultado .box-two-cards').slice(0, 5).show();
+
+            if ($('.contenedor-cards-resultado .box-two-cards').length > 5) {
+                $('.contenedor-cards-resultado #loadmore').fadeIn();
+            }
+            else {
+                $('.contenedor-cards-resultado .box-two-cards #loadmore').hide();
+            }
+
+            if ($('.contenedor-cards-resultado .box-two-cards').length <= 10) {
+                $('.contenedor-cards-resultado #loadmore').hide();
+            }
+
+        }
+    }
+
+    $('.contenedor-cards-resultado #loadmore').on('click', function (e) {
+        e.preventDefault();
+        $('.contenedor-cards-resultado .box-two-cards:hidden').slice(0, 10).slideDown();
+        if ($('.contenedor-cards-resultado .box-two-cards:hidden').length <= 0) {
+            $('.contenedor-cards-resultado #loadmore').fadeOut();
+            $('.contenedor-cards-resultado #top').fadeIn();
+        }
+    });
+
+    $('.contenedor-cards-resultado #top').on('click', function (e) {
+        e.preventDefault();
+        console.log('volver');
+        $('html, body').animate({
+            scrollTop: $(".contenedor-banner-resultado").offset().top
+        }, 'slow');
+        return false;
+    });
+
+    function formatDate(date) {
+        let day = date.getDate();
+
+        if (day < 10) {
+            day = `0${day}`;
+        }
+
+        var month = date.getMonth() + 1;
+
+        if (month < 10) {
+            month = `0${month}`;
+        }
+
+        const year = date.getFullYear();
+
+        return day + "/" + month + "/" + year;
+    }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function handleResize() {
+                var screenWidth = window.innerWidth;
+                var contenedorItemsFiltros = document.querySelector('.contenedor-mobile-items-filtros');
+
+                if (screenWidth <= 800) {
+                    if (!contenedorItemsFiltros) {
+                        var section = document.querySelector('.content-mobile-filtros-lateral');
+                        if (section) {
+                            var newDiv = document.createElement('div');
+                            newDiv.className = 'contenedor-mobile-items-filtros';
+
+                            newDiv.innerHTML = `<div class="box-item-filtro-mobile">
+
+                        <!-- <div class="title-todos-submenu-mobile active-item-categoria"> -->
+                        <div class="title-todos-submenu-mobile">
+                            <div class="icon-sector">
+
+                            </div>
+                            <h2 data-category-slug="">@Resource.filtrar_busqueda_todos</h2>
+
+                        </div>
+                    </div>
+
+                    @foreach (CategoriaBE categoria in categorias)
+                    {
+                        <div class="box-item-filtro-mobile">
+
+                            <!-- <div class="title-submenu-filtro-mobile active-item-categoria"> -->
+                            <div class="title-submenu-filtro-mobile @Html.Raw(@categoriaSlug == @categoria.Slug ? "active-item-categoria" : "")">
+                                <div class="icon-sector">
+                                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5 5L9 1" stroke="#B5B5B5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <h3 class="select-categoria-mobile" data-category-slug="@categoria.Slug">@categoria.Nombre</h3>
+                            </div>
+
+                            <!-- <ul class="contenedor-sublista-filtros-mobile mostrar-items-submenu"> -->
+                            <ul class="contenedor-sublista-filtros-mobile @Html.Raw(@categoriaSlug == @categoria.Slug ? "mostrar-items-submenu" : "")">
+
+                                <!-- <li class="item-subcategoria-mobile active-item-subcategoria"> -->
+                                @foreach (SubcategoriaBE subcategoria in subcategorias.Where(x => x.CategoriaId == categoria.Id).ToList())
+                                {
+                                    <li class="item-subcategoria-mobile" data-category-slug="@categoria.Slug" data-subcategory-slug="@subcategoria.Slug">@subcategoria.Nombre</li>
+                                }
+                            </ul>
+                        </div>
+                    }`;
+                            section.appendChild(newDiv);
+                        }
+                    }
+                } else {
+                    if (contenedorItemsFiltros) {
+                        contenedorItemsFiltros.remove();
+                    }
+                }
+            }
+
+            handleResize();
+
+            window.addEventListener('resize', handleResize);
+        });
+    </script>
+</body>
+</html>
+
+<style>
+    .card-txt h2 {
+        font-family: "ClanOt", sans-serif;
+        font-weight: 700;
+        width: 190px;
+        color: #ffffff;
+        display: block;
+        display: -webkit-box;
+        height: 42.9px;
+        font-size: 11px;
+        line-height: 1.3;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>

@@ -1,0 +1,105 @@
+﻿@using System.Configuration
+<!-- <section class="modal-buscador-filtro active-modal-buscador"> -->
+@{
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<section class="modal-buscador-filtro">
+    <div class="contenedor-modal-buscador">
+        <div class="box-banner-buscador">
+            <img src="@strUrl/img/plantilla-resultado-busqueda/buscador-modal/d_banner-buscador.jpg" alt="">
+        </div>
+
+        <div class="icon-cerrar-modal">
+            <img src="@strUrl/img/plantilla-resultado-busqueda/buscador-modal/icon-cerrar-buscador.png" alt="">
+        </div>
+        <div class="content-modal-buscador blockv3-container">
+            <h3>@Resource.buscar_texto</h3>
+            <div class="contenedor-input-buscador">
+                <input type="text" id="buscado" placeholder="@Resource.buscar_alt">
+                <div class="box-icon-buscar">
+                    <span>@Resource.buscar</span>
+                    <img src="@strUrl/img/plantilla-resultado-busqueda/buscador-modal/icon-buscador.png" alt="">
+                </div>
+            </div>
+
+            <div class="contenedor-blog-noticias" style="display: none">
+                <input type="hidden" id="hdnLinkNoticia" value="@Resource.link_noticias" />
+                <div class="contenedor-blog-peru">
+                    <div class="content-superior-title">
+                        <h3>@Resource.blog</h3>
+                    </div>
+
+                    <div id="contenedor-resultado-blog" class="contenedor-inferior-resultado">
+
+
+                    </div>
+                </div>
+
+                <div class="contenedor-noticias">
+                    <div class="content-superior-title">
+                        <h3>@Resource.noticias</h3>
+                    </div>
+
+                    <div id="contenedor-resultado-noticias" class="contenedor-inferior-resultado">
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="contenedor-icons-decorator">
+            <div class="icons-decorator blockv3-container">
+                <div class="box-icons icons-21">
+    
+                    <img src="@strUrl/img/home/icons/iconos-1024.png" style="width:100%" alt="">
+    
+    @* <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">*@
+                </div>
+
+                <div class="box-icons icons-10">
+                    <img src="@strUrl/img/home/icons/iconos-768.png" style="width:100%" alt="">                
+    
+    @*<img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">*@
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

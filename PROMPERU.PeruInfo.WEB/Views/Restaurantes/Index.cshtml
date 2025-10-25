@@ -1,0 +1,386 @@
+﻿@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model dynamic
+
+@{
+    SubcategoriaBE subcategoria = Model.Subcategoria;
+    CategoriaBE categoria = Model.Categoria;
+    List<NegocioBE> negocios = Model.Negocios;
+    List<PaisBE> paises = Model.Paises;
+
+    string culture = ViewBag.Culture;
+    int idioma = culture == "es-pe" ? 1 : 2;
+
+    Layout = null;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<!DOCTYPE html>
+<html lang="@culture">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@strUrl/css/aos.css">
+    <link rel="stylesheet" href="@strUrl/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="@strUrl/css/peru-info.components.css">
+    <link rel="stylesheet" href="@strUrl/css/20.restaurantes-del-mundo.css">
+
+    @* <script src="@strUrl/js/ani-masonry/modernizr.custom.js"></script> *@
+    <title>@Resource.seo_titulo_restaurante</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <base href="@strUrl">
+    <link rel="shortcut icon" href="@strUrl/img/favicon_PeruInfo.ico" />
+    <link rel="canonical" href="@absoluteUrl">
+    <meta name="description" content="@Resource.seo_descripcion_restaurante" />
+    <meta name="author" content="Peru.info">
+    <meta name="distribution" content="global" />
+    <meta name="keywords" content="@Resource.seo_keywords_restaurante" />
+    <meta property="og:locale" content="@culture" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@Resource.seo_titulo_restaurante" />
+    <meta property="og:description" content="@Resource.seo_descripcion_restaurante" />
+    <meta property="og:url" content="@absoluteUrl" />
+    <meta property="og:site_name" content="Perú Info" />
+    <meta property="og:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@Resource.seo_descripcion_restaurante" />
+    <meta name="twitter:title" content="@Resource.seo_titulo_restaurante" />
+    <meta name="twitter:site" content="https://twitter.com/marcaPERU" />
+    <meta name="twitter:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")" />
+    @if (idioma == 1)
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6PS60QLG"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GB6PS60QLG');
+        </script>
+    }
+    else
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5R15JNKSP"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-E5R15JNKSP');
+        </script>
+    }
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDQMLXQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Código de seguimiento de Hotjar de -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 4938555, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    @Html.Partial("~/Views/Shared/Partials/_WidgetsLayout.cshtml")
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMLXQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------------------- BLOCK HEADER ----------------------->
+    <!-- <header class="header-peru-info active-scroll-header"> -->
+    <header class="header-peru-info">
+        <div class="contenedor-header-peru-info">
+            <div class="contenedor-logo-peru">
+                <a href="/">
+                    <img src="@strUrl/img/home/header/logo-peru.png" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                    <img src="@strUrl/img/home/header/logo-peru-gris.svg" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                </a>
+            </div>
+
+            @{
+                Html.RenderAction("HeaderMenu", "Home");
+            }
+
+        </div>
+
+        <!-- <div class="menu-lateral mostrar-menu-lateral"> -->
+        @{
+            Html.RenderAction("PageMenu", "Home");
+        }
+    </header>
+    <!-------------------- /BLOCK HEADER ----------------------->
+    <!-------------------- BLOCK MODALES-HEADER ----------------------->
+    @Html.Partial("Partials/_ModalsHeader")
+    <!-------------------- /BLOCK MODALES-HEADER ----------------------->
+    <!-------------------- BLOCK BANNER ----------------------->
+    <section class="contenedor-banner-restaurantes">
+        <div class="content-banner-restaurantes">
+            <div class="box-logo-restaurantes">
+                <img src="@strUrl/img/20.restaurantes-del-mundo/logo-banner.jpg" alt="">
+            </div>
+            <div class="contenedor-txt-restaurantes">
+                <h1>@subcategoria.Nombre</h1>
+                <p>@subcategoria.Subtitulo</p>
+            </div>
+        </div>
+    </section>
+    <!-------------------- /BLOCK BANNER ----------------------->
+
+    <main>
+
+        <!-------------------- BLOCK PAGINA ----------------------->
+        <section class="container-paginas-embajadores">
+            <div class="content-paginas-embajadores blockv3-container">
+
+                <div class="contenedor-paginado-embajadoresPeru">
+                    <div class="paginado-amigoPeru">
+                        <a href="/">Inicio</a>
+                        <img src="@strUrl/img/plantilla-embajadores/icon-arrow.png" alt="">
+                        <a href="/@culture/@categoria.Slug">@categoria.Nombre.ToUpper()</a>
+                        <img src="@strUrl/img/plantilla-embajadores/icon-arrow.png" alt="">
+                        <a href="javascript:void(0);">@subcategoria.Nombre</a>
+                    </div>
+                    <!-- <img src="@strUrl/img/11.amigos/mayorque.png" alt=""> -->
+                </div>
+            </div>
+        </section>
+        <!-------------------- /BLOCK PAGINA ----------------------->
+        <!-------------------- BLOCK BUSCADOR ----------------------->
+        <section class="container-buscador-patrimonio">
+            <div class="content-buscador-patrimonio blockv3-container">
+
+                <div class="contenedor-buscador-patrimonioPeru">
+
+                    <div class="title-amigoPeru">
+                        <h4>@Resource.titulo_conoce_restaurantes:</h4>
+                    </div>
+
+                    <div class="contenedor-card-amigoPeru">
+                        <div class="item-card">
+
+                            <div class="buscador-noticias-patrimonio">
+                                <div class="content-buscador-noticias">
+
+                                    <div class="input-buscador">
+                                        <h4>@Resource.buscar_texto</h4>
+                                        <div class="item-buscar">
+                                            <input id="txtNombre" placeholder="@Resource.buscar_texto_alt">
+                                            <div class="icon-lupa" id="lupa">
+                                                <img src="@strUrl/img/plantilla-embajadores/lupa-buscar.png" alt="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="filtro-desplegable">
+
+                                        <div class="title-filtro filtro-country">
+                                            <h4>@Resource.buscar_filtros</h4>
+                                            <div class="icon-svg">
+                                                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-up" class="svg-inline--fa fa-angle-up fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                                    <path fill="currentColor" d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z">
+                                                    </path>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <div class="content-date-filtro">
+                                            <h5>@Resource.buscar_pais</h5>
+                                            <div class="box-select-filtro">
+                                                <select id="ddlPais">
+                                                    <option value="">Seleccione</option>
+                                                    @foreach (PaisBE pais in paises)
+                                                    {
+                                                        <option value="@pais.Id">@pais.Nombre</option>
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="content-btn-buscar">
+                                        <a id="btnBuscar" href="javascript:void(0)">@Resource.buscar</a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="contenedor-cards-v2">
+                                <div id="negocios-cards" class="content-cards-v2">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-------------------- /BLOCK BUSCADOR ----------------------->
+
+    </main>
+
+    <!-------------------- BLOCK FOOTER ----------------------->
+    @{
+        Html.RenderAction("PageMenu", "Home", new { footer = true });
+    }
+    <!-------------------- /BLOCK FOOTER ----------------------->
+
+    <script>
+        let baseDomain = '@strUrl';
+    </script>
+    <script src="@strUrl/js/aos.js"></script>
+    <script src="@strUrl/js/jquery.min.js"></script>
+    <script src="@strUrl/js/slick.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.3.2.min.js"></script>
+    <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
+    <script src="@strUrl/js/jquery-ui.min.js"></script>
+    <script src="@strUrl/js/peru-info.components.js"></script>
+    <script src="@strUrl/js/20.restaurantes-del-mundo.js"></script>
+    <script>
+    let culture = "@culture";
+    let idioma = @idioma;
+    </script>
+    <script src="@strUrl/js/search.js"></script>
+    <script>
+        $(document).ready(function () {
+            callToApi();
+
+            $("#lupa").on("click",
+                e => {
+                    e.preventDefault();
+
+                    let nombre = null;
+                    let pais = null;
+
+                    if ($("#ddlPais").val() !== "") {
+                        pais = $("#ddlPais").val();
+                    }
+
+                    if ($("#txtNombre").val() !== "") {
+                        nombre = $("#txtNombre").val();
+                    }
+
+                    callToApi(nombre, pais);
+                });
+
+            $("#btnBuscar").on("click",
+                e => {
+                    e.preventDefault();
+
+                    let nombre = null;
+                    let pais = null;
+
+                    if ($("#ddlPais").val() !== "") {
+                        pais = $("#ddlPais").val();
+                    }
+
+                    if ($("#txtNombre").val() !== "") {
+                        nombre = $("#txtNombre").val();
+                    }
+
+                    callToApi(nombre, pais);
+                });
+        });
+
+        function callToApi(nombre = null, pais = null) {
+            let url = `@strUrl/${culture}/api/negocios?idioma=${idioma}`;
+
+            if (nombre !== null) {
+                url = `${url}&nombre=${nombre}`;
+            }
+
+            if (pais !== null) {
+                url = `${url}&pais=${pais}`;
+            }
+
+            $.get(url)
+                .done(result => {
+                    console.log(result);
+
+                    $("#negocios-cards").html("");
+
+                    if (result.data.length > 0) {
+                        result.data.forEach(item => {
+                            let direccionWeb = "";
+                            let telefono = "";
+
+                            if (item.DireccionWeb !== null) {
+                                direccionWeb = `<p>
+                                                            Web:
+                                                            <span>${item.DireccionWeb}</span>
+                                                        </p>`;
+                            }
+
+                            if (item.Telefono !== null) {
+                                telefono = `<p>
+                                                        Teléfono:
+                                                        <span>${item.Telefono}</span>
+                                                    </p>`;
+                            }
+
+                            $("#negocios-cards").append(
+                                `<div class="container-card-v2">
+                                            <a ${item.DireccionWeb ? `href="${item.DireccionWeb}"` : ''} target="_blank">
+                                                <div class="logo-card-v2">
+                                                   ${item.Imagen ? `<img src="@strUrl/archivos/negocio/${item.Imagen}" alt="${item.AltImagen}">`: ''}
+                                                </div>
+
+                                                <div class="contenedor-locate-info">
+                                                    <h4>${item.PaisNombre}, ${item.Ciudad}</h4>
+                                                    <div class="content-locate-info">
+                                                        <h3>${item.Titulo}</h3>
+                                                        <div class="box-locate-contact">
+                                                            <p>
+                                                                Dirección:
+                                                                <span>${item.Direccion}</span>
+                                                            </p>
+                                                            <div class="locate-contact">
+                                                                ${direccionWeb}
+
+                                                                ${telefono}
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <p>${item.Resumen}</p>
+                                                </div>
+
+                                            </a>
+                                        </div>`);
+                        });
+                    }
+                });
+
+        }
+    </script>
+</body>
+</html>

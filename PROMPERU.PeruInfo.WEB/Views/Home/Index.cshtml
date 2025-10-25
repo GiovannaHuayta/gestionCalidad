@@ -1,0 +1,257 @@
+﻿@using System.Configuration
+@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model dynamic
+
+@{
+    ViewBag.Title = "Home";
+    string culture = ViewBag.Culture;
+    List<CategoriaBE> categorias = Model.Categorias;
+    List<BannerBE> banners = Model.Banner;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+
+
+    int idioma = culture == "es-pe" ? 1 : 2;
+}
+
+@section styles
+{
+    <link rel="stylesheet" href="@strUrl/css/01.home.css">
+    <link rel="stylesheet" href="@strUrl/css/aos.css">
+
+    @if (idioma == 1)
+    {
+        <link rel="alternate" hreflang="x-default" href="@absoluteUrl" />
+        <link rel="alternate" hreflang="es-pe" href="@absoluteUrl" />
+        <link rel="alternate" hreflang="es" href="@absoluteUrl" />
+        <link rel="alternate" hreflang="en-us" href="@strUrl/en-us/" />
+        <link rel="alternate" hreflang="en" href="@strUrl/en-us/" />
+
+    }
+    else
+    {
+        <link rel="alternate" hreflang="x-default" href="@strUrl/es-pe/" />
+        <link rel="alternate" hreflang="en-us" href="@absoluteUrl" />
+        <link rel="alternate" hreflang="en" href="@absoluteUrl" />
+        <link rel="alternate" hreflang="es-pe" href="@strUrl/es-pe/" />
+        <link rel="alternate" hreflang="es" href="@strUrl/es-pe/" />
+    }
+}
+
+
+<!-------------------- BLOCK BANNER ----------------------->
+<section class="banner-home">
+    <div class="contenedor-banner-home">
+
+        <div class="contenedor-slider-img">
+            <div class="content-slider-img">
+                @foreach (BannerBE banner in banners)
+                {
+                    <div class="item-slider-img">
+                        <a href="@Html.Raw(!string.IsNullOrEmpty(banner.Link) ? banner.Link : "javascript:void(0);")" @Html.Raw(banner.VentanaNueva == true ? "target='_blank'" : "")>
+                            <img src="@strUrl/archivos/banner/@banner.ImagenDesktop" alt="@banner.ImagenTextoAlternativo">
+                        </a>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+        <div class="contenedor-slider-txt">
+            <div class="content-slider-txt">
+                @foreach (BannerBE banner in banners)
+                {
+                    <div class="item-slider-txt">
+                        <a href="@Html.Raw(!string.IsNullOrEmpty(banner.Link) ? banner.Link : "javascript:void(0);")" @Html.Raw(banner.VentanaNueva == true ? "target='_blank'" : "")>
+                            <div class="efec-titulo">
+                                <h2>@banner.Titulo</h2>
+                                <span>@banner.Titulo</span>
+                            </div>
+                            <p>@banner.Bajada</p>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="contenedor-arrows">
+            <div class="content-arrows">
+                @*<div class="prev-banner">
+                        <img src="@strUrl/img/home/header/ico-flecha_izquierda.png" alt="icono de flecha derecha">
+                    </div>
+                    <div class="next-banner">
+                        <img src="@strUrl/img/home/header/ico-flecha_derecha.png" alt="icono de flecha derecha">
+                    </div>*@
+                <div class="prev-banner">
+                    <span class="sprite bg-icon_flecha_izquierda"></span>
+                </div>
+                <div class="next-banner">
+                    <span class="sprite bg-icon_flecha_derecha"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-boton">
+            <div class="scroll-cont">
+                <div class="scroll-circ"></div>
+            </div>
+        </div>
+
+        <div class="redes-sociales-mobile">
+            <div class="contenedor-redes-sociales">
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/marcaPERU">
+                            <span class="sprite bg-icon-fb"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.twitter.com/marcaPERU">
+                            <span class="sprite bg-icon-tw"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.youtube.com/marcaperu">
+                            <span class="sprite bg-icon-yt"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/peru">
+                            <span class="sprite bg-icon-ig"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.tiktok.com/@Html.Raw("@marcaperu")">
+                            <span class="sprite bg-icon-tiktok_resp"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contenedor-solicita-marca">
+            <div class="content-solicita-marca">
+                <a href="@Resource.link_licenciatarios_url" target="_blank">
+                    <p>
+                        @Html.Raw(Resource.link_licenciatarios_texto)
+                    </p>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<!-------------------- /BLOCK BANNER ----------------------->
+
+<main>
+    <!-------------------- BLOCK CATEGORIAS ----------------------->
+    <section class="container-categorias-home">
+        <div class="content-categorias-home blockv3-container">
+            <div class="block-categorias-box">
+                <div class="content-categoria">
+
+                    <div class="title-categorias" data-aos="fade-up-right" data-aos-duration="1500">
+                        <h4>@Resource.categorias</h4>
+                    </div>
+
+                    <div class="box-categorias">
+                        <div class="content-box">
+                            @foreach (CategoriaBE categoria in categorias.Where(x => x.VisibleHome == true))
+                            {
+                                <div class="box-card categoria-@categoria.Color" data-aos="fade-right" data-aos-duration="1500">
+                                    <a href="/@culture/@categoria.Slug">
+                                        <div class="logo-card">
+                                            <img src="@strUrl/img/home/categorias/logo-@(categoria.Color).png" alt="@categoria.Nombre">
+                                        </div>
+                                        <h3>@categoria.Nombre</h3>
+                                    </a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="block-white-img">
+
+            <div class="content-block-white">
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-------------------- /BLOCK CATEGORIAS ----------------------->
+    <!-------------------- BLOCK SOLICITA MARCA ----------------------->
+    <div class="contenedor-solicitar-marca">
+        <div class="content-solicitar-marca">
+            <a href="@Resource.link_licenciatarios_url" target="_blank">
+                <p>
+                    @Html.Raw(Resource.link_licenciatarios_texto)
+                </p>
+            </a>
+        </div>
+    </div>
+    <!-------------------- /BLOCK SOLICITA MARCA ----------------------->
+    <!-------------------- BLOCK BLOG-PERU ----------------------->
+    @{
+        Html.RenderAction("Publicaciones", "Home", new { tipo = 1 });
+    }
+    <!-------------------- /BLOCK BLOG-PERU ----------------------->
+    <!-------------------- BLOCK NOTICIAS ----------------------->
+    @{
+        Html.RenderAction("Publicaciones", "Home", new { tipo = 2 });
+    }
+    <!-------------------- /BLOCK NOTICIAS ----------------------->
+    <!-------------------- BLOCK ME-GUSTA-PERU ----------------------->
+    <section class="container-block-home">
+        <div class="content-block-home blockv3-container">
+            <div class="peru-subTitle">
+                <h4>@Resource.sociales</h4>
+            </div>
+            <div class="contenedor-iframe">
+                <div class="contenedor-superior-iframe">
+                    <div class="content-iframe content-iframe-instagram" style="display:none;">
+                        <h4>Instagram</h4>
+                    </div>
+                    <div class="content-iframe content-iframe-facebook">
+                        <h4>Facebook</h4>
+                        <div id="fb-root"></div>
+                        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v12.0" nonce="BeiZ4LxT"></script>
+                        <div class="fb-page" data-href="https://www.facebook.com/marcaPERU" data-tabs="timeline" data-width="500" data-height="610" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                            <blockquote cite="https://www.facebook.com/marcaPERU" class="fb-xfbml-parse-ignore">
+                                <a href="https://www.facebook.com/marcaPERU">Meta</a>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="content-iframe content-iframe-twitter">
+                        <h4>X</h4>
+                        <div class="iframe-twitter">
+                            <a class="twitter-timeline" data-height="700" href="https://twitter.com/marcaPERU?ref_src=twsrc%5Etfw">Tweets by marcaPERU</a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-------------------- /BLOCK ME-GUSTA-PERU ----------------------->
+    <!-------------------- BLOCK REDES-SOCIALES-DESKTOP ----------------------->
+    @{
+        Html.RenderPartial("Partials/_RedesSociales");
+    }
+    <!-------------------- /BLOCK REDES-SOCIALES-DESKTOP ----------------------->
+
+</main>
+
+@section scripts
+{
+    <script src="@strUrl/js/aos.js"></script>
+    <script src="@strUrl/js/slick.min.js"></script>
+    <script src="@strUrl/js/01.home.js"></script>
+}

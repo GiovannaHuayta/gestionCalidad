@@ -1,0 +1,147 @@
+
+.sprite {
+    display: inline-block;
+    background-image: url('/img/css_sprites.png');
+    background-repeat: no-repeat;
+}
+
+.bg-icon_facebook {
+    width: 32px;
+    height: 32px;
+    background: url('/img/css_sprites.png') -10px -124px;
+}
+
+.bg-icon_instagram {
+    width: 32px;
+    height: 32px;
+    background: url('/img/css_sprites.png') -114px -124px;
+}
+
+.bg-icon_twitter {
+    width: 32px;
+    height: 32px;
+    background: url('/img/css_sprites.png') -10px -176px;
+}
+
+.bg-icon_youtube {
+    width: 32px;
+    height: 32px;
+    background: url('/img/css_sprites.png') -62px -124px;
+}
+
+.bg-icon_tik_tok {
+    width: 32px;
+    height: 32px;
+    background: url('/img/css_sprites.png') -166px -124px;
+}
+
+
+.bg-icon-fb {
+    width: 35px;
+    height: 37px;
+    background-position: -124px -66px;
+}
+
+.bg-icon-tw {
+    width: 37px;
+    height: 37px;
+    background-position: -67px -67px;
+}
+
+.bg-icon-yt {
+    width: 34px;
+    height: 37px;
+    background-position: -180px -67px;
+}
+
+.bg-icon-ig {
+    width: 36px;
+    height: 36px;
+    background-position: -124px -10px;
+}
+
+.bg-icon-tiktok_resp {
+    width: 37px;
+    height: 37px;
+    background-position: -10px -67px;
+}
+
+.bg-icon_cerrar_buscador {
+    width: 30px;
+    height: 30px;
+    background-position: -62px -176px;
+}
+
+.bg-icon_cerrar {
+    width: 20px;
+    height: 19px;
+    background-position: -281px -10px;
+}
+
+.bg-ico_campana {
+    width: 18px;
+    height: 18px;
+    background-position: -235px -188px;
+}
+
+.bg-icon_buscar {
+    width: 27px;
+    height: 26px;
+    background-position: -10px -228px;
+}
+
+.bg-icon_buscar_gris {
+    width: 27px;
+    height: 26px;
+    background-position: -162px -176px;
+}
+
+
+.bg-icon_idioma {
+    width: 26px;
+    height: 27px;
+    background-position: -235px -10px;
+}
+
+.bg-icon_idioma_gris {
+    width: 26px;
+    height: 27px;
+    background-position: -235px -57px;
+}
+
+.bg-icon_barss {
+    width: 22px;
+    height: 18px;
+    background-position: -57px -228px;
+}
+
+.bg-icon_barss_gris {
+    width: 22px;
+    height: 18px;
+    background-position: -99px -228px;
+}
+
+.bg-icon_buscador {
+    width: 22px; /* Ajusta según el tamaño del icono */
+    height: 22px;
+    background-position: -235px -147px; /* Ajusta la posición del icono dentro del sprite */
+}
+
+
+.bg-icon_flecha_izquierda {
+    width: 37px;
+    height: 37px;
+    background-position: -67px -10px;
+}
+
+.bg-icon_flecha_derecha {
+    width: 37px;
+    height: 37px;
+    background-position: -10px -10px;
+}
+
+.bg-icon_down {
+    width: 9px;
+    height: 6px;
+    background-position: -281px -49px;
+}

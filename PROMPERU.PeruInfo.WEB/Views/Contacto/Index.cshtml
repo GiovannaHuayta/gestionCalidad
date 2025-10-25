@@ -1,0 +1,302 @@
+﻿@using System.Configuration
+@using PROMPERU.PeruInfo.Domain.Entities
+@{
+    Layout = null;
+
+    string culture = ViewBag.Culture;
+    int idioma = culture == "es-pe" ? 1 : 2;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+
+
+    List<PaginaBE> paginas = ViewBag.Paginas;
+
+    var descripcionSeo = "";
+    var tituloSeo = "";
+    var canonicalSeo = "";
+
+    descripcionSeo = Resource.seo_descripcion_contacto;
+    tituloSeo = Resource.seo_titulo_contacto;
+    canonicalSeo = absoluteUrl;
+
+    foreach (var pagina in paginas)
+    {
+        descripcionSeo = pagina.DescripcionSeo;
+        tituloSeo = pagina.TituloSeo;
+        canonicalSeo = pagina.CanonicalSeo;
+    }
+
+
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@strUrl/css/peru-info.components.css">
+    <link rel="stylesheet" href="@strUrl/css/04.contacto.css">
+
+    <title>@tituloSeo</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <base href="@strUrl">
+    <link rel="shortcut icon" href="@strUrl/img/favicon_PeruInfo.ico" />
+    <link rel="canonical" href="@canonicalSeo">
+    <meta name="description" content="@descripcionSeo" />
+    <meta name="author" content="Peru.info">
+    <meta name="distribution" content="global" />
+    <meta name="keywords" content="@Resource.seo_keywords_contacto" />
+    <meta property="og:locale" content="@culture" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@tituloSeo" />
+    <meta property="og:description" content="@descripcionSeo" />
+    <meta property="og:url" content="@absoluteUrl" />
+    <meta property="og:site_name" content="Perú Info" />
+    <meta property="og:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@descripcionSeo" />
+    <meta name="twitter:title" content="@tituloSeo" />
+    <meta name="twitter:site" content="https://twitter.com/marcaPERU" />
+    <meta name="twitter:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")" />
+    @if (idioma == 1)
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6PS60QLG"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GB6PS60QLG');
+        </script>
+    }
+    else
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5R15JNKSP"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-E5R15JNKSP');
+        </script>
+    }
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDQMLXQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Código de seguimiento de Hotjar de -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 4938555, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    @Html.Partial("~/Views/Shared/Partials/_WidgetsLayout.cshtml")
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMLXQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------------------- BLOCK HEADER ----------------------->
+    <!-- <header class="header-peru-info active-scroll-header"> -->
+    <header class="header-peru-info">
+        <div class="contenedor-header-peru-info">
+            <div class="contenedor-logo-peru">
+                <a href="#">
+                    <img src="@strUrl/img/home/header/logo-peru.png" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                    <img src="@strUrl/img/home/header/logo-peru-gris.svg" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                </a>
+            </div>
+
+            @{
+                Html.RenderAction("HeaderMenu", "Home");
+            }
+
+        </div>
+
+        <!-- <div class="menu-lateral mostrar-menu-lateral"> -->
+        @{
+            Html.RenderAction("PageMenu", "Home");
+        }
+    </header>
+    <!-------------------- /BLOCK HEADER ----------------------->
+    <!-------------------- BLOCK MODALES-HEADER ----------------------->
+    @Html.Partial("Partials/_ModalsHeader")
+    <!-------------------- /BLOCK MODALES-HEADER ----------------------->
+
+    <section class="banner-contacto">
+        <img src="@strUrl/img/contacto/banner-contacto.jpg" alt="">
+    </section>
+
+
+    <section class="formulario-contacto" style="margin-bottom: 100px;">
+        <div class="content-formulario-contacto blockv3-container">
+            <form action="" id="frmContacto">
+                <div class="content-inputs">
+                    <h2>@Resource.consulta_titulo</h2>
+                    <p>@Resource.consulta_subtitulo_1 <br><a href="mailto:inversiones@promperu.gob.pe">inversiones@promperu.gob.pe</a> <br>@Resource.consulta_subtitulo_2</p>
+                    <div class="control-group">
+                        <div class="input-control">
+                            <label for="nombre">@Resource.txt_nombres:</label>
+                            <input type="text" name="txtNombre" id="txtNombre" maxlength="50" onblur="verifL(this)" onkeyup="verifL(this)">
+                            <small id="infoNombre" style="display: none">@Resource.campo_requerido</small>
+                        </div>
+                        <div class="input-control">
+                            <label for="apellido">@Resource.txt_last_name:</label>
+                            <input type="text" name="txtApellido" id="txtApellido" maxlength="50" onblur="verifL(this)" onkeyup="verifL(this)">
+                            <small id="infoApellido" style="display: none">@Resource.campo_requerido</small>
+                        </div>
+                        <div class="input-control">
+                            <label for="email">@Resource.txt_correo:</label>
+                            <input type="email" name="txtEmail" id="txtEmail" maxlength="50">
+                            <small id="infoCorreo" style="display: none">@Resource.campo_requerido</small>
+                        </div>
+                        <div class="input-control">
+                            <label for="msj">@Resource.txt_mensaje:</label>
+                            <textarea name="txtMsj" id="txtMsj"></textarea>
+                            <small id="infoMensaje" style="display: none">@Resource.campo_requerido</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <p>@Resource.lbl_terminos <a href="/@culture/@Resource.slug_terminos_condiciones" class="terabrir">@Resource.terminos_condiciones</a></p>
+                    <div class="captcha"></div>
+                    <button class="enviarMsj">@Resource.btn_enviar</button>
+                </div>
+
+                <div class="mensaje-pta" style="display: none;">
+                    <div class="logo-validacion">
+                        <!--fixme falta imagen-->
+                        <img src="" alt="">
+                    </div>
+                    <h2>@Resource.titulo_confirmacion_consulta</h2>
+                    <p>
+                        @Resource.texto_confirmacion_consulta
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <!-------------------- BLOCK FOOTER ----------------------->
+    @{
+        Html.RenderAction("PageMenu", "Home", new { footer = true });
+    }
+    <!-------------------- /BLOCK FOOTER ----------------------->
+    <script>
+        let baseDomain = '@strUrl';
+    </script>
+    <script src="@strUrl/js/jquery.min.js"></script>
+    <script src="@strUrl/js/peru-info.components.js"></script>
+    <script src="@strUrl/js/04.contacto.js"></script>
+    <script>
+    let culture = "@culture";
+    let idioma = @idioma;
+    </script>
+    <script src="@strUrl/js/search.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".enviarMsj").on("click",
+                e => {
+                    e.preventDefault();
+
+                    if ($("#txtNombre").val() === "") {
+                        $("#infoNombre").css("display", "block");
+                        return false;
+                    } else {
+                        $("#infoNombre").css("display", "none");
+                    }
+
+                    if ($("#txtApellido").val() === "") {
+                        $("#infoApellido").css("display", "block");
+                        return false;
+                    } else {
+                        $("#infoApellido").css("display", "none");
+                    }
+
+                    if ($("#txtEmail").val() === "") {
+                        $("#infoCorreo").css("display", "block");
+                        return false;
+                    } else {
+                        $("#infoCorreo").css("display", "none");
+                    }
+
+                    if ($("#txtMsj").val() === "") {
+                        $("#infoMensaje").css("display", "block");
+                        return false;
+                    } else {
+                        $("#infoMensaje").css("display", "none");
+                    }
+
+                    $.post("/contacto",
+                        {
+                            Nombre: $("#txtNombre").val(),
+                            Apellidos: $("#txtApellido").val(),
+                            Correo: $("#txtEmail").val(),
+                            Consulta: $("#txtMsj").val()
+                        })
+                        .done(result => {
+                            if (result.success === true) {
+                                $("#txtNombre").val("");
+                                $("#txtApellido").val("");
+                                $("#txtEmail").val("");
+                                $("#txtMsj").val("");
+
+                                $(".content-inputs").css("display", "none");
+                                $(".actions").css("display", "none");
+                                $(".mensaje-pta").css("display", "block");
+                            }
+                        });
+                });
+        });
+
+        function verifL(n) {
+            permitidos = /[^Ã¡Ã Ã¤Ã¢ÂªÃÃ€Ã‚Ã„Ã©Ã¨Ã«ÃªÃ‰ÃˆÃŠÃ‹Ã­Ã¬Ã¯Ã®ÃÃŒÃÃŽÃ³Ã²Ã¶Ã´Ã“Ã’Ã–Ã”'ÃºÃ¹Ã¼Ã»ÃšÃ™Ã›ÃœabcdefghijklmnÃ±opqrstuvwxyzABCDEFGHIJKLMNÃ‘OPQRSTUVWXYZ .]/;
+            if (permitidos.test(n.value.slice(n.value.length - 1))) {
+                //n.value = n.value.slice(0, n.value.length - 1)
+                n.value = "";
+                //n.focus();
+            }
+        }
+        function verifN(n) {
+            permitidos = /[^0-9]/g;
+            if (permitidos.test(n.value.slice(n.value.length - 1))) {
+                //n.value = n.value.slice(0, n.value.length - 1)
+                n.value = "";
+                //n.focus();
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

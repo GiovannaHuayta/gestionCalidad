@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7F197A5-5831-4CA3-9708-2C645A5D8D02}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PROMPERU.PeruInfo.ApplicationService</RootNamespace>
+    <AssemblyName>PROMPERU.PeruInfo.ApplicationService</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationServiceProfile.cs" />
+    <Compile Include="Contracts\IBannerService.cs" />
+    <Compile Include="Contracts\ICampaniaService.cs" />
+    <Compile Include="Contracts\ICategoriaService.cs" />
+    <Compile Include="Contracts\IComunicadoService.cs" />
+    <Compile Include="Contracts\IContactoService.cs" />
+    <Compile Include="Contracts\IDeportistaService.cs" />
+    <Compile Include="Contracts\IGaleriaPeruParisService.cs" />
+    <Compile Include="Contracts\IGaleriaService.cs" />
+    <Compile Include="Contracts\IIdiomaService.cs" />
+    <Compile Include="Contracts\INegocioService.cs" />
+    <Compile Include="Contracts\INosPreparamosService.cs" />
+    <Compile Include="Contracts\IPaginaService.cs" />
+    <Compile Include="Contracts\IPaisService.cs" />
+    <Compile Include="Contracts\IPalabraAlientoService.cs" />
+    <Compile Include="Contracts\IPersonaService.cs" />
+    <Compile Include="Contracts\IPersonaTipoService.cs" />
+    <Compile Include="Contracts\IPublicacionService.cs" />
+    <Compile Include="Contracts\ISubcategoriaService.cs" />
+    <Compile Include="Contracts\ITarjetaService.cs" />
+    <Compile Include="Contracts\ITipoService.cs" />
+    <Compile Include="Contracts\IUsuarioService.cs" />
+    <Compile Include="DTO\CategoriaDTO.cs" />
+    <Compile Include="DTO\ComunicadoDTO.cs" />
+    <Compile Include="DTO\ContactoDTO.cs" />
+    <Compile Include="DTO\NegocioDTO.cs" />
+    <Compile Include="DTO\PalabrasAlientoDTO.cs" />
+    <Compile Include="DTO\PublicacionDTO.cs" />
+    <Compile Include="DTO\SubcategoriaDTO.cs" />
+    <Compile Include="DTO\UsuarioDTO.cs" />
+    <Compile Include="Implements\BannerService.cs" />
+    <Compile Include="Implements\CampaniaService.cs" />
+    <Compile Include="Implements\CategoriaService.cs" />
+    <Compile Include="Implements\ComunicadoService.cs" />
+    <Compile Include="Implements\ContactoService.cs" />
+    <Compile Include="Implements\DeportistaService.cs" />
+    <Compile Include="Implements\GaleriaPeruParisService.cs" />
+    <Compile Include="Implements\GaleriaService.cs" />
+    <Compile Include="Implements\IdiomaService.cs" />
+    <Compile Include="Implements\NegocioService.cs" />
+    <Compile Include="Implements\NosPreparamosService.cs" />
+    <Compile Include="Implements\PaginaService.cs" />
+    <Compile Include="Implements\PaisService.cs" />
+    <Compile Include="Implements\PalabraAlientoService.cs" />
+    <Compile Include="Implements\PersonaService.cs" />
+    <Compile Include="Implements\PersonaTipoService.cs" />
+    <Compile Include="Implements\PublicacionService.cs" />
+    <Compile Include="Implements\SubcategoriaService.cs" />
+    <Compile Include="Implements\TarjetaService.cs" />
+    <Compile Include="Implements\TipoService.cs" />
+    <Compile Include="Implements\UsuarioService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="log4net.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\PROMPERU.PeruInfo.Domain\PROMPERU.PeruInfo.Domain.csproj">
+      <Project>{4D9E2330-5FB0-496E-B234-836AF9E9FA6D}</Project>
+      <Name>PROMPERU.PeruInfo.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

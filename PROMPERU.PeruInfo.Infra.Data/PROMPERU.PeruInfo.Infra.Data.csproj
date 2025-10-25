@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{943B7F96-F15E-48AB-92C7-C05B6B58B83A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PROMPERU.PeruInfo.Infra.Data</RootNamespace>
+    <AssemblyName>PROMPERU.PeruInfo.Infra.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BannerRepository.cs" />
+    <Compile Include="CampaniaRepository.cs" />
+    <Compile Include="CategoriaRepository.cs" />
+    <Compile Include="ComunicadoRepository.cs" />
+    <Compile Include="ContactoRepository.cs" />
+    <Compile Include="GaleriaPeruParisRepository.cs" />
+    <Compile Include="GaleriaRepository.cs" />
+    <Compile Include="IdiomaRepository.cs" />
+    <Compile Include="NegocioRepository.cs" />
+    <Compile Include="NosPreparamosRepository.cs" />
+    <Compile Include="PaisRepository.cs" />
+    <Compile Include="PalabraAlientoRepository.cs" />
+    <Compile Include="PersonaRepository.cs" />
+    <Compile Include="PersonaTipoRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicacionRepository.cs" />
+    <Compile Include="SubcategoriaRepository.cs" />
+    <Compile Include="TarjetaRepository.cs" />
+    <Compile Include="TipoRepository.cs" />
+    <Compile Include="UsuarioRepository.cs" />
+    <Compile Include="Utils\AdoHelper.cs" />
+    <Compile Include="DeportistasRepository.cs" />
+    <Compile Include="Utils\AdoHelperSecundario.cs" />
+    <Compile Include="Utils\GenericTypeExtensions.cs" />
+    <Compile Include="PaginaRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="log4net.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PROMPERU.PeruInfo.Domain\PROMPERU.PeruInfo.Domain.csproj">
+      <Project>{4d9e2330-5fb0-496e-b234-836af9e9fa6d}</Project>
+      <Name>PROMPERU.PeruInfo.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

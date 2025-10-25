@@ -1,0 +1,158 @@
+﻿@using System.Configuration;
+@{ ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"];}
+
+@section Scripts
+{
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Seguridad/Usuario.js"></script>
+
+    <script>
+    var editar = true;
+        var eliminar = true;</script>
+}
+
+<div class="l-contents">
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Usuarios</h1>
+        </div>
+        <nav class="cont-icons">
+            <a id="btnNuevo" href="javascript:" class="cont-icons-new">
+                <span class="fas icon-plus">
+                </span><span>Nuevo</span>
+            </a>
+        </nav>
+        <div class="cont-table">
+            <table id="gridUsuarios" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1000px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 10%"></th>
+                        <th data-title="Nombres">
+                            <input type="text" id="gridUsuarios_txtB_Nombres">
+                        </th>
+                        <th data-title="Apellidos">
+                            <input type="text" id="gridUsuarios_txtB_Apellidos">
+                        </th>
+                        <th data-title="Email">
+                            <input type="text" id="gridUsuarios_txtB_Email">
+                        </th>
+                        <th data-title="Perfil">
+                            <input type="text" id="gridUsuarios_txtB_Perfil">
+                        </th>
+                        <th data-title="Activo">
+                            <input type="text" id="gridUsuarios_txtB_Activo">
+                        </th>
+                        <th data-title="FechaCreacion">
+                            <input type="text" id="gridUsuarios_txtB_FechaCreacion">
+                        </th>
+                        <th data-title="" style="width: 10%;">
+                            <div class="accion-box">
+                                <a href="" title="Editar">
+                                    <span class="fas fa-search"></span>
+                                </a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 10%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th>
+                            <a id="a_Nombres">Nombres</a>
+                        </th>
+                        <th>
+                            <a id="a_Apellidos">Apellidos</a>
+                        </th>
+                        <th>
+                            <a id="a_Email">Email</a>
+                        </th>
+                        <th>
+                            <a id="a_Perfil">Perfil</a>
+                        </th>
+                        <th>
+                            <a id="a_Activo">Activo</a>
+                        </th>
+                        <th>
+                            <a id="a_FechaCreacion">Registrado</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_"></a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="reveal-modal-bg">
+        <div class="modal-registrar">
+            <h2 id="lblRegistro">Crear Usuario</h2>
+
+            <input type="hidden" id="hdnUsuarioId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Email:</label>
+                <input id="txtEmail" type="text" class="cont-box-input" maxlength="50">
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Nombres:</label>
+                <input id="txtNombre" type="text" class="cont-box-input" maxlength="120">
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Apellidos:</label>
+                <input id="txtApellido" type="text" class="cont-box-input" maxlength="120">
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Contraseña:</label>
+                <input id="txtClave" type="password" class="cont-box-input" maxlength="80">
+                <input id="hdnClave" type="hidden" />
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Perfil:</label>
+                <select id="ddlPerfil" class="cont-box-select">
+                    <option value="0">--Seleccione--</option>
+                    <option value="1">Administrador</option>
+                    <option value="2">Editor</option>
+                </select>
+            </div>
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">Activo:</label>
+
+                <input type="checkbox" id="chkActivo" class="input-checkbox" checked="">
+                <label for="chkActivo" class="input-checkbox-lab"> </label>
+            </div>
+            <div class="cont-box">
+                <button id="btnGuardar" class="cont-box-submit">
+                    <label>Registrar</label>
+                </button>
+            </div>
+            <div class="cont-box">
+                <button id="btnCancelar" class="cont-box-cancel close">
+                    <label>Cancelar</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>

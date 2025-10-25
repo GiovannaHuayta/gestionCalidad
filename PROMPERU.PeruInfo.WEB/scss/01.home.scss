@@ -1,0 +1,3021 @@
+@import 'model/slick.scss';
+@import 'model/_config.scss';
+@import 'model/_reset.scss';
+@import 'model/_font.scss';
+
+
+// ********** ********** MI ********** **********
+
+body{
+    overflow-x: hidden;
+}
+
+
+
+// BLOCK BANNER
+.banner-home {
+    width: 100%;
+    // overflow-x: hidden;
+    .contenedor-banner-home {
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        position: relative;
+
+        @include respondto(minxs) {
+            height: 375px;
+        }
+
+        @include respondto(maxxs) {
+            height: 375px;
+        }
+
+        @include respondto(sm) {
+            height: 400px;
+        }
+
+        @include respondto(md) {
+        }
+
+        @include respondto(lg) {
+        }
+
+        @include respondto(xlg) {
+        }
+
+        &:after {
+            background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(26,26,26,0) 65%,rgba(26,26,26,1) 95%,rgba(26,26,26,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000',endColorstr='#333333',GradientType=0);
+            content: ' ';
+            height: 100%;
+            left: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 3;
+
+            @include respondto(xs) {
+                background: linear-gradient(to bottom,rgba(26,26,26,0) 0%,rgba(26,26,26,0) 65%,rgba(26,26,26,1) 90%,rgba(26,26,26,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000',endColorstr='#333333',GradientType=0);
+            }
+
+            @include respondto(sm) {
+            }
+
+            @include respondto(md) {
+            }
+
+            @include respondto(lg) {
+            }
+
+            @include respondto(xlg) {
+            }
+        }
+
+        .contenedor-slider-img {
+            width: 100%;
+            height: 100%;
+
+            .content-slider-img {
+                width: 100%;
+                height: 100%;
+
+                .slick-list {
+                    height: 100%;
+
+                    .slick-track {
+                        height: 100%;
+
+                        .item-slider-img {
+                            height: 100%;
+
+                            a {
+                                height: 100%;
+
+                                img {
+                                    display: block;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    object-position: top center;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .content-slider-img .item-slider-img:nth-child(n+1) {
+            display: none;
+        }
+
+        .content-slider-img.slick-initialized .item-slider-img {
+            display: block;
+        }
+
+        .contenedor-slider-txt {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
+            .content-slider-txt {
+                height: 1px;
+                overflow: hidden;
+
+                .slick-list {
+                    overflow: hidden;
+
+                    .slick-track {
+                        .item-slider-txt {
+                            text-align: center;
+
+                            &.slick-active {
+                                a {
+                                    .efec-titulo {
+                                        span {
+                                            height: 100%;
+                                        }
+                                    }
+                                }
+                            }
+
+                            a {
+                                .efec-titulo {
+                                    position: relative;
+
+                                    h2 {
+                                        font-family: $font-clanOt;
+                                        font-weight: 700;
+                                        font-size: 6.5em;
+                                        letter-spacing: .03em;
+                                        line-height: 1.3;
+                                        color: transparent;
+                                        text-indent: 0.03em;
+                                        transition: color 1s ease-in-out;
+                                        white-space: nowrap;
+                                        -webkit-text-stroke: 1px #fff;
+
+                                        @include respondto(xs) {
+                                            font-size: 30px;
+                                            letter-spacing: .02em;
+                                            text-indent: 0.02em;
+                                        }
+
+                                        @include respondto(sm) {
+                                            font-size: 56px;
+                                            letter-spacing: .02em;
+                                            text-indent: 0.02em;
+                                        }
+
+                                        @include respondto(md) {
+                                            font-size: 76px;
+                                            letter-spacing: .02em;
+                                            text-indent: 0.02em;
+                                        }
+
+                                        @include respondto(lg) {
+                                        }
+
+                                        @include respondto(xlg) {
+                                        }
+                                    }
+
+                                    span {
+                                        font-family: $font-clanOt;
+                                        font-weight: 700;
+                                        align-items: flex-end;
+                                        bottom: 0;
+                                        color: #fff;
+                                        display: flex;
+                                        font-size: 6.5em;
+                                        height: 0;
+                                        left: 50%;
+                                        letter-spacing: .03em;
+                                        line-height: 1.3;
+                                        overflow: hidden;
+                                        position: absolute;
+                                        text-indent: 0.03em;
+                                        transform: translateX(-50%);
+                                        transition: height 1s ease-in-out;
+                                        white-space: nowrap;
+
+                                        @include respondto(xs) {
+                                            font-size: 30px;
+                                            letter-spacing: .02em;
+                                            text-indent: 0.02em;
+                                        }
+
+                                        @include respondto(sm) {
+                                            font-size: 56px;
+                                            letter-spacing: .02em;
+                                            text-indent: 0.02em;
+                                        }
+
+                                        @include respondto(md) {
+                                            font-size: 76px;
+                                            letter-spacing: .02em;
+                                            text-indent: 0.02em;
+                                        }
+
+                                        @include respondto(lg) {
+                                        }
+
+                                        @include respondto(xlg) {
+                                        }
+                                    }
+                                }
+
+                                p {
+                                    font-family: $font-clanOt;
+                                    font-weight: 900;
+                                    font-size: 32px;
+                                    line-height: 32px;
+                                    color: #ffffff;
+
+                                    @include respondto(xs) {
+                                        font-size: 15px;
+                                    }
+
+                                    @include respondto(sm) {
+                                    }
+
+                                    @include respondto(md) {
+                                    }
+
+                                    @include respondto(lg) {
+                                    }
+
+                                    @include respondto(xlg) {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .content-slider-txt.slick-initialized.slick-slider {
+            height: auto;
+        }
+
+
+        .contenedor-arrows {
+            width: 100%;
+            position: absolute;
+            bottom: 55px;
+            left: 0;
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+            z-index: 5;
+
+            @include respondto(xs) {
+                display: none;
+            }
+
+            @include respondto(sm) {
+                display: none;
+            }
+
+            @include respondto(md) {
+                bottom: 50px;
+            }
+
+            @include respondto(lg) {
+                bottom: 50px;
+            }
+
+            @include respondto(xlg) {
+            }
+
+            .content-arrows {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 0 11%;
+                // width: 96%;
+                // max-width: 1220px;
+                .prev-banner {
+                    cursor: pointer;
+                    transition: all .25s ease-in-out;
+
+                    &:hover {
+                        img {
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    img {
+                        height: 35px;
+                        width: 35px;
+                        transform: scale(1);
+
+                        @include respondto(minxs) {
+                        }
+
+                        @include respondto(maxxs) {
+                            width: 31px;
+                            height: 31px;
+                        }
+
+                        @include respondto(sm) {
+                            width: 31px;
+                            height: 31px;
+                        }
+
+                        @include respondto(md) {
+                            width: 32px;
+                            height: 32px;
+                        }
+
+                        @include respondto(lg) {
+                            height: 32px;
+                            width: 32px;
+                        }
+
+                        @include respondto(xlg) {
+                        }
+                    }
+                }
+
+                .next-banner {
+                    cursor: pointer;
+                    transition: all .25s ease-in-out;
+
+                    &:hover {
+                        img {
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    img {
+                        height: 35px;
+                        width: 35px;
+                        transform: scale(1);
+
+                        @include respondto(minxs) {
+                        }
+
+                        @include respondto(maxxs) {
+                            width: 31px;
+                            height: 31px;
+                        }
+
+                        @include respondto(sm) {
+                            width: 31px;
+                            height: 31px;
+                        }
+
+                        @include respondto(md) {
+                            width: 32px;
+                            height: 32px;
+                        }
+
+                        @include respondto(lg) {
+                            height: 32px;
+                            width: 32px;
+                        }
+
+                        @include respondto(xlg) {
+                        }
+                    }
+                }
+            }
+        }
+
+        .scroll-boton {
+            cursor: pointer;
+            left: 50%;
+            position: absolute;
+            top: calc(100vh - 104px);
+            transform: translateX(-50%);
+            z-index: 5;
+
+            @include respondto(xs) {
+                display: none;
+            }
+
+            @include respondto(sm) {
+                display: none;
+            }
+
+            @include respondto(md) {
+                top: calc(100vh - 100px);
+            }
+
+            @include respondto(lg) {
+                top: calc(100vh - 100px);
+            }
+
+            @include respondto(xlg) {
+            }
+
+            .scroll-cont {
+                border: 2px solid #fff;
+                border-radius: 60px;
+                height: 48px;
+                width: 24px;
+
+                @include respondto(minxs) {
+                }
+
+                @include respondto(maxxs) {
+                }
+
+                @include respondto(sm) {
+                    border: 1.5px solid #fff;
+                    border-radius: 60px;
+                    height: 42px;
+                    width: 20px;
+                }
+
+                @include respondto(md) {
+                    border: 1.5px solid #fff;
+                    border-radius: 60px;
+                    height: 42px;
+                    width: 20px;
+                }
+
+                @include respondto(lg) {
+                    border: 1.5px solid #fff;
+                    border-radius: 60px;
+                    height: 42px;
+                    width: 20px;
+                }
+
+                @include respondto(xlg) {
+                }
+
+                .scroll-circ {
+                    animation-duration: 1.5s;
+                    animation-iteration-count: infinite;
+                    animation-name: deslizar;
+                    animation-timing-function: ease-in-out;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    width: 8px;
+                    height: 8px;
+                    left: 50%;
+                    position: absolute;
+                    transform: translateX(-50%);
+                    top: 4.8px;
+
+                    @include respondto(minxs) {
+                    }
+
+                    @include respondto(maxxs) {
+                    }
+
+                    @include respondto(sm) {
+                    }
+
+                    @include respondto(md) {
+                        width: 7px;
+                        height: 7px;
+                    }
+
+                    @include respondto(lg) {
+                        width: 7px;
+                        height: 7px;
+                    }
+
+                    @include respondto(xlg) {
+                    }
+                }
+            }
+        }
+
+        .redes-sociales-mobile {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            z-index: 5;
+
+            @include respondto(xs) {
+            }
+
+            @include respondto(sm) {
+            }
+
+            @include respondto(md) {
+                display: block;
+            }
+
+            @include respondto(lg) {
+                display: block;
+            }
+
+            @include respondto(xlg) {
+                display: block;
+            }
+
+            .contenedor-redes-sociales {
+                width: 100%;
+
+                ul {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+
+                    li {
+                        margin: 11.7px;
+
+                        a {
+                            img {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contenedor-solicita-marca {
+            position: absolute;
+            left: 10%;
+            // left: 120px;
+            top: 70%;
+            z-index: 5;
+
+            @include respondto(minxs) {
+                display: none;
+            }
+
+            @include respondto(maxxs) {
+                display: none;
+            }
+
+            @include respondto(sm) {
+                display: none;
+            }
+
+            @include respondto(md) {
+            }
+
+            @include respondto(lg) {
+            }
+
+            @include respondto(xlg) {
+            }
+
+            .content-solicita-marca {
+                display: inline-flex;
+
+                a {
+                    width: 300px;
+                    padding: 30px 25px;
+                    background-color: rgba(213, 43, 30, 0.5);
+                    border-radius: 8px;
+
+                    &:hover {
+                        background-color: rgba(213, 43, 30, 0.9);
+                        ;
+                    }
+
+                    p {
+                        font-family: $font-clanOt;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 24px;
+                        color: #ffffff;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes deslizar {
+    0%   {top: 0.4em;}
+    50%  {top: calc(100% - .9em);}
+    100% {top: 0.4em;}
+}
+// /BLOCK BANNER
+
+
+
+// BLOCK CATEGORIAS
+.container-categorias-home {
+    width: 100%;
+    background-color: #181818;
+    height: 820px;
+    position: relative;
+    z-index: 20;
+    background-image: url('../img/home/fondo_discover.png');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size:contain;
+
+    @include respondto(minxs) {
+        height: 613px;
+    }
+
+    @include respondto(maxxs) {
+        height: 725px;
+    }
+
+    @include respondto(sm) {
+        height: 780px;
+    }
+
+    @include respondto(md) {
+        height: 685px;
+    }
+
+    @include respondto(lg) {
+        height: 745px;
+    }
+
+    @include respondto(xlg) {
+    }
+
+    .content-categorias-home {
+        margin-bottom: -88px;
+
+        .block-categorias-box {
+            width: 100%;
+
+            .content-categoria {
+                width: 100%;
+
+                .title-categorias {
+                    padding-top: 90px;
+                    border-bottom: 5px solid #D52B1E;
+                    width: 93px;
+
+                    @include respondto(minxs) {
+                        display: none;
+                    }
+
+                    @include respondto(maxxs) {
+                        display: none;
+                    }
+
+                    @include respondto(sm) {
+                        display: none;
+                    }
+
+                    @include respondto(md) {
+                        width: 82px;
+                    }
+
+                    @include respondto(lg) {
+                        width: 86px;
+                    }
+
+                    @include respondto(xlg) {
+                    }
+
+                    h4 {
+                        font-size: 47.5px;
+                        font-weight: 700;
+                        font-family: $font-clanOt;
+                        color: #FFFFFF;
+
+                        @include respondto(minxs) {
+                        }
+
+                        @include respondto(maxxs) {
+                        }
+
+                        @include respondto(sm) {
+                        }
+
+                        @include respondto(md) {
+                            font-size: 44px;
+                        }
+
+                        @include respondto(lg) {
+                            font-size: 44px;
+                        }
+
+                        @include respondto(xlg) {
+                        }
+                    }
+                }
+
+                .box-categorias {
+                    padding-left: 107px;
+                    padding-right: 107px;
+                    padding-top: 40px;
+
+                    @include respondto(minxs) {
+                        padding-left: 28px;
+                        padding-right: 28px;
+                        padding-top: 45px;
+                    }
+
+                    @include respondto(maxxs) {
+                        padding-left: 40px;
+                        padding-right: 40px;
+                        padding-top: 40px;
+                    }
+
+                    @include respondto(sm) {
+                        padding-left: 40px;
+                        padding-right: 40px;
+                        padding-top: 40px;
+                    }
+
+                    @include respondto(md) {
+                        padding-left: 92px;
+                        padding-right: 92px;
+                    }
+
+                    @include respondto(lg) {
+                        padding-left: 95px;
+                        padding-right: 95px;
+                    }
+
+                    @include respondto(xlg) {
+                    }
+
+                    .content-box {
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        grid-gap: 14px;
+
+                        @include respondto(minxs) {
+                            grid-template-columns: 1fr;
+                            grid-template-rows: repeat(5, 98px);
+                            grid-gap: 12px;
+                        }
+
+                        @include respondto(maxxs) {
+                            grid-template-columns: 1fr;
+                            grid-template-rows: repeat(5, 120px);
+                            grid-gap: 12px;
+                        }
+
+                        @include respondto(sm) {
+                            grid-template-columns: 1fr;
+                            grid-template-rows: repeat(5, 130px);
+                        }
+
+                        @include respondto(md) {
+                            grid-template-rows: repeat(3, 174px);
+                        }
+
+                        @include respondto(lg) {
+                            grid-template-rows: repeat(3, 198px);
+                        }
+
+                        @include respondto(xlg) {
+                            grid-template-rows: repeat(3, 221px);
+                            grid-gap: 16px;
+                        }
+
+                        .box-card {
+                            width: 100%;
+                            height: 100%;
+                            position: relative;
+
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                pointer-events: none;
+                            }
+
+                            &:nth-child(1) {
+                                &:before {
+                                    background-color: rgba(var(--color-categoria), 0.5);
+                                }
+
+                                @include respondto(minxs) {
+                                }
+
+                                @include respondto(maxxs) {
+                                }
+
+                                @include respondto(sm) {
+                                }
+
+                                @include respondto(md) {
+                                    grid-column: span 2;
+                                }
+
+                                @include respondto(lg) {
+                                    grid-column: span 2;
+                                }
+
+                                @include respondto(xlg) {
+                                    grid-column: span 2;
+                                }
+                            }
+
+                            &:nth-child(2) {
+                                &:before {
+                                    background-color: rgba(var(--color-categoria), 0.5);
+                                }
+                            }
+
+                            &:nth-child(3) {
+                                &:before {
+                                    background-color: rgba(var(--color-categoria), 0.5);
+                                }
+                            }
+
+                            &:nth-child(4) {
+                                &:before {
+                                    background-color: rgba(var(--color-categoria), 0.5);
+                                }
+
+                                @include respondto(minxs) {
+                                }
+
+                                @include respondto(maxxs) {
+                                }
+
+                                @include respondto(sm) {
+                                }
+
+                                @include respondto(md) {
+                                    grid-column: span 2;
+                                }
+
+                                @include respondto(lg) {
+                                    grid-column: span 2;
+                                }
+
+                                @include respondto(xlg) {
+                                    grid-column: span 2;
+                                }
+                            }
+
+                            &:nth-child(5) {
+                                &:before {
+                                    background-color: rgba(var(--color-categoria), 0.5);
+                                }
+
+                                @include respondto(minxs) {
+                                }
+
+                                @include respondto(maxxs) {
+                                }
+
+                                @include respondto(sm) {
+                                }
+
+                                @include respondto(md) {
+                                    grid-column: span 3;
+                                }
+
+                                @include respondto(lg) {
+                                    grid-column: span 3;
+                                }
+
+                                @include respondto(xlg) {
+                                    grid-column: span 3;
+                                }
+                            }
+
+                            &:hover {
+                                &:before {
+                                    opacity: 0;
+                                }
+
+                                a {
+                                    .logo-card {
+                                        img {
+                                        }
+                                    }
+
+                                    h3 {
+                                        opacity: 0;
+                                    }
+                                }
+                            }
+
+                            a {
+                                width: 100%;
+                                height: 100%;
+                                display: block;
+                                overflow: hidden;
+
+                                .logo-card {
+                                    width: 100%;
+                                    height: 100%;
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+
+                                h3 {
+                                    position: absolute;
+                                    top: 50%;
+                                    // left: 50%;
+                                    width: 100%;
+                                    transform: translate(0, -45%);
+                                    font-family: $font-clanOt;
+                                    font-weight: 900;
+                                    font-size: 28px;
+                                    color: #FFFFFF;
+                                    text-align: center;
+                                    text-transform: uppercase;
+
+                                    @include respondto(minxs) {
+                                        font-size: 16px;
+
+                                        br {
+                                            display: none;
+                                        }
+                                    }
+
+                                    @include respondto(maxxs) {
+                                        font-size: 20px;
+
+                                        br {
+                                            display: none;
+                                        }
+                                    }
+
+                                    @include respondto(sm) {
+                                        font-size: 22px;
+
+                                        br {
+                                            display: none;
+                                        }
+                                    }
+
+                                    @include respondto(md) {
+                                        font-size: 23px;
+                                    }
+
+                                    @include respondto(lg) {
+                                        font-size: 25px;
+                                    }
+
+                                    @include respondto(xlg) {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .block-white-img {
+        position: absolute;
+        z-index: -10;
+        width: 100%;
+        // background-color: rgba(26, 26, 26);
+        // background-color: linear-gradient(360deg, #1A1A1A 92.73%, rgba(26, 26, 26, 0) 100%);
+        @include respondto(minxs) {
+            background-image: url('../img/home/categorias/logo-dibujos.png');
+            background-repeat: no-repeat no-repeat;
+            background-size: 100% 44px;
+            height: 44px;
+            bottom: 1px;
+        }
+
+        @include respondto(maxxs) {
+            background-image: url('../img/home/categorias/logo-dibujos.png');
+            background-repeat: repeat no-repeat;
+            background-size: auto 55px;
+            height: 55px;
+            bottom: 1px;
+        }
+
+        @include respondto(sm) {
+            background-image: url('../img/home/categorias/logo-dibujos.png');
+            background-repeat: repeat no-repeat;
+            background-size: auto 63px;
+            height: 63px;
+            bottom: 1px;
+        }
+
+        @include respondto(md) {
+            background-color: rgb(255, 255, 255);
+            height: 76px;
+            bottom: -76px;
+        }
+
+        @include respondto(lg) {
+            background-color: rgb(255, 255, 255);
+            height: 76px;
+            bottom: -76px;
+        }
+
+        @include respondto(xlg) {
+            background-color: rgb(255, 255, 255);
+            height: 76px;
+            bottom: -76px;
+        }
+
+        .content-block-white {
+        }
+    }
+}
+// /BLOCK CATEGORIAS
+
+
+
+// SOLICITA MARCA
+.contenedor-solicitar-marca {
+    margin-top: 130px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include respondto(minxs) {
+        margin-top: 45px;
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @include respondto(maxxs) {
+        margin-top: 45px;
+        max-width: 85%;
+    }
+
+    @include respondto(sm) {
+        margin-top: 45px;
+        max-width: 85%;
+    }
+
+    @include respondto(md) {
+        display: none;
+    }
+
+    @include respondto(lg) {
+        display: none;
+    }
+
+    @include respondto(xlg) {
+        display: none;
+    }
+
+    .content-solicitar-marca {
+        border: 1px solid #D52B1E;
+        border-radius: 5px;
+        padding: 14px 33px 18px 33px;
+        // width: 50%;
+        a {
+            text-align: center;
+            font-family: $font-clanOt;
+            font-size: 13px;
+            line-height: 13px;
+            font-weight: 700;
+            color: #000000;
+
+            @include respondto(minxs) {
+                font-size: 13px;
+                line-height: 13px;
+            }
+
+            @include respondto(maxxs) {
+                font-size: 15px;
+                line-height: 15px;
+            }
+
+            @include respondto(sm) {
+                font-size: 20px;
+                line-height: 20px;
+            }
+
+            @include respondto(md) {
+            }
+
+            @include respondto(lg) {
+            }
+
+            @include respondto(xlg) {
+            }
+
+            p {
+            }
+        }
+    }
+}
+// /SOLICITA MARCA
+
+
+
+// BLOCK BLOG-PERU
+.container-blog-home {
+    width: 100%;
+
+    .content-blog-home {
+        padding: 0 0 200px 0;
+
+        @include respondto(minxs) {
+            padding: 0;
+        }
+
+        @include respondto(maxxs) {
+            padding: 0;
+        }
+
+        @include respondto(sm) {
+            padding: 0 0 30px 0;
+        }
+
+        @include respondto(md) {
+            padding: 0 0 150px 0;
+        }
+
+        @include respondto(lg) {
+            padding: 0 0 150px 0;
+        }
+
+        @include respondto(xlg) {
+        }
+
+        .blog-subTitle {
+            position: relative;
+            padding-top: 38px;
+            padding-bottom: 64px;
+
+            @include respondto(minxs) {
+                display: flex;
+                justify-content: center;
+                padding-bottom: 58px;
+            }
+
+            @include respondto(maxxs) {
+                display: flex;
+                justify-content: center;
+            }
+
+            @include respondto(sm) {
+                display: flex;
+                justify-content: center;
+            }
+
+            @include respondto(md) {
+                // padding-top: 30px;
+                padding-top: 160px;
+                margin-bottom: 34px;
+            }
+
+            @include respondto(lg) {
+                padding-top: 160px;
+                margin-bottom: 44px;
+            }
+
+            @include respondto(xlg) {
+                padding-top: 170px;
+                margin-bottom: 64px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                border-bottom: 5px solid #D52B1E;
+                width: 95px;
+                padding-bottom: 31px;
+                height: 5px;
+
+                @include respondto(minxs) {
+                    width: 39px;
+                    top: 50%;
+                    padding-bottom: 20px;
+                }
+
+                @include respondto(maxxs) {
+                    width: 52px;
+                    top: 50%;
+                    padding-bottom: 20px;
+                }
+
+                @include respondto(sm) {
+                    width: 52px;
+                    top: 50%;
+                    padding-bottom: 20px;
+                }
+
+                @include respondto(md) {
+                    padding-bottom: 17px;
+                }
+
+                @include respondto(lg) {
+                    padding-bottom: 24px;
+                }
+
+                @include respondto(xlg) {
+                    padding-bottom: 31px;
+                }
+            }
+
+            h4 {
+                font-family: $font-clanOt;
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 48px;
+
+                @include respondto(minxs) {
+                    font-size: 26px;
+                }
+
+                @include respondto(maxxs) {
+                    font-size: 34px;
+                }
+
+                @include respondto(sm) {
+                    font-size: 35px;
+                }
+
+                @include respondto(md) {
+                    font-size: 35px;
+                    line-height: 35px;
+                }
+
+                @include respondto(lg) {
+                    font-size: 41px;
+                    line-height: 41px;
+                }
+
+                @include respondto(xlg) {
+                    font-size: 48px;
+                    line-height: 48px;
+                }
+            }
+        }
+
+        .contenedor-slider-blog {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .content-slider-blog {
+                width: calc(100% - 80px);
+
+                @include respondto(minxs) {
+                    width: 69.17%;
+                    max-width: 290px;
+                }
+
+                @include respondto(maxxs) {
+                    width: 85%;
+                    max-width: 530px;
+                }
+
+                @include respondto(sm) {
+                    width: 80%;
+                    max-width: 650px;
+                }
+
+                @include respondto(md) {
+                    width: 83%;
+                }
+
+                @include respondto(lg) {
+                }
+
+                @include respondto(xlg) {
+                }
+
+                .slick-arrow {
+                    position: absolute;
+                    font-size: 0;
+                    line-height: 0;
+                    padding: 0;
+                    border: 0;
+                    cursor: pointer;
+                    height: 44px;
+                    width: 44px;
+                    z-index: 10;
+                    // opacity: 0;
+                    transition: all 0.25s;
+
+                    @include respondto(xs) {
+                        /*display: none;
+                        opacity: 0;
+                        pointer-events: none;*/
+                    }
+
+                    @include respondto(sm) {
+                        // display: none;
+                        // opacity: 0;
+                        // pointer-events: auto;
+                    }
+
+                    @include respondto(md) {
+                    }
+
+                    @include respondto(lg) {
+                    }
+
+                    @include respondto(xlg) {
+                    }
+
+                    &:hover {
+                        opacity: 1;
+                    }
+
+                    &:focus {
+                        color: transparent;
+                        outline: none;
+                        // background: transparent;
+                    }
+
+                    &.slick-prev {
+                        top: 50%;
+                        left: -40px;
+                        // transform: rotate(180deg) translateY(50%);
+                        background-image: url('../img/home/blog-peru/icon-left.png');
+                        background-repeat: no-repeat;
+
+                        &:hover {
+                            left: -45px;
+                        }
+
+                        &:before {
+                            content: '';
+                        }
+
+                        &:after {
+                        }
+                    }
+
+                    &.slick-next {
+                        top: 50%;
+                        right: -40px;
+                        // transform: translateY(-60%);
+                        background-image: url('../img/home/blog-peru/icon-right.png');
+
+                        &:hover {
+                            right: -45px;
+                        }
+
+                        &:before {
+                            content: '';
+                        }
+
+                        &:after {
+                        }
+                    }
+                }
+
+                .slick-list {
+                    @include respondto(minxs) {
+                        height: 490px;
+                    }
+
+                    @include respondto(maxxs) {
+                        height: 455px
+                    }
+
+                    @include respondto(sm) {
+                        height: 525px
+                    }
+
+                    @include respondto(md) {
+                        overflow: visible;
+                    }
+
+                    @include respondto(lg) {
+                        overflow: visible;
+                    }
+
+                    @include respondto(xlg) {
+                        overflow: visible;
+                    }
+
+                    .slick-track {
+                        .item-blog {
+                            padding: 0 21px 0 21px;
+
+                            @include respondto(minxs) {
+                                padding: 0 7px 0 7px;
+                            }
+
+                            @include respondto(maxxs) {
+                                padding: 0 7px 0 7px;
+                            }
+
+                            @include respondto(sm) {
+                                padding: 0 12px 0 12px;
+                                opacity: 0;
+                                transition: opacity .75s ease-in-out,transform .75s ease-in-out;
+                                transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,300,0,1);
+
+                                &.slick-active {
+                                    opacity: 1;
+                                    transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
+                                }
+                            }
+
+                            @include respondto(md) {
+                                padding: 0 15px 0 15px;
+                                opacity: 0;
+                                transition: opacity .75s ease-in-out,transform .75s ease-in-out;
+                                transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,300,0,1);
+
+                                &.slick-active {
+                                    opacity: 1;
+                                    transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
+                                }
+                            }
+
+                            @include respondto(lg) {
+                                opacity: 0;
+                                transition: opacity .75s ease-in-out,transform .75s ease-in-out;
+                                transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,300,0,1);
+
+                                &.slick-active {
+                                    opacity: 1;
+                                    transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
+                                }
+                            }
+
+                            @include respondto(xlg) {
+                                opacity: 0;
+                                transition: opacity .75s ease-in-out,transform .75s ease-in-out;
+                                transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,300,0,1);
+
+                                &.slick-active {
+                                    opacity: 1;
+                                    transform: matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);
+                                }
+                            }
+
+                            .content-item-blog {
+                                position: relative;
+
+                                .img-blog {
+                                    width: 100%;
+                                    height: 100%;
+                                    overflow:hidden;
+
+                                    img {
+                                        width: 100%;
+                                        max-width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                        min-height: 350px;
+                                        transition: all .7s ease;
+                                    }
+                                }
+
+                                .txt-blog {
+                                    // position: relative;
+                                    display: flex;
+                                    align-items: center;
+                                    min-height: 264px;
+                                    padding: 36px 30px 30px 30px;
+                                    width: 65.66%;
+                                    max-width: 69%;
+                                    background-color: rgba(var(--color-categoria), 0.9);
+                                    position: absolute;
+                                    bottom: -70px;
+                                    left: 24.5%;
+
+                                    @include respondto(minxs) {
+                                        width: 80%;
+                                        max-width: 80%;
+                                        left: 10%;
+                                        min-height: 190px;
+                                        bottom: -77px;
+                                        padding: 20px 20px 20px 20px;
+                                    }
+
+                                    @include respondto(maxxs) {
+                                        width: 80%;
+                                        max-width: 80%;
+                                        left: 10%;
+                                        min-height: 190px;
+                                        bottom: -77px;
+                                        padding: 20px 20px 20px 20px;
+                                    }
+
+                                    @include respondto(sm) {
+                                        width: 75%;
+                                        max-width: 80%;
+                                        left: 17%;
+                                        min-height: 210px;
+                                        bottom: -70px;
+                                        padding: 22px 22px 25px 22px;
+                                    }
+
+                                    @include respondto(md) {
+                                        width: 80%;
+                                        max-width: 80%;
+                                        left: 12%;
+                                        min-height: 210px;
+                                        bottom: -88px;
+                                        padding: 22px 17px 25px 17px;
+                                    }
+
+                                    @include respondto(lg) {
+                                        width: 72%;
+                                        max-width: 75%;
+                                        min-height: 230px;
+                                        left: 22%;
+                                        bottom: -60px;
+                                        padding: 30px 28px 30px 28px;
+                                    }
+
+                                    @include respondto(xlg) {
+                                    }
+
+                                    .relative-txt {
+                                        // position: relative;
+                                        p {
+                                            font-family: $font-clanOt;
+                                            font-weight: 900;
+                                            font-size: 20px;
+                                            line-height: 23px;
+                                            letter-spacing: 1.2px;
+                                            padding-bottom: 20px;
+                                            color: #ffffff;
+
+                                            @include respondto(minxs) {
+                                                font-weight: 700;
+                                                font-size: 13px;
+                                                line-height: 18px;
+                                                letter-spacing: 0.9px;
+                                                padding-bottom: 10px;
+                                            }
+
+                                            @include respondto(maxxs) {
+                                                font-weight: 700;
+                                                font-size: 13px;
+                                                line-height: 18px;
+                                                letter-spacing: 0.9px;
+                                                padding-bottom: 10px;
+                                            }
+
+                                            @include respondto(sm) {
+                                                font-weight: 700;
+                                                font-size: 15px;
+                                                line-height: 19px;
+                                                letter-spacing: 0.9px;
+                                                padding-bottom: 10px;
+                                            }
+
+                                            @include respondto(md) {
+                                                font-size: 14.5px;
+                                                line-height: 18px;
+                                                letter-spacing: 0.9px;
+                                                padding-bottom: 10px;
+                                            }
+
+                                            @include respondto(lg) {
+                                                font-size: 16.4px;
+                                                line-height: 20px;
+                                            }
+
+                                            @include respondto(xlg) {
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .box-logo-borde {
+                                    max-width: 72%;
+                                    height: 30px;
+                                    position: absolute;
+                                    left: 22.0%;
+                                    bottom: -60px;
+                                    background-color: #ffffff;
+                                    overflow: hidden;
+
+                                    @include respondto(minxs) {
+                                        max-width: 98.5%;
+                                        height: 20px;
+                                        left: -8.5%;
+                                        bottom: -77px;
+                                    }
+
+                                    @include respondto(maxxs) {
+                                        max-width: 97.7%;
+                                        height: 20px;
+                                        left: -8%;
+                                        bottom: -77px;
+                                    }
+
+                                    @include respondto(sm) {
+                                        max-width: 81%;
+                                        height: 25px;
+                                        left: 11%;
+                                        bottom: -70px;
+                                    }
+
+                                    @include respondto(md) {
+                                        max-width: 85%;
+                                        height: 25px;
+                                        left: 7%;
+                                        bottom: -88px;
+                                    }
+
+                                    @include respondto(lg) {
+                                    }
+
+                                    @include respondto(xlg) {
+                                        left: 24.5%;
+                                        max-width: 65.7%;
+                                        bottom: -100px;
+                                    }
+
+                                    svg {
+                                        height: 30px;
+
+                                        @include respondto(minxs) {
+                                            height: 20px;
+                                        }
+
+                                        @include respondto(maxxs) {
+                                            height: 20px;
+                                        }
+
+                                        @include respondto(sm) {
+                                            height: 25px;
+                                        }
+
+                                        @include respondto(md) {
+                                            height: 25px;
+                                        }
+
+                                        @include respondto(lg) {
+                                        }
+
+                                        @include respondto(xlg) {
+                                        }
+
+                                        path {
+                                            fill: rgb(var(--color-categoria));
+                                        }
+                                    }
+                                }
+                                a{
+                                    &:hover img{
+                                        transform:scale(1.2);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// /BLOCK BLOG-PERU
+
+
+
+// BLOCK NOTICIAS
+.container-noticias-home {
+    width: 100%;
+
+    .content-noticias-home {
+
+        .noticias-subtitle {
+            position: relative;
+            padding-top: 38px;
+            padding-bottom: 64px;
+
+            @include respondto(minxs) {
+                display: flex;
+                justify-content: center;
+                padding-bottom: 58px;
+            }
+
+            @include respondto(maxxs) {
+                display: flex;
+                justify-content: center;
+            }
+
+            @include respondto(sm) {
+                display: flex;
+                justify-content: center;
+            }
+
+            @include respondto(md) {
+                padding-top: 30px;
+                margin-bottom: 34px;
+            }
+
+            @include respondto(lg) {
+                padding-top: 34px;
+                margin-bottom: 44px;
+            }
+
+            @include respondto(xlg) {
+                padding-top: 38px;
+                margin-bottom: 64px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                border-bottom: 5px solid #D52B1E;
+                width: 95px;
+                padding-bottom: 31px;
+                height: 5px;
+
+                @include respondto(minxs) {
+                    width: 39px;
+                    top: 50%;
+                    padding-bottom: 20px;
+                }
+
+                @include respondto(maxxs) {
+                    width: 52px;
+                    top: 50%;
+                    padding-bottom: 20px;
+                }
+
+                @include respondto(sm) {
+                    width: 52px;
+                    top: 50%;
+                    padding-bottom: 20px;
+                }
+
+                @include respondto(md) {
+                    padding-bottom: 17px;
+                }
+
+                @include respondto(lg) {
+                    padding-bottom: 24px;
+                }
+
+                @include respondto(xlg) {
+                    padding-bottom: 31px;
+                }
+            }
+
+            h4 {
+                font-family: $font-clanOt;
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 48px;
+
+                @include respondto(minxs) {
+                    font-size: 26px;
+                }
+
+                @include respondto(maxxs) {
+                    font-size: 34px;
+                }
+
+                @include respondto(sm) {
+                    font-size: 35px;
+                }
+
+                @include respondto(md) {
+                    font-size: 35px;
+                    line-height: 35px;
+                }
+
+                @include respondto(lg) {
+                    font-size: 41px;
+                    line-height: 41px;
+                }
+
+                @include respondto(xlg) {
+                    font-size: 48px;
+                    line-height: 48px;
+                }
+            }
+        }
+
+        .contenedor-noticas-cards {
+            width: 100%;
+            padding-top: 31px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+
+            @include respondto(minxs) {
+                display: none;
+            }
+
+            @include respondto(maxxs) {
+                display: none;
+            }
+
+            @include respondto(sm) {
+                display: none;
+            }
+
+            @include respondto(md) {
+            }
+
+            @include respondto(lg) {
+            }
+
+            @include respondto(xlg) {
+            }
+
+            .contenedor-cards {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                overflow: hidden;
+
+                &.inferior-cards {
+                    opacity: 0;
+                    max-height: 0;
+                    transition: all .7s ease;
+
+                    &.mostrar-card-inferior {
+                        opacity: 1;
+                        max-height: 500px;
+                        transition: all .8s ease;
+                    }
+                }
+
+                .contenedor-card-noticia {
+                    // global
+                    a {
+                        .logo-card {
+                            overflow: hidden;
+
+                            img {
+                                transition: all .7s ease;
+                            }
+                        }
+
+                        &:hover img {
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+            }
+        }
+
+        .box-ver-mas {
+            width: 100%;
+            padding-bottom: 87px;
+
+            @include respondto(minxs) {
+                display: none;
+            }
+
+            @include respondto(maxxs) {
+                display: none;
+            }
+
+            @include respondto(sm) {
+                display: none;
+            }
+
+            @include respondto(md) {
+            }
+
+            @include respondto(lg) {
+            }
+
+            @include respondto(xlg) {
+            }
+
+            .ver-mas {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 137px;
+                    height: 38px;
+                    border: 1px solid #000000;
+                    font-family: $font-roboto;
+                    color: #000000;
+                    font-size: 22px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    letter-spacing: 0.96px;
+                    cursor: pointer;
+
+                    &:nth-child(2) {
+                        display: none;
+                    }
+
+                    &.mostrar-ver-menos {
+                        &:nth-child(1) {
+                            display: none;
+                        }
+
+                        &:nth-child(2) {
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contenedor-slider-noticia {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @include respondto(minxs) {
+        }
+
+        @include respondto(maxxs) {
+        }
+
+        @include respondto(sm) {
+        }
+
+        @include respondto(md) {
+            display: none;
+        }
+
+        @include respondto(lg) {
+            display: none;
+        }
+
+        @include respondto(xlg) {
+            display: none;
+        }
+
+        .slider-noticia {
+            width: 100%;
+
+            @include respondto(minxs) {
+                width: 75.46%;
+                max-width: 400px;
+            }
+
+            @include respondto(maxxs) {
+                width: 62%;
+            }
+
+            @include respondto(sm) {
+                padding: 0 50px;
+            }
+
+            @include respondto(md) {
+                display: none;
+            }
+
+            @include respondto(lg) {
+                display: none;
+            }
+
+            @include respondto(xlg) {
+                display: none;
+            }
+
+            .slick-arrow {
+                position: absolute;
+                font-size: 0;
+                line-height: 0;
+                padding: 0;
+                border: 0;
+                cursor: pointer;
+                height: 44px;
+                width: 44px;
+                z-index: 10;
+                // opacity: 0;
+                transition: all 0.25s;
+
+                @include respondto(xs) {
+                    /*display: none;
+                    opacity: 0;
+                    pointer-events: none;*/
+                }
+
+                @include respondto(sm) {
+                    // display: none;
+                    // opacity: 0;
+                    // pointer-events: auto;
+                }
+
+                @include respondto(md) {
+                }
+
+                @include respondto(lg) {
+                }
+
+                @include respondto(xlg) {
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &:focus {
+                    color: transparent;
+                    outline: none;
+                    // background: transparent;
+                }
+
+                &.slick-prev {
+                    top: 50%;
+                    left: -45px;
+                    // transform: rotate(180deg) translateY(50%);
+                    background-image: url('../img/home/blog-peru/icon-left.png');
+                    background-repeat: no-repeat;
+
+                    &:hover {
+                        left: -45px;
+                    }
+
+                    &:before {
+                        content: '';
+                    }
+
+                    &:after {
+                    }
+                }
+
+                &.slick-next {
+                    top: 50%;
+                    right: -45px;
+                    // transform: translateY(-60%);
+                    background-image: url('../img/home/blog-peru/icon-right.png');
+
+                    &:hover {
+                        right: -45px;
+                    }
+
+                    &:before {
+                        content: '';
+                    }
+
+                    &:after {
+                    }
+                }
+            }
+
+            .slick-list {
+                .slick-track {
+                    .item-card-noticia {
+                        width: 100%;
+                        margin: 0 7px;
+                        // padding: 11px;
+                        @include respondto(minxs) {
+                        }
+
+                        @include respondto(maxxs) {
+                        }
+
+                        @include respondto(sm) {
+                            margin: 0 4px;
+                        }
+
+                        @include respondto(md) {
+                        }
+
+                        @include respondto(lg) {
+                        }
+
+                        @include respondto(xlg) {
+                        }
+
+                        .contenedor-card-noticia {
+                            width: 100%;
+
+                            a {
+                                width: 100%;
+
+                                .logo-card {
+                                    width: 100%;
+                                    height: 150px;
+                                    margin-bottom: 22px;
+
+                                    @include respondto(minxs) {
+                                    }
+
+                                    @include respondto(maxxs) {
+                                        height: 200px;
+                                    }
+
+                                    @include respondto(sm) {
+                                        height: 160px;
+                                    }
+
+                                    @include respondto(md) {
+                                    }
+
+                                    @include respondto(lg) {
+                                    }
+
+                                    @include respondto(xlg) {
+                                    }
+
+                                    img {
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+
+                                .content-card-info {
+                                    width: 100%;
+                                    margin-bottom: 52px;
+
+                                    h3 {
+                                        font-family: $font-clanOt;
+
+                                        @include respondto(minxs) {
+                                            font-weight: 700;
+                                            font-size: 13px;
+                                            line-height: 1;
+                                            letter-spacing: .8px;
+                                            margin-bottom: 10px;
+                                        }
+
+                                        @include respondto(maxxs) {
+                                            font-size: 15px;
+                                            line-height: 1;
+                                            letter-spacing: .8px;
+                                            margin-bottom: 12px;
+                                        }
+
+                                        @include respondto(sm) {
+                                            font-size: 14px;
+                                            line-height: 1;
+                                            letter-spacing: .8px;
+                                            margin-bottom: 12px;
+                                        }
+
+                                        @include respondto(md) {
+                                        }
+
+                                        @include respondto(lg) {
+                                        }
+
+                                        @include respondto(xlg) {
+                                        }
+                                    }
+
+                                    .info-card {
+                                        margin-bottom: 0;
+
+                                        p {
+                                            font-family: $font-clanOt;
+                                            font-weight: 700;
+                                            font-size: 13px;
+                                            line-height: 18px;
+                                            color: #000000;
+
+                                            @include respondto(minxs) {
+                                                letter-spacing: .3px;
+                                            }
+
+                                            @include respondto(maxxs) {
+                                                font-size: 14px;
+                                                letter-spacing: .2px;
+                                            }
+
+                                            @include respondto(sm) {
+                                                font-size: 13px;
+                                                letter-spacing: .2px;
+                                            }
+
+                                            @include respondto(md) {
+                                            }
+
+                                            @include respondto(lg) {
+                                            }
+
+                                            @include respondto(xlg) {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// css del card noticias
+.contenedor-card-noticia {
+    width: 32%;
+
+    @include respondto(minxs) {
+    }
+
+    @include respondto(maxxs) {
+    }
+
+    @include respondto(sm) {
+    }
+
+    @include respondto(md) {
+        width: 32.5%;
+    }
+
+    @include respondto(lg) {
+    }
+
+    @include respondto(xlg) {
+    }
+
+    .logo-card {
+        display: flex;
+        width: 100%;
+        height: 270px;
+        margin-bottom: 48px;
+
+        @include respondto(minxs) {
+        }
+
+        @include respondto(maxxs) {
+        }
+
+        @include respondto(sm) {
+        }
+
+        @include respondto(md) {
+            width: 100%;
+            height: 190px;
+            margin-bottom: 35px;
+            margin-bottom: 24px;
+        }
+
+        @include respondto(lg) {
+            width: 100%;
+            height: 230px;
+            margin-bottom: 40px;
+            margin-bottom: 24px;
+        }
+
+        @include respondto(xlg) {
+            width: 100%;
+            height: 270px;
+            margin-bottom: 48px;
+            margin-bottom: 24px;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .content-card-info {
+        width: 100%;
+        margin-bottom: 23px;
+
+        @include respondto(minxs) {
+        }
+
+        @include respondto(maxxs) {
+        }
+
+        @include respondto(sm) {
+        }
+
+        @include respondto(md) {
+            margin-bottom: 10px;
+        }
+
+        @include respondto(lg) {
+            margin-bottom: 15px;
+        }
+
+        @include respondto(xlg) {
+            margin-bottom: 23px;
+        }
+
+        h3 {
+            font-family: $font-clanOt;
+            font-weight: 700;
+            font-size: 19px;
+            line-height: 19.2px;
+            letter-spacing: 1.34px;
+            margin-bottom: 16px;
+            color: rgb(var(--color-categoria));
+
+            @include respondto(minxs) {
+            }
+
+            @include respondto(maxxs) {
+            }
+
+            @include respondto(sm) {
+            }
+
+            @include respondto(md) {
+                font-size: 14px;
+                line-height: 19.2px;
+                letter-spacing: 1px;
+            }
+
+            @include respondto(lg) {
+                font-size: 16px;
+                line-height: 19.2px;
+                letter-spacing: 1px;
+            }
+
+            @include respondto(xlg) {
+                font-size: 19px;
+                line-height: 19.2px;
+                letter-spacing: 1.2px;
+            }
+        }
+
+        .info-card {
+            margin-bottom: 100px;
+
+            @include respondto(minxs) {
+            }
+
+            @include respondto(maxxs) {
+            }
+
+            @include respondto(sm) {
+            }
+
+            @include respondto(md) {
+                margin-bottom: 40px;
+            }
+
+            @include respondto(lg) {
+                margin-bottom: 60px;
+            }
+
+            @include respondto(xlg) {
+                margin-bottom: 80px;
+            }
+
+            p {
+                font-family: $font-clanOt;
+                font-weight: 700;
+                font-size: 19px;
+                // line-height: 26.88px;
+                color: #000000;
+
+                @include respondto(minxs) {
+                }
+
+                @include respondto(maxxs) {
+                }
+
+                @include respondto(sm) {
+                }
+
+                @include respondto(md) {
+                    font-size: 14px;
+                    line-height: 19px;
+                    letter-spacing: .8px;
+                }
+
+                @include respondto(lg) {
+                    font-size: 16px;
+                    line-height: 19.2px;
+                    letter-spacing: 1px;
+                }
+
+                @include respondto(xlg) {
+                    font-size: 19px;
+                    line-height: 26px;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+}
+// /BLOCK NOTICIAS
+
+
+
+// BLOCK ME-GUSTA-PERU
+.container-block-home {
+    width: 100%;
+
+    .content-block-home {
+
+        .peru-subTitle {
+            position: relative;
+            padding-top: 38px;
+            padding-bottom: 64px;
+
+            @include respondto(minxs) {
+                display: flex;
+                justify-content: center;
+                padding-bottom: 20px;
+            }
+
+            @include respondto(maxxs) {
+                display: flex;
+                justify-content: center;
+                background-color: antiquewhite;
+            }
+
+            @include respondto(sm) {
+                display: flex;
+                justify-content: center;
+            }
+
+            @include respondto(md) {
+                padding-top: 30px;
+                margin-bottom: 34px;
+            }
+
+            @include respondto(lg) {
+                padding-top: 34px;
+                margin-bottom: 44px;
+            }
+
+            @include respondto(xlg) {
+                padding-top: 38px;
+                margin-bottom: 64px;
+            }
+
+            h4 {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $font-clanOt;
+                font-weight: 700;
+                font-size: 48px;
+                line-height: 48px;
+
+                @include respondto(minxs) {
+                    font-size: 25px;
+                    line-height: 25px;
+                }
+
+                @include respondto(maxxs) {
+                    font-size: 25px;
+                    line-height: 25px;
+                }
+
+                @include respondto(sm) {
+                    font-size: 25px;
+                }
+
+                @include respondto(md) {
+                    font-size: 35px;
+                    line-height: 35px;
+                    display: block;
+                }
+
+                @include respondto(lg) {
+                    font-size: 41px;
+                    line-height: 41px;
+                    display: block;
+                }
+
+                @include respondto(xlg) {
+                    font-size: 48px;
+                    line-height: 48px;
+                    display: block;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    border-bottom: 5px solid #D52B1E;
+
+                    @include respondto(minxs) {
+                        width: 170px;
+                        padding-bottom: 50px;
+                    }
+
+                    @include respondto(maxxs) {
+                        width: 170px;
+                        padding-bottom: 50px;
+                    }
+
+                    @include respondto(sm) {
+                        width: 170px;
+                        padding-bottom: 50px;
+                    }
+
+                    @include respondto(md) {
+                        // padding-bottom: 17px;
+                        width: 95px;
+                        padding-bottom: 60px;
+                        height: 5px;
+                        left: 0;
+                    }
+
+                    @include respondto(lg) {
+                        width: 95px;
+                        // padding-bottom: 31px;
+                        height: 5px;
+                        padding-bottom: 65px;
+                        left: 0;
+                    }
+
+                    @include respondto(xlg) {
+                        width: 95px;
+                        padding-bottom: 70px;
+                        height: 5px;
+                        // padding-bottom: 31px;
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        .contenedor-iframe {
+            width: 100%;
+            padding-bottom: 40px;
+
+            @include respondto(minxs) {
+                padding: 0 30px;
+            }
+
+            @include respondto(maxxs) {
+                padding: 0 30px;
+            }
+
+            @include respondto(sm) {
+                padding: 0 30px;
+            }
+
+            @include respondto(md) {
+                padding: 0 20px;
+            }
+
+            @include respondto(lg) {
+                padding: 0px;
+            }
+
+            @include respondto(xlg) {
+                padding: 0 115px;
+            }
+
+            .contenedor-superior-iframe {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                justify-content: space-around;
+                padding-bottom: 50px;
+                align-items: flex-start;
+
+                @include respondto(xs) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                @include respondto(sm) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                @include respondto(md) {
+                    /*height: 710px;*/
+                    width: 100%;
+                }
+
+                @include respondto(lg) {
+                    /*height: 710px;*/
+                    width: 100%;
+                }
+
+                @include respondto(xlg) {
+                    /*height: 710px;*/
+                    width: 100%;
+                }
+
+                .content-iframe {
+                    @include respondto(xs) {
+                        margin-bottom: 45px;
+                    }
+
+                    @include respondto(sm) {
+                        margin-bottom: 45px;
+                    }
+                }
+
+                .content-iframe-instagram {
+                    width: 31%;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+                    padding-bottom: 10px;
+
+                    @include respondto(xs) {
+                        width: 100%;
+                        height: 200px;
+                    }
+
+                    @include respondto(sm) {
+                        width: 100%;
+                        height: 200px;
+                    }
+
+                    @include respondto(md) {
+                    }
+
+                    @include respondto(lg) {
+                    }
+
+                    @include respondto(xlg) {
+                    }
+
+                    h4 {
+                        display: flex;
+                        align-items: center;
+                        font-family: $font-clanOt;
+                        font-size: 26px;
+                        line-height: 25.6px;
+
+                        @include respondto(xs) {
+                            margin: auto;
+                            display: flex;
+                            justify-content: center;
+                            font-size: 25px;
+                        }
+
+                        @include respondto(sm) {
+                            font-size: 25px;
+                            line-height: 25.6px;
+                            margin: auto;
+                            display: flex;
+                            justify-content: center;
+                        }
+
+                        @include respondto(md) {
+                            // margin: auto;
+                        }
+
+                        @include respondto(lg) {
+                        }
+
+                        @include respondto(xlg) {
+                        }
+
+                        &::after {
+                            content: "";
+                            border-bottom: 5px solid #D52B1E;
+                            width: 95px;
+                            padding-bottom: 31px;
+                            height: 5px;
+                            position: absolute;
+
+                            @include respondto(xs) {
+                                width: 39px;
+                                top: 50%;
+                                padding-bottom: 16px;
+                            }
+
+                            @include respondto(sm) {
+                                padding-bottom: 65px;
+                                width: 39px;
+                            }
+
+                            @include respondto(md) {
+                                display: none;
+                            }
+
+                            @include respondto(lg) {
+                                display: none;
+                            }
+
+                            @include respondto(xlg) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .iframe-instgrm {
+                        width: 100%;
+                    }
+                }
+
+                .content-iframe-facebook {
+                    width: 31%;
+                    position: relative;
+
+                    @include respondto(xs) {
+                        width: 90% !important;
+                    }
+
+                    @include respondto(sm) {
+                    }
+
+                    @include respondto(md) {
+                    }
+
+                    @include respondto(lg) {
+                    }
+
+                    @include respondto(xlg) {
+                    }
+
+                    h4 {
+                        display: flex;
+                        align-items: center;
+                        height: 50px;
+                        font-family: $font-clanOt;
+                        font-size: 26px;
+                        line-height: 25.6px;
+
+                        @include respondto(xs) {
+                            justify-content: center;
+                            font-size: 25px;
+                            height: 75px;
+                            margin-bottom: 15px;
+                        }
+
+                        @include respondto(sm) {
+                            justify-content: center;
+                            font-size: 25px;
+                            height: 75px;
+                            margin-bottom: 15px;
+                        }
+
+                        @include respondto(md) {
+                        }
+
+                        @include respondto(lg) {
+                        }
+
+                        @include respondto(xlg) {
+                        }
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            border-bottom: 5px solid #D52B1E;
+                            width: 95px;
+                            padding-bottom: 31px;
+                            height: 5px;
+
+                            @include respondto(minxs) {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 39px;
+                                padding-bottom: 50px;
+                                height: 4px;
+                            }
+
+                            @include respondto(maxxs) {
+                                width: 39px;
+                                padding-bottom: 50px;
+                                height: 4px;
+                            }
+
+                            @include respondto(sm) {
+                                width: 39px;
+                                padding-bottom: 50px;
+                                height: 4px;
+                            }
+
+                            @include respondto(md) {
+                                display: none;
+                            }
+
+                            @include respondto(lg) {
+                                display: none;
+                            }
+
+                            @include respondto(xlg) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .fb-page {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .content-iframe-twitter {
+                    width: 31%;
+                    position: relative;
+                    // height: 700px;
+                    @include respondto(minxs) {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        // align-items: center;
+                        padding: 0 20px;
+                        flex-direction: column;
+                    }
+
+                    @include respondto(maxxs) {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        // align-items: center;
+                        padding: 0 100px;
+                        flex-direction: column;
+                    }
+
+                    @include respondto(sm) {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        // align-items: center;
+                        padding: 0 140px;
+                        flex-direction: column;
+                    }
+
+                    @include respondto(md) {
+                    }
+
+                    @include respondto(lg) {
+                    }
+
+                    @include respondto(xlg) {
+                    }
+
+                    h4 {
+                        height: 50px;
+                        font-family: $font-clanOt;
+                        font-size: 26px;
+                        line-height: 25.6px;
+
+                        @include respondto(minxs) {
+                            display: flex;
+                            align-items: center;
+                            font-size: 25px;
+                            justify-content: center;
+                            margin-bottom: 20px;
+                        }
+
+                        @include respondto(maxxs) {
+                            display: flex;
+                            align-items: center;
+                            font-size: 25px;
+                            justify-content: center;
+                            margin-bottom: 20px;
+                        }
+
+                        @include respondto(sm) {
+                            display: flex;
+                            align-items: center;
+                            font-size: 25px;
+                            justify-content: center;
+                            margin-bottom: 20px;
+                        }
+
+                        @include respondto(md) {
+                        }
+
+                        @include respondto(lg) {
+                        }
+
+                        @include respondto(xlg) {
+                        }
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            border-bottom: 5px solid #D52B1E;
+                            width: 95px;
+                            padding-bottom: 31px;
+                            height: 5px;
+
+                            @include respondto(minxs) {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 39px;
+                                padding-bottom: 50px;
+                                height: 4px;
+                            }
+
+                            @include respondto(maxxs) {
+                                width: 39px;
+                                padding-bottom: 50px;
+                                height: 4px;
+                            }
+
+                            @include respondto(sm) {
+                                width: 39px;
+                                padding-bottom: 50px;
+                                height: 4px;
+                            }
+
+                            @include respondto(md) {
+                                display: none;
+                            }
+
+                            @include respondto(lg) {
+                                display: none;
+                            }
+
+                            @include respondto(xlg) {
+                                display: none;
+                            }
+                        }
+                        // background-color: #dfd7d7;
+                    }
+                }
+            }
+        }
+
+        .contenedor-ver-mas {
+            width: 100%;
+            margin-bottom: 20px;
+            margin-top: 20px;
+
+            @include respondto(minxs) {
+                // display: none;
+            }
+
+            @include respondto(maxxs) {
+                // display: none;
+            }
+
+            @include respondto(sm) {
+                // display: none;
+            }
+
+            @include respondto(md) {
+                // background: yellowgreen;
+            }
+
+            @include respondto(lg) {
+                // background: violet;
+            }
+
+            @include respondto(xlg) {
+                // width: 1400px;
+            }
+
+            .ver-mas-iframe {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                p {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 137px;
+                    height: 38px;
+                    border: 1px solid #000000;
+                    font-family: $font-roboto;
+                    color: #000000;
+                    font-size: 22px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    letter-spacing: 0.96px;
+                    cursor: pointer;
+
+                    &:nth-child(2) {
+                        display: none;
+                    }
+
+                    &.mostrar-ver-menos-iframe {
+                        &:nth-child(1) {
+                            display: none;
+                        }
+
+                        &:nth-child(2) {
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// /BLOCK ME-GUSTA-PERU
+
+
+
+
+
+
+
+
+
+
+// ********** ********** /MI ********** **********
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ********** ********** MA ********** **********
+
+
+// ********** ********** /MA ********** **********

@@ -1,0 +1,284 @@
+﻿@using System.Configuration;
+@{ ViewBag.Title = "Subcategoría";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"]; }
+
+@section Scripts
+{
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/Subcategoria.js"></script>
+
+    <script>
+        const editar = true;
+        const eliminar = true;
+    </script>
+}
+
+<div class="l-contents">
+
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Subcategoría</h1>
+        </div>
+
+        <nav class="cont-icons">
+            <a id="btnNuevo" href="javascript:" class="cont-icons-new">
+                <span class="fas icon-plus">
+                </span><span>Nuevo</span>
+            </a>
+        </nav>
+
+        <div class="cont-table">
+            <table id="gridBloques" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1000px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 5%"></th>
+                        <th data-title="NombreCategoria" style="width: 5%">
+                            <input type="text" id="gridSubcategoria_txtB_NombreCategoria">
+                        </th>
+                        <th data-title="NombreIdioma" style="width: 20%">
+                            <input type="text" id="gridSubcategoria_txtB_NombreIdioma">
+                        </th>
+                        <th data-title="Nombre" style="width: 20%">
+                            <input type="text" id="gridSubcategoria_txtB_Nombre">
+                        </th>
+                        <th data-title="Activo" style="width: 10%">
+                            <input type="text" id="gridSubcategoria_txtB_Activo">
+                        </th>
+                        <th data-title="VisibleBuscador" style="width: 10%">
+                            <input type="text" id="gridSubcategoria_txtB_VisibleBuscador">
+                        </th>
+
+                        <th data-title="" style="width: 10%" align="center">
+                            <div class="accion-box">
+                                <a href="" title="Editar">
+                                    <span class="fas fa-search"></span>
+                                </a>
+
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 5%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th style="width: 5%;">
+                            <a id="a_NombreCategoria">Nombre de Categoria</a>
+                        </th>
+                        <th style="width: 20%;">
+                            <a id="a_NombreIdioma">Nombre de Idioma</a>
+                        </th>
+                        <th style="width: 20%;">
+                            <a id="a_Nombre">Nombre</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Activo">Activo</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_VisibleBuscador">¿Buscador visible?</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_"></a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="reveal-modal-bg">
+        <div class="modal-registrar">
+            <h2 id="lblRegistro">Crear Subcategoria</h2>
+
+            <input type="hidden" id="hdnSubcategoriaId" />
+            <input type="hidden" id="hdnSubcategoriaTraduccionId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Idioma:</label>
+                <select id="ddlIdioma" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Idioma--</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Categoría:</label>
+                <select id="ddlCategoria" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Categoría--</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Nombre:</label>
+                <input id="txtNombre" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Subtítulo:</label>
+                <div style="width: 553px;">
+                    <textarea id="txtSubtitulo" class="cont-box-input" rows="4" onkeyup="countChars(this);"></textarea>
+                    <p id="charNum" style="text-align: right;">400 caracteres restantes</p>
+                </div>
+            </div>
+
+            <input type="hidden" id="hdnImagenId" name="hdnImagenId" />
+            <input type="hidden" id="hdnImagenTraduccionId" name="hdnImagenTraduccionId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen Cabecera Desktop:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagenDesktop" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Dimensiones: 1920px X 681px</span>
+                    <input type="hidden" id="txtImagenDesktop" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagenDesktop" class="w-50" alt="" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen Cabecera Movil:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagenMovil" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Dimensiones: 390px X 454px</span>
+                    <input type="hidden" id="txtImagenMovil" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagenMovil" class="w-50" alt="" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen Texto Alternativo:</label>
+                <input id="txtImagenTextoAlternativo" type="text" class="cont-box-input" maxlength="250">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Titulo Bloque Categoría:</label>
+                <input id="txtTituloBloqueCategoria" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Descripcion Bloque Categoría:</label>
+                <textarea id="txtDescripcionBloqueCategoria" class="cont-box-input" rows="5"></textarea>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Nombre Boton Bloque Categoría:</label>
+                <input id="txtNombreBotonBloqueCategoria" type="text" class="cont-box-input" maxlength="50">
+            </div>
+
+            <input type="hidden" id="hdnImagenBloqueCategoriaId" name="hdnImagenBloqueCategoriaId" />
+            <input type="hidden" id="hdnImagenBloqueCategoriaTraduccionId" name="hdnImagenBloqueCategoriaTraduccionId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen Bloque Categoría:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagenBloqueCategoria" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Dimensiones: 960px X 1075px</span>
+                    <input type="hidden" id="txtImagenBloqueCategoria" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagenBloqueCategoria" class="w-50" alt="" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen Bloque Categoría Texto Alternativo:</label>
+                <input id="txtImagenBloqueCategoriaTextoAlternativo" type="text" class="cont-box-input" maxlength="250">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Link Externo Bloque Categoría:</label>
+                <input id="txtLinkExterno" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Orden Bloque Categoria:</label>
+                <input id="txtOrdenBloqueCategoria" type="number" class="cont-box-input">
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">Activo:</label>
+
+                <input type="checkbox" id="chkActivo" class="input-checkbox" checked="">
+                <label for="chkActivo" class="input-checkbox-lab"> </label>
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">¿Buscador visible?:</label>
+
+                <input type="checkbox" id="chkVisibleBuscador" class="input-checkbox" checked="">
+                <label for="chkVisibleBuscador" class="input-checkbox-lab"> </label>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Sección Padre:</label>
+                <div style="width: 553px;">
+                    <select id="ddlSeccionPadre" class="cont-box-select">
+                        <option value="0" selected="selected" class="option-disabled">--Seleccione Sección Padre--</option>
+                    </select>
+                    <p style="text-align: left;">Elegir solo si aplica</p>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Título SEO:</label>
+                <input id="txtTituloSEO" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Descripcion SEO:</label>
+                <div style="width: 553px;">
+                    <textarea id="txtDescripcionSEO" class="cont-box-input" rows="4" onkeyup="countCharsSEO(this);"></textarea>
+                    <p id="charNumSEO" style="text-align: right;">400 caracteres restantes</p>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">KeyWords:</label>
+                <input id="txtKeyWords" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <button id="btnGuardar" class="cont-box-submit">
+                    <label>Registrar</label>
+                </button>
+            </div>
+            <div class="cont-box">
+                <button id="btnCancelar" class="cont-box-cancel close">
+                    <label>Cancelar</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>

@@ -1,0 +1,215 @@
+﻿@using System.Configuration;
+@{ ViewBag.Title = "Banner Categoría";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"]; }
+
+@section Scripts
+{
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/BannerCategoria.js"></script>
+
+    <script>
+        const editar = true;
+        const eliminar = true;
+    </script>
+}
+
+<div class="l-contents">
+
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Banner - Categoría</h1>
+        </div>
+
+        <nav class="cont-icons">
+            <a id="btnNuevo" href="javascript:" class="cont-icons-new">
+                <span class="fas icon-plus">
+                </span><span>Nuevo</span>
+            </a>
+        </nav>
+
+        <div class="cont-table">
+            <table id="gridBloques" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1000px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 5%"></th>
+                        <th data-title="IdiomaNombre" style="width: 15%">
+                            <input type="text" id="gridTarjeta_txtB_IdiomaNombre">
+                        </th>
+                        <th data-title="Titulo" style="width: 10%">
+                            <input type="text" id="gridTarjeta_txtB_CategoriaNombre">
+                        </th>
+                        @*<th data-title="Bajada" style="width: 20%">
+                                <input type="text" id="gridTarjeta_txtB_Bajada">
+                            </th>
+                            <th data-title="Link" style="width: 20%">
+                                <input type="text" id="gridTarjeta_txtB_Link">
+                            </th>*@
+                        <th data-title="Activo" style="width: 10%">
+                            <input type="text" id="gridTarjeta_txtB_Activo">
+                        </th>
+
+                        <th data-title="" style="width: 10%" align="center">
+                            <div class="accion-box">
+                                <a href="" title="Editar">
+                                    <span class="fas fa-search"></span>
+                                </a>
+
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 10%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th style="width: 15%;">
+                            <a id="a_IdiomaNombre">Idioma</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Titulo">Categoría</a>
+                        </th>
+                        @*<th style="width: 20%;">
+                                <a id="a_Bajada">Bajada</a>
+                            </th>
+                            <th style="width: 20%;">
+                                <a id="a_Link">Link</a>
+                            </th>*@
+                        <th style="width: 10%;">
+                            <a id="a_Activo">Activo</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_"></a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="reveal-modal-bg">
+        <div class="modal-registrar">
+            <h2 id="lblRegistro">Agregar Banner</h2>
+
+            <input type="hidden" id="hdnCategoriaId" />
+            <input type="hidden" id="hdnBannerId" />
+            <input type="hidden" id="hdnBannerTraduccionId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Idioma:</label>
+                <select id="ddlIdioma" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Idioma--</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Categoría:</label>
+                <select id="ddlCategoria" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Categoría--</option>
+                </select>
+            </div>
+
+            <input type="hidden" id="hdnImagenId" name="hdnImagenId" />
+            <input type="hidden" id="hdnImagenTraduccionId" name="hdnImagenTraduccionId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen Desktop:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagenDesktop" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Dimensiones: 1920px X 501px</span>
+                    <input type="hidden" id="txtImagenDesktop" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagenDesktop" class="w-50" alt="" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen Movil:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagenMovil" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Dimensiones: 390px X 334px</span>
+                    <input type="hidden" id="txtImagenMovil" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagenMovil" class="w-50" alt="" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen Texto Alternativo:</label>
+                <input id="txtImagenTextoAlternativo" type="text" class="cont-box-input" maxlength="250">
+            </div>
+
+            <div class="cont-box" style="display: none;">
+                <label class="cont-box-label">Título:</label>
+                <input id="txtTitulo" type="text" class="cont-box-input" maxlength="250">
+            </div>
+
+            <div class="cont-box" style="display: none;">
+                <label class="cont-box-label">Bajada:</label>
+                <input id="txtBajada" type="text" class="cont-box-input" maxlength="250">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Link:</label>
+                <input id="txtLink" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">¿Ventana Nueva?:</label>
+
+                <input type="checkbox" id="chkVentanaNueva" class="input-checkbox" checked="">
+                <label for="chkVentanaNueva" class="input-checkbox-lab"> </label>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Orden:</label>
+                <input id="txtOrden" type="number" class="cont-box-input">
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">Activo</label>
+
+                <input type="checkbox" id="chkActivo" class="input-checkbox" checked="">
+                <label for="chkActivo" class="input-checkbox-lab"> </label>
+            </div>
+
+            <div class="cont-box">
+                <button id="btnGuardar" class="cont-box-submit">
+                    <label>Registrar</label>
+                </button>
+            </div>
+            <div class="cont-box">
+                <button id="btnCancelar" class="cont-box-cancel close">
+                    <label>Cancelar</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>

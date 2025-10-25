@@ -1,0 +1,195 @@
+﻿@using System.Configuration
+@{
+    string culture = ViewBag.Culture;
+
+    int idioma = culture == "es-pe" ? 1 : 2;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}".ToLower();
+
+    string ipPublica = ViewBag.IpPublica;
+
+
+}
+
+<!DOCTYPE html>
+<html lang="@culture">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="@strUrl/css/peru-info.components.css">
+    @RenderSection("styles", false)
+    <title>@Resource.seo_titulo_home</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <base href="@strUrl">
+    <link rel="shortcut icon" href="@strUrl/img/favicon_PeruInfo.ico" />
+    <link rel="canonical" href="@absoluteUrl">
+    <meta name="description" content="@Resource.seo_descripcion_home" />
+    <meta name="author" content="Peru.info">
+    <meta name="distribution" content="global" />
+    <meta name="keywords" content="@Resource.seo_keywords_home" />
+    <meta property="og:locale" content="@culture" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@Resource.seo_titulo_home" />
+    <meta property="og:description" content="@Resource.seo_descripcion_home" />
+    <meta property="og:url" content="@absoluteUrl" />
+    <meta property="og:site_name" content="Perú Info" />
+    <meta property="og:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@Resource.seo_descripcion_home" />
+    <meta name="twitter:title" content="@Resource.seo_titulo_home" />
+    <meta name="twitter:site" content="https://twitter.com/marcaPERU" />
+    <meta name="twitter:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")" />
+    @if (idioma == 1)
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6PS60QLG"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GB6PS60QLG');
+        </script>
+    }
+    else
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5R15JNKSP"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-E5R15JNKSP');
+        </script>
+    }
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDQMLXQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Código de seguimiento de Hotjar de -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 4938555, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    @Html.Partial("~/Views/Shared/Partials/_WidgetsLayout.cshtml")
+
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMLXQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-------------------- BLOCK HEADER ----------------------->
+    <!-- <header class="header-peru-info active-scroll-header"> -->
+    <header class="header-peru-info">
+        <div class="contenedor-header-peru-info">
+            <div class="contenedor-logo-peru">
+                <a href="/">
+                    <img src="@strUrl/img/home/header/logo-peru.png" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                    <img src="@strUrl/img/home/header/logo-peru-gris.svg" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                </a>
+            </div>
+
+            @{
+                Html.RenderAction("HeaderMenu", "Home");
+            }
+
+        </div>
+
+        <!-- <div class="menu-lateral mostrar-menu-lateral"> -->
+        @{
+            Html.RenderAction("PageMenu", "Home");
+        }
+
+    </header>
+    <!-------------------- /BLOCK HEADER ----------------------->
+    <!-------------------- BLOCK MODALES-HEADER ----------------------->
+    @Html.Partial("Partials/_ModalsHeader")
+    <!-------------------- /BLOCK MODALES-HEADER ----------------------->
+
+    @RenderBody()
+
+    <!-------------------- BLOCK FOOTER ----------------------->
+    @{
+        Html.RenderAction("PageMenu", "Home", new { footer = true });
+    }
+    <!-------------------- /BLOCK FOOTER ----------------------->
+    <!-------------------- Cookies Acceptance ----------------------->
+    <div class="cookies" id="cookies">
+        <p>@Resource.texto_cookies <a href="/@culture/@Resource.slug_aviso_privacidad">@Resource.cookies_descubra_mas</a></p>
+        <a class="boton aceptar_cookies" onclick="setCookiesAcceptance()"><strong>@Resource.boton_aceptar_cookies</strong></a>
+        <a href="javascript:;" class="boton close_cookies" onclick="exitCookiesAcceptance()"><strong>@Resource.boton_cerrar_cookies x</strong></a>
+    </div>
+    <!-------------------- /Cookies Acceptance ----------------------->
+    <script>
+        let baseDomain = '@strUrl';
+    </script>
+    <script src="@strUrl/js/jquery.min.js"></script>
+    @RenderSection("scripts", false)
+    <script src="@strUrl/js/peru-info.components.js"></script>
+    <script>
+        let culture = "@culture";
+        let idioma = @idioma;
+        
+    </script>
+    <script src="@strUrl/js/search.js"></script>
+
+    <script>
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function setCookiesAcceptance() {
+            console.log("setCookieAcceptance");
+            document.cookie = "_ck_accept=yes;max-age=3153600";
+            document.getElementById("cookies").style.display = "none";
+        }
+        function exitCookiesAcceptance() {
+            console.log("setCookieAcceptance");
+            document.getElementById("cookies").style.display = "none";
+        }
+        if (getCookie("_ck_accept") == "yes") {
+            document.getElementById("cookies").style.display = "none";
+        }
+    </script>
+
+</body>
+    </html>

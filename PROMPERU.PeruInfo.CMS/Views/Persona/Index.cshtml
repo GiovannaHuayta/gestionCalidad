@@ -1,0 +1,274 @@
+﻿@using System.Configuration;
+@{ ViewBag.Title = "Embajadores / Amigos del Perú";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"];
+}
+
+@section Scripts
+{
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/Persona.js"></script>
+
+    <script>
+    var editar = true;
+        var eliminar = true;</script>
+}
+
+<div class="l-contents">
+
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Embajadores / Amigos del Perú</h1>
+        </div>
+
+        <nav class="cont-icons">
+            <a id="btnNuevo" href="javascript:" class="cont-icons-new">
+                <span class="fas icon-plus">
+                </span><span>Nuevo</span>
+            </a>
+        </nav>
+
+        <div class="cont-table">
+            <table id="gridBloques" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1000px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 5%"></th>
+                        <th data-title="NombreSubcategoria" style="width: 5%">
+                            <input type="text" id="gridPersona_txtB_NombreSubcategoria">
+                        </th>
+                        <th data-title="Nombre" style="width: 10%">
+                            <input type="text" id="gridPersona_txtB_Nombre">
+                        </th>
+                        <th data-title="Anio" style="width: 10%">
+                            <input type="text" id="gridPersona_txtB_Anio">
+                        </th>
+                        <th data-title="Activo" style="width: 10%">
+                            <input type="text" id="gridPersona_txtB_Activo">
+                        </th>
+                        <th data-title="NombreIdioma" style="width: 10%">
+                            <input type="text" id="gridPersona_txtB_NombreIdioma">
+                        </th>
+                        <th data-title="" style="width: 10%" align="center">
+                            <div class="accion-box">
+                                <a href="" title="Editar">
+                                    <span class="fas fa-search"></span>
+                                </a>
+
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 5%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th style="width: 5%;">
+                            <a id="a_NombreSubcategoria">Subcategoria</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Nombre">Nombre</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Anio">Año</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Activo">Activo</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_NombreIdioma">Nombre de Iioma</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_"></a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="reveal-modal-bg">
+        <div class="modal-registrar">
+            <h2 id="lblRegistro">Crear Persona</h2>
+
+            <input type="hidden" id="hdnPersonaId" />
+            <input type="hidden" id="hdnPersonaTraduccionId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Idioma:</label>
+                <select id="ddlIdioma" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Idioma--</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Sub Categoría:</label>
+                <select id="ddlSubcategoria" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Subcategoría--</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Nombre:</label>
+                <input id="txtNombre" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen Portada:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagen" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Formato: JPG / PNG. Dimensiones: 324px X 485px</span>
+                    <input type="hidden" id="txtImagen" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagen" class="w-50" alt="" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen Detalle:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagen2" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Formato: JPG / PNG. Dimensiones: 460px X 350px</span>
+                    <input type="hidden" id="txtImagen2" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagen2" class="w-50" alt="" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen Ícono:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagen3" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Formato: PNG. Dimensiones: 30px X 30px</span>
+                    <input type="hidden" id="txtImagen3" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagen3" class="w-50" alt="" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Año:</label>
+                <input id="txtAnio" type="number" class="cont-box-input" maxlength="4">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Alt Imagen:</label>
+                <input id="txtAltImagen" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">¿Está destacado?</label>
+
+                <input type="checkbox" id="chkDestacado" class="input-checkbox" checked="">
+                <label for="chkDestacado" class="input-checkbox-lab"> </label>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Tipo:</label>
+                <select id="ddlTipo" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Tipo--</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Facebook:</label>
+                <input id="txtFacebook" type="text" class="cont-box-input" maxlength="150">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Twitter:</label>
+                <input id="txtTwitter" type="text" class="cont-box-input" maxlength="150">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Instagram:</label>
+                <input id="txtInstagram" type="text" class="cont-box-input" maxlength="150">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">YouTube:</label>
+                <input id="txtYouTube" type="text" class="cont-box-input" maxlength="150">
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">Activo:</label>
+
+                <input type="checkbox" id="chkActivo" class="input-checkbox" checked="">
+                <label for="chkActivo" class="input-checkbox-lab"> </label>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Resumen:</label>
+                <div style="width: 553px;">
+                    <textarea id="txtResumen" class="cont-box-input" rows="4" onkeyup="countChars(this);"></textarea>
+                    <p id="charNum" style="text-align: right;">500 caracteres restantes</p>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Detalle:</label>
+                <textarea id="txtDetalle" class="cont-box-input" rows="5"></textarea>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Título SEO:</label>
+                <input id="txtTituloSEO" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Descripcion SEO:</label>
+                <div style="width: 553px;">
+                    <textarea id="txtDescripcionSEO" class="cont-box-input" rows="4" onkeyup="countCharsSEO(this);"></textarea>
+                    <p id="charNumSEO" style="text-align: right;">255 caracteres restantes</p>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">KeyWords:</label>
+                <input id="txtKeyWords" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <button id="btnGuardar" class="cont-box-submit">
+                    <label>Registrar</label>
+                </button>
+            </div>
+            <div class="cont-box">
+                <button id="btnCancelar" class="cont-box-cancel close">
+                    <label>Cancelar</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>

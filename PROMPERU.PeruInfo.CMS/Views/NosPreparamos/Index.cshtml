@@ -1,0 +1,149 @@
+﻿@using System.Configuration
+@{ ViewBag.Title = "Asi nos preparamos";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"]; }
+@section Scripts
+{
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/NosPreparamos.js"></script>
+    <script>
+        var editar = true;
+        var eliminar = true;</script>
+}
+<div class="l-contents">
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Así nos Preparamos</h1>
+        </div>
+        <div class="cont-table">
+            <table id="gridBloques" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1440px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 5%"></th>
+                        <th data-title="Titulo" style="width: 5%">
+                            <input type="text" id="gridNosPreparamos_txtB_Titulo">
+                        </th>
+                        <th data-title="Subtitulo" style="width: 10%">
+                            <input type="text" id="gridNosPreparamos_txtB_SubTitulo">
+                        </th>
+                        <th data-title="Imagen de Portada" style="width: 10%">
+                            <input type="text" id="gridNosPreparamos_txtB_ImagenPortada">
+                        </th>
+                        <th data-title="Link de red social" style="width: 10%">
+                            <input type="text" id="gridNosPreparamos_txtB_LinkRedSocial">
+                        </th>
+                        <th data-title="Estado" style="width: 10%">
+                            
+                        </th>
+                        <th data-title="" style="width: 10%" align="center">
+                            <div class="accion-box">
+                                <a href="" title="Editar">
+                                    <span class="fas fa-search"></span>
+                                </a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 5%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th style="width: 5%;">
+                            <a id="a_NombreIdioma">Título</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_PaisNombre">Subtítulo</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Titulo">Imagen de Portada</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Activo">Link de red social</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_FechaPublicacion">Estado</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_"></a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="reveal-modal-bg">
+        <div class="modal-registrar">
+            <h2 id="lblRegistro">Editar Registro</h2>
+            <input type="hidden" id="hdnNosPreparamosId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Título:</label>
+                <input id="txtTitulo" type="text" class="cont-box-input" maxlength="300">
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Subtítulo:</label>
+                <input id="txtSubTitulo" type="text" class="cont-box-input" maxlength="300">
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen de Portada:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagen" type="file" class="cont-box-input" maxlength="500">
+                    <span class="text-start small py-1">Formato: JPG / PNG. Dimensiones: 343px X 235px</span>
+                    <input type="hidden" id="txtImagen" />
+                </div>
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagen" class="w-50" alt="" />
+                </div>
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Alt Imagen:</label>
+                <input id="txtAltImagen" type="text" class="cont-box-input" maxlength="500">
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Link Red Social:</label>
+                <input id="txtLinkRedSocial" type="text" class="cont-box-input" maxlength="500">
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Html Red Social :</label>
+                <div style="width: 553px;">
+                    <textarea id="txtHtmlRedSocial" class="cont-box-input" rows="4"></textarea>
+                </div>                
+            </div>
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">Activo:</label>
+                <input type="checkbox" id="chkActivo" class="input-checkbox" checked="">
+                <label for="chkActivo" class="input-checkbox-lab"> </label>
+            </div>
+            <div class="cont-box">
+                <button id="btnGuardar" class="cont-box-submit">
+                    <label>Actualizar</label>
+                </button>
+            </div>
+            <div class="cont-box">
+                <button id="btnCancelar" class="cont-box-cancel close">
+                    <label>Cancelar</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>

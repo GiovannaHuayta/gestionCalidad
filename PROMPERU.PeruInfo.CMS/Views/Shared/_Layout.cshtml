@@ -1,0 +1,191 @@
+﻿@using System.Configuration;
+@{ 
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"];
+    //string baseUrl = $"{Request.Url?.Scheme}://{Request.Url?.Authority}{Request.ApplicationPath?.TrimEnd('/')}/";
+    string baseUrl = vDominioAbsoluto+"/";
+
+    }
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="@baseUrl">
+    <title>Peru.Info - PromPeru</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link href="@vDominioAbsoluto/css/style.css" rel="stylesheet">
+    <link rel="icon" href="@vDominioAbsoluto/img/iconos/icon.png">
+
+    <link href="@vDominioAbsoluto/css/Menu.css" rel="stylesheet">
+    <link href="@vDominioAbsoluto/iconmoon/iconmoon.css" rel="stylesheet">
+    <link href="@vDominioAbsoluto/css/apprise.css" rel="stylesheet">
+    <link href="@vDominioAbsoluto/css/botones.css" rel="stylesheet">
+
+    <link href="@vDominioAbsoluto/Content/DataTables/css/jquery.dataTables.min.css" />
+
+
+    <script src="@vDominioAbsoluto/Scripts/jquery-3.6.0.min.js"></script>
+
+    <script src="@vDominioAbsoluto/Scripts/ckeditor/ckeditor.js"></script>
+    <script src="@vDominioAbsoluto/Scripts/ckeditor/adapters/jquery.js"></script>
+
+    <script src="@vDominioAbsoluto/Scripts/helper.js"></script>
+    <script src="@vDominioAbsoluto/Scripts/apprise.js"></script>
+
+    <script src="@vDominioAbsoluto/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="@vDominioAbsoluto/Scripts/jquery.dateFormat-1.0.js"></script>
+
+    <link href="@vDominioAbsoluto/css/jquery.datepick.min.css" rel="stylesheet">
+    <script src="@vDominioAbsoluto/Scripts/jquery.plugin.min.js"></script>
+    <script src="@vDominioAbsoluto/Scripts/jquery.datepick.min.js"></script>
+    <script src="@vDominioAbsoluto/Scripts/jquery.datepick-es.js"></script>
+    @RenderSection("Scripts", false)
+    <script>var urlRaiz = "/";</script>
+    <style type="text/css">
+        .cke {
+            width: 100% !important;
+        }
+
+        .menu-toggle {
+        }
+
+        .menu-list {
+        }
+
+        .menu-option {
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="l-contents header-cont">
+                <div class="header-logo2">
+                    <a id="btnMenu" href="javascript:" class="header-glos" title="Menú"><span></span><span class="fas fa-list"></span></a><h2>Perú.Info</h2>
+                </div>
+                <div class="header-logo3">
+                    <a href="@Url.Action("Logout", "Usuario")" class="header-close">
+                        <span>Cerrar Sesión</span><span class="fas fa-power-off"></span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="side-menu">
+
+        <ul class="menu">
+            <li>
+                <a class="menu-toggle">
+                    <span class="icon-key"></span>Administración<span class="menu-caret"></span>
+                </a>
+                <ul class="menu-list">
+                    <li><a class="menu-option" href="@Url.Action("Index", "Pagina")"><span class="icon-newspaper"></span>Menú Página</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "Usuario")"><span class="icon-user"></span>Usuarios</a></li>
+                </ul>
+            </li>
+            <li><div class="divider"></div></li>
+            <li>
+                <a class="menu-toggle">
+                    <span class="icon-newspaper"></span>Banners<span class="menu-caret"></span>
+                </a>
+                <ul class="menu-list">
+                    <li><a class="menu-option" href="@Url.Action("Index", "Banner")"><span class="icon-newspaper"></span>Home</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "BannerCategoria")"><span class="icon-newspaper"></span>Categoría</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "BannerSubcategoria")"><span class="icon-newspaper"></span>Subcategoría</a></li>
+                </ul>
+            </li>
+            <li><div class="divider"></div></li>
+            <li>
+                <a class="menu-toggle">
+                    <span class="icon-newspaper"></span>Publicaciones<span class="menu-caret"></span>
+                </a>
+                <ul class="menu-list">
+                    <li><a class="menu-option" href="@Url.Action("Index", "Comunicado")"><span class="icon-newspaper"></span>Comunicados Covid y Alertas</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "Publicacion")"><span class="icon-newspaper"></span>Noticias y Blog</a></li>
+                </ul>
+            </li>
+            <li><div class="divider"></div></li>
+            <li>
+                <a class="menu-toggle">
+                    <span class="icon-newspaper"></span>Campañas<span class="menu-caret"></span>
+                </a>
+                <ul class="menu-list">
+                    <li><a class="menu-option" href="@Url.Action("Index", "Campania")"><span class="icon-newspaper"></span>Marca Perú</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "GaleriaCampania")"><span class="icon-newspaper"></span>Galería</a></li>
+                </ul>
+            </li>
+            <li><div class="divider"></div></li>
+            <li>
+                <a class="menu-toggle">
+                    <span class="icon-newspaper"></span>Contenido de Páginas<span class="menu-caret"></span>
+                </a>
+                <ul class="menu-list">
+                    <li><a class="menu-option" href="@Url.Action("Index", "Categoria")"><span class="icon-newspaper"></span>Categorías</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "Subcategoria")"><span class="icon-newspaper"></span>Subcategorías</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "Tarjeta")"><span class="icon-newspaper"></span>Tarjetas de Subcategorías</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "Negocio")"><span class="icon-newspaper"></span>Negocios (Restaurantes)</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "Persona")"><span class="icon-newspaper"></span>Personas (Embajadores / Amigos<br />del Perú)</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "TerminosCondiciones")"><span class="icon-newspaper"></span>Términos y Condiciones</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "AvisoPrivacidad")"><span class="icon-newspaper"></span>Aviso de privacidad</a></li>
+                </ul>
+            </li>
+            <li><div class="divider"></div></li>
+            <li>
+                <a class="menu-toggle">
+                    <span class="icon-user"></span>Reporte<span class="menu-caret"></span>
+                </a>
+                <ul class="menu-list">
+                    <li><a class="menu-option" href="@Url.Action("Index", "Contacto")"><span class="icon-key"></span>Contacto</a></li>
+                </ul>
+            </li>
+            <li><div class="divider"></div></li>
+            <li>
+                <a class="menu-toggle">
+                    <span class="icon-newspaper"></span>Juegos Olímpicos<span class="menu-caret"></span>
+                </a>
+                <ul class="menu-list">
+                    <li><a class="menu-option" href="@Url.Action("Index", "NosPreparamos")"><span class="icon-newspaper"></span>Así nos Preparamos</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "Deportistas")"><span class="icon-newspaper"></span>Deportistas</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "PalabrasAliento")"><span class="icon-newspaper"></span>Palabras de aliento</a></li>
+                    <li><a class="menu-option" href="@Url.Action("Index", "GaleriaPeruParis")"><span class="icon-newspaper"></span>Perú en París</a></li>
+                </ul>
+            </li>
+            <li><div class="divider"></div></li>
+        </ul>
+
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="side-body" id="divContenido" style="min-height:500px;">
+        @RenderBody()
+    </div>
+
+    <script>$(function () {
+            $('#btnMenu').click(function () {
+                $('.side-menu').toggleClass('slide-menu');
+                if ($("#divOverlayPopUp").length == 0) {
+                    $('body').append('<div class="overlayPopup" id="divOverlayPopUp"></div>');
+                }
+
+                $('#divOverlayPopUp').width(screen.width * 4 + "px");
+                $('#divOverlayPopUp').height(screen.height * 4 + "px");
+                $('#divOverlayPopUp').css({ 'z-index': (200), 'margin-top': 60 });
+                $('#divOverlayPopUp').toggle();
+            });
+            $('.menu-option').click(function () {
+                $('.side-menu').toggleClass('slide-menu');
+                $('#divOverlayPopUp').hide();
+            });
+        });</script>
+
+</body>
+</html>

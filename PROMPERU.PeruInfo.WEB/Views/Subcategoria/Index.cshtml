@@ -1,0 +1,361 @@
+﻿@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model dynamic
+
+@{
+    SubcategoriaBE subcategoria = Model.Subcategoria;
+    List<TarjetaBE> tarjetas = Model.Tarjetas;
+    GaleriaBE galeria = Model.Galeria;
+    List<BannerBE> banners = Model.Banners;
+
+    string culture = ViewBag.Culture;
+    int idioma = culture == "es-pe" ? 1 : 2;
+
+    Layout = null;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@strUrl/css/peru-info.components.css">
+    <link rel="stylesheet" href="@strUrl/css/aos.css">
+    <link rel="stylesheet" href="@strUrl/css/plantilla-subcategoria.css">
+    <title>@subcategoria.TituloSeo</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <base href="@strUrl">
+    <link rel="shortcut icon" href="@strUrl/img/favicon_PeruInfo.ico" />
+    <link rel="canonical" href="@absoluteUrl">
+    <meta name="description" content="@subcategoria.DescripcionSeo" />
+    <meta name="author" content="Peru.info">
+    <meta name="distribution" content="global" />
+    <meta name="keywords" content="@subcategoria.Keywords" />
+    <meta property="og:locale" content="@culture" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@subcategoria.TituloSeo" />
+    <meta property="og:description" content="@subcategoria.DescripcionSeo" />
+    <meta property="og:url" content="@absoluteUrl" />
+    <meta property="og:site_name" content="Perú Info" />
+    <meta property="og:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@subcategoria.DescripcionSeo" />
+    <meta name="twitter:title" content="@subcategoria.TituloSeo" />
+    <meta name="twitter:site" content="https://twitter.com/marcaPERU" />
+    <meta name="twitter:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")" />
+    @if (idioma == 1)
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6PS60QLG"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GB6PS60QLG');
+        </script>
+    }
+    else
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5R15JNKSP"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-E5R15JNKSP');
+        </script>
+    }
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDQMLXQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Código de seguimiento de Hotjar de -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 4938555, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    @Html.Partial("~/Views/Shared/Partials/_WidgetsLayout.cshtml")
+
+</head>
+
+<body class="categoria-@subcategoria.CategoriaColor">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMLXQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------------------- BLOCK HEADER ----------------------->
+    <!-- <header class="header-peru-info active-scroll-header"> -->
+    <header class="header-peru-info">
+        <div class="contenedor-header-peru-info">
+            <div class="contenedor-logo-peru">
+                <a href="/">
+                    <img src="@strUrl/img/home/header/logo-peru.png" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                    <img src="@strUrl/img/home/header/logo-peru-gris.svg" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                </a>
+            </div>
+
+            @{
+                Html.RenderAction("HeaderMenu", "Home");
+            }
+
+        </div>
+
+        <!-- <div class="menu-lateral mostrar-menu-lateral"> -->
+        @{
+            Html.RenderAction("PageMenu", "Home");
+        }
+    </header>
+    <!-------------------- /BLOCK HEADER ----------------------->
+    <!-------------------- BLOCK MODALES-HEADER ----------------------->
+    @Html.Partial("Partials/_ModalsHeader")
+    <!-------------------- /BLOCK MODALES-HEADER ----------------------->
+    <!-------------------- BLOCK BANNER-SUBCATEGORIA ----------------------->
+    <section class="contenedor-banner-subcategoria">
+        <div class="content-banner-subcategoria">
+
+            <div class="box-banner-logo">
+                @if (galeria == null)
+                {
+                    <img src="@strUrl/img/plantilla-subcategoria/banner/d_banner-restaurantes.jpg" alt="">
+                    <img src="@strUrl/img/plantilla-subcategoria/banner/m_banner-restaurantes.jpg" alt="">
+                }
+                else
+                {
+                    <img src="@strUrl/archivos/subcategoria/@galeria.RutaDekstop" alt="@galeria.TextoAlternativo">
+                    <img src="@strUrl/archivos/subcategoria/@galeria.RutaMovil" alt="@galeria.TextoAlternativo">
+                }
+            </div>
+
+            <div class="box-banner-txt">
+
+                <div class="btn-banner-categoria">
+                    <div class="content-btn-banner">
+                        <a href="/@culture/@subcategoria.CategoriaSlug">
+                            <span>@subcategoria.CategoriaNombre</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="content-box-txt">
+                    <h1>
+                        @subcategoria.Nombre
+                    </h1>
+                    <p>
+                        @subcategoria.Subtitulo
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-------------------- /BLOCK BANNER-SUBCATEGORIA ----------------------->
+
+    <main>
+        <!-------------------- BLOCK SLIDER-UNILINEA ----------------------->
+        @if (tarjetas.Any())
+        {
+            {
+                bool contains = tarjetas.Any(item => !string.IsNullOrEmpty(item.ImagenDesktop));
+
+                if (contains)
+                {
+                    <section class="contenedor-unilinea-subcategoria">
+                        <div class="content-unilinea-subcategoria blockv3-container">
+                            <div class="contenedor-slider-unilinea">
+                                <div class="content-slider-unilinea">
+                                    @foreach (TarjetaBE tarjeta in tarjetas)
+                                    {
+                                        <div class="contenedor-item-slider">
+                                            <div class="contenedor-card-slider @Html.Raw(!string.IsNullOrEmpty(tarjeta.Link) ? "" : "box-no-linkear")">
+                                                <a class="box-card-slider-link" href="@Html.Raw(!string.IsNullOrEmpty(tarjeta.Link) ? tarjeta.Link : "javascript:void(0);")">
+                                                    <div class="box-logo-card">
+                                                        <div class="logo-card">
+                                                            <img src="@strUrl/archivos/tarjeta/@tarjeta.ImagenDesktop" alt="@tarjeta.ImagenAlt">
+                                                        </div>
+
+                                                        <div class="icon-arrow">
+                                                            <img src="@strUrl/img/plantilla-categoria/principal-info/arrow-diagonal.png" alt="">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="descripcion-card">
+                                                        <h3>@tarjeta.Titulo</h3>
+                                                        <p>
+                                                            @tarjeta.Descripcion
+                                                        </p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                }
+                else
+                {
+                    <section class="contenedor-multifila">
+                        <div class="content-multifila blockv3-container">
+
+                            <div class="contenedor-slider-multifila">
+                                <div class="content-slider-multifila">
+
+                                    @foreach (TarjetaBE tarjeta in tarjetas)
+                                    {
+                                        <div class="contenedor-item-slider">
+                                            <div class="box-card-slider">
+                                                <h3>@tarjeta.Titulo</h3>
+                                                <p>
+                                                    @tarjeta.Descripcion
+                                                </p>
+                                                @if (!string.IsNullOrEmpty(tarjeta.Link))
+                                                {
+                                                    <a href="@tarjeta.Link" @Html.Raw(tarjeta.VentanaNueva == true ? "target='_blank'" : "")>@tarjeta.NombreBoton</a>
+                                                }
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                }
+            }
+        }
+        <!-------------------- /BLOCK SLIDER-UNILINEA ----------------------->
+        <!-------------------- BLOCK ICONS-DECORATOR ----------------------->
+        <section class="contenedor-icons-decorator">
+            <div class="icons-decorator blockv3-container">
+                <div class="box-icons icons-21">
+                    <img src="@strUrl/img/home/icons/iconos-1024.png" style="width:100%" alt="">               
+                    
+    @*<img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">*@
+                </div>
+
+                <div class="box-icons icons-10">
+    
+                    <img src="@strUrl/img/home/icons/iconos-768.png" style="width:100%" alt="">
+    
+    @*  <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">*@
+                </div>
+            </div>
+        </section>
+        <!-------------------- /BLOCK ICONS-DECORATOR ----------------------->
+        <!-------------------- BLOCK SLIDER-NOTICIAS ----------------------->
+        @{
+            Html.RenderAction("PublicacionesInterna", "Home", new { tipo = 2, categoria = subcategoria.CategoriaNombre, subcategoria = subcategoria.Id });
+        }
+        <!-------------------- /BLOCK SLIDER-NOTICIAS ----------------------->
+        <!-------------------- BLOCK SLIDER-CATEGORIA ----------------------->
+        @if (banners.Any(x => x.Activo == true))
+        {
+            <section class="contenedor-categoria">
+                <div class="content-categoria">
+
+                    <div class="content-slider-categoria">
+
+                        @foreach (BannerBE item in banners)
+                        {
+                            <div class="contenedor-slider-item-card">
+                                <div class="box-slider-logo">
+                                    <a href="@Html.Raw(!string.IsNullOrEmpty(item.Link) ? item.Link : "javascript:void(0)")" @Html.Raw(item.VentanaNueva == true ? "target='_blank'" : "")>
+                                        <img src="@strUrl/archivos/banner/@item.ImagenDesktop" alt="@item.ImagenTextoAlternativo">
+                                        <img src="@strUrl/archivos/banner/@item.ImagenMovil" alt="@item.ImagenTextoAlternativo">
+                                    </a>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+            </section>
+        }
+        <!-------------------- /BLOCK SLIDER-CATEGORIA ----------------------->
+
+    </main>
+
+    <!-------------------- BLOCK FOOTER ----------------------->
+    @{
+        Html.RenderAction("PageMenu", "Home", new { footer = true });
+    }
+    <!-------------------- /BLOCK FOOTER ---------------------->
+    <script>
+        let baseDomain = '@strUrl';
+    </script>
+    <script src="@strUrl/js/aos.js"></script>
+    <script src="@strUrl/js/jquery.min.js"></script>
+    <script src="@strUrl/js/slick.min.js"></script>
+    <script src="@strUrl/js/peru-info.components.js"></script>
+    <script src="@strUrl/js/plantilla-subcategoria.js"></script>
+    <script>
+    let culture = "@culture";
+    let idioma = @idioma;
+    </script>
+    <script src="@strUrl/js/search.js"></script>
+</body>
+</html>

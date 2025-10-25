@@ -1,0 +1,2803 @@
+﻿@using System.Configuration
+@{
+    Layout = null;
+
+    string culture = ViewBag.Culture;
+    int idioma = culture == "es-pe" ? 1 : 2;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@strUrl/css/peru-info.components.css">
+    <link rel="stylesheet" href="@strUrl/css/10.premios.css">
+    <title>@Resource.seo_titulo_premios</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <base href="@strUrl">
+    <link rel="shortcut icon" href="@strUrl/img/favicon_PeruInfo.ico" />
+    <link rel="canonical" href="@absoluteUrl">
+    <meta name="description" content="@Resource.seo_descripcion_premios" />
+    <meta name="author" content="Peru.info">
+    <meta name="distribution" content="global" />
+    <meta name="keywords" content="@Resource.seo_keywords_premios" />
+    <meta property="og:locale" content="@culture" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@Resource.seo_titulo_premios" />
+    <meta property="og:description" content="@Resource.seo_descripcion_premios" />
+    <meta property="og:url" content="@absoluteUrl" />
+    <meta property="og:site_name" content="Perú Info" />
+    <meta property="og:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@Resource.seo_descripcion_premios" />
+    <meta name="twitter:title" content="@Resource.seo_titulo_premios" />
+    <meta name="twitter:site" content="https://twitter.com/marcaPERU" />
+    <meta name="twitter:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")" />
+    @if (idioma == 1)
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6PS60QLG"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GB6PS60QLG');
+        </script>
+    }
+    else
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5R15JNKSP"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-E5R15JNKSP');
+        </script>
+    }
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDQMLXQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Código de seguimiento de Hotjar de -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 4938555, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    @Html.Partial("~/Views/Shared/Partials/_WidgetsLayout.cshtml")
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMLXQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------------------- BLOCK HEADER ----------------------->
+    <!-- <header class="header-peru-info active-scroll-header"> -->
+    <header class="header-peru-info">
+        <div class="contenedor-header-peru-info">
+            <div class="contenedor-logo-peru">
+                <a href="/">
+                    <img src="@strUrl/img/10.premios/icons-header/logo-peru-rojo.png" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                    <img src="@strUrl/img/home/header/logo-peru-gris.svg" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                </a>
+            </div>
+
+            @{
+                Html.RenderAction("HeaderMenu", "Home");
+            }
+
+        </div>
+
+        <!-- <div class="menu-lateral mostrar-menu-lateral"> -->
+        @{
+            Html.RenderAction("PageMenu", "Home");
+        }
+    </header>
+    <!-------------------- /BLOCK HEADER ----------------------->
+    <!-------------------- BLOCK MODALES-HEADER ----------------------->
+    @Html.Partial("Partials/_ModalsHeader")
+    <!-------------------- /BLOCK MODALES-HEADER ----------------------->
+
+    <main>
+
+        <!-------------------- BLOCK PREMIOS-HONORES ----------------------->
+        <section class="contenedor-premios-honores">
+            <div class="content-premios-honores">
+
+                <h1>
+                    Premios
+                    <span>&</span>
+                    Honores
+                </h1>
+
+                <div class="contenedor-premios-tiempo">
+
+                    <div class="linea-divisora-tiempo">
+                    </div>
+
+                    <div class="box-btn-anio alinear-izquierda">
+                        <!-- <div class="box-btn-anio"> -->
+                        <label>
+                            2018
+                        </label>
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Creatividad Empresarial
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/creatividad-empresarial-casa-turismo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Creatividad Empresarial
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/creatividad-empresarial-casa-turismo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Casa Perú</h4>
+                                <p>Ganador Categoría: Turismo y Recreación</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Turismo In</h4>
+                                <p>Ganador Categoría: Medios Interactivos</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Zagreb Tourfilm Festival
+                                    <br>
+                                    (Zagreb, Croatia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/zagreb-tourtfilm-festival.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Zagreb Tourfilm Festival
+                                </h3>
+                                <h3>
+                                    (Zagreb, Croatia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/zagreb-tourtfilm-festival.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Voyager: Colors of Perú</h4>
+                                <p>The best art, music and culture Tourism Film 2018</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    US International
+                                    <br>
+                                    Film & Video Festival
+                                    <br>
+                                    (Los Angeles, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/us-international-film.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    US International
+                                    Film & Video Festival
+                                </h3>
+                                <h3>
+                                    (Los Angeles, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/us-international-film.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Generation with a cause</h4>
+                                <p>Corporate Tourism Films - Certificate</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Film in Perú</h4>
+                                <p>Corporate Tourism Films - Certificate</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    International Istanbul
+                                    <br>
+                                    Tourism Film Festival
+                                    <br>
+                                    (Estambul, Turquía)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/istanbul-tourism.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    International Istanbul
+                                    Tourism Film Festival
+                                </h3>
+                                <h3>
+                                    (Estambul, Turquía)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/istanbul-tourism.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Voyager: Colors of Perú</h4>
+                                <p>Culture Tourism - Third Prize</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    XIV International Tour Film Fest
+                                    <br>
+                                    "On The East Coast of Europe"
+                                    <br>
+                                    (Veliko Tarnovo, Bulgaria)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/veliko-tarnovo-bulgaria.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    XIV International Tour Film Fest
+                                    "On The East Coast of Europe"
+                                </h3>
+                                <h3>
+                                    (Veliko Tarnovo, Bulgaria)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/veliko-tarnovo-bulgaria.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Generation with a cause</h4>
+                                <p>Faith & Traditions</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Perú, the richest country in the world</h4>
+                                <p>Sports & Adventure</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Regional
+                                    <br>
+                                    (Guayaquil, Ecuador)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards-2016.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Regional
+                                </h3>
+                                <h3>
+                                    (Guayaquil, Ecuador)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards-2016.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>South America's Leading Culinary Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>South America's Leading Cultural Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Machu Picchu</h4>
+                                <p>South America's Leading Tourist Attraction</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Promperú</h4>
+                                <p>South America's Leading Tourist Board</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    International Eco & Tourism
+                                    <br>
+                                    Film Festival 2018
+                                    <br>
+                                    (Tortosa, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/international-eco-tourismfilm2018.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    International Eco & Tourism
+                                    Film Festival 2018
+                                </h3>
+                                <h3>
+                                    (Tortosa, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/international-eco-tourismfilm2018.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú, el país más rico del mundo</h4>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Film in Perú</h4>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    New York Festivals World's
+                                    <br>
+                                    Best TV & Films
+                                    <br>
+                                    (New York, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/ny-festival-words.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    New York Festivals World's Best TV & Films
+                                </h3>
+                                <h3>
+                                    (New York, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/ny-festival-words.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Voyager: Colors of Perú </h4>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Generation with a cause</h4>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Tourfilm - RIGA 2018
+                                    <br>
+                                    (Riga, Letonia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/tourfilm-riga2018.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Tourfilm - RIGA 2018
+                                </h3>
+                                <h3>
+                                    (Riga, Letonia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/tourfilm-riga2018.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Generation with a cause</h4>
+                                <p>Tourism destination country - First place</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Peru, the richest country in the world</h4>
+                                <p>Tourism destination country - Second place</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Voyager: Colors of Perú</h4>
+                                <p>Culture Tourism - Second place</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    PATWA International Awards
+                                    <br>
+                                    Pacific Area Travel Writters Association
+                                    <br>
+                                    (Berlin, Alemania)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/patwa-international-berlin.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    PATWA International Awards
+                                    Pacific Area <br> Travel Writters Association
+                                </h3>
+                                <h3>
+                                    (Berlin, Alemania)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/patwa-international-berlin.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>Mejor Destino Histórico</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    The Golden City Gate
+                                    <br>
+                                    (Berlin, Alemania)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/golden-city-gate.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    The Golden City Gate
+                                </h3>
+                                <h3>
+                                    (Berlin, Alemania)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/golden-city-gate.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Voyager: Colors of Perú</h4>
+                                <p>Second Prize</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Peru, the richest country in the world</h4>
+                                <p>Third Prize</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Video Film in Perú</h4>
+                                <p>Excellent</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Generación con Causa</h4>
+                                <p>Excellent</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Wanderlust
+                                    <br>
+                                    Reader Travel Awards 2018
+                                    <br>
+                                    (Aleman, online)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/wanderlust-reader-travel.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Wanderlust Reader Travel Awards 2018
+                                </h3>
+                                <h3>
+                                    (Aleman, online)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/wanderlust-reader-travel.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>Top Country - Tercer lugar</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio Excelencias 2017
+                                    <br>
+                                    Grupo Excelencias
+                                    <br>
+                                    (Madrid, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-excelencias-2017.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio Excelencias 2017
+                                    Grupo Excelencias
+                                </h3>
+                                <h3>
+                                    (Madrid, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-excelencias-2017.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Generación con Causa</h4>
+                                <p>Premio Excelencias Gourmet 2017</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="box-btn-anio alinear-derecha">
+                        <!-- <div class="box-btn-anio"> -->
+                        <label>2017</label>
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha primera-caja">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    National Geographic
+                                    <br>
+                                    Traveller Reader Awards 2017
+                                    <br>
+                                    (British, online)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/ng-traveller-reader.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    National Geographic
+                                    Traveller Reader Awards 2017
+                                </h3>
+                                <h3>
+                                    (British, online)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/ng-traveller-reader.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Kuelap</h4>
+                                <p>Ganador Mejor Atracción Turística en el Extranjero</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Mundial
+                                    <br>
+                                    (Phu Quoc, Vietnam)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-reconocimiento.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Mundial
+                                </h3>
+                                <h3>
+                                    (Phu Quoc, Vietnam)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-reconocimiento.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>World's Leading Culinary Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Machu Picchu</h4>
+                                <p>World's Leading Tourist Attraction</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Robb Report
+                                    <br>
+                                    Premiación Anual Best of the Best
+                                    <br>
+                                    (Madrid, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/robb-report-premiacion.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Robb Report
+                                    Premiación Anual Best of the Best
+                                </h3>
+                                <h3>
+                                    (Madrid, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/robb-report-premiacion.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>Best Destination</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    FIAP
+                                    <br>
+                                    Festival Iberoamericano de la Publicidad
+                                    <br>
+                                    (Miami, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/fiap-festival-iberoamerico.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    FIAP
+                                    Festival Iberoamericano de la Publicidad
+                                </h3>
+                                <h3>
+                                    (Miami, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/fiap-festival-iberoamerico.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>El Sabor de la Victoria</h4>
+                                <p>Bronce: Innovación en Ambiente</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Regional
+                                    <br>
+                                    (Riviera Maya, México)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Regional
+                                </h3>
+                                <h3>
+                                    (Riviera Maya, México)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>South America's Leading Green Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Promperú</h4>
+                                <p>South America's Leading Tourist Board</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    La Razón de España
+                                    <br>
+                                    VI Edición de los Premios de Turismo
+                                    <br>
+                                    (Madrid, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/razon-espana-premio-turismo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    La Razón de España
+                                    VI Edición de los Premios de Turismo
+                                </h3>
+                                <h3>
+                                    (Madrid, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/razon-espana-premio-turismo.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>Mejor Destino Gastronomico Internacional</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    El Sol
+                                    <br>
+                                    Festival Iberoamericano de
+                                    <br>
+                                    la Comunicación Publicitaria
+                                    <br>
+                                    (Bilbao, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/comunicacion-publicitaria-sabor-victoria.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    El Sol
+                                    Festival Iberoamericano de
+                                    la Comunicación Publicitaria
+                                </h3>
+                                <h3>
+                                    (Bilbao, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/comunicacion-publicitaria-sabor-victoria.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>El Sabor de la Victoria</h4>
+                                <p>Oro: Marketing Promocional</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio IDEAS
+                                    <br>
+                                    Asociación Peruana de Agencias
+                                    <br>
+                                    de Publicidad APAP
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-ideas-apap-oro.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio IDEAS
+                                    Asociación Peruana de Agencias
+                                    de Publicidad APAP
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-ideas-apap-oro.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Maletas del Perú</h4>
+                                <p>Oro: Vía Publica</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>
+                                    Oro: Medios de Comunicación, Recreación,
+                                    <br> Viajes, Entretenimiento
+                                </p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro: Formatos No Convencionales</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Latam Media Digital
+                                    <br>
+                                    Escuela Latinoamericana de Negocios
+                                    <br>
+                                    de Internet - INTERLAT
+                                    <br>
+                                    (Colombia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-interlat.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Latam Media Digital
+                                    Escuela Latinoamericana de Negocios
+                                    de Internet - INTERLAT
+                                </h3>
+                                <h3>
+                                    (Colombia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-interlat.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>New Year's Resolutions: Make it Happen in Perú</h4>
+                                <p>Plata: Mejor campaña en Twitter</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="box-btn-anio alinear-izquierda">
+                        <!-- <div class="box-btn-anio"> -->
+                        <label>
+                            2016
+                        </label>
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Mundial
+                                    <br>
+                                    (Las Maldivas, Asia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards-2016.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Mundial
+                                </h3>
+                                <h3>
+                                    (Las Maldivas, Asia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards-2016.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>World´s Leading Culinary Destination</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Premios DIGI
+                                    <br>
+                                    IAB MIXX
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-digi-new.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Premios DIGI
+                                    IAB MIXX
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-digi-new.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>New Year's Resolutions: Make it Happen in Perú</h4>
+                                <p>Plata: Brand Awareness y Posicionamiento</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Plata: Ejecuciones Tácticas: Redes Sociales</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Regional
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards-2016.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Regional
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards-2016.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Lima</h4>
+                                <p>
+                                    South America's Leading Meetings & Conference
+                                    <br> Destination
+                                </p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>South America's Leading Culinary Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Promperú</h4>
+                                <p>South America's Leading Tourist Board</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio IDEAS
+                                    <br>
+                                    Asociación Peruana de Agencias de
+                                    <br>
+                                    Publicidad APAP
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-ideas-apap-plata.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio IDEAS
+                                    Asociación Peruana de Agencias de
+                                    Publicidad APAP
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-ideas-apap-plata.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>New Year's Resolutions: Make it Happen in Perú</h4>
+                                <p>Plata Categoría : Media Direct</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="box-btn-anio alinear-izquierda">
+                        <!-- <div class="box-btn-anio"> -->
+                        <label>
+                            2015
+                        </label>
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Mundial
+                                    <br>
+                                    (El Jadida, Marruecos)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Mundial
+                                </h3>
+                                <h3>
+                                    (El Jadida, Marruecos)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>World´s Leading Culinary Destination</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    YouTube
+                                    <br>
+                                    Award of Video Excellence
+                                    <br>
+                                    (Americano, online)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/youtube-video-excellence.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    YouTube
+                                    Award of Video Excellence
+                                </h3>
+                                <h3>
+                                    (Americano, online)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/youtube-video-excellence.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Más Peruano Que</h4>
+                                <p>N° 1 in the YouTube Ads Leaderboard</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Creatividad Empresarial
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/creatividad-empresarial-ytqp.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Creatividad Empresarial
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/creatividad-empresarial-ytqp.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>¿Y Tú Que Planes?</h4>
+                                <p>
+                                    Ganador Categoría: Marketing,
+                                    <br>Comercialización y Ventas
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Regional
+                                    <br>
+                                    (Bogotá, Colombia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Regional
+                                </h3>
+                                <h3>
+                                    (Bogotá, Colombia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>South America's Leading Cultural Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>South America's Leading Culinary Destination</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio DIGI
+                                    <br>
+                                    IAB MIXX
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-digi-iab.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio DIGI
+                                    IAB MIXX
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-digi-iab.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>¿Y Tú Que Planes?</h4>
+                                <p>Brand Awareness y Posicionamiento</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Generación de contactos y respuesta directa</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="box-btn-anio alinear-derecha">
+                        <!-- <div class="box-btn-anio"> -->
+                        <label>
+                            2014
+                        </label>
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Mundial
+                                    <br>
+                                    (Isla Anguilla, Caribe)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Mundial
+                                </h3>
+                                <h3>
+                                    (Isla Anguilla, Caribe)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Peru.travel</h4>
+                                <p>World's Leading Tourism Authority Website</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>World’s Leading Culinary Destination</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio Amauta
+                                    <br>
+                                    Federación de Asociaciones de Marketing Directo e
+                                    <br>
+                                    Interactivo de Latinoamericana - ALMADI
+                                    <br>
+                                    (Punta del Este, Uruguay)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-amauta-aldi.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio Amauta
+                                    Federación de Asociaciones de Marketing Directo e
+                                    Interactivo de Latinoamericana - ALMADI
+                                </h3>
+                                <h3>
+                                    (Punta del Este, Uruguay)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-amauta-aldi.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Representantes de lo Nuestro</h4>
+                                <p>Oro: Campañas Online Mkt Integrales - B2C - Servicio</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro: Campañas de Mkt directo - Mkt Integrado - B2C - Servicio</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Regional
+                                    <br>
+                                    (Quito, Ecuador)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Regional
+                                </h3>
+                                <h3>
+                                    (Quito, Ecuador)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>South America's Leading Heritage Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>South America's Leading Cultural Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>South America's Leading Culinary Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Lima</h4>
+                                <p>South America's Leading City Break Destination</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="box-btn-anio alinear-izquierda">
+                        <!-- <div class="box-btn-anio"> -->
+                        <label>
+                            2013
+                        </label>
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Marketing & Territorio
+                                    <br>
+                                    (Zaragoza, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/marketing-territorio-recordaras.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Marketing & Territorio
+                                </h3>
+                                <h3>
+                                    (Zaragoza, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/marketing-territorio-recordaras.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Recordarás Perú: 2032</h4>
+                                <p>Mejor Campaña Internacional de Marketing Territorial</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Mundial
+                                    <br>
+                                    (Doha, Qatar)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Mundial
+                                </h3>
+                                <h3>
+                                    (Doha, Qatar)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>World´s Leading Culinary Destination</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Mundial
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Mundial
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>South America's Leading Culinary Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Promperú</h4>
+                                <p>South America's Leading Tourist Board</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="box-btn-anio alinear-derecha">
+                        <!-- <div class="box-btn-anio"> -->
+                        <label>
+                            2012
+                        </label>
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Mundial
+                                    <br>
+                                    (Nueva Delhi, India)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Mundial
+                                </h3>
+                                <h3>
+                                    (Nueva Delhi, India)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Machu Picchu</h4>
+                                <p>World’s Leading Green Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>World’s Leading Culinary Destination</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    FIAP
+                                    <br>
+                                    Festival Iberoamericano de
+                                    <br>
+                                    Promociones & Eventos
+                                    <br>
+                                    (Buenos Aires, Argentina)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/fip-recordaras.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    FIAP
+                                    Festival Iberoamericano de
+                                    Promociones & Eventos
+                                </h3>
+                                <h3>
+                                    (Buenos Aires, Argentina)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/fip-recordaras.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Recordarás Perú: 2032</h4>
+                                <p>Oro en Promociones & Eventos</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>"Ceviche & Pisco Party"</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Festival de Publicidad
+                                    <br>
+                                    El Ojo de Iberoamérica
+                                    <br>
+                                    (Buenos Aires, Argentina)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/publicidad-ojo-america.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Festival de Publicidad
+                                    El Ojo de Iberoamérica
+                                </h3>
+                                <h3>
+                                    (Buenos Aires, Argentina)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/publicidad-ojo-america.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Loreto, Italia</h4>
+                                <p>Plata El Ojo Relaciones Públicas</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Plata El Ojo Contenido</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Bronce El Ojo Sustentable</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    PUCP
+                                    <br>
+                                    Premio Ardilla de Oro
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/pucp-premio-ardilla.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    PUCP
+                                    Premio Ardilla de Oro
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/pucp-premio-ardilla.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Peru, Nebraska</h4>
+                                <p>Gran Premio a la Comunicación de</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>"Marca con Valores"</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Regional
+                                    <br>
+                                    (Turks & Caicos Islands)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Regional
+                                </h3>
+                                <h3>
+                                    (Turks & Caicos Islands)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú</h4>
+                                <p>South America’s Leading Culinary Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Promperú</h4>
+                                <p>South America's Leading Tourist Board</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Ciudadanos al Día
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/ciudadanos-dia-promperu.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Ciudadanos al Día
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/ciudadanos-dia-promperu.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Promperú</h4>
+                                <p>
+                                    Reconocimiento especial por la gestión en
+                                    <br>
+                                    la promoción de la cultura e identidad
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    EL SOL
+                                    <br>
+                                    Festival Iberoamericano de la
+                                    <br>
+                                    Comunicación Publicitaria
+                                    <br>
+                                    (Bilbao, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/comunicacion-publicitaria-peru-nebraska.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    EL SOL
+                                    Festival Iberoamericano de la
+                                    Comunicación Publicitaria
+                                </h3>
+                                <h3>
+                                    (Bilbao, España)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/comunicacion-publicitaria-peru-nebraska.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú, Nebraska</h4>
+                                <p>Gran Premio en Marketing Promocional</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro en Spot TV / Cine - Contenido Audiovisual</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro en PR - Comunicaciones Institucionales</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro en Marketing Promocional - Eventos</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro en Campaña Integrada e Innovación</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Plata en Piezas Digitales - Contenidos de Marca</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Festival de Publicidad
+                                    <br>
+                                    Cannes Lions
+                                    <br>
+                                    (Cannes, Francia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/festival-cannes-lions.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Festival de Publicidad
+                                    Cannes Lions
+                                </h3>
+                                <h3>
+                                    (Cannes, Francia)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/festival-cannes-lions.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Peru, Nebraska</h4>
+                                <p>León de Bronce en Publicidad Exterior</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>León de Bronce en Marketing y Promocional</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    APAP 2012
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/apap-2012-peru-nebraska.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    APAP 2012
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/apap-2012-peru-nebraska.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú, Nebraska</h4>
+                                <p>Grand Prix en Campañas Integradas</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro en Campañas Integradas</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Plata en Campaña de Productos</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro en Web Film</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro en Mejor Edición</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    FIAP
+                                    <br>
+                                    Festival Iberoamericano de la Publicidad
+                                    <br>
+                                    (Miami, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/fiap-festival-iberoamerico.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    FIAP
+                                    Festival Iberoamericano de la Publicidad
+                                </h3>
+                                <h3>
+                                    (Miami, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/fiap-festival-iberoamerico.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú, Nebraska</h4>
+                                <p>La COPA Campaña Corporativa</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Grand Prix Online movies y Producciones Independientes</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Grand Prix Interactivo</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Sol de Oro en Servicios Públicos y Privados</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Sol de Oro en Promo /Activaciones / Marketing Directo</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Sol de Oro en Producción General</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Sol de Oro en Interactivo</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Sol de Oro en Prensa y PR Sponsorship y Grandes Eventos</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>
+                                    Sol de Plata en Prensa y PR Comunicación y
+                                    <br>
+                                    Publicidad Institucional
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    APAP 2012
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premios-effie.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    APAP 2012
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premios-effie.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú, Nebraska</h4>
+                                <p>Grand Prix a la Eficacia Publicitaria</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro en la Categoría de Imagen Corporativa</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Webby Awards
+                                    <br>
+                                    (Nueva York, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/webby-awards.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Webby Awards
+                                </h3>
+                                <h3>
+                                    (Nueva York, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/webby-awards.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú, Nebraska</h4>
+                                <p>Ganadores en la Categoría de Viajes y Turismo</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Ganadores del Premio del Público</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    INDECOPI
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/indecopi-promperu.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    INDECOPI
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/indecopi-promperu.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Promperú</h4>
+                                <p>
+                                    Reconocimiento por las Buenas Gestiones
+                                    <br>
+                                    en Propiedad Intelectual
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio ANDA
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-anda.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio ANDA
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-anda.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú, Nebraska</h4>
+                                <p>Excelencia en Medios Digitales</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="box-btn-anio alinear-derecha">
+                        <!-- <div class="box-btn-anio"> -->
+                        <label>
+                            2011
+                        </label>
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    New 7 Wonders
+                                    <br>
+                                    (Zurich, Suiza)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/new-7-wonders.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    New 7 Wonders
+                                </h3>
+                                <h3>
+                                    (Zurich, Suiza)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/new-7-wonders.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Amazonía: Nueva Maravilla</h4>
+                                <h4>Natural del Mundo</h4>
+                                <p>
+                                    Evento de inauguración se realizó en
+                                    <br>
+                                    agosto 2012 en Iquitos, Perú
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Creatividad Empresarial
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/creatividad-empresarial-peru-nebraska.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Creatividad Empresarial
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/creatividad-empresarial-peru-nebraska.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú, Nebraska</h4>
+                                <p>Grand Prix Creatividad Empresarial</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>
+                                    Ganador Categoria: Marketing,
+                                    <br>
+                                    Comercialización y Ventas
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    <br>
+                                    Edición Regional
+                                    <br>
+                                    (Montego Bay, Jamaica)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    World Travel Awards
+                                    Edición Regional
+                                </h3>
+                                <h3>
+                                    (Montego Bay, Jamaica)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/world-travel-awards.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Machu Picchu</h4>
+                                <p>South America's Leading Green Destination</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <h4>Promperú</h4>
+                                <p>South America's Leading Tourist Board</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Festival de Publicidad
+                                    <br>
+                                    El Ojo de Iberoamérica
+                                    <br>
+                                    (Buenos Aires, Argentina)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/ojo-de-iberoamerica.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Festival de Publicidad
+                                    El Ojo de Iberoamérica
+                                </h3>
+                                <h3>
+                                    (Buenos Aires, Argentina)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/ojo-de-iberoamerica.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú, Nebraska</h4>
+                                <p>Grand Prix en Relaciones Públicas y Contenido</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Mejor Pieza El Ojo Local TV Perú</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Mejor Anunciante Perú:Promperú</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro El Ojo Relaciones Públicas</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro El Ojo Contenido</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Oro El Ojo Classic Cine / TV</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Plata El Ojo Promo</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Plata El Ojo Vía Pública</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Bronce El Ojo Interactivo</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Bronce El Tercer Ojo</p>
+                            </div>
+                            <div class="content-box-organizador">
+                                <p>Bronce El Ojo Classic Cine/TV</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-derecha">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio DIGI
+                                    <br>
+                                    IAB MIXX
+                                    <br>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-digi-iab.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    Premio DIGI
+                                    IAB MIXX
+                                </h3>
+                                <h3>
+                                    (Lima, Perú)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/premio-digi-iab.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Perú, Nebraska</h4>
+                                <p>
+                                    People's Choice Award por Mejor
+                                    <br>
+                                    Campaña Digital
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-item-premios alinear-izquierda">
+                        <!-- <div class="contenedor-item-premios"> -->
+
+                        <div class="box-nombre-premio">
+                            <div class="title-premio">
+                                <h3>
+                                    OEA
+                                    <br>
+                                    Organización de Estados Americanos
+                                    <br>
+                                    (Washington DC, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/oea-gastronomia-peruana.png" alt="">
+                            </div>
+                        </div>
+                        <div class="box-nombre-premio-mobile">
+                            <div class="title-premio">
+                                <h3>
+                                    OEA
+                                    Organización de Estados Americanos
+                                </h3>
+                                <h3>
+                                    (Washington DC, USA)
+                                </h3>
+                            </div>
+                            <div class="logo-premio">
+                                <img src="@strUrl/img/10.premios/oea-gastronomia-peruana.png" alt="">
+                            </div>
+                        </div>
+
+                        <div class="box-nombre-organizador">
+                            <div class="content-box-organizador">
+                                <h4>Gastronomía Peruana</h4>
+                                <p>Patrimonio Cultural de las Américas</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-------------------- /BLOCK PREMIOS-HONORES ----------------------->
+
+
+    </main>
+
+
+    <!-------------------- BLOCK FOOTER ----------------------->
+    @{
+        Html.RenderAction("PageMenu", "Home", new { footer = true });
+    }
+    <!-------------------- /BLOCK FOOTER ----------------------->
+    <script>
+        let baseDomain = '@strUrl';
+    </script>
+    <script src="@strUrl/js/jquery.min.js"></script>
+    <script src="@strUrl/js/peru-info.components.js"></script>
+    <script src="@strUrl/js/10.premios.js"></script>
+    <script>
+    let culture = "@culture";
+    let idioma = @idioma;
+    </script>
+    <script src="@strUrl/js/search.js"></script>
+</body>
+</html>

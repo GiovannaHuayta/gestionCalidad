@@ -1,0 +1,39 @@
+﻿@using System.Configuration
+@{
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+<link href="~/css/css_sprites.css" rel="stylesheet" />
+<section class="redes-sociales-fijas">
+    <div class="contenedor-redes-sociales">
+        <ul>
+            <li>
+                <a target="_blank" href="https://www.facebook.com/marcaPERU">
+                    <span class="sprite bg-icon_facebook"></span>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.instagram.com/peru">
+                    <span class="sprite bg-icon_instagram"></span>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.twitter.com/marcaPERU">
+                    <span class="sprite bg-icon_twitter"></span>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.youtube.com/marcaperu">
+                    <span class="sprite bg-icon_youtube"></span>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.tiktok.com/@Html.Raw("@marcaperu")">
+                    <span class="sprite bg-icon_tik_tok"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+

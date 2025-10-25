@@ -1,0 +1,121 @@
+/**************** RESPONSIVE *********************/
+// definicion de las medidas de la pantalla //
+
+$xs: 576px;
+$sm: 768px;
+$md: 992px;
+$lg: 1200px;
+$xlg: 1700px;
+$mobile-landscape: 480px;
+$tablet-landscape: 1024px;
+
+$container-max-widths: (
+  maxxs: 540px,
+  sm: 720px,
+  md: 960px,
+  lg: 1140px,
+  xlg: 1700
+);
+
+/**************** /RESPONSIVE *********************/
+
+
+/***** Dark theme Material Design *****/
+
+$ldark-status-bar: #000000;
+$ldark-app-bar: #212121;
+$ldark-background: #303030;
+$ldark-cards-dialogs: #424242;
+$ldark-primary-text: rgba(255, 255, 255, 1.00);
+$ldark-secundary-text: rgba(255, 255, 255, 0.70);
+$ldark-disabled-text: rgba(255, 255, 255, 0.50);
+$ldark-divider-text: rgba(255, 255, 255, 0.12);
+$ldark-divider: rgba(255, 255, 255, 0.38);
+$ldark-icon-active: rgba(0, 0, 0, 0.54);
+$ldark-icon-inactive: rgba(0, 0, 0, 0.38);
+
+/***** /Dark theme Material Design *****/
+
+
+/****** Light theme Material Design ******/
+
+$llight-status-bar: #e0e0e0;
+$llight-app-bar: #f5f5f5;
+$llight-background: #fafafa;
+$llight-cards-dialogs: #ffffff;
+$llight-primary-text: rgba(0, 0, 0, 0.87);
+$llight-secundary-text: rgba(0, 0, 0, 0.54);
+$llight-disabled-text: rgba(0, 0, 0, 0.38);
+$llight-divider-text: rgba(0, 0, 0, 0.12);
+$llight-divider: rgba(0, 0, 0, 0.38);
+$llight-icon-active: rgba(255, 255, 255, 1.00);
+$llight-icon-inactive: rgba(255, 255, 255, 0.50);
+
+/****** /Light theme Material Design ******/
+
+
+
+/********* Constants de fuente Info-Peru ***********/
+
+$font-clanOt: 'ClanOt', sans-serif;
+
+$font-breePeru: 'BreePeru', sans-serif;
+
+$font-roboto: 'Roboto', sans-serif;
+
+/********* /Constants de fuente Info-Peru ***********/
+
+
+
+
+
+/********* PALETTE COLORS ***********/
+
+// CULTURA-SOSTENIBLE
+// $pw-primary-900         : #03311A;
+// $pw-primary-800         : #00401B;
+// $pw-primary-700         : #044223;
+// $pw-primary-500         : #20A173;
+// $pw-primary-300         : #1BB282;
+// $pw-primary-200         : #33E993;
+// $pw-primary-150         : #C4DAC5;
+// $pw-primary-100         : #CAD9C5;
+// $pw-secondary-500       : #C4C4C4;
+// $pw-secondary-400       : #F0F0F1;
+// $pw-secondary-300       : #F0F0F0;
+// $pw-light-blue-500      : #45BBC8;
+// $pw-pink-500            : #E95094;
+// $pw-bluish-green-500    : #009995;
+// $pw-orange-700          : #E7412C;
+// $pw-lila-700            : #9F7BB4;
+// $pw-purple-500          : #C34D95;
+// $pw-yellow-700          : #FDC400;
+
+
+
+// $yp-primary-100         : #F3F0F6;
+// $yk-primary-300         : #026FBF;
+// $yk-primary-500         : #006FBF;
+// $yk-primary-700         : #003563;
+// $yp-primary-900         : #3B0A64;
+// $yp-secondary-100       : #AAFFF5;
+// $yk-secondary-300       : #98CFE3;
+// $yk-secondary-500       : #64DBFF;
+// $yp-secondary-700       : #00AA95;
+// $yp-secondary-900       : #007E6F;
+// $yk-accent              : #ffffff;
+// $yp-gray-100            : #F6F6F6;
+// $yp-gray-200            : #E5E7EB;
+// $yp-gray-300            : #BFC4CC;
+// $yp-gray-500            : #99A1AD;
+// $yp-gray-700            : #868F9E;
+// $yp-gray-900            : #4D5B70;
+// $yp-warm                : #E30425;
+// $yp-success             : #6AC90F;
+// $yp-wait                : #FFD546;
+// $yp-skeletor            : #f0f1f3;
+// $yp-skeletor-200        : #e2e2e2;
+// $yp-rejected          : #ff0000;
+// $yp-disabled          : $llight-disabled-text; // naranja decolorado
+
+/********* /PALETTE COLORS ***********/

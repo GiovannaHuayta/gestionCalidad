@@ -1,0 +1,1142 @@
+// @import 'model/slick.scss';
+@import 'model/_config.scss';
+@import 'model/_reset.scss';
+@import 'model/_font.scss';
+
+
+// ********** ********** MI ********** **********
+
+
+// BLOCK BANNER
+.banner-home{
+    width: 100%;
+    // overflow-x: hidden;
+    padding-bottom: 124px;
+    @include respondto(minxs) {
+        padding-bottom: 25px;
+    }
+    @include respondto(maxxs) {
+        padding-bottom: 30px;
+    }
+    @include respondto(sm) {
+        padding-bottom: 40px;
+    }
+    @include respondto(md) {
+        padding-bottom: 90px;
+    }
+    @include respondto(lg) {
+    }
+    @include respondto(xlg) {
+    }
+    .contenedor-banner-home{
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        position: relative;
+        background-image: url('../img/06.covid/logo-banner-covid.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        display: flex;
+        align-items: center;
+        @include respondto(minxs) {
+            height: 340px;
+        }
+        @include respondto(maxxs) {
+            height: 340px;
+        }
+        @include respondto(sm) {
+        }
+        @include respondto(md) {
+        }
+        @include respondto(lg) {
+        }
+        @include respondto(xlg) {
+        }
+        &:after{
+            content: ' ';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: rgba(0,0,0,.7);
+            // z-index: 3;
+            @include respondto(xs) {
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+        }
+        .contenedor-title-info{
+            z-index: 3;
+            padding: 0 30px;
+            .content-categoria{
+                display: flex;
+                align-items: center;
+                padding-bottom: 20px;
+                @include respondto(xs) {
+                    padding-bottom: 8px;
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+                .caja-azul{
+                    width: 6px;
+                    height: 17px;
+                    background-color: #006ab4;
+                    margin-bottom: 3px;
+                    margin-right: 7px;
+                    @include respondto(xs) {
+                        width: 4px;
+                        height: 9px;
+                        margin-bottom: 3px;
+                        margin-right: 4px;
+                    }
+                    @include respondto(sm) {
+                        width: 4px;
+                        height: 12px;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                        width: 5px;
+                        height: 15px;
+                        margin-bottom: 2px;
+                    }
+                    @include respondto(xlg) {
+                    }
+                }
+                h3{
+                    font-family: $font-breePeru;
+                    font-weight: 700;
+                    line-height: 1;
+                    color: #ffffff;
+                    @include respondto(xs) {
+                        font-size: 12px;
+                    }
+                    @include respondto(sm) {
+                        font-size: 16px;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                        font-size: 21px;
+                    }
+                    @include respondto(xlg) {
+                        font-size: 24px;
+                    }
+                }
+            }
+            .content-title{
+                
+                padding-bottom: 40px;
+                @include respondto(xs) {
+                    width: 85%;
+                    padding-bottom: 14px;
+                }
+                @include respondto(sm) {
+                    width: 64%;
+                }
+                @include respondto(md) {
+                    width: 63%;
+                }
+                @include respondto(lg) {
+                    width: 73%;
+                }
+                @include respondto(xlg) {
+                    width: 64%;
+                }
+                h2{
+                    font-family: $font-breePeru;
+                    font-weight: 700;
+                    line-height: 1;
+                    color: #ffffff;
+                    @include respondto(xs) {
+                        font-size: 26px;
+                    }
+                    @include respondto(sm) {
+                        font-size: 46px;
+                    }
+                    @include respondto(md) {
+                        font-size: 58px;
+                    }
+                    @include respondto(lg) {
+                        font-size: 82px;
+                    }
+                    @include respondto(xlg) {
+                        font-size: 94px;
+                    }
+                }
+            }
+            hr{
+                width: 100%;
+                margin-bottom: 40px;
+                @include respondto(xs) {
+                    margin-bottom: 17px;
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+            .txt-info{
+                
+                @include respondto(xs) {
+                    width: 100%;
+                    padding: 0 7px;
+                }
+                @include respondto(sm) {
+                    width: 100%;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                    width: 70%;
+                }
+                p{
+                    font-family: $font-clanOt;
+                    font-weight: 500;
+                    font-size: 26px;
+                    line-height: 1.2;
+                    color: #ffffff;
+                    @include respondto(xs) {
+                        font-size: 12px;
+                        text-align: center;
+                        font-weight: 400;
+                    }
+                    @include respondto(sm) {
+                        font-size: 16px;
+                        text-align: center;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                        font-size: 24px;
+                    }
+                    @include respondto(xlg) {
+                    }
+                    br{
+                        @include respondto(xs) {
+                            display: none;
+                        }
+                        @include respondto(sm) {
+                            display: none;
+                        }
+                        @include respondto(md) {
+                        }
+                        @include respondto(lg) {
+
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+@keyframes deslizar {
+    0%   {top: 0.4em;}
+    50%  {top: calc(100% - .9em);}
+    100% {top: 0.4em;}
+}
+// /BLOCK banner
+
+
+
+//  BLOCK FILTRO
+.filtro-covid{
+    width: 100%;
+    padding-bottom: 60px;
+    @include respondto(minxs) {
+        padding-bottom: 28px;
+    }
+    @include respondto(maxxs) {
+        padding-bottom: 40px;
+    }
+    @include respondto(sm) {
+        padding-bottom: 50px;
+    }
+    @include respondto(md) {
+        padding: 0 10px 60px 10px;
+    }
+    @include respondto(lg) {
+    }
+    @include respondto(xlg) {
+    }
+    .contenedor-filtro-covid{
+
+        @include respondto(minxs) {
+            padding: 0 34px;
+        }
+        @include respondto(maxxs) {
+            padding: 0 50px;
+        }
+        @include respondto(sm) {
+            padding: 0 75px;
+        }
+        @include respondto(md) {
+            display: flex;
+            justify-content: space-between;
+        }
+        @include respondto(lg) {
+            display: flex;
+            justify-content: space-between;
+        }
+        @include respondto(xlg) {
+            display: flex;
+            justify-content: space-between;
+        }
+        .content-filtro-input{
+            position: relative;
+            width: 100%;
+            @include respondto(minxs) {
+                padding-bottom: 15px;
+            }
+            @include respondto(maxxs) {
+                padding-bottom: 15px;
+            }
+            @include respondto(sm) {
+                padding-bottom: 15px;
+            }
+            @include respondto(md) {
+                width: 67%;
+            }
+            @include respondto(lg) {
+                width: 70%;
+            }
+            @include respondto(xlg) {
+                width: 70%;
+            }
+            input{
+                width: 100%;
+                border: none;
+                border-radius: 17px;
+                background-color: #eaeaea;
+                font-family: $font-clanOt;
+                font-weight: 700;
+                font-size: 20px;
+                color: #000000;
+                padding: 15px 60px 14px 28px;
+                &:focus-visible{
+                    outline: transparent;
+                }
+                @include respondto(minxs) {
+                    font-size: 15px;
+                    padding: 10px 40px 9px 18px;
+                    border-radius: 10px;
+                }
+                @include respondto(maxxs) {
+                    font-size: 15px;
+                    padding: 11px 50px 10px 22px;
+                    border-radius: 10px;
+                }
+                @include respondto(sm) {
+                    font-size: 16px;
+                    padding: 14px 50px 13px 24px;
+                    border-radius: 10px;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+            .icon-buscar{
+                position: absolute;
+                top: 18px;
+                right: 28px;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                @include respondto(minxs) {
+                    width: 14px;
+                    height: 14px;
+                    top: 13px;
+                    right: 17px;
+                }
+                @include respondto(maxxs) {
+                    width: 15px;
+                    height: 15px;
+                    top: 13px;
+                    right: 20px;
+                }
+                @include respondto(sm) {
+                    width: 17px;
+                    height: 17px;
+                    top: 17px;
+                    right: 20px;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .content-select-covid{
+            position: relative;
+            width: 100%;
+            @include respondto(minxs) {
+            }
+            @include respondto(maxxs) {
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+                width: 32%;
+            }
+            @include respondto(lg) {
+                width: 29%;
+            }
+            @include respondto(xlg) {
+                width: 29%;
+            }
+            select{
+                width: 100%;
+                border: none;
+                border-radius: 17px;
+                background-color: #eaeaea;
+                font-family: $font-clanOt;
+                font-weight: 700;
+                font-size: 19px;
+                padding: 15px 30px 14px 28px;
+                @include respondto(minxs) {
+                    font-size: 15px;
+                    padding: 9px 38px 9px 18px;
+                    border-radius: 10px;
+                }
+                @include respondto(maxxs) {
+                    font-size: 15px;
+                    padding: 10px 38px 9px 20px;
+                    border-radius: 10px;
+                }
+                @include respondto(sm) {
+                    font-size: 16px;
+                    padding: 13px 38px 13px 22px;
+                    border-radius: 10px;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+                &:focus-visible{
+                    outline: transparent;
+                }
+                option{}
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background-image: url(../img/06.covid/icon-select.png);
+                background-repeat: no-repeat;
+                background-size: 17px 10px;
+                right: 1px;
+                width: 30px;
+                height: 11px;
+                pointer-events: none;
+                background-color: #eaeaea;
+                @include respondto(minxs) {
+                    height: 8px;
+                    background-size: 13px 7px;
+                }
+                @include respondto(maxxs) {
+                    height: 8px;
+                    background-size: 13px 7px;
+                }
+                @include respondto(sm) {
+                    height: 9px;
+                    background-size: 14px 8px;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+
+    }
+}
+// /BLOCK FILTRO
+
+
+//  BLOCK ARTICULOS-RECIENTES
+.articulos-recientes{
+    width: 100%;
+    .contenedor-articulos-recientes{
+
+        @include respondto(minxs) {
+            padding: 0 36px;
+        }
+        @include respondto(maxxs) {
+            padding: 0 50px;
+        }
+        @include respondto(sm) {
+            padding: 0 75px;
+        }
+        @include respondto(md) {
+            padding: 0 10px;
+        }
+        @include respondto(lg) {
+        }
+        @include respondto(xlg) {
+        }
+        .content-title-articulo{
+            padding-bottom: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #E91414;
+            @include respondto(minxs) {
+                text-align: center;
+                padding-bottom: 13px;
+                margin-bottom: 19px;
+            }
+            @include respondto(maxxs) {
+                text-align: center;
+                padding-bottom: 15px;
+                margin-bottom: 19px;
+            }
+            @include respondto(sm) {
+                text-align: center;
+                padding-bottom: 18px;
+                margin-bottom: 19px;
+            }
+            @include respondto(md) {
+                padding-bottom: 22px;
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+            h3{
+                font-family: $font-clanOt;
+                font-weight: 700;
+                font-size: 26px;
+                line-height: 1.1;
+                color: #282828;
+                @include respondto(minxs) {
+                    text-align: center;
+                    font-size: 17px;
+                }
+                @include respondto(maxxs) {
+                    text-align: center;
+                    font-size: 20px;
+                }
+                @include respondto(sm) {
+                    text-align: center;
+                    font-size: 24px;
+                }
+                @include respondto(md) {
+                    font-size: 25px;
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+
+        .contenedor-info-articulos{
+            width: 100%;
+            padding-bottom: 70px;
+            @include respondto(minxs) {
+                padding-bottom: 25px;
+            }
+            @include respondto(maxxs) {
+                padding-bottom: 35px;
+            }
+            @include respondto(sm) {
+                padding-bottom: 45px;
+            }
+            @include respondto(md) {
+                display: flex;
+                justify-content: space-between;
+            }
+            @include respondto(lg) {
+                display: flex;
+                justify-content: space-between;
+            }
+            @include respondto(xlg) {
+                display: flex;
+                justify-content: space-between;
+            }
+            .content-informacion-articulo{
+                width: 100%;
+                @include respondto(minxs) {
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                    width: 33.33%;
+                    display: flex;
+                    position: relative;
+                }
+                @include respondto(lg) {
+                    width: 33.33%;
+                    display: flex;
+                    position: relative;
+                }
+                @include respondto(xlg) {
+                    width: 33.33%;
+                    display: flex;
+                    position: relative;
+                }
+                &:after{
+                    content: '';
+                    height: 100%;
+                    width: 2px;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    background-color: #bebebe;
+                }
+                &:nth-child(2){
+                    justify-content: center;
+                }
+                &:nth-child(3){
+                    justify-content: flex-end;
+                    &:after{
+                        display: none;
+                    }
+                }
+                
+                .informacion-articulo{
+                    width: 100%;
+                    @include respondto(minxs) {
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                        width: 92%;
+                    }
+                    @include respondto(lg) {
+                        width: 90%;
+                    }
+                    @include respondto(xlg) {
+                        width: 90%;
+                    }
+                    span{
+                        font-family: $font-breePeru;
+                        font-weight: 300;
+                        font-style: italic;
+                        font-size: 13px;
+                        line-height: 1.1;
+                        color: #282828;
+                        @include respondto(minxs) {
+                            font-size: 11px;
+                        }
+                        @include respondto(maxxs) {
+                            font-size: 12px;
+                        }
+                        @include respondto(sm) {
+                        }
+                        @include respondto(md) {
+                            font-size: 12px;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                    h3{
+                        font-family: $font-clanOt;
+                        font-weight: 700;
+                        font-size: 15px;
+                        line-height: 1.1;
+                        color: #282828;
+                        padding-bottom: 15px;
+                        padding-top: 9px;
+                        @include respondto(minxs) {
+                            font-size: 12px;
+                            line-height: 1.2;
+                            padding-top: 4px;
+                            padding-bottom: 6px;
+                        }
+                        @include respondto(maxxs) {
+                            font-size: 13px;
+                            line-height: 1.2;
+                            padding-top: 5px;
+                            padding-bottom: 7px;
+                        }
+                        @include respondto(sm) {
+                            font-size: 14px;
+                            line-height: 1.2;
+                            padding-top: 9px;
+                            padding-bottom: 9px;
+                        }
+                        @include respondto(md) {
+                            font-size: 13.5px;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                    p{
+                        font-family: $font-clanOt;
+                        font-weight: 500;
+                        font-size: 15px;
+                        line-height: 1.1;
+                        color: #282828;
+                        padding-bottom: 24px;
+                        @include respondto(minxs) {
+                            font-size: 11px;
+                            line-height: 1.2;
+                        }
+                        @include respondto(maxxs) {
+                            font-size: 12px;
+                            line-height: 1.2;
+                        }
+                        @include respondto(sm) {
+                            font-size: 14px;
+                            line-height: 1.2;
+                        }
+                        @include respondto(md) {
+                            font-size: 13px;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                    .content-descargar{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        @include respondto(minxs) {
+                            padding-bottom: 47px;
+                        }
+                        @include respondto(maxxs) {
+                            padding-bottom: 47px;
+                        }
+                        @include respondto(sm) {
+                            padding-bottom: 50px;
+                        }
+                        @include respondto(md) {
+                            justify-content: flex-end;
+                        }
+                        @include respondto(lg) {
+                            justify-content: flex-end;
+                        }
+                        @include respondto(xlg) {
+                            justify-content: flex-end;
+                        }
+                        b{
+                            font-family: $font-clanOt;
+                            font-weight: 700;
+                            font-size: 18px;
+                            line-height: 1.1;
+                            color: #c4122e;
+                            padding-right: 13px;
+                            cursor: pointer;
+                            @include respondto(minxs) {
+                                font-size: 13px;
+                            }
+                            @include respondto(maxxs) {
+                                font-size: 15px;
+                            }
+                            @include respondto(sm) {
+                                font-size: 17px;
+                            }
+                            @include respondto(md) {
+                                font-size: 16.5px;
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+                        }
+                        img{
+                            width: 27px;
+                            height: 29px;
+                            cursor: pointer;
+                            @include respondto(minxs) {
+                                width: 20px;
+                                height: 22px;
+                            }
+                            @include respondto(maxxs) {
+                                width: 22px;
+                                height: 24px;
+                            }
+                            @include respondto(sm) {
+                                width: 24px;
+                                height: 26px;
+                            }
+                            @include respondto(md) {
+                                width: 24px;
+                                height: 26px;
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+//  /BLOCK ARTICULOS-RECIENTES
+
+
+//  BLOCK COMUNICADOS
+.comunicados-covid{
+    width: 100%;
+    .contenedor-comunicados-covid{
+    
+        .content-title-comunicados{
+            padding-bottom: 28px;
+            border-bottom: 2px solid #E91414;
+            margin-bottom: 34px;
+            @include respondto(minxs) {
+                width: calc(100% - 72px);
+                margin: 0 auto 19px auto;
+                text-align: center;
+                padding-bottom: 13px;
+            }
+            @include respondto(maxxs) {
+                width: calc(100% - 100px);
+                margin: 0 auto 19px auto;
+                text-align: center;
+                padding-bottom: 15px;
+            }
+            @include respondto(sm) {
+                width: calc(100% - 150px);
+                margin: 0 auto 19px auto;
+                text-align: center;
+                padding-bottom: 18px;
+            }
+            @include respondto(md) {
+                width: calc(100% - 20px);
+                margin: 0 auto 19px auto;
+                padding-bottom: 22px;
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+            h3{
+                font-family: $font-clanOt;
+                font-weight: 700;
+                font-size: 26px;
+                line-height: 1.1;
+                color: #282828;
+                @include respondto(minxs) {
+                    text-align: center;
+                    font-size: 17px;
+                }
+                @include respondto(maxxs) {
+                    text-align: center;
+                    font-size: 20px;
+                }
+                @include respondto(sm) {
+                    text-align: center;
+                    font-size: 24px;
+                }
+                @include respondto(md) {
+                    font-size: 25px;
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+        .contenedor-info-comunicados{
+            width: 100%;
+            @include respondto(minxs) {
+                padding: 0 36px;
+            }
+            @include respondto(maxxs) {
+                padding: 0 50px;
+            }
+            @include respondto(sm) {
+                padding: 0 75px;
+            }
+            @include respondto(md) {
+                padding: 0 10px;
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+            .content-informacion-comunicado{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 2px solid #d1d1d1;
+                margin-bottom: 19px;
+                @include respondto(minxs) {
+                    border: none;
+                }
+                @include respondto(maxxs) {
+                    border: none;
+                }
+                @include respondto(sm) {
+                    border: none;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+                &:last-child{
+                    margin-bottom: 27px;
+                }
+                .informacion-comunicado{
+                    span{
+                        font-family: $font-breePeru;
+                        font-weight: 300;
+                        font-style: italic;
+                        font-size: 13px;
+                        line-height: 1.1;
+                        color: #282828;
+                        @include respondto(minxs) {
+                            font-size: 11px;
+                        }
+                        @include respondto(maxxs) {
+                            font-size: 12px;
+                        }
+                        @include respondto(sm) {
+                        }
+                        @include respondto(md) {
+                            font-size: 12px;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                    h3{
+                        font-family: $font-clanOt;
+                        font-weight: 700;
+                        font-size: 15px;
+                        line-height: 1.1;
+                        color: #282828;
+                        padding-bottom: 15px;
+                        padding-top: 9px;
+                        @include respondto(minxs) {
+                            font-size: 12px;
+                            line-height: 1.2;
+                            padding-top: 4px;
+                            padding-bottom: 6px;
+                        }
+                        @include respondto(maxxs) {
+                            font-size: 13px;
+                            line-height: 1.2;
+                            padding-top: 5px;
+                            padding-bottom: 7px;
+                        }
+                        @include respondto(sm) {
+                            font-size: 14px;
+                            line-height: 1.2;
+                            padding-top: 9px;
+                            padding-bottom: 9px;
+                        }
+                        @include respondto(md) {
+                            font-size: 13.5;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                    p{
+                        font-family: $font-clanOt;
+                        font-weight: 500;
+                        font-size: 15px;
+                        line-height: 1.1;
+                        color: #282828;
+                        padding-bottom: 27px;
+                        @include respondto(minxs) {
+                            font-size: 11px;
+                            display: none;
+                        }
+                        @include respondto(maxxs) {
+                            font-size: 12px;
+                            line-height: 1.2;
+                            display: none;
+                        }
+                        @include respondto(sm) {
+                            font-size: 14px;
+                            line-height: 1.2;
+                            display: none;
+                        }
+                        @include respondto(md) {
+                            font-size: 13px;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                }
+                .content-descargar{
+                    align-self: center;
+                    width: 32px;
+                    img{
+                        width: 100%;
+                        cursor: pointer;
+                        @include respondto(minxs) {
+                            width: 20px;
+                            height: 22px;
+                        }
+                        @include respondto(maxxs) {
+                            width: 22px;
+                            height: 24px;
+                        }
+                        @include respondto(sm) {
+                            width: 24px;
+                            height: 26px;
+                        }
+                        @include respondto(md) {
+                            width: 24px;
+                            height: 26px;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                }
+            }
+        }
+        .contenedor-paginado-comunicado{
+            display: flex;
+            @include respondto(minxs) {
+                justify-content: center;
+                padding-bottom: 30px;
+            }
+            @include respondto(maxxs) {
+                justify-content: center;
+                padding-bottom: 30px;
+            }
+            @include respondto(sm) {
+                justify-content: center;
+                padding-bottom: 30px;
+            }
+            @include respondto(md) {
+                justify-content: flex-end;
+                align-items: center;
+                padding: 0 10px;
+            }
+            @include respondto(lg) {
+                justify-content: flex-end;
+                align-items: center;
+            }
+            @include respondto(xlg) {
+                justify-content: flex-end;
+                align-items: center;
+            }
+            .content-paginado{
+                display: flex;
+                align-items: center;
+                img{
+                    width: 6.5px;
+                    margin-bottom: 1.5px;
+                    cursor: pointer;
+                    @include respondto(minxs) {
+                        margin-bottom: 1.5px;
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                }
+                b{
+                    font-family: $font-clanOt;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 1.1;
+                    color: #282828;
+                    padding: 0 8px;
+                    cursor: pointer;
+                    &.active-numeral-paginado{
+                        color: #E91414;
+                    }
+                    @include respondto(minxs) {
+                        font-size: 14px;
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                }
+                strong{
+                    padding-bottom: 4px;
+                }
+            }
+        }
+    }
+}
+//  /BLOCK COMUNICADOS
+
+
+
+// ********** ********** /MI ********** **********
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ********** ********** MA ********** **********
+
+
+// ********** ********** /MA ********** **********

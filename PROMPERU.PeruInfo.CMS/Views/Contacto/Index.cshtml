@@ -1,0 +1,85 @@
+﻿@using System.Configuration
+@{ ViewBag.Title = "Contacto de Inversiones";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"]; }
+
+@section Scripts
+{
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/Contacto.js"></script>
+
+    <script>
+        var editar = true;
+        var eliminar = true;</script>
+}
+
+<div class="l-contents">
+
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Contacto de Inversiones</h1>
+        </div>
+
+        <nav class="cont-icons">
+            <a id="btnExcel" href="@Url.Action("Exportar", "Contacto")" title="Descargar EXCEL" class="cont-icons-new link-icon-table">
+                <span class="fas fa-file-excel"></span><span>Exportar a Excel</span>
+            </a>
+        </nav>
+
+        <div class="cont-table">
+            <table id="gridBloques" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1000px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 10%"></th>
+                        <th data-title="Nombres">
+                            <input type="text" id="gridContacto_txtB_Nombres">
+                        </th>
+                        <th data-title="Apellidos">
+                            <input type="text" id="gridContacto_txtB_Apellidos">
+                        </th>
+                        <th data-title="Correo">
+                            <input type="text" id="gridContacto_txtB_Correo">
+                        </th>
+                        <th data-title="FechaRegistro">
+                            <input type="text" id="gridContacto_txtB_FechaRegistro">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 10%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th>
+                            <a id="a_Nombres">Nombres</a>
+                        </th>
+                        <th>
+                            <a id="a_Apellidos">Apellidos</a>
+                        </th>
+                        <th>
+                            <a id="a_Correo">Correo Electrónico</a>
+                        </th>
+                        <th>
+                            <a id="a_FechaRegistro">Registrado</a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>
+

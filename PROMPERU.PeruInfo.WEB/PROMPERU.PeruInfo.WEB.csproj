@@ -1,0 +1,707 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9AA5184-A169-41B5-995B-D39642E749E2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PROMPERU.PeruInfo.WEB</RootNamespace>
+    <AssemblyName>PROMPERU.PeruInfo.WEB</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44331</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.14.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.14\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc5, Version=1.4.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc5.1.4.0\lib\net45\Unity.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfiguration.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Extensions.cs" />
+    <Compile Include="Helpers\SiteMaps.cs" />
+    <Compile Include="Helpers\LanguageManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource.en-us.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resource.es-pe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.es-pe.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\templates\mail\mail_contacto.txt" />
+    <Content Include="css\01.home.css" />
+    <Content Include="css\03.plantilla-e.css" />
+    <Content Include="css\04.contacto.css" />
+    <Content Include="css\05.apps.css" />
+    <Content Include="css\06.covid.css" />
+    <Content Include="css\10.premios.css" />
+    <Content Include="css\13.plantilla-c.css" />
+    <Content Include="css\20.restaurantes-del-mundo.css" />
+    <Content Include="css\aos.css" />
+    <Content Include="css\css_sprites.css" />
+    <Content Include="css\images\ui-icons_444444_256x240.png" />
+    <Content Include="css\images\ui-icons_555555_256x240.png" />
+    <Content Include="css\images\ui-icons_777620_256x240.png" />
+    <Content Include="css\images\ui-icons_777777_256x240.png" />
+    <Content Include="css\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="css\jquery-ui.min.css" />
+    <Content Include="css\peru-info.components.css" />
+    <Content Include="css\plantilla-categoria.css" />
+    <Content Include="css\plantilla-detalle-embajador.css" />
+    <Content Include="css\plantilla-embajadores.css" />
+    <Content Include="css\plantilla-notas-noticias.css" />
+    <Content Include="css\plantilla-resultado-busqueda.css" />
+    <Content Include="css\plantilla-subcategoria.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="img\03.plantilla-e\banner-cacao.jpg" />
+    <Content Include="img\03.plantilla-e\banner-lambayeque.jpg" />
+    <Content Include="img\03.plantilla-e\banner-pacay.jpg" />
+    <Content Include="img\03.plantilla-e\banner-pastel-papa.jpg" />
+    <Content Include="img\03.plantilla-e\banner-zampona.jpg" />
+    <Content Include="img\03.plantilla-e\left-arrow.png" />
+    <Content Include="img\03.plantilla-e\right-arrow.png" />
+    <Content Include="img\06.covid\flecha-derecha.png" />
+    <Content Include="img\06.covid\flecha-izquierda.png" />
+    <Content Include="img\06.covid\icon-buscar.png" />
+    <Content Include="img\06.covid\icon-descargar.png" />
+    <Content Include="img\06.covid\icon-select.png" />
+    <Content Include="img\06.covid\logo-banner-covid.jpg" />
+    <Content Include="img\10.premios\apap-2012-peru-nebraska.png" />
+    <Content Include="img\10.premios\ciudadanos-dia-promperu.png" />
+    <Content Include="img\10.premios\comunicacion-publicitaria-peru-nebraska.png" />
+    <Content Include="img\10.premios\comunicacion-publicitaria-sabor-victoria.png" />
+    <Content Include="img\10.premios\creatividad-empresarial-casa-turismo.png" />
+    <Content Include="img\10.premios\creatividad-empresarial-peru-nebraska.png" />
+    <Content Include="img\10.premios\creatividad-empresarial-ytqp.png" />
+    <Content Include="img\10.premios\festival-cannes-lions.png" />
+    <Content Include="img\10.premios\fiap-festival-iberoamerico.png" />
+    <Content Include="img\10.premios\fip-recordaras.png" />
+    <Content Include="img\10.premios\golden-city-gate.png" />
+    <Content Include="img\10.premios\icons-header\Buscar.png" />
+    <Content Include="img\10.premios\icons-header\logo-peru-rojo.png" />
+    <Content Include="img\10.premios\icons-header\Menu H.png" />
+    <Content Include="img\10.premios\icons-header\Vector.png" />
+    <Content Include="img\10.premios\indecopi-promperu.png" />
+    <Content Include="img\10.premios\international-eco-tourismfilm2018.png" />
+    <Content Include="img\10.premios\istanbul-tourism.png" />
+    <Content Include="img\10.premios\marketing-territorio-recordaras.png" />
+    <Content Include="img\10.premios\new-7-wonders.png" />
+    <Content Include="img\10.premios\ng-traveller-reader.png" />
+    <Content Include="img\10.premios\ny-festival-words.png" />
+    <Content Include="img\10.premios\oea-gastronomia-peruana.png" />
+    <Content Include="img\10.premios\ojo-de-iberoamerica.png" />
+    <Content Include="img\10.premios\patwa-international-berlin.png" />
+    <Content Include="img\10.premios\premio-amauta-aldi.png" />
+    <Content Include="img\10.premios\premio-anda.png" />
+    <Content Include="img\10.premios\premio-digi-iab.png" />
+    <Content Include="img\10.premios\premio-digi-new.png" />
+    <Content Include="img\10.premios\premio-excelencias-2017.png" />
+    <Content Include="img\10.premios\premio-ideas-apap-oro.png" />
+    <Content Include="img\10.premios\premio-ideas-apap-plata.png" />
+    <Content Include="img\10.premios\premio-interlat.png" />
+    <Content Include="img\10.premios\premios-effie.png" />
+    <Content Include="img\10.premios\publicidad-ojo-america.png" />
+    <Content Include="img\10.premios\pucp-premio-ardilla.png" />
+    <Content Include="img\10.premios\razon-espana-premio-turismo.png" />
+    <Content Include="img\10.premios\robb-report-premiacion.png" />
+    <Content Include="img\10.premios\tourfilm-riga2018.png" />
+    <Content Include="img\10.premios\us-international-film.png" />
+    <Content Include="img\10.premios\veliko-tarnovo-bulgaria.png" />
+    <Content Include="img\10.premios\wanderlust-reader-travel.png" />
+    <Content Include="img\10.premios\webby-awards.png" />
+    <Content Include="img\10.premios\world-travel-awards-2016.png" />
+    <Content Include="img\10.premios\world-travel-awards.png" />
+    <Content Include="img\10.premios\world-travel-reconocimiento.png" />
+    <Content Include="img\10.premios\youtube-video-excellence.png" />
+    <Content Include="img\10.premios\zagreb-tourtfilm-festival.png" />
+    <Content Include="img\13.plantilla-c\galeria-foto-1.jpg" />
+    <Content Include="img\13.plantilla-c\galeria-foto-2.jpg" />
+    <Content Include="img\13.plantilla-c\galeria-foto-3.jpg" />
+    <Content Include="img\13.plantilla-c\galeria-foto-4.jpg" />
+    <Content Include="img\13.plantilla-c\icon-play.png" />
+    <Content Include="img\13.plantilla-c\logo-pc.jpg" />
+    <Content Include="img\13.plantilla-c\mini-cocina.png" />
+    <Content Include="img\13.plantilla-c\mini-peru-dedicado.png" />
+    <Content Include="img\13.plantilla-c\mini-textiles.png" />
+    <Content Include="img\20.restaurantes-del-mundo\icon-select-1.png" />
+    <Content Include="img\20.restaurantes-del-mundo\icon-select.jpg" />
+    <Content Include="img\20.restaurantes-del-mundo\logo-banner.jpg" />
+    <Content Include="img\20.restaurantes-del-mundo\logo-card.jpg" />
+    <Content Include="img\apps\app_habla-quechua.jpg" />
+    <Content Include="img\apps\app_peru-brochure.jpg" />
+    <Content Include="img\apps\app_pisco-spirit-of-peru.jpg" />
+    <Content Include="img\apps\banner-apps.jpg" />
+    <Content Include="img\apps\btn-googleplay.png" />
+    <Content Include="img\apps\btn_appstore.png" />
+    <Content Include="img\contacto\banner-contacto.jpg" />
+    <Content Include="img\css_sprites.png" />
+    <Content Include="img\favicon_PeruInfo.ico" />
+    <Content Include="img\home\banner\icon-arrow-left.png" />
+    <Content Include="img\home\banner\icon-arrow-right.png" />
+    <Content Include="img\home\banner\icon-bajar.png" />
+    <Content Include="img\home\banner\logo-banner-alpaca.jpg" />
+    <Content Include="img\home\banner\logo-banner-cafe.jpg" />
+    <Content Include="img\home\banner\logo-banner-copas.jpg" />
+    <Content Include="img\home\banner\logo-banner-copas.png" />
+    <Content Include="img\home\banner\logo-banner-safe-travels.jpg" />
+    <Content Include="img\home\banner\logo-banner-superfoods.png" />
+    <Content Include="img\home\blog-peru\btn-flecha_derecha.jpg" />
+    <Content Include="img\home\blog-peru\btn-flecha_izquierda.jpg" />
+    <Content Include="img\home\blog-peru\icon-left.png" />
+    <Content Include="img\home\blog-peru\icon-right.png" />
+    <Content Include="img\home\blog-peru\imagen-blog-1.png" />
+    <Content Include="img\home\blog-peru\imagen-blog-2.png" />
+    <Content Include="img\home\blog-peru\imagen-blog-3.png" />
+    <Content Include="img\home\blog-peru\imagen-blog-4.jpg" />
+    <Content Include="img\home\blog-peru\imagen-borde-amarillo.png" />
+    <Content Include="img\home\blog-peru\imagen-borde-azul.png" />
+    <Content Include="img\home\blog-peru\imagen-borde-rojo.png" />
+    <Content Include="img\home\blog-peru\reloj.jpg" />
+    <Content Include="img\home\categorias\logo-comercio-exterior.png" />
+    <Content Include="img\home\categorias\logo-dibujos.png" />
+    <Content Include="img\home\categorias\logo-gastronomia.png" />
+    <Content Include="img\home\categorias\logo-inversiones.png" />
+    <Content Include="img\home\categorias\logo-talento.png" />
+    <Content Include="img\home\categorias\logo-turismo.png" />
+    <Content Include="img\home\Facebook.png" />
+    <Content Include="img\home\fondo_discover.png" />
+    <Content Include="img\home\header\fb.png" />
+    <Content Include="img\home\header\ico-campana.png" />
+    <Content Include="img\home\header\ico-flecha_derecha.png" />
+    <Content Include="img\home\header\ico-flecha_izquierda.png" />
+    <Content Include="img\home\header\icon-alerta.png" />
+    <Content Include="img\home\header\icon-bars-gris.png" />
+    <Content Include="img\home\header\icon-bars.png" />
+    <Content Include="img\home\header\icon-buscar-gris.png" />
+    <Content Include="img\home\header\icon-buscar.png" />
+    <Content Include="img\home\header\icon-cerrar.png" />
+    <Content Include="img\home\header\icon-idioma-gris.png" />
+    <Content Include="img\home\header\icon-idioma.png" />
+    <Content Include="img\home\header\ig.png" />
+    <Content Include="img\home\header\logo-peru-gris.png" />
+    <Content Include="img\home\header\logo-peru-gris.svg" />
+    <Content Include="img\home\header\logo-peru.png" />
+    <Content Include="img\home\header\pint.png" />
+    <Content Include="img\home\header\tw.png" />
+    <Content Include="img\home\header\Vector.png" />
+    <Content Include="img\home\header\yt.png" />
+    <Content Include="img\home\icons\iconos-1024.png" />
+    <Content Include="img\home\icons\iconos-768.png" />
+    <Content Include="img\home\Instagram.png" />
+    <Content Include="img\home\noticias\imagen-noticia-1.png" />
+    <Content Include="img\home\noticias\imagen-noticia-2.png" />
+    <Content Include="img\home\noticias\imagen-noticia-3.png" />
+    <Content Include="img\home\noticias\imagen-noticia-4.jpg" />
+    <Content Include="img\home\redes-sociales\icon-facebook-m.png" />
+    <Content Include="img\home\redes-sociales\icon-facebook.png" />
+    <Content Include="img\home\redes-sociales\icon-instagram-m.png" />
+    <Content Include="img\home\redes-sociales\icon-instagram.png" />
+    <Content Include="img\home\redes-sociales\icon-pinterest-m.png" />
+    <Content Include="img\home\redes-sociales\icon-tik-tok.png" />
+    <Content Include="img\home\redes-sociales\icon-twitter-m.png" />
+    <Content Include="img\home\redes-sociales\icon-twitter.png" />
+    <Content Include="img\home\redes-sociales\icon-youtube-m.png" />
+    <Content Include="img\home\redes-sociales\icon-youtube.png" />
+    <Content Include="img\home\Tik Tok.png" />
+    <Content Include="img\home\Twitter.png" />
+    <Content Include="img\home\Youtube.png" />
+    <Content Include="img\plantilla-categoria\banner\d_banner-gastronomia.jpg" />
+    <Content Include="img\plantilla-categoria\banner\logo-banner-gastronomia.jpg" />
+    <Content Include="img\plantilla-categoria\banner\m_banner-gastronomia.jpg" />
+    <Content Include="img\plantilla-categoria\footer\icon-down.png" />
+    <Content Include="img\plantilla-categoria\footer\logo-ministerio.png" />
+    <Content Include="img\plantilla-categoria\footer\logo-peru-rojo.png" />
+    <Content Include="img\plantilla-categoria\footer\logo-promperu.png" />
+    <Content Include="img\plantilla-categoria\footer\m_icons-decorator.png" />
+    <Content Include="img\plantilla-categoria\icons-decorator\icon-decorator-1.png" />
+    <Content Include="img\plantilla-categoria\icons-decorator\icon-decorator-2.png" />
+    <Content Include="img\plantilla-categoria\icons-decorator\icon-decorator-3.png" />
+    <Content Include="img\plantilla-categoria\icons-decorator\icon-decorator-4.png" />
+    <Content Include="img\plantilla-categoria\icons-decorator\icon-decorator-5.png" />
+    <Content Include="img\plantilla-categoria\icons-decorator\icon-decorator-6.png" />
+    <Content Include="img\plantilla-categoria\icons-decorator\icon-decorator-7.png" />
+    <Content Include="img\plantilla-categoria\icons-decorator\icon-decorator-8.png" />
+    <Content Include="img\plantilla-categoria\instituciones\exportemos.png" />
+    <Content Include="img\plantilla-categoria\instituciones\icon-bcr.png" />
+    <Content Include="img\plantilla-categoria\instituciones\icon-in-peru.png" />
+    <Content Include="img\plantilla-categoria\instituciones\icon-pro-inversion.png" />
+    <Content Include="img\plantilla-categoria\instituciones\icon-superintendencia.png" />
+    <Content Include="img\plantilla-categoria\instituciones\infocenter.png" />
+    <Content Include="img\plantilla-categoria\instituciones\peru_market.png" />
+    <Content Include="img\plantilla-categoria\principal-info\arrow-diagonal.png" />
+    <Content Include="img\plantilla-categoria\principal-info\logo-productos-oriundos.jpg" />
+    <Content Include="img\plantilla-categoria\principal-info\logo-reconocimientos.jpg" />
+    <Content Include="img\plantilla-categoria\principal-info\logo-regiones.jpg" />
+    <Content Include="img\plantilla-categoria\principal-info\logo-restaurantes.jpg" />
+    <Content Include="img\plantilla-categoria\slider-categoria\d_logo-generacion-causa.jpg" />
+    <Content Include="img\plantilla-categoria\slider-categoria\d_logo-invest-peru.jpg" />
+    <Content Include="img\plantilla-categoria\slider-categoria\icon-arrow-left.png" />
+    <Content Include="img\plantilla-categoria\slider-categoria\icon-arrow-right.png" />
+    <Content Include="img\plantilla-categoria\slider-categoria\m_logo-generacion-causa.jpg" />
+    <Content Include="img\plantilla-categoria\slider-noticias\slider-noticias-1.jpg" />
+    <Content Include="img\plantilla-categoria\slider-noticias\slider-noticias-2.jpg" />
+    <Content Include="img\plantilla-categoria\slider-noticias\slider-noticias-3.jpg" />
+    <Content Include="img\plantilla-categoria\slider-noticias\slider-noticias-4.jpg" />
+    <Content Include="img\plantilla-categoria\slider-noticias\slider-noticias-5.jpg" />
+    <Content Include="img\plantilla-detalle-embajador\d_banner-detalle.jpg" />
+    <Content Include="img\plantilla-detalle-embajador\icon-face.png" />
+    <Content Include="img\plantilla-detalle-embajador\icon-twitter.png" />
+    <Content Include="img\plantilla-detalle-embajador\m_banner-detalle.jpg" />
+    <Content Include="img\plantilla-embajadores\banner\d_banner-embajadores.jpg" />
+    <Content Include="img\plantilla-embajadores\banner\m_banner-embajadores.jpg" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-arrow-right-red.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-arrow-right.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-buscar.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-desplegar.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-gris-actuacion.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-gris-artista.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-gris-ciencia.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-gris-cine.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-gris-deporte.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-gris-gastronomia.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-gris-literatura.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-gris-moda.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-gris-musica.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-gris-turismo.png" />
+    <Content Include="img\plantilla-embajadores\buscar-filtros\icon-todos.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\arrow-diagonal.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\icon-blanco-actuacion.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\icon-blanco-artista.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\icon-blanco-ciencia.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\icon-blanco-cine.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\icon-blanco-deporte.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\icon-blanco-gastronomia.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\icon-blanco-literatura.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\icon-blanco-moda.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\icon-blanco-musica.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\icon-blanco-turismo.png" />
+    <Content Include="img\plantilla-embajadores\card-logo-icon\logo-card.jpg" />
+    <Content Include="img\plantilla-embajadores\icon-arrow.png" />
+    <Content Include="img\plantilla-embajadores\lupa-buscar.png" />
+    <Content Include="img\plantilla-embajadores\mas-visto\icon-play.png" />
+    <Content Include="img\plantilla-embajadores\mas-visto\logo-slider-mini.jpg" />
+    <Content Include="img\plantilla-embajadores\mas-visto\peru-dedicado-agroindustria-mini.jpg" />
+    <Content Include="img\plantilla-embajadores\mas-visto\peru-dedicado-gastronomia-mini.jpg" />
+    <Content Include="img\plantilla-notas-noticias\banner\d_banner-header.jpg" />
+    <Content Include="img\plantilla-notas-noticias\banner\m_banner-header.jpg" />
+    <Content Include="img\plantilla-notas-noticias\cards-notas\logo-card-1.jpg" />
+    <Content Include="img\plantilla-notas-noticias\cards-notas\logo-card-2.jpg" />
+    <Content Include="img\plantilla-notas-noticias\descubre-mas\d_logo-descubre.jpg" />
+    <Content Include="img\plantilla-notas-noticias\descubre-mas\m_logo-descubre.jpg" />
+    <Content Include="img\plantilla-notas-noticias\icon-arrow-left.png" />
+    <Content Include="img\plantilla-notas-noticias\icon-arrow.png" />
+    <Content Include="img\plantilla-notas-noticias\icon-gnews.png" />
+    <Content Include="img\plantilla-notas-noticias\img-notas\img-nota.jpg" />
+    <Content Include="img\plantilla-notas-noticias\rrss\icon-rrss-face.png" />
+    <Content Include="img\plantilla-notas-noticias\rrss\icon-rrss-linkedin.png" />
+    <Content Include="img\plantilla-notas-noticias\rrss\icon-rrss-twitter.png" />
+    <Content Include="img\plantilla-notas-noticias\rrss\icon-rrss-wtsp.png" />
+    <Content Include="img\plantilla-notas-noticias\rrss\icon-to-share.png" />
+    <Content Include="img\plantilla-resultado-busqueda\buscador-modal\card-noticia-1.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\buscador-modal\card-noticia-2.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\buscador-modal\card-noticia-3.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\buscador-modal\d_banner-buscador.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\buscador-modal\icon-buscador.png" />
+    <Content Include="img\plantilla-resultado-busqueda\buscador-modal\icon-cerrar-buscador.png" />
+    <Content Include="img\plantilla-resultado-busqueda\buscador-modal\logo-blog-1.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\buscador-modal\logo-blog-2.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\buscador-modal\logo-blog-3.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\comunicado_modal.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\d_banner-resultado.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\icon-arrow-bottom.png" />
+    <Content Include="img\plantilla-resultado-busqueda\icon-calendar.png" />
+    <Content Include="img\plantilla-resultado-busqueda\logo-card-2.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\logo-card-3.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\logo-card.jpg" />
+    <Content Include="img\plantilla-resultado-busqueda\m_banner-resultado.jpg" />
+    <Content Include="img\plantilla-subcategoria\banner\d_banner-restaurantes.jpg" />
+    <Content Include="img\plantilla-subcategoria\banner\m_banner-restaurantes.jpg" />
+    <Content Include="img\plantilla-subcategoria\slider-categoria\d_logo-generacion-causa.jpg" />
+    <Content Include="img\plantilla-subcategoria\slider-categoria\d_logo-invest-peru.jpg" />
+    <Content Include="img\plantilla-subcategoria\slider-categoria\icon-arrow-left.png" />
+    <Content Include="img\plantilla-subcategoria\slider-categoria\icon-arrow-right.png" />
+    <Content Include="img\plantilla-subcategoria\slider-categoria\m_logo-generacion-causa.jpg" />
+    <Content Include="img\plantilla-subcategoria\slider-unilinea\logo-card.jpg" />
+    <Content Include="img\share-peruinfo.jpg" />
+    <Content Include="js\01.home.js" />
+    <Content Include="js\03.plantilla-e.js" />
+    <Content Include="js\04.contacto.js" />
+    <Content Include="js\05.apps.js" />
+    <Content Include="js\06.covid.js" />
+    <Content Include="js\10.premios.js" />
+    <Content Include="js\13.plantilla-c.js" />
+    <Content Include="js\20.restaurantes-del-mundo.js" />
+    <Content Include="js\aos.js" />
+    <Content Include="js\fullpage.min.js" />
+    <Content Include="js\jquery-ui.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\peru-info.components.js" />
+    <Content Include="js\plantilla-categoria.js" />
+    <Content Include="js\plantilla-embajadores.js" />
+    <Content Include="js\plantilla-notas-noticias.js" />
+    <Content Include="js\plantilla-resultado-busqueda.js" />
+    <Content Include="js\plantilla-subcategoria.js" />
+    <Content Include="js\search.js" />
+    <Content Include="js\slick.min.js" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\font-bree\breeperu_bold.otf" />
+    <Content Include="fonts\font-bree\breeperu_boldoblique.otf" />
+    <Content Include="fonts\font-bree\breeperu_light.otf" />
+    <Content Include="fonts\font-bree\breeperu_lightoblique.otf" />
+    <Content Include="fonts\font-bree\breeperu_regular.otf" />
+    <Content Include="fonts\font-bree\breeperu_regularoblique.otf" />
+    <Content Include="fonts\font-clan\clanOt-400.otf" />
+    <Content Include="fonts\font-clan\clanOt-500.otf" />
+    <Content Include="fonts\font-clan\clanOt-700.otf" />
+    <Content Include="fonts\font-clan\clanOt-900.otf" />
+    <Content Include="fonts\font-roboto\roboto-bold.ttf" />
+    <Content Include="fonts\font-roboto\roboto-light.ttf" />
+    <Content Include="fonts\font-roboto\roboto-medium.ttf" />
+    <Content Include="fonts\font-roboto\roboto-regular.ttf" />
+    <Content Include="log4net.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\Production.pubxml" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="sitemap-en.xml" />
+    <Content Include="sitemap-pe.xml" />
+    <Content Include="Views\Apps\Index.cshtml" />
+    <Content Include="Views\Busqueda\Index.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Comunicados\Index.cshtml" />
+    <Content Include="Views\Embajadores\Detalle.cshtml" />
+    <Content Include="Views\Embajadores\Index.cshtml" />
+    <Content Include="Views\Premios\Index.cshtml" />
+    <Content Include="Views\Publicacion\Index.cshtml" />
+    <Content Include="Views\Restaurantes\Index.cshtml" />
+    <Content Include="Views\Shared\Partials\_AlertModal.cshtml" />
+    <Content Include="Views\Shared\Partials\_Blog.cshtml" />
+    <Content Include="Views\Shared\Partials\_Footer.cshtml" />
+    <Content Include="Views\Shared\Partials\_HeaderMenu.cshtml" />
+    <Content Include="Views\Shared\Partials\_NoticiasInterna.cshtml" />
+    <Content Include="Views\Shared\Partials\_PageMenu.cshtml" />
+    <Content Include="Views\Shared\Partials\_RedesSociales.cshtml" />
+    <Content Include="Views\Shared\Partials\_Relacionados.cshtml" />
+    <Content Include="Views\Shared\Partials\_RelacionadosCategoria.cshtml" />
+    <Content Include="Views\Subcategoria\Index.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Partials\_Noticias.cshtml" />
+    <Content Include="Views\Shared\Partials\_LanguageMenu.cshtml" />
+    <Content Include="Views\Contacto\Index.cshtml" />
+    <Content Include="Views\Shared\Partials\_ModalsHeader.cshtml" />
+    <Content Include="Views\Campania\Index.cshtml" />
+    <Content Include="Views\Privacidad\Index.cshtml" />
+    <Content Include="scss\01.home.scss" />
+    <Content Include="scss\03.plantilla-e.scss" />
+    <Content Include="scss\04.contacto.scss" />
+    <Content Include="scss\05.apps.scss" />
+    <Content Include="scss\06.covid.scss" />
+    <Content Include="scss\10.premios.scss" />
+    <Content Include="scss\13.plantilla-c.scss" />
+    <Content Include="scss\20.restaurantes-del-mundo.scss" />
+    <Content Include="scss\model\config\_constants.scss" />
+    <Content Include="scss\model\config\_mixins.scss" />
+    <Content Include="scss\model\slick.scss" />
+    <Content Include="scss\model\_config.scss" />
+    <Content Include="scss\model\_font.scss" />
+    <Content Include="scss\model\_reset.scss" />
+    <Content Include="scss\peru-info.components.scss" />
+    <Content Include="scss\plantilla-categoria.scss" />
+    <Content Include="scss\plantilla-detalle-embajador.scss" />
+    <Content Include="scss\plantilla-embajadores.scss" />
+    <Content Include="scss\plantilla-notas-noticias.scss" />
+    <Content Include="scss\plantilla-resultado-busqueda.scss" />
+    <Content Include="scss\plantilla-subcategoria.scss" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Shared\Partials\_WidgetsLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PROMPERU.PeruInfo.ApplicationService\PROMPERU.PeruInfo.ApplicationService.csproj">
+      <Project>{E7F197A5-5831-4CA3-9708-2C645A5D8D02}</Project>
+      <Name>PROMPERU.PeruInfo.ApplicationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PROMPERU.PeruInfo.Domain\PROMPERU.PeruInfo.Domain.csproj">
+      <Project>{4D9E2330-5FB0-496E-B234-836AF9E9FA6D}</Project>
+      <Name>PROMPERU.PeruInfo.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PROMPERU.PeruInfo.Infra.Data\PROMPERU.PeruInfo.Infra.Data.csproj">
+      <Project>{943B7F96-F15E-48AB-92C7-C05B6B58B83A}</Project>
+      <Name>PROMPERU.PeruInfo.Infra.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.en-us.resx">
+      <DependentUpon>Resource.resx</DependentUpon>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.en-us.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.es-pe.resx">
+      <DependentUpon>Resource.resx</DependentUpon>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.es-pe.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63017</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44331/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

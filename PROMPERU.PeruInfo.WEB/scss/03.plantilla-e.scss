@@ -1,0 +1,2402 @@
+@import 'model/slick.scss';
+@import 'model/_config.scss';
+@import 'model/_reset.scss';
+@import 'model/_font.scss';
+
+
+// ********** ********** MI ********** **********
+
+
+// Block Card-Mas-Nuevo
+.contenedor-card-nuevo{
+    width: 100%;
+    // height: 100%;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom,rgba(0,0,0,0.1) 0%,rgba(0,0,0,.85) 100%);
+        pointer-events: none;
+    }
+    &:hover{
+        &::before{
+            background: rgba(var(--color-categoria), 0.7);;
+        }
+    } 
+
+    a{
+        width: 100%;
+        height: 100%;
+        .logo-card{
+            width: 100%;
+            height: 100%;
+            // display: flex;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                // object-position: center;
+            }
+        }
+
+        .txt-card{
+            position: absolute;
+            left: 25px;
+            bottom: 30px;
+            width: 237px;
+            font-family: $font-breePeru;
+            color: #ffffff;
+            h3{
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 26px;
+            }
+            p{
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
+    }
+}
+// Block Card-Mas-Nuevo
+
+
+// BLOCK BANNER
+.banner-plantilla-e{
+    width: 100%;
+    // overflow-x: hidden;
+    .contenedor-banner-plantilla-e{
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        position: relative;
+        @include respondto(minxs) {
+            height: 375px;
+        }
+        @include respondto(maxxs) {
+            height: 375px;
+        }
+        @include respondto(sm) {
+            height: 400px;
+        }
+        @include respondto(md) {
+        }
+        @include respondto(lg) {
+        }
+        @include respondto(xlg) {
+        }
+        &:after{
+            content: ' ';
+            background-color: rgba(0,0,0,.8);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 1;
+            @include respondto(xs) {
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+        }
+        .contenedor-slider-img{
+            width: 100%;
+            height: 100%;
+            .content-slider-img{
+                width: 100%;
+                height: 100%;
+                .slick-list{
+                    height: 100%;
+                    .slick-track{
+                        height: 100%;
+                        .item-slider-img{
+                            height: 100%;
+                            a{
+                                height: 100%;
+                                img{
+                                    display: block;
+                                    height: 100%;
+                                    object-fit: cover;
+                                    object-position: top center;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .contenedor-slider-txt{
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 0;
+            transform: translateY(-40%);
+            z-index: 3;
+            @include respondto(minxs) {
+            }
+            @include respondto(maxxs) {
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+                transform: translateY(-45%);
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+            .content-slider-txt{
+                .slick-list{
+                    overflow:hidden;
+                    .slick-track{
+                        display: flex;
+                        align-items: center;
+                        .item-slider-txt{
+                            width: 100%;
+                            a{
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                padding: 0 10%;
+                                @include respondto(minxs) {
+                                    justify-content: center;
+                                    padding: 0;
+                                }
+                                @include respondto(maxxs) {
+                                }
+                                @include respondto(sm) {
+                                }
+                                @include respondto(md) {
+                                    padding: 0 5%;
+                                }
+                                @include respondto(lg) {
+                                }
+                                @include respondto(xlg) {
+                                }
+                                .efec-titulo{
+                                    width: 85%;
+                                    @include respondto(minxs) {
+                                        width: 80%;
+                                        margin-right: auto;
+                                        margin-left: auto;
+                                    }
+                                    @include respondto(maxxs) {
+                                        margin-right: auto;
+                                        margin-left: auto;
+                                    }
+                                    @include respondto(sm) {
+                                        margin-right: auto;
+                                        margin-left: auto;
+                                    }
+                                    @include respondto(md) {
+                                    }
+                                    @include respondto(lg) {
+                                        width: 88%;
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    h2{
+                                        font-family: $font-breePeru;
+                                        font-weight: 700;
+                                        font-size: 70px;
+                                        color: #ffffff;
+                                        letter-spacing: 2.16px;
+                                        line-height: 77px;
+                                        @include respondto(minxs) {
+                                            font-size: 28px;
+                                            letter-spacing: 0.4px;
+                                            line-height: 31px;
+                                            text-align: center;
+                                        }
+                                        @include respondto(maxxs) {
+                                            font-size: 32px;
+                                            letter-spacing: 0.4px;
+                                            line-height: 32px;
+                                            text-align: center;
+                                        }
+                                        @include respondto(sm) {
+                                            font-size: 37px;
+                                            letter-spacing: 0.5px;
+                                            line-height: 37px;
+                                            text-align: center;
+                                            // background-color: aqua;
+                                        }
+                                        @include respondto(md) {
+                                            font-size: 57px;
+                                            letter-spacing: 2px;
+                                            line-height: 63px;
+                                        }
+                                        @include respondto(lg) {
+                                            font-size: 65px;
+                                            letter-spacing: 2px;
+                                            line-height: 72px;
+                                        }
+                                        @include respondto(xlg) {}
+                                    }
+                                }
+                                .content-categoria{
+                                    display: flex;
+                                    // justify-content: flex-start;
+                                    transform: rotate(90deg);
+                                    @include respondto(minxs) {
+                                        display: none;
+                                    }
+                                    @include respondto(maxxs) {
+                                        display: none;
+                                    }
+                                    @include respondto(sm) {
+                                        display: none;
+                                    }
+                                    @include respondto(md) {
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    .caja-azul{
+                                        width: 6px;
+                                        height: 17px;
+                                        // background-color: #006ab4;
+                                        background-color: rgb(var(--color-categoria));
+                                        margin-top: 3px;
+                                        margin-right: 7px;
+                                        @include respondto(xs) {
+                                        }
+                                        @include respondto(sm) {
+                                        }
+                                        @include respondto(md) {
+                                            height: 14px;
+                                        }
+                                        @include respondto(lg) {
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                    }
+                                    h3{
+                                        font-family: $font-breePeru;
+                                        font-weight: 700;
+                                        line-height: 1;
+                                        color: #ffffff;
+                                        @include respondto(xs) {
+                                            // font-size: 12px;
+                                        }
+                                        @include respondto(sm) {
+                                            // font-size: 16px;
+                                        }
+                                        @include respondto(md) {
+                                            font-size: 19px;
+                                        }
+                                        @include respondto(lg) {
+                                            font-size: 21px;
+                                        }
+                                        @include respondto(xlg) {
+                                            font-size: 24px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .contenedor-arrows{
+            width: 100%;
+            position: absolute;
+            bottom: 55px;
+            left: 0;
+            display: flex;
+            align-items: center;
+            z-index: 5;
+            @include respondto(xs) {
+                bottom: 30px;
+            }
+            @include respondto(sm) {
+                bottom: 50px;
+            }
+            @include respondto(md) {
+                bottom: 50px;
+            }
+            @include respondto(lg) {
+                bottom: 50px;
+            }
+            @include respondto(xlg) {}
+            .content-arrows{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 11%;
+                width: 100%;
+                .prev-banner{
+                    cursor: pointer;
+                    transition: all .25s ease-in-out;
+                    &:hover{
+                        img{
+                            transform: scale(1.05);
+                        }
+                    }
+                    img{
+                        height: 35px;
+                        width: 35px;
+                        transform: scale(1);
+                        @include respondto(minxs) {
+                            width: 21px;
+                            height: 21px
+                        }
+                        @include respondto(maxxs) {
+                            width: 31px;
+                            height: 31px;
+                        }
+                        @include respondto(sm) {
+                            width: 31px;
+                            height: 31px;
+                        }
+                        @include respondto(md) {
+                            width: 32px;
+                            height: 32px;
+                        }
+                        @include respondto(lg) {
+                            height: 32px;
+                            width: 32px;
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                }
+                .next-banner{
+                    cursor: pointer;
+                    transition: all .25s ease-in-out;
+                    &:hover{
+                        img{
+                            transform: scale(1.05);
+                        }
+                    }
+                    img{
+                        height: 35px;
+                        width: 35px;
+                        transform: scale(1);
+                        @include respondto(minxs) {
+                            width: 21px;
+                            height: 21px
+                        }
+                        @include respondto(maxxs) {
+                            width: 31px;
+                            height: 31px;
+                        }
+                        @include respondto(sm) {
+                            width: 31px;
+                            height: 31px;
+                        }
+                        @include respondto(md) {
+                            width: 32px;
+                            height: 32px;
+                        }
+                        @include respondto(lg) {
+                            height: 32px;
+                            width: 32px;
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                }
+            }
+        }
+
+        .scroll-boton{
+            cursor: pointer;
+            left: 50%;
+            position: absolute;
+            top: calc(100vh - 104px);
+            transform: translateX(-50%);
+            z-index: 5;
+            @include respondto(xs) {
+                display: none;
+            }
+            @include respondto(sm) {
+                display: none;
+            }
+            @include respondto(md) {
+                top: calc(100vh - 100px);
+            }
+            @include respondto(lg) {
+                top: calc(100vh - 100px);
+            }
+            @include respondto(xlg) {}
+            .scroll-cont{
+                border: 2px solid #fff;
+                border-radius: 60px;
+                height: 48px;
+                width: 24px;
+                @include respondto(minxs) {
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                    border: 1.5px solid #fff;
+                    border-radius: 60px;
+                    height: 42px;
+                    width: 20px;
+                }
+                @include respondto(md) {
+                    border: 1.5px solid #fff;
+                    border-radius: 60px;
+                    height: 42px;
+                    width: 20px;
+                }
+                @include respondto(lg) {
+                    border: 1.5px solid #fff;
+                    border-radius: 60px;
+                    height: 42px;
+                    width: 20px;
+                }
+                @include respondto(xlg) {
+                }
+                .scroll-circ{
+                    animation-duration: 1.5s;
+                    animation-iteration-count: infinite;
+                    animation-name: deslizar;
+                    animation-timing-function: ease-in-out;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    width: 8px;
+                    height: 8px;
+                    left: 50%;
+                    position: absolute;
+                    transform: translateX(-50%);
+                    top: 4.8px;
+                    @include respondto(minxs) {
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                        width: 7px;
+                        height: 7px; 
+                    }
+                    @include respondto(lg) {
+                        width: 7px;
+                        height: 7px;    
+                    }
+                    @include respondto(xlg) {
+                    }
+                }
+            }
+        }
+
+        .redes-sociales-mobile{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            z-index: 5;
+            @include respondto(xs) {
+                display: none;
+            }
+            @include respondto(sm) {
+                display: none;
+            }
+            @include respondto(md) {
+                display: none;
+            }
+            @include respondto(lg) {
+                display: none;
+            }
+            @include respondto(xlg) {
+                display: none;
+            }
+            .contenedor-redes-sociales{
+                width: 100%;
+                ul{
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    li{
+                        margin: 11.7px;
+                        a{
+                            img{}
+                        }
+                    }
+                }
+            }
+        }
+
+        .contenedor-solicita-marca{
+            position: absolute;
+            left: 120px;
+            top: 70%;
+            z-index: 5;
+            @include respondto(minxs) {
+                display: none;
+            }
+            @include respondto(maxxs) {
+                display: none;
+            }
+            @include respondto(sm) {
+                display: none;
+            }
+            @include respondto(md) {
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+            .content-solicita-marca{
+                display: inline-flex;
+                a{
+                    width: 300px;
+                    padding: 30px 25px;
+                    background-color: rgba(213, 43, 30, 0.5);
+                    border-radius: 8px;
+                    &:hover{
+                        background-color: rgba(213, 43, 30, 0.9);;
+                    }
+                    p{
+                        font-family: $font-clanOt;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 24px;
+                        color: #ffffff;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes deslizar {
+    0%   {top: 0.4em;}
+    50%  {top: calc(100% - .9em);}
+    100% {top: 0.4em;}
+}
+// /BLOCK BANNER
+
+
+
+//  BLOCK BUSCADOR
+.buscador-filtros{
+    width: 100%;
+    .contenedor-buscador-filtros{
+        padding-top: 64px;
+        @include respondto(minxs) {
+            padding: 22px 20px 0 20px;
+        }
+        @include respondto(maxxs) {
+            padding: 30px 30px 0 30px;;
+        }
+        @include respondto(sm) {
+            padding: 30px 30px 0 30px;
+        }
+        @include respondto(md) {
+            
+        }
+        @include respondto(lg) {
+            
+        }
+        @include respondto(xlg) {
+            
+        }
+
+        .contenedor-buscador{
+            position: relative;
+            width: 100%;
+            margin-bottom: 30px;
+            @include respondto(minxs) {
+                margin-bottom: 8px;
+            }
+            @include respondto(maxxs) {
+                margin-bottom: 10px;
+            }
+            @include respondto(sm) {
+                margin-bottom: 12px;
+            }
+            @include respondto(md) {
+                margin-bottom: 25px;
+            }
+            @include respondto(lg) {
+                margin-bottom: 25px;
+            }
+            @include respondto(xlg) {
+            }
+            input{
+                width: 100%;
+                border: 1px solid #bebebe;
+                border-radius: 10px;
+                background-color: #ffffff;
+                font-family: $font-breePeru;
+                font-weight: 500;
+                font-size: 20px;
+                padding: 13px 30px 10px 60px;
+                color: #000000;
+                &:focus-visible{
+                    outline: transparent;
+                }
+                &::placeholder{
+                    color: #000000;
+                }
+                @include respondto(minxs) {
+                    font-size: 16px;
+                    padding: 10px 15px 8px 42px;
+                    border-radius: 8px;
+                }
+                @include respondto(maxxs) {
+                    font-size: 16px;
+                    padding: 11px 15px 9px 46px;
+                    border-radius: 8px;
+                }
+                @include respondto(sm) {
+                    font-size: 17px;
+                    padding: 12px 15px 9px 50px;
+                    border-radius: 9px;
+                }
+                @include respondto(md) {
+                    font-size: 18px;
+                    padding: 12.5px 30px 9.5px 52px;
+                }
+                @include respondto(lg) {
+                    font-size: 18px;
+                    padding: 12.5px 30px 9.5px 52px;
+                }
+                @include respondto(xlg) {
+                }
+            }
+            .icon-buscar{
+                position: absolute;
+                top: 15px;
+                left: 24px;
+                width: 19px;
+                height: 19px;
+                cursor: pointer;
+                @include respondto(minxs) {
+                    width: 14px;
+                    height: 14px;
+                    top: 11px;
+                    left: 15px;
+                }
+                @include respondto(maxxs) {
+                    width: 14px;
+                    height: 14px;
+                    top: 12px;
+                    left: 19px;
+                }
+                @include respondto(sm) {
+                    width: 16px;
+                    height: 16px;
+                    top: 13px;
+                    left: 20px;
+                }
+                @include respondto(md) {
+                    top: 14px;
+                    left: 20px;
+                    width: 18px;
+                    height: 18px;
+                }
+                @include respondto(lg) {
+                    top: 14px;
+                    left: 20px;
+                    width: 18px;
+                    height: 18px;
+                }
+                @include respondto(xlg) {
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .contenedor-filtros{
+            width: 100%;
+            padding-bottom: 60px;
+            @include respondto(minxs) {
+            }
+            @include respondto(maxxs) {
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+                display: flex;
+                justify-content: space-between;
+            }
+            @include respondto(lg) {
+                display: flex;
+                justify-content: space-between;
+            }
+            @include respondto(xlg) {
+                display: flex;
+                justify-content: space-between;
+            }
+            .content-select{
+                position: relative;
+                @include respondto(minxs) {
+                    width: 100%;
+                    margin-bottom: 8px;
+                }
+                @include respondto(maxxs) {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+                @include respondto(sm) {
+                    width: 100%;
+                    margin-bottom: 12px;
+                }
+                @include respondto(md) {
+                    width: 32%;
+                }
+                @include respondto(lg) {
+                    width: 32.5%;
+                }
+                @include respondto(xlg) {
+                    width: 32.5%;
+                }
+                select{
+                    width: 100%;
+                    border: 1px solid #bebebe;
+                    border-radius: 10px;
+                    background-color: #ffffff;
+                    font-family: $font-breePeru;
+                    font-weight: 500;
+                    font-size: 20px;
+                    color: #000000;
+                    padding: 12px 45px 9px 24px;
+                    @include respondto(minxs) {
+                        font-size: 16px;
+                        padding: 9px 40px 7px 11px;
+                        border-radius: 8px;
+                    }
+                    @include respondto(maxxs) {
+                        font-size: 16px;
+                        padding: 10px 40px 8px 14px;
+                        border-radius: 8px;
+                    }
+                    @include respondto(sm) {
+                        font-size: 17px;
+                        padding: 11px 40px 8px 17px;
+                        border-radius: 9px;
+                    }
+                    @include respondto(md) {
+                        font-size: 18px;
+                        padding: 11px 40px 9px 16px;
+                    }
+                    @include respondto(lg) {
+                        font-size: 18px;
+                        padding: 11px 40px 9px 16px;
+                    }
+                    @include respondto(xlg) {
+                    }
+                    &:focus-visible{
+                        outline: transparent;
+                    }
+                    option{}
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 1px;
+                    background-image: url(../img/06.covid/icon-select.png);
+                    background-repeat: no-repeat;
+                    background-size: 14px 8px;
+                    width: 30px;
+                    height: 8px;
+                    pointer-events: none;
+                    background-color: #ffffff;
+                    @include respondto(minxs) {
+                        width: 20px;
+                        height: 7px;
+                        background-size: 11px 5px;
+                        background-position-y: 1px;
+                    }
+                    @include respondto(maxxs) {
+                        width: 24px;
+                        height: 7px;
+                        background-size: 11px 5px;
+                        background-position-y: 2px;
+                    }
+                    @include respondto(sm) {
+                        width: 24px;
+                        height: 7px;
+                        background-size: 11px 5px;
+                        background-position-y: 2px;
+                    }
+                    @include respondto(md) {
+                        width: 26px;
+                        height: 7px;
+                        background-size: 13px 6px;
+                    }
+                    @include respondto(lg) {
+                        width: 26px;
+                        height: 7px;
+                        background-size: 13px 6px;
+                        background-position-y: 1px;
+                    }
+                    @include respondto(xlg) {
+                    }
+                }
+            }
+            .filtro-desplegable{  
+                height: 48px;
+                position: relative;
+                @include respondto(minxs) {
+                    width: 100%;
+                    height: 37px;
+                    margin-bottom: 8px;
+                }
+                @include respondto(maxxs) {
+                    width: 100%;
+                    height: 39px;
+                    margin-bottom: 10px;
+                }
+                @include respondto(sm) {
+                    width: 100%;
+                    height: 42px;
+                    margin-bottom: 12px;
+                }
+                @include respondto(md) {
+                    width: 32%;
+                    height: 44px;
+                }
+                @include respondto(lg) {
+                    width: 32.5%;
+                    height: 44px;
+                }
+                @include respondto(xlg) {
+                    width: 32.5%;
+                }
+                input{
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid #bebebe;
+                    border-radius: 10px;
+                    background-color: #ffffff;
+                    padding: 5px 45px 0 27px;
+                    font-family: $font-breePeru;
+                    font-weight: 500;
+                    font-size: 20px;
+                    color: #000000;
+                    @include respondto(minxs) {
+                        font-size: 16px;
+                        padding: 2px 40px 0 15px;
+                        border-radius: 8px;
+                    }
+                    @include respondto(maxxs) {
+                        font-size: 16px;
+                        padding: 2px 40px 0 18px;
+                        border-radius: 8px;
+                    }
+                    @include respondto(sm) {
+                        font-size: 16px;
+                        padding: 2px 40px 0 21px;
+                        border-radius: 8px;
+                    }
+                    @include respondto(md) {
+                        font-size: 18px;
+                        padding: 2px 40px 0 20px;
+                    }
+                    @include respondto(lg) {
+                        font-size: 18px;
+                        padding: 2px 40px 0 20px;
+                    }
+                    @include respondto(xlg) {
+                    }
+                    &::placeholder{
+                        color: #000000;
+                    }
+                    &:focus-visible{
+                        outline: transparent;
+                    }
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-image: url(../img/06.covid/icon-select.png);
+                    background-repeat: no-repeat;
+                    background-size: 14px 8px;
+                    right: 1px;
+                    width: 30px;
+                    height: 8px;
+                    pointer-events: none;
+                    background-color: #ffffff;
+                    @include respondto(minxs) {
+                        width: 20px;
+                        height: 7px;
+                        background-size: 11px 5px;
+                        background-position-y: 1px;
+                    }
+                    @include respondto(maxxs) {
+                        width: 24px;
+                        height: 7px;
+                        background-size: 11px 5px;
+                        background-position-y: 2px;
+                    }
+                    @include respondto(sm) {
+                        width: 24px;
+                        height: 7px;
+                        background-size: 11px 5px;
+                        background-position-y: 2px;
+                    }
+                    @include respondto(md) {
+                        width: 26px;
+                        height: 7px;
+                        background-size: 13px 6px;
+                    }
+                    @include respondto(lg) {
+                        width: 26px;
+                        height: 7px;
+                        background-size: 13px 6px;
+                        background-position-y: 1px;
+                    }
+                    @include respondto(xlg) {
+                    }
+                }
+            }
+        }
+
+    }
+}
+// /BLOCK BUSCADOR
+
+
+
+// BLOCK MAS-NUEVO
+.seccion-mas-nuevo{
+    width: 100%;
+    .contenedor-mas-nuevo{
+        padding-bottom: 55px;
+        .title-mas-nuevo{
+            @include respondto(minxs) {
+                padding: 0 20px;
+            }
+            @include respondto(maxxs) {
+                padding: 0 30px;
+            }
+            @include respondto(sm) {
+                padding: 0 30px;
+            }
+            @include respondto(md) {
+                padding: 0 3px;
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+            h3{
+                font-family: $font-breePeru;
+                font-weight: 500;
+                font-size: 28px;
+                padding-bottom: 47px;
+                color: #000000;
+                @include respondto(minxs) {
+                    font-weight: 700;
+                    font-size: 17px;
+                    padding-bottom: 25px;
+                }
+                @include respondto(maxxs) {
+                    font-weight: 700;
+                    font-size: 20px;
+                    padding-bottom: 30px;
+
+                }
+                @include respondto(sm) {
+                    font-weight: 700;
+                    font-size: 24px;
+                    padding-bottom: 35px;
+                }
+                @include respondto(md) {
+                    font-size: 26px;
+                    padding-bottom: 40px;
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+        .contenedor-slider-mas-nuevo{
+            width: 100%;
+            @include respondto(minxs) {
+                display: none;
+            }
+            @include respondto(maxxs) {
+                display: none;
+            }
+            @include respondto(sm) {
+                display: none;
+            }
+            @include respondto(md) {
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+            .content-slider-mas-nuevo{
+                width: 100%;
+                position: relative;
+                .slick-arrow{
+                    position: absolute;
+                    font-size: 0;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    &:hover{
+                        opacity: .6;
+                    }
+                    &.slick-prev{
+                        top: -75px;
+                        right: 114px;
+                        @include respondto(minxs) {
+                        }
+                        @include respondto(maxxs) {
+                        }
+                        @include respondto(sm) {
+                        }
+                        @include respondto(md) {
+                            top: -69px;
+                            right: 122px;
+                        }
+                        @include respondto(lg) {
+                            right: 120px;
+                        }
+                        @include respondto(xlg) {
+                        }
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            width: 16px;
+                            height: 28px;
+                            background-image: url('../img/03.plantilla-e/left-arrow.png');
+                            background-repeat: no-repeat;
+                            background-size: 16px;
+                            // background-color: lightcoral;
+                            @include respondto(minxs) {
+                            }
+                            @include respondto(maxxs) {
+                            }
+                            @include respondto(sm) {
+                            }
+                            @include respondto(md) {
+                                width: 15px;
+                                height: 27px;
+                                background-size: 15px;
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+                        }
+                    }
+                    &.slick-next{
+                        top: -75px;
+                        right: 34px;
+                        @include respondto(minxs) {
+                        }
+                        @include respondto(maxxs) {
+                        }
+                        @include respondto(sm) {
+                        }
+                        @include respondto(md) {
+                            top: -69px;
+                            right: 42px;
+                        }
+                        @include respondto(lg) {
+                            right: 40px;
+                        }
+                        @include respondto(xlg) {
+                        }
+                        &:after{
+                            content: ''; 
+                            position: absolute;
+                            width: 16px;
+                            height: 28px;
+                            background-image: url('../img/03.plantilla-e/right-arrow.png');
+                            background-repeat: no-repeat;
+                            background-size: 16px;
+                            // background-color: lightcoral;
+                            @include respondto(minxs) {
+                            }
+                            @include respondto(maxxs) {
+                            }
+                            @include respondto(sm) {
+                            }
+                            @include respondto(md) {
+                                width: 15px;
+                                height: 27px;
+                                background-size: 15px;
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+                        }
+                    }
+                }
+                .slick-list{
+                    .slick-track{
+
+                        .item-slider{
+                            padding: 0 7px;
+                            height: 934px;
+                            @include respondto(minxs) {
+                            }
+                            @include respondto(maxxs) {
+                            }
+                            @include respondto(sm) {
+                            }
+                            @include respondto(md) {
+                                height: 660px;
+                                padding: 0 5px;
+                            }
+                            @include respondto(lg) {
+                                height: 752px;
+                                padding: 0 5px;
+                            }
+                            @include respondto(xlg) {
+                            }
+                            .box-cards-slider{
+                                width: 100%;
+                                height: 100%;
+                                display: flex;
+                                justify-content: space-between;
+                                box-sizing: border-box;
+                                .box-cards-left{
+                                    width: 49.2%;
+                                    height: 100%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 20px;
+                                    @include respondto(minxs) {
+                                    }
+                                    @include respondto(maxxs) {
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                        gap: 14px;
+                                    }
+                                    @include respondto(lg) {
+                                        gap: 16px;
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    .contenedor-card-nuevo{
+                                        height: 50%;
+                                        position: relative;
+                                        &::before{
+                                            content: '';
+                                        }
+                                        a{
+                                            .logo-card{
+                                                img{
+                                                }
+                                            }
+            
+                                            .txt-card{
+                                                @include respondto(minxs) {
+                                                }
+                                                @include respondto(maxxs) {
+                                                }
+                                                @include respondto(sm) {
+                                                }
+                                                @include respondto(md) {
+                                                    width: 187px;
+                                                    left: 18px;
+                                                    bottom: 20px;
+                                                }
+                                                @include respondto(lg) {
+                                                    width: 203px;
+                                                    left: 20px;
+                                                    bottom: 25px;
+                                                }
+                                                @include respondto(xlg) {
+                                                }
+                                                h3{
+                                                    @include respondto(minxs) {
+                                                    }
+                                                    @include respondto(maxxs) {
+                                                    }
+                                                    @include respondto(sm) {
+                                                    }
+                                                    @include respondto(md) {
+                                                        font-size: 16px;
+                                                        line-height: 22px;
+                                                    }
+                                                    @include respondto(lg) {
+                                                    }
+                                                    @include respondto(xlg) {
+                                                    }
+                                                }
+                                                p{
+                                                    @include respondto(minxs) {
+                                                    }
+                                                    @include respondto(maxxs) {
+                                                    }
+                                                    @include respondto(sm) {
+                                                    }
+                                                    @include respondto(md) {
+                                                        font-size: 14px;
+                                                        line-height: 20px;
+                                                    }
+                                                    @include respondto(lg) {
+                                                        font-size: 16px;
+                                                        line-height: 22px;
+                                                    }
+                                                    @include respondto(xlg) {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+        
+                                .box-cads-right{
+                                    width: 49.2%;
+                                    height: 100%;
+                                    display: grid;
+                                    grid-template-columns: 1fr 1fr;
+                                    grid-template-rows: repeat(3,32.46%);
+                                    grid-gap: 12px 11px;
+                                    @include respondto(minxs) {
+                                    }
+                                    @include respondto(maxxs) {
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                        grid-template-rows: repeat(3,32.62%);
+                                        grid-gap: 7px 6px;
+                                    }
+                                    @include respondto(lg) {
+                                        grid-template-rows: repeat(3,32.43%);
+                                        grid-gap: 10px 9px;
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    .contenedor-card-nuevo{
+                                        &::before{
+                                            content: '';
+                                        }
+                                        a{
+                                            .logo-card{
+                                                img{
+                                                }
+                                            }
+            
+                                            .txt-card{
+                                                @include respondto(minxs) {
+                                                }
+                                                @include respondto(maxxs) {
+                                                }
+                                                @include respondto(sm) {
+                                                }
+                                                @include respondto(md) {
+                                                    width: 182px;
+                                                    left: 15px;
+                                                    bottom: 15px;
+                                                }
+                                                @include respondto(lg) {
+                                                    width: 203px;
+                                                    left: 20px;
+                                                    bottom: 25px;
+                                                }
+                                                @include respondto(xlg) {
+                                                }
+                                                h3{
+                                                    @include respondto(minxs) {
+                                                    }
+                                                    @include respondto(maxxs) {
+                                                    }
+                                                    @include respondto(sm) {
+                                                    }
+                                                    @include respondto(md) {
+                                                        font-size: 16px;
+                                                        line-height: 22px;
+                                                    }
+                                                    @include respondto(lg) {
+                                                    }
+                                                    @include respondto(xlg) {
+                                                    }
+                                                }
+                                                p{
+                                                    @include respondto(minxs) {
+                                                    }
+                                                    @include respondto(maxxs) {
+                                                    }
+                                                    @include respondto(sm) {
+                                                    }
+                                                    @include respondto(md) {
+                                                        font-size: 14px;
+                                                        line-height: 18px;;
+                                                    }
+                                                    @include respondto(lg) {
+                                                        font-size: 16px;
+                                                        line-height: 20px;
+                                                    }
+                                                    @include respondto(xlg) {
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &:nth-child(3){
+                                            grid-column: span 2;
+                                        }
+                                        &:nth-child(4){
+                                            grid-column: span 2;
+                                        }
+                                    }
+                                    
+                                }
+        
+                            }
+        
+                        }
+
+                    }
+                } 
+            }
+        }
+
+        .contenedor-slider-nuevo-mobile{
+            width: 100%;
+            @include respondto(minxs) {
+                margin: 0 -2.083%;
+                width: 104.166%;
+            }
+            @include respondto(maxxs) {
+                margin: 0 -2.083%;
+                width: 104.166%;
+            }
+            @include respondto(sm) {
+                width: 104.166%;
+                margin: 0 -2.083%;
+            }
+            @include respondto(md) {
+                display: none;
+            }
+            @include respondto(lg) {
+                display: none;
+            }
+            @include respondto(xlg) {
+                display: none;
+            }
+            .content-slider-nuevo-mobile{
+                width: 100%;
+                .slick-arrow{
+                    position: absolute;
+                    font-size: 0;
+                    background-color: transparent;
+                    border: none;
+                    cursor: pointer;
+                    &:hover{
+                        opacity: .6;
+                    }
+                    &.slick-prev{
+                        top: -46px;
+                        right: 70px;
+                        @include respondto(minxs) { 
+                        }
+                        @include respondto(maxxs) {
+                            top: -54px;
+                            right: 84px;
+                        }
+                        @include respondto(sm) {
+                            top: -62px;
+                            right: 100px;
+                        }
+                        @include respondto(md) {
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            width: 12px;
+                            height: 21px;
+                            background-image: url('../img/03.plantilla-e/left-arrow.png');
+                            background-repeat: no-repeat;
+                            background-size: 12px;
+                            // background-color: lightcoral;
+                            @include respondto(minxs) {
+                            }
+                            @include respondto(maxxs) {
+                                width: 13px;
+                                height: 23px;
+                                background-size: 13px;
+                            }
+                            @include respondto(sm) {
+                                width: 15px;
+                                height: 27px;
+                                background-size: 15px;
+                            }
+                            @include respondto(md) {
+                                width: 15px;
+                                height: 27px;
+                                background-size: 15px;
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+                        }
+                    }
+                    &.slick-next{
+                        top: -46px;
+                        right: 32px;
+                        @include respondto(minxs) {
+                        }
+                        @include respondto(maxxs) {
+                            top: -54px;
+                            right: 40px;
+                        }
+                        @include respondto(sm) {
+                            top: -62px;
+                            right: 48px;
+                        }
+                        @include respondto(md) {
+                            top: -69px;
+                            right: 42px;
+                        }
+                        @include respondto(lg) {
+                            right: 40px;
+                        }
+                        @include respondto(xlg) {
+                        }
+                        &:after{
+                            content: ''; 
+                            position: absolute;
+                            width: 12px;
+                            height: 21px;
+                            background-image: url('../img/03.plantilla-e/right-arrow.png');
+                            background-repeat: no-repeat;
+                            background-size: 12px;
+                            // background-color: lightcoral;
+                            @include respondto(minxs) {
+                            }
+                            @include respondto(maxxs) {
+                                width: 13px;
+                                height: 23px;
+                                background-size: 13px;
+                            }
+                            @include respondto(sm) {
+                                width: 15px;
+                                height: 27px;
+                                background-size: 15px;
+                            }
+                            @include respondto(md) {
+                                width: 15px;
+                                height: 27px;
+                                background-size: 15px;
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+                        }
+                    }
+                }
+                .slick-list{
+                    .slick-track{
+
+                        .item-slider-mobile{
+                            // width: 239px;
+                            height: 342px;
+                            padding: 0 6px;
+                            @include respondto(minxs) {
+                            }
+                            @include respondto(maxxs) {
+                                height: 440px;
+                                padding: 0 6px;
+                            }
+                            @include respondto(sm) {
+                                height: 470px;
+                                padding: 0 7px;
+                            }
+                            @include respondto(md) {
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+                            .contenedor-card-nuevo{
+                                // width: auto;
+                                height: 100%;
+                                &::before{
+                                    content: '';
+                                }
+                                a{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                            
+                                    .txt-card{
+                                        left: 13px;
+                                        bottom: 13px;
+                                        width: 142px;
+                                        font-family: $font-breePeru;
+                                        color: #ffffff;
+                                        @include respondto(minxs) {
+                                        }
+                                        @include respondto(maxxs) {
+                                        }
+                                        @include respondto(sm) {
+                                            width: 150px;
+                                            left: 20px;
+                                            bottom: 20px;
+                                        }
+                                        @include respondto(md) {
+                                        }
+                                        @include respondto(lg) {
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                        h3{
+                                            font-weight: 700;
+                                            font-size: 13px;
+                                            line-height: 20px;
+                                            letter-spacing: .8px;
+                                            @include respondto(minxs) {
+                                            }
+                                            @include respondto(maxxs) {
+                                            }
+                                            @include respondto(sm) {
+                                                font-size: 14px;
+                                            }
+                                            @include respondto(md) {
+                                            }
+                                            @include respondto(lg) {
+                                            }
+                                            @include respondto(xlg) {
+                                            }
+                                        }
+                                        p{
+                                            font-weight: 400;
+                                            font-size: 12.5px;
+                                            line-height: 16px;
+                                            letter-spacing: .5px;
+                                            @include respondto(minxs) {
+                                            }
+                                            @include respondto(maxxs) {
+                                            }
+                                            @include respondto(sm) {
+                                                font-size: 13px;
+                                            }
+                                            @include respondto(md) {
+                                            }
+                                            @include respondto(lg) {
+                                            }
+                                            @include respondto(xlg) {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+        
+                        }
+
+                    }
+                }
+
+            }
+        }
+    
+    }
+}
+// /BLOCK MAS-NUEVO
+
+
+
+// BLOCK MAS-VISTO
+.seccion-mas-visto{
+    width: 100%;
+    background-color: #f2f2f2;
+    .content-mas-visto{
+        padding: 80px 0 60px 0;
+        @include respondto(minxs) {
+            padding: 25px 20px 7px 20px;
+        }
+        @include respondto(maxxs) {
+            padding: 35px 30px 12px 30px;;
+        }
+        @include respondto(sm) {
+            padding: 40px 30px 20px 30px;
+        }
+        @include respondto(md) {
+            padding: 70px 0 60px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        @include respondto(lg) {
+            display: flex;
+            justify-content: space-between;
+        }
+        @include respondto(xlg) {
+            display: flex;
+            justify-content: space-between;
+        }
+        h5{
+            font-family: $font-breePeru;
+            font-weight: 700;
+            font-size: 17px;
+            padding-bottom: 20px;
+            color: #282828;
+            @include respondto(minxs) {
+            }
+            @include respondto(maxxs) {
+                font-size: 20px;
+                padding-bottom: 25px;
+            }
+            @include respondto(sm) {
+                font-size: 24px;
+                padding-bottom: 25px;               
+            }
+            @include respondto(md) {
+                display: none;
+            }
+            @include respondto(lg) {
+                display: none;
+            }
+            @include respondto(xlg) {
+                display: none;
+            }
+        }
+        .contenedor-slider-top{
+            padding-bottom: 15px;
+            @include respondto(minxs) {
+                padding: 0 0 7px 0;
+            }
+            @include respondto(maxxs) {
+                padding: 0 0 10px 0;
+            }
+            @include respondto(sm) {
+                padding: 0 0 15px 0;
+            }
+            @include respondto(md) {
+                width: 65%;
+            }
+            @include respondto(lg) {
+                width: 65.5%;
+            }
+            @include respondto(xlg) {
+                width: 66%;
+            }
+            .content-slider-video{
+                width: 100%;
+                .slick-list{
+                    width: 100%;
+                    .slick-track{
+                        .item-slider-video{
+                            width: 100%;
+                            .box-slider-video{
+                                @include iframe16by9;
+                                @include respondto(minxs) {
+                                    // @include iframe4by3;
+                                }
+                                @include respondto(maxxs) {
+                                }
+                                @include respondto(sm) {
+                                }
+                                @include respondto(md) {
+                                    @include iframe16by9;
+                                }
+                                @include respondto(lg) {
+                                    @include iframe16by9;
+                                }
+                                @include respondto(xlg) {
+                                    @include iframe16by9;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .contenedor-slider-bottom{
+            @include respondto(minxs) {
+            }
+            @include respondto(maxxs) {
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+                width: 33%;
+            }
+            @include respondto(lg) {
+                width: 32%;
+            }
+            @include respondto(xlg) {
+                width: 31%;
+            }
+            h5{
+                font-family: $font-breePeru;
+                font-weight: 500;
+                font-size: 25px;
+                padding-bottom: 27px;
+                color: #282828;
+                @include respondto(minxs) {
+                    display: none;
+                    padding: 0;
+                }
+                @include respondto(maxxs) {
+                    display: none;
+                }
+                @include respondto(sm) {
+                    display: none;
+                }
+                @include respondto(md) {
+                    font-size: 22px;
+                    padding-bottom: 20px;
+                    display: block;
+                }
+                @include respondto(lg) {
+                    font-size: 24px;
+                    display: block;
+                }
+                @include respondto(xlg) {
+                    display: block;
+                }
+            }
+            .content-slider-bottom{
+                width: 100%;
+                
+                @include respondto(minxs) {
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+                .slick-list{
+                    
+                    .slick-track{
+                        width: 100% !important;
+                        display: flex;
+                        flex-direction: column;
+                        margin-left: 0;
+                        margin-right: 0;
+                        .item-slider-bottom{
+                            width: 100% !important;
+                            padding-top: 23px;
+                            border-top: 1px solid #7b7b7b;
+                            @include respondto(minxs) {
+                                padding-top: 19px;
+                                &:nth-child(1){
+                                    border-top: none;
+                                }
+                            }
+                            @include respondto(maxxs) {
+                                padding-top: 21px;
+                                &:nth-child(1){
+                                    border-top: none;
+                                }
+                            }
+                            @include respondto(sm) {
+                                padding-top: 21px;
+                                &:nth-child(1){
+                                    border-top: none;
+                                }
+                            }
+                            @include respondto(md) {
+                                padding-top: 17px;
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+                            .card-slider-mini{
+                                display: flex;
+                                align-items: flex-start;
+                                padding-bottom: 23px;
+                                cursor: pointer;
+                                @include respondto(minxs) {
+                                    padding-bottom: 19px;
+                                }
+                                @include respondto(maxxs) {
+                                    padding-bottom: 21px;
+                                }
+                                @include respondto(sm) {
+                                    padding-bottom: 21px;
+                                }
+                                @include respondto(md) {
+                                    padding-bottom: 17px;
+                                }
+                                @include respondto(lg) {
+                                }
+                                @include respondto(xlg) {
+                                }
+                                .box-logo-mini{
+                                    width: 80px;
+                                    min-width: 80px;
+                                    height: 80px;
+                                    @include respondto(minxs) {
+                                        width: 52px;
+                                        min-width: 52px;
+                                        height: 52px;
+                                    }
+                                    @include respondto(maxxs) {
+                                        width: 64px;
+                                        min-width: 64px;
+                                        height: 64px;
+                                    }
+                                    @include respondto(sm) {
+                                        width: 70px;
+                                        min-width: 70px;
+                                        height: 70px;
+                                    }
+                                    @include respondto(md) {
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    img{
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                        // object-position: center;
+                                    }
+                                }
+                                .box-txt-mini{
+                                    padding-left: 16px;
+                                    font-family: $font-breePeru;
+                                    color: #282828;
+                                    @include respondto(minxs) {
+                                        padding-left: 14px;
+                                    }
+                                    @include respondto(maxxs) {
+                                        padding-left: 15px;
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                        padding-left: 10px;
+                                    }
+                                    @include respondto(lg) {
+                                        padding-left: 12px;
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    h3{
+                                        font-weight: 700;
+                                        font-size: 24.5px;
+                                        padding-bottom: 5px;
+                                        @include respondto(minxs) {
+                                            font-size: 14px;
+                                        }
+                                        @include respondto(maxxs) {
+                                            font-size: 15.5px;
+                                        }
+                                        @include respondto(sm) {
+                                            font-size: 17.5px;
+                                        }
+                                        @include respondto(md) {
+                                            font-size: 19px;
+                                        }
+                                        @include respondto(lg) {
+                                            font-size: 21px;
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                    }
+                                    h4{
+                                        font-weight: 700;
+                                        font-size: 24.5px;
+                                        padding-bottom: 4px;
+                                        line-height: 1.1;
+                                        @include respondto(minxs) {
+                                            font-size: 13.8px;
+                                            padding-bottom: 3px;
+                                        }
+                                        @include respondto(maxxs) {
+                                            font-size: 15px;
+                                        }
+                                        @include respondto(sm) {
+                                            font-size: 17px;
+                                        }
+                                        @include respondto(md) {
+                                            font-size: 18px;
+                                        }
+                                        @include respondto(lg) {
+                                            font-size: 19.5px;
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                    }
+                                    p{
+                                        font-weight: 400;
+                                        font-size: 15.5px;
+                                        line-height: 21px;
+                                        @include respondto(minxs) {
+                                            font-size: 11px;
+                                            line-height: 15px;
+                                        }
+                                        @include respondto(maxxs) {
+                                            font-size: 12.5px;
+                                            line-height: 18px;
+                                        }
+                                        @include respondto(sm) {
+                                            font-size: 13.5px;
+                                            line-height: 20px;
+                                        }
+                                        @include respondto(md) {
+                                            font-size: 13px;
+                                        }
+                                        @include respondto(lg) {
+                                            font-size: 14.5px;
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                    }
+                                }
+                                
+                            }
+
+                        }
+
+                    }
+                }
+            }
+        }
+
+    }
+}
+// /BLOCK MAS-VISTO
+
+
+
+// BLOCK NOTICIAS
+.container-noticias-home{
+    width: 100%;
+    .content-noticias-home{ 
+
+        .noticias-subtitle{
+            padding-top: 60px;
+            padding-bottom: 37px;
+            @include respondto(minxs) { 
+                padding: 35px 0 25px 40px;
+            }
+            @include respondto(maxxs) { 
+                padding: 45px 0 30px 40px;
+            }
+            @include respondto(sm) {
+                padding-left: 35px;
+            }
+            @include respondto(md) {
+                padding-top: 57px;
+                padding-bottom: 31px;
+            }
+            @include respondto(lg) {
+                padding-bottom: 35px;
+            }
+            @include respondto(xlg) {
+            }
+
+            h4{
+                font-family: $font-breePeru;
+                font-weight: 500;
+                font-size: 30px;
+                @include respondto(minxs) { 
+                    font-weight: 700;
+                    font-size: 17px;
+                }
+                @include respondto(maxxs) { 
+                    font-size: 28px;
+                }
+                @include respondto(sm) {
+                    font-size: 28px;
+                }
+                @include respondto(md) {
+                    font-size: 28px;
+                }
+                @include respondto(lg) {
+                    font-size: 28px;
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+
+        .contenedor-noticas-cards{
+            width: 100%;
+            // padding-top: 31px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            @include respondto(minxs) { 
+                display: none;
+            }
+            @include respondto(maxxs) { 
+                display: none;
+            }
+            @include respondto(sm) {
+                display: none;
+            }
+            @include respondto(md) {
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+            .contenedor-cards{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                overflow: hidden;
+
+                &.inferior-cards{
+                    opacity: 0;
+                    max-height: 0;
+                    transition: all .7s ease;
+                    &.mostrar-card-inferior{
+                        opacity: 1;
+                        max-height: 500px;
+                        transition: all .8s ease;
+                    }
+                }
+
+                .contenedor-card-noticia{
+                    // global
+                }
+            }
+
+        }
+
+    }
+    .contenedor-slider-noticia{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        @include respondto(minxs) {        
+        }
+        @include respondto(maxxs) {  
+        }
+        @include respondto(sm) { 
+        }
+        @include respondto(md) {
+            display: none;
+        }
+        @include respondto(lg) {
+            display: none;
+        }
+        @include respondto(xlg) {
+            display: none;
+        }
+        .slider-noticia{
+            width: 100%;
+            @include respondto(minxs) {        
+                width: 75.46%;
+                max-width: 400px;
+            }
+            @include respondto(maxxs) {  
+                width: 62%;
+            }
+            @include respondto(sm) { 
+                padding: 0 50px;
+            }
+            @include respondto(md) {
+                display: none;
+            }
+            @include respondto(lg) {
+                display: none;
+            }
+            @include respondto(xlg) {
+                display: none;
+            }
+            .slick-list{
+                .slick-track{
+                    .item-card-noticia{
+                        width: 100%;
+                        margin: 0 7px;
+                        // padding: 11px;
+                        @include respondto(minxs) {
+                        }
+                        @include respondto(maxxs) {
+                        }
+                        @include respondto(sm) {
+                            margin: 0 4px;
+                        }
+                        @include respondto(md) {
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                        .contenedor-card-noticia{
+                            width: 100%;
+                            a{
+                                width: 100%;
+                                .logo-card{
+                                    width: 100%;
+                                    height: 150px;
+                                    margin-bottom: 22px;
+                                    @include respondto(minxs) {        
+                                    }
+                                    @include respondto(maxxs) {  
+                                        height: 200px;
+                                    }
+                                    @include respondto(sm) { 
+                                        height: 160px;
+                                    }
+                                    @include respondto(md) {
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    img{
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+                                .content-card-info{
+                                    width: 100%;
+                                    margin-bottom: 52px;
+                                    h3{
+                                        font-family: $font-clanOt;
+                                        @include respondto(minxs) {  
+                                            font-weight: 700;
+                                            font-size: 13px;
+                                            line-height: 1;
+                                            letter-spacing: .8px;
+                                            margin-bottom: 10px;
+                                        }
+                                        @include respondto(maxxs) { 
+                                            font-size: 15px; 
+                                            line-height: 1;
+                                            letter-spacing: .8px;
+                                            margin-bottom: 12px;
+                                        }
+                                        @include respondto(sm) { 
+                                            font-size: 14px;
+                                            line-height: 1;
+                                            letter-spacing: .8px;
+                                            margin-bottom: 12px;
+                                        }
+                                        @include respondto(md) {
+                                        }
+                                        @include respondto(lg) {
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                    }
+                                    .info-card{
+                                        margin-bottom: 0;
+                                        p{
+                                            font-family: $font-clanOt;
+                                            font-weight: 700;
+                                            font-size: 13px;
+                                            line-height: 18px;
+                                            color: #000000;
+                                            @include respondto(minxs) {    
+                                                letter-spacing: .3px;    
+                                            }
+                                            @include respondto(maxxs) {  
+                                                font-size: 14px;
+                                                letter-spacing: .2px;
+                                            }
+                                            @include respondto(sm) { 
+                                                font-size: 13px;
+                                                letter-spacing: .2px;
+                                            }
+                                            @include respondto(md) {
+                                            }
+                                            @include respondto(lg) {
+                                            }
+                                            @include respondto(xlg) {
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// css del card noticias
+.contenedor-card-noticia{
+    width: 32%;
+    @include respondto(minxs) {
+    }
+    @include respondto(maxxs) {
+    }
+    @include respondto(sm) {
+    }
+    @include respondto(md) {
+        width: 32.5%;
+    }
+    @include respondto(lg) {
+    }
+    @include respondto(xlg) {
+    }
+    .logo-card{
+        display: flex;
+        width: 100%;
+        height: 270px;
+        margin-bottom: 48px;
+        @include respondto(minxs) {}
+        @include respondto(maxxs) {}
+        @include respondto(sm) {}
+        @include respondto(md) {
+            width: 100%;
+            height: 190px;
+            margin-bottom: 35px;
+        }
+        @include respondto(lg) {
+            width: 100%;
+            height: 230px;
+            margin-bottom: 40px;
+        }
+        @include respondto(xlg) {
+            width: 100%;
+            height: 270px;
+            margin-bottom: 48px;
+        }
+        img{
+            width: 100%;
+        }
+    }
+
+    .content-card-info{
+        width: 100%;
+        margin-bottom: 23px;
+        @include respondto(minxs) {}
+        @include respondto(maxxs) {}
+        @include respondto(sm) {}
+        @include respondto(md) {
+            margin-bottom: 10px;
+        }
+        @include respondto(lg) {
+            margin-bottom: 15px;
+        }
+        @include respondto(xlg) {
+            margin-bottom: 23px;
+        }
+        h3{
+            font-family: $font-clanOt;
+            font-weight: 700;
+            font-size: 19px;
+            line-height: 19.2px;
+            letter-spacing: 1.34px;
+            margin-bottom: 16px;
+            color: rgb(var(--color-categoria));
+            @include respondto(minxs) {}
+            @include respondto(maxxs) {}
+            @include respondto(sm) {}
+            @include respondto(md) {
+                font-size: 14px;
+                line-height: 19.2px;
+                letter-spacing: 1px;
+            }
+            @include respondto(lg) {
+                font-size: 16px;
+                line-height: 19.2px;
+                letter-spacing: 1px;
+            }
+            @include respondto(xlg) {
+                font-size: 19px;
+                line-height: 19.2px;
+                letter-spacing: 1.2px;
+            }
+        }
+        
+        .info-card{
+            margin-bottom: 100px;
+            @include respondto(minxs) {}
+            @include respondto(maxxs) {}
+            @include respondto(sm) {}
+            @include respondto(md) {
+                margin-bottom: 40px;
+            }
+            @include respondto(lg) {
+                margin-bottom: 60px;
+            }
+            @include respondto(xlg) {
+                margin-bottom: 80px;
+            }
+            p{
+                font-family: $font-clanOt;
+                font-weight: 700;
+                font-size: 19px;
+                // line-height: 26.88px;
+                color: #000000;
+                @include respondto(minxs) {}
+                @include respondto(maxxs) {}
+                @include respondto(sm) {}
+                @include respondto(md) {
+                    font-size: 14px;
+                    line-height: 19px;
+                    letter-spacing: .8px;
+                }
+                @include respondto(lg) {
+                    font-size: 16px;
+                    line-height: 19.2px;
+                    letter-spacing: 1px;
+                }
+                @include respondto(xlg) {
+                    font-size: 19px;
+                    line-height: 26px;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+    }
+}
+// /BLOCK NOTICIAS
+
+
+
+
+// ********** ********** /MI ********** **********
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ********** ********** MA ********** **********
+
+
+// ********** ********** /MA ********** **********

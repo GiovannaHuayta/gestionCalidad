@@ -1,0 +1,1218 @@
+@import 'model/slick.scss';
+@import 'model/_config.scss';
+@import 'model/_reset.scss';
+@import 'model/_font.scss';
+
+
+// ********** ********** MI ********** **********
+
+
+// BLOCK BANNER
+.contenedor-banner-restaurantes{
+    width: 100%;
+    .content-banner-restaurantes{
+        width: 100%;
+        height: auto;
+        position: relative;
+        @include respondto(minxs) {
+        }
+        @include respondto(maxxs) {
+        }
+        @include respondto(sm) {
+        }
+        @include respondto(md) {
+        }
+        @include respondto(lg) {
+        }
+        @include respondto(xlg) {
+        }
+        .box-logo-restaurantes{
+            width: 100%;
+            height: auto;
+            min-height: 30vh;
+            display: flex;
+            @include respondto(minxs) {
+                // height: 276px;
+                height: 290px;
+            }
+            @include respondto(maxxs) {
+                height: 310px;
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                // min-height: 30vh;
+                object-fit: cover;
+                object-position: top center;
+                @include respondto(minxs) {
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                    min-height: 310px;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+        .contenedor-txt-restaurantes{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            width: 36%;
+            font-family: $font-breePeru;
+            text-align: center;
+            color: #ffffff;
+            @include respondto(minxs) {
+                width: 83%;
+                transform: translate(-50%, -35%);
+            }
+            @include respondto(maxxs) {
+                width: 61%;
+                transform: translate(-50%, -30%);
+            }
+            @include respondto(sm) {
+                width: 61%;
+                transform: translate(-50%, -27%);
+            }
+            @include respondto(md) {
+                width: 52%;
+                transform: translate(-50%, -25%);
+            }
+            @include respondto(lg) {
+                width: 39%;
+            }
+            @include respondto(xlg) {
+            }
+            h1{
+                font-weight: 700;
+                font-size: 48px;
+                padding-bottom: 20px;
+                @include respondto(minxs) {
+                    font-size: 22px;
+                    padding-bottom: 10px;
+                }
+                @include respondto(maxxs) {
+                    font-size: 25px;
+                    padding-bottom: 10px;
+                }
+                @include respondto(sm) {
+                    font-size: 30px;
+                    padding-bottom: 12px;
+                }
+                @include respondto(md) {
+                    font-size: 34px;
+                    padding-bottom: 12px;
+                }
+                @include respondto(lg) {
+                    font-size: 42px;
+                }
+                @include respondto(xlg) {
+                }
+            }
+            p{
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 26px;
+                @include respondto(minxs) {
+                    font-size: 15px;
+                    line-height: 18px;
+                }
+                @include respondto(maxxs) {
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+                @include respondto(sm) {
+                    font-size: 17px;
+                    line-height: 20px;
+                }
+                @include respondto(md) {
+                    font-size: 17px;
+                }
+                @include respondto(lg) {
+                    font-size: 22px;
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+    }
+}
+// /BLOCK BANNER
+
+
+
+// BLOCK PAGINA
+.container-paginas-embajadores{
+    width: 100%;
+    .content-paginas-embajadores{
+        display: flex;
+        justify-content: center;
+        
+        @include respondto(minxs) {
+        }
+        @include respondto(maxxs) {
+        }
+        @include respondto(sm) {
+        }
+        @include respondto(md) {
+        }
+        @include respondto(lg) {
+        }
+        @include respondto(xlg) {
+        }
+        
+        .contenedor-paginado-embajadoresPeru{
+            width: 100%;
+            @include respondto(minxs) { 
+                display: none;
+            }
+            @include respondto(maxxs) {
+                display: none;
+            }
+            @include respondto(sm) {
+                display: none;
+            }
+            @include respondto(md) {
+                width: 95%;
+                padding: 35px 0 40px 0;
+            }
+            @include respondto(lg) {
+                width: 95%;
+                padding: 35px 0 40px 0;
+            }
+            @include respondto(xlg) {
+                width: 85%;
+                padding: 35px 0 45px 0;
+            }
+            .paginado-amigoPeru{
+                width: 100%;
+                a{
+                    font-family: $font-breePeru;
+                    font-weight: 500;
+                    font-size:13px;
+                    line-height: 19px;
+                    color: #747577;
+                    @include respondto(minxs) { 
+                        font-size:12px;
+                    }
+                    @include respondto(maxxs) {
+                        font-size:12px;
+                    }
+                    @include respondto(sm) {
+                        font-size:12px;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                    // padding-right: 5px;
+                    
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+                img{
+                    margin: 0 5px;
+                }
+                
+            }
+        }
+
+    }
+}
+// /BLOCK PAGINA
+
+
+
+// BLOCK BUSCADOR
+.container-buscador-patrimonio{
+    width: 100%;
+    .content-buscador-patrimonio{
+        display: flex;
+        justify-content: center;
+        .contenedor-buscador-patrimonioPeru{
+            width: 100%;
+            @include respondto(minxs) { 
+                padding: 35px 13px 0 13px;
+            }
+            @include respondto(maxxs) {
+                padding: 40px 15px 0 15px;
+            }
+            @include respondto(sm) {
+                width: 90%;
+                padding: 45px 0 0 0;
+            }
+            @include respondto(md) {
+                width: 95%;
+            }
+            @include respondto(lg) {
+                width: 95%;
+            }
+            @include respondto(xlg) {
+                width: 85%;
+            }
+
+            .title-amigoPeru{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                padding-bottom: 32px;
+                @include respondto(minxs) { 
+                    justify-content: center;
+                    text-align: center;
+                    padding-bottom: 37px;
+                    display: block;
+                }
+                @include respondto(maxxs) {
+                    justify-content: center;
+                    text-align: center;
+                    padding-bottom: 37px;
+                }
+                @include respondto(sm) {
+                    text-align: center;
+                    padding-bottom: 37px;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {}
+                @include respondto(xlg) {}
+                h4{
+                    font-family: $font-breePeru;
+                    font-weight: 500;
+                    font-size: 32px;
+                    line-height: 38.5px;
+                    color: #636466;
+                    @include respondto(minxs) { 
+                        font-size: 15.7px;
+                        line-height: 1;
+                    }
+                    @include respondto(maxxs) {
+                        font-size: 18px;
+                        line-height: 1;
+                    }
+                    @include respondto(sm) {
+                        font-size: 24px;
+                        line-height: 1;
+                    }
+                    @include respondto(md) {
+                        font-size: 28px;
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                    br{
+                        @include respondto(minxs) { 
+                        }
+                        @include respondto(maxxs) {
+                        }
+                        @include respondto(sm) {
+                        }
+                        @include respondto(md) {
+                            display: none;
+                        }
+                        @include respondto(lg) {
+                            display: none;
+                        }
+                        @include respondto(xlg) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .contenedor-card-amigoPeru{
+                width: 100%;
+                @include respondto(minxs) { 
+                }
+                @include respondto(maxxs) {
+                    padding: 0 5px ;
+                }
+                @include respondto(sm) {
+                    padding: 0 5px ;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+                .item-card{
+                    display: flex;
+                    @include respondto(minxs) { 
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    @include respondto(maxxs) {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    @include respondto(sm) {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+
+                    .buscador-noticias-patrimonio{
+                        width: 278px;
+                        padding-right: 28px;
+                        @include respondto(minxs) {
+                            width: 100%;
+                            padding: 0 0 22px 0;
+                        }
+                        @include respondto(maxxs) {
+                            width: 100%;
+                            padding: 0 0 30px 0;
+                        }
+                        @include respondto(sm) {
+                            width: 100%;
+                            padding: 0 0 30px 0;
+                        }
+                        @include respondto(md) {
+                            padding-right: 15px;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                        .content-buscador-noticias{
+                            width: 250px;
+                            padding: 25px 12px 0 12px;
+                            background-color: #E6E7E8;
+                            @include respondto(minxs) { 
+                                width: 100%;
+                                display: block;
+                                margin-right: 0px;
+                                padding: 25px 18px 0 18px;
+                            }
+                            @include respondto(maxxs) {
+                                width: 100%;
+                                display: block;
+                                margin-right: 0px;
+                                padding: 25px 20px 0 20px;
+                            }
+                            @include respondto(sm) {
+                                width: 100%;
+                                display: block;
+                                margin-right: 0px;
+                                padding: 25px 20px 0 20px;
+                            }
+                            @include respondto(md) {
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+
+                            .input-buscador{
+                                width: 100%; 
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                @include respondto(minxs) { 
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                @include respondto(maxxs) {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                @include respondto(sm) {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                @include respondto(md) {
+                                }
+                                @include respondto(lg) {
+                                }
+                                @include respondto(xlg) {
+                                }
+    
+                                h4{
+                                    // font-family: $font-breePeru;
+                                    font-weight: 500;
+                                    // font-size: 16px;
+                                    font-family: $font-clanOt;
+                                    font-size: 15px;
+                                    color: #636466;
+                                    padding-bottom: 15px;
+                                    @include respondto(minxs) {
+                                        padding-bottom: 12px;
+                                    }
+                                    @include respondto(maxxs) {
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                }
+                                .item-buscar{
+                                    width: 100%;
+                                    height: 48px;
+                                    margin-bottom: 30px;
+                                    position: relative;
+                                    @include respondto(minxs) {
+                                        height: 48px;
+                                    }
+                                    @include respondto(maxxs) {
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    input{
+                                        height: 100%;
+                                        width: 100%;
+                                        border: 1px solid #FFFFFF;
+                                        // font-family: $font-breePeru;
+                                        font-family: $font-clanOt;
+                                        font-weight: 500;
+                                        font-size: 15px;
+                                        color: #3D3D3D;
+                                        padding: 2px 38px 0 14px;
+                                        // padding-left: 14px;
+                                        // padding-right: 38px;
+                                        @include respondto(minxs) {
+                                        }
+                                        @include respondto(maxxs) {
+                                            padding: 2px 44px 0 14px;
+                                        }
+                                        @include respondto(sm) {
+                                        }
+                                        @include respondto(md) {
+                                        }
+                                        @include respondto(lg) {
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                        &:focus-visible{
+                                            // border: none;
+                                            // outline: none;
+                                        }
+                                        &::placeholder{
+                                            color: #636466;
+                                            line-height: 30px;
+                                            font-size: 14.5px;
+                                            font-weight: 400;
+                                        }
+                                    }
+                                    .icon-lupa{
+                                        position: absolute;
+                                        top: 14px;
+                                        right: 10px;
+                                        height: 20px;
+                                        width: 20px;
+                                        cursor: pointer;
+                                        @include respondto(minxs) {
+                                        }
+                                        @include respondto(maxxs) {
+                                            right: 14px;
+                                        }
+                                        @include respondto(sm) {
+                                        }
+                                        @include respondto(md) {
+                                        }
+                                        @include respondto(lg) {
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                        img{}
+                                    }
+                                    
+                                }
+                            }
+    
+                            .filtro-desplegable{
+                                width: 100%;            
+                                .title-filtro{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    padding-right: 5px;
+                                    padding-bottom: 20px;
+                                    cursor: pointer;
+                                    &.icon-flecha-filtro{
+                                        transition: all .4s ease;
+                                        h4{}
+                                        .icon-svg{
+                                            transform: rotate(180deg);
+                                        }
+                                    }
+                                    h4{
+                                        // font-family: $font-breePeru;
+                                        font-family: $font-clanOt;
+                                        font-weight: 500;
+                                        // font-size: 16px;
+                                        font-size: 15px;
+                                        color: #636466;
+                                    }
+                                    .icon-svg{
+                                        transition: all .4s ease;
+                                        svg{
+                                            width: 13px;
+                                            path{
+                                                color: #636466;
+                                            }
+                                        }
+                                    }
+                                }
+                                .content-date-filtro{
+                                    width: 100%;
+                                    padding-bottom: 17px;
+                                    overflow: hidden;
+                                    max-height: 115px;
+                                    opacity: 1;
+                                    transition: all .5s ease;
+                                    &.ocultar-filtro{
+                                        max-height: 0;
+                                        padding: 0;
+                                        opacity: 0;
+                                        transition: all .5s ease;
+                                        h5{
+                                        }
+                                        .box-select-filtro{
+                                            select{
+                                            }
+                                        }
+                                    }
+                                    h5{
+                                        padding-left: 15px;
+                                        padding-bottom: 10px;
+                                        // font-family: $font-breePeru;
+                                        font-family: $font-clanOt;
+                                        font-weight: 500;
+                                        // font-size: 13px;
+                                        font-size: 12px;
+                                        color: #636466;
+                                    }
+
+                                    .box-select-filtro{
+                                        width: 100%;
+                                        height: 48px;
+                                        margin-bottom: 15px;
+                                        @include respondto(minxs) {
+                                        }
+                                        @include respondto(maxxs) {
+                                        }
+                                        @include respondto(sm) {
+                                        }
+                                        @include respondto(md) {
+                                        }
+                                        @include respondto(lg) {
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                        select{
+                                            width: 100%;
+                                            height: 100%;
+                                            padding: 2px 0 0 14px;
+                                            border: none;
+                                            background-image: url('../img/20.restaurantes-del-mundo/icon-select.jpg');
+                                            background-repeat: no-repeat;
+                                            background-size: 10px 6px;
+                                            background-position: calc(100% - 10px) center;
+                                            appearance: none;
+                                            cursor: pointer;
+                                            // font-family: $font-breePeru;
+                                            font-family: $font-clanOt;
+                                            font-weight: 400;
+                                            // font-size: 14px;
+                                            font-size: 13px;
+                                            color: #636466;
+                                            transition: all .5s ease;
+                                            &:focus-visible{
+                                                outline: none;
+                                            }
+                                            &:focus{
+                                                box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+                                            }
+                                        }
+                                    }
+
+                                }
+                                .box-tags{
+                                    width: 100%;
+                                    padding-bottom: 50px;
+                                    max-height: 100px;
+                                    overflow: hidden;
+                                    opacity: 1;
+                                    transition: all .4s ease;
+                                    &.ocultar-tag{
+                                        max-height: 0;
+                                        padding: 0;
+                                        opacity: 0;
+                                        transition: all .4s ease;
+                                        .item-seleccionado{
+                                            // height: 0;
+                                        }
+                                    }
+                                    @include respondto(minxs) {
+                                        padding-bottom: 30px;
+                                    }
+                                    @include respondto(maxxs) {
+                                        padding-bottom: 35px;
+                                    }
+                                    @include respondto(sm) {
+                                        padding-bottom: 40px;
+                                    }
+                                    @include respondto(md) {
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    .item-seleccionado{
+                                        width: 100%;
+                                        height: 55px;
+                                        background-color: #ffffff;
+                                        transition: all .5s ease;
+                                    }
+                                }
+                            }
+
+                            .content-btn-buscar{
+                                width: 100%;
+                                height: 44px;
+                                display: inline-flex;
+                                margin-bottom: 14px;
+                                @include respondto(minxs) {
+                                    margin-bottom: 22px;
+                                }
+                                @include respondto(maxxs) {
+                                    margin-bottom: 20px;
+                                }
+                                @include respondto(sm) {
+                                    margin-bottom: 20px;
+                                }
+                                @include respondto(md) {
+                                }
+                                @include respondto(lg) {
+                                }
+                                @include respondto(xlg) {
+                                }
+                                a{
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    background-color: #F59D15;
+                                    border-radius: 5px;
+                                    // font-family: $font-breePeru;
+                                    font-family: $font-clanOt;
+                                    font-weight: 500;
+                                    // font-size: 15.5px;
+                                    font-size: 15px;
+                                    color: #ffffff;
+                                    &:hover {
+                                        background-color: darken(#F59D15, 4);
+                                    }
+                                    &:active {
+                                        transform: scale(.96);
+                                    }
+                                    @include respondto(minxs) {
+                                    }
+                                    @include respondto(maxxs) {
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    .contenedor-cards-v2{
+                        width: 100%;
+                        @include respondto(minxs) { 
+                        }
+                        @include respondto(maxxs) {
+                        }
+                        @include respondto(sm) {
+                        }
+                        @include respondto(md) {
+                            
+                        }
+                        @include respondto(lg) {
+                            
+                        }
+                        @include respondto(xlg) {
+                            
+                        }
+                        .content-cards-v2{
+                            width: 100%;
+                            padding-left: 28px;
+                            @include respondto(minxs) { 
+                                padding: 0;
+                            }
+                            @include respondto(maxxs) {
+                                padding: 0;
+                                // display: none;
+                            }
+                            @include respondto(sm) {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                                // gap: 15px;
+                                padding: 0;
+                            }
+                            @include respondto(md) {
+                                padding-left: 15px;
+                            }
+                            @include respondto(lg) {
+                                
+                            }
+                            @include respondto(xlg) {
+                                
+                            }
+                            .container-card-v2{
+                                width: 100%;
+                                padding-bottom: 18px;
+                                height: 257px;
+                                @include respondto(minxs) { 
+                                    height: auto;
+                                }
+                                @include respondto(maxxs) {
+                                    height: auto;
+                                }
+                                @include respondto(sm) {
+                                    width: 49.3%;
+                                    height: auto;
+                                }
+                                @include respondto(md) {
+                                    height: 230px;
+                                }
+                                @include respondto(lg) {
+                                    height: 246px;
+                                }
+                                @include respondto(xlg) {
+                                    
+                                }
+                                &:last-child{
+                                    margin-bottom: 118px;
+                                    @include respondto(minxs) { 
+                                    }
+                                    @include respondto(maxxs) {
+                                        padding-bottom: 92px;
+                                    }
+                                    @include respondto(sm) {
+                                        padding-bottom: 92px;
+                                    }
+                                    @include respondto(md) {
+                                        
+                                    }
+                                    @include respondto(lg) {
+                                        
+                                    }
+                                    @include respondto(xlg) {
+                                        
+                                    }
+                                }
+                                a{
+                                    width: 100%;
+                                    height: 100%;
+                                    @include respondto(minxs) {
+                                    }
+                                    @include respondto(maxxs) {
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                        display: flex;
+                                    }
+                                    @include respondto(lg) {
+                                        display: flex;
+                                    }
+                                    @include respondto(xlg) {
+                                        display: flex;
+                                    }
+                                    .logo-card-v2{
+                                        width: 40%;
+                                        height: 100%;
+                                        @include respondto(minxs) { 
+                                            width: 100%;
+                                            height: 501px;
+                                            // display: flex;
+                                        }
+                                        @include respondto(maxxs) {
+                                            width: 100%;
+                                            height: 507px;
+                                        }
+                                        @include respondto(sm) {
+                                            width: 100%;
+                                            height: 507px;
+                                        }
+                                        @include respondto(md) {
+                                            width: 38%;
+                                        }
+                                        @include respondto(lg) {
+                                            width: 39%;
+                                        }
+                                        @include respondto(xlg) {
+                                            
+                                        }
+                                        img{
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                            @include respondto(minxs) { 
+                                                height: 100%;
+                                                object-fit: cover;
+                                            }
+                                            @include respondto(maxxs) {
+                                                height: 100%;
+                                                object-fit: cover;
+                                            }
+                                            @include respondto(sm) {
+                                                height: 100%;
+                                                object-fit: cover;
+                                            }
+                                            @include respondto(md) {
+                                                
+                                            }
+                                            @include respondto(lg) {
+                                                
+                                            }
+                                            @include respondto(xlg) {
+                                                
+                                            }
+                                        }
+                                    }
+                                    .contenedor-locate-info{
+                                        width: 60%;
+                                        height: 100%;
+                                        padding: 40px 77px 0 52px;
+                                        background-color: #E6E7E8;
+                                        border-bottom: 5px solid #F59D15;
+                                        @include respondto(minxs) {
+                                            width: 100%;
+                                            text-align: center;
+                                            padding: 33px 0 0 0;
+                                            height: 210px;
+                                        }
+                                        @include respondto(maxxs) {
+                                            width: 100%;
+                                            text-align: center;
+                                            padding: 33px 0 0 0;
+                                            height: 210px;
+                                        }
+                                        @include respondto(sm) {
+                                            width: 100%;
+                                            text-align: center;
+                                            padding: 35px 0 0 0;
+                                            height: 220px;
+                                            max-height: 250px;
+                                        }
+                                        @include respondto(md) {
+                                            width: 62%;
+                                            padding: 35px 20px 0 25px;
+                                        }
+                                        @include respondto(lg) {
+                                            width: 61%;
+                                            padding: 40px 40px 0 44px;
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                        h4{
+                                            // font-family: $font-breePeru;
+                                            font-family: $font-clanOt;
+                                            font-weight: 700;
+                                            // font-size: 17px;
+                                            font-size: 16px;
+                                            letter-spacing: 2.27px;
+                                            color: #F59D15;
+                                            padding-bottom: 18px;
+                                            @include respondto(minxs) {
+                                                padding-bottom: 10px;
+                                            }
+                                            @include respondto(maxxs) {
+                                                padding-bottom: 12px;
+                                            }
+                                            @include respondto(sm) {
+                                                padding-bottom: 13px;
+                                            }
+                                            @include respondto(md) {
+                                                // font-size: 15px;
+                                                font-size: 14.5;
+                                                padding-bottom: 15px;
+                                            }
+                                            @include respondto(lg) {
+                                            }
+                                            @include respondto(xlg) {
+                                            }
+                                        }
+                                        .content-locate-info{
+                                            h3{
+                                                // font-family: $font-breePeru;
+                                                font-family: $font-clanOt;
+                                                font-weight: 700;
+                                                // font-size: 19px;
+                                                font-size: 18px;
+                                                color: #939598;
+                                                padding-bottom: 13px;
+                                                @include respondto(minxs) {
+                                                    padding-bottom: 10px;
+                                                }
+                                                @include respondto(maxxs) {
+                                                    padding-bottom: 10px;
+                                                }
+                                                @include respondto(sm) {
+
+                                                }
+                                                @include respondto(md) {
+                                                    // font-size: 17px;
+                                                    font-size: 16px;
+                                                    padding-bottom: 10px;
+                                                }
+                                                @include respondto(lg) {
+                                                }
+                                                @include respondto(xlg) {
+                                                }
+                                            }
+                                            .box-locate-contact{
+                                                p{
+                                                    // font-family: $font-breePeru;
+                                                    font-family: $font-clanOt;
+                                                    font-weight: 700;
+                                                    // font-size: 14.8px;
+                                                    letter-spacing: .6px;
+                                                    color: #939598;
+                                                    padding-bottom: 12px;
+                                                    @include respondto(minxs) {
+                                                        padding-bottom: 8px;
+                                                        // font-size: 14px;
+                                                        font-size: 13px;
+                                                    }
+                                                    @include respondto(maxxs) {
+                                                        padding-bottom: 10px;
+                                                        font-size: 14px;
+                                                    }
+                                                    @include respondto(sm) {
+                                                        padding-bottom: 10px;
+                                                    }
+                                                    @include respondto(md) {
+                                                        font-size: 12.7px;
+                                                        letter-spacing: .3px;
+                                                        padding-bottom: 10px;
+                                                    }
+                                                    @include respondto(lg) {
+                                                        // font-size: 14px;
+                                                        font-size: 13px;
+                                                        letter-spacing: .5px;
+                                                        padding-bottom: 10px;
+                                                    }
+                                                    @include respondto(xlg) {
+                                                    }
+                                                    span{
+                                                        // font-family: $font-breePeru;
+                                                        font-family: $font-clanOt;
+                                                        font-weight: 400;
+                                                        // font-size: 13.8px;
+                                                        @include respondto(minxs) {
+                                                            // font-size: 13px;
+                                                            font-size: 12px;
+                                                        }
+                                                        @include respondto(maxxs) {
+                                                            font-size: 13px;
+                                                        }
+                                                        @include respondto(sm) {
+                                                            font-size: 13px;
+                                                        }
+                                                        @include respondto(md) {
+                                                            font-size: 11.7px;
+                                                        }
+                                                        @include respondto(lg) {
+                                                            // font-size: 13px;
+                                                            font-size: 12px;
+                                                        }
+                                                        @include respondto(xlg) {
+                                                            font-size: 12.5px;
+                                                        }
+                                                    }
+                                                }
+                                                .locate-contact{
+                                                    display: flex;
+                                                    justify-content: space-between;
+                                                    @include respondto(minxs) {
+                                                        flex-direction: column;
+                                                    }
+                                                    @include respondto(maxxs) {
+                                                        flex-direction: column;
+                                                    }
+                                                    @include respondto(sm) {
+                                                        flex-direction: column;
+                                                    }
+                                                    @include respondto(md) {
+                                                    }
+                                                    @include respondto(lg) {
+                                                    }
+                                                    @include respondto(xlg) {
+                                                    }
+                                                    p{
+                                                        // font-family: $font-breePeru;
+                                                        font-family: $font-clanOt;
+                                                        font-weight: 700;
+                                                        // font-size: 14.8px;
+                                                        letter-spacing: .6px;
+                                                        color: #939598;
+                                                        padding-bottom: 12px;
+                                                        @include respondto(minxs) {
+                                                            // font-size: 14px;
+                                                            font-size: 13px;
+                                                            padding-bottom: 8px;
+                                                        }
+                                                        @include respondto(maxxs) {
+                                                            font-size: 14px;
+                                                            padding-bottom: 9px;
+                                                        }
+                                                        @include respondto(sm) {
+                                                            font-size: 14px;
+                                                            padding-bottom: 10px;
+                                                        }
+                                                        @include respondto(md) {
+                                                            font-size: 12.7px;
+                                                            letter-spacing: .3px;
+                                                        }
+                                                        @include respondto(lg) {
+                                                            // font-size: 14px;
+                                                            font-size: 13px;
+                                                            letter-spacing: .5px;
+                                                        }
+                                                        @include respondto(xlg) {
+                                                            font-size: 14px;
+                                                        }
+                                                        
+                                                        span{
+                                                            // font-family: $font-breePeru;
+                                                            font-family: $font-clanOt;
+                                                            font-weight: 400;
+                                                            // font-size: 13.8px;
+                                                            @include respondto(minxs) {
+                                                                // font-size: 13px;
+                                                                font-size: 12px;
+                                                            }
+                                                            @include respondto(maxxs) {
+                                                                font-size: 13px;
+                                                            }
+                                                            @include respondto(sm) {
+                                                                font-size: 13px;
+                                                            }
+                                                            @include respondto(md) {
+                                                                font-size: 11.7px;
+                                                            }
+                                                            @include respondto(lg) {
+                                                                // font-size: 13px;
+                                                                font-size: 12px;
+                                                            }
+                                                            @include respondto(xlg) {
+                                                                font-size: 13px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        } 
+                                        p{
+                                            // font-family: $font-breePeru;
+                                            font-family: $font-clanOt;
+                                            // font-weight: 400;
+                                            font-weight: 500;
+                                            // font-size: 13.8px;
+                                            font-size: 13px;
+                                            letter-spacing: 1px;
+                                            color: #939598;
+                                            @include respondto(minxs) {
+                                                font-size: 13px;
+                                                letter-spacing: .7px;
+                                            }
+                                            @include respondto(maxxs) {
+                                                font-size: 13px;
+                                                letter-spacing: .7px;
+                                            }
+                                            @include respondto(sm) {
+                                                font-size: 13px;
+                                                letter-spacing: .8;
+                                                padding-bottom: 0;
+                                                margin-bottom: 0;
+                                            }
+                                            @include respondto(md) {
+                                                font-size: 12.7px;
+                                                letter-spacing: .5px;
+                                            }
+                                            @include respondto(lg) {
+                                            }
+                                            @include respondto(xlg) {
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// ********** ********** /MI ********** **********
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ********** ********** MA ********** **********
+
+
+// ********** ********** /MA ********** **********

@@ -1,0 +1,601 @@
+/**************** RESPONSIVE *********************/
+/**************** /RESPONSIVE *********************/
+/***** Dark theme Material Design *****/
+/***** /Dark theme Material Design *****/
+/****** Light theme Material Design ******/
+/****** /Light theme Material Design ******/
+/********* Constants de fuente Info-Peru ***********/
+/********* /Constants de fuente Info-Peru ***********/
+/********* PALETTE COLORS ***********/
+/********* /PALETTE COLORS ***********/
+/**************** RESPONSIVE *********************/
+/**************** /RESPONSIVE *********************/
+/* Inicio iframe responsive */
+/* Fin iframe responsive */
+/* Inicio ajustar texto a la caja usa tres puntos suspensivos al final y en una sola linea */
+/* Fin ajustar texto a la caja usa tres puntos suspensivos al final y en una sola linea */
+/* Inicio ajustar texto a la caja usa tres puntos suspensivos al final y en varias lineas */
+/* Example: @include ajustatrespuntosmultiline(17px, 1.1, 3); */
+/* Fin ajustar texto a la caja usa tres puntos suspensivos al final y en varias lineas */
+/* Inicio ajustar texto a la caja */
+/* Fin ajustar texto a la caja */
+/* Inicio convierte imagen a escala de grises por css y svg 
+*  Para asegurar mayor compatibilidad agrgar en cualquier parte de la pagina el siguiente code:
+* 	<div style="width:0;height:0;"><svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"><filter id="grayscale"><fecolormatrix type="matrix" values="0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"/></filter></svg></div>
+*/
+/* Fin convierte imagen a escala de grises por css y svg  */
+/* Inicio scroll design */
+/* Example: @include scroll-design(#f5f5f5,#630496,#662c91,rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)) */
+/* Fin scroll design */
+/* Inicio animacion shadow */
+/* Fin animacion shadow */
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+@media only screen and (max-width: 768px) {
+  body.overflow-hidden {
+    overflow: hidden;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  body.overflow-hidden {
+    overflow: hidden;
+  }
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+span {
+  margin: 0;
+}
+
+img {
+  vertical-align: baseline;
+  max-width: none;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+form {
+  margin: 0;
+}
+
+.input-number-no-bottom {
+  -moz-appearance: textfield;
+  margin: 0;
+}
+.input-number-no-bottom::-webkit-inner-spin-button, .input-number-no-bottom::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-searchbox-no-style::-webkit-search-decoration, .input-searchbox-no-style::-webkit-search-cancel-button, .input-searchbox-no-style::-webkit-search-results-button, .input-searchbox-no-style::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+.clear-input {
+  border: 0;
+}
+.clear-input:focus {
+  outline: 0px;
+}
+
+.blockv3-container {
+  width: 96%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 1701px) {
+  .blockv3-container {
+    max-width: 1450px;
+  }
+}
+
+/* ClanOt */
+@font-face {
+  font-family: "ClanOt";
+  font-weight: 400;
+  font-style: normal;
+  src: local("clanOt 400"), local("clanOt-400"), url("../fonts/font-clan/clanOt-400.otf") format("opentype");
+}
+@font-face {
+  font-family: "ClanOt";
+  font-style: normal;
+  font-weight: 500;
+  src: local("clanOt 500"), local("clanOt-500"), url("../fonts/font-clan/clanOt-500.otf") format("opentype");
+}
+@font-face {
+  font-family: "ClanOt";
+  font-style: normal;
+  font-weight: 700;
+  src: local("clanOt 700"), local("clanOt-700"), url("../fonts/font-clan/clanOt-700.otf") format("opentype");
+}
+@font-face {
+  font-family: "ClanOt";
+  font-style: normal;
+  font-weight: 900;
+  src: local("clanOt 900"), local("clanOt-900"), url("../fonts/font-clan/clanOt-900.otf") format("opentype");
+}
+/* Bree */
+@font-face {
+  font-family: "BreePeru";
+  font-style: normal;
+  font-weight: 400;
+  src: local("bree 400"), local("bree-400"), url("../fonts/font-bree/breeperu_light.otf") format("opentype");
+}
+@font-face {
+  font-family: "BreePeru";
+  font-style: italic;
+  font-weight: 400;
+  src: local("bree 400"), local("bree-400"), url("../fonts/font-bree/breeperu_lightoblique.otf") format("opentype");
+}
+@font-face {
+  font-family: "BreePeru";
+  font-style: normal;
+  font-weight: 500;
+  src: local("bree 500"), local("bree-500"), url("../fonts/font-bree/breeperu_regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "BreePeru";
+  font-style: italic;
+  font-weight: 500;
+  src: local("bree 500"), local("bree-500"), url("../fonts/font-bree/breeperu_regularoblique.otf") format("opentype");
+}
+@font-face {
+  font-family: "BreePeru";
+  font-style: normal;
+  font-weight: 700;
+  src: local("bree 700"), local("bree-700"), url("../fonts/font-bree/breeperu_bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "BreePeru";
+  font-style: italic;
+  font-weight: 700;
+  src: local("bree 700"), local("bree-700"), url("../fonts/font-bree/breeperu_boldoblique.otf") format("opentype");
+}
+/* Roboto */
+@font-face {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-style: normal;
+  src: local("roboto 300"), local("roboto-300"), url("../fonts/font-roboto/roboto-light.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  src: local("roboto 400"), local("roboto-400"), url("../fonts/font-roboto/roboto-regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: local("roboto 500"), local("roboto-500"), url("../fonts/font-roboto/roboto-medium.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: local("roboto 700"), local("roboto-700"), url("../fonts/font-roboto/roboto-bold.ttf") format("opentype");
+}
+.banner-contacto {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 80vh;
+}
+@media only screen and (max-width: 576px) {
+  .banner-contacto {
+    height: 35vh;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .banner-contacto {
+    height: 35vh;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .banner-contacto {
+    height: 35vh;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .banner-contacto {
+    height: 35vh;
+  }
+}
+.banner-contacto img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+@media only screen and (max-width: 576px) {
+  .banner-contacto img {
+    -o-object-position: left;
+       object-position: left;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .banner-contacto img {
+    -o-object-position: left;
+       object-position: left;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .banner-contacto img {
+    -o-object-position: left;
+       object-position: left;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .banner-contacto img {
+    -o-object-position: left;
+       object-position: left;
+  }
+}
+
+.formulario-contacto .content-formulario-contacto form {
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 30px;
+}
+@media only screen and (max-width: 576px) {
+  .formulario-contacto .content-formulario-contacto form {
+    margin-bottom: 45px;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .formulario-contacto .content-formulario-contacto form {
+    margin-bottom: 45px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .formulario-contacto .content-formulario-contacto form {
+    margin-bottom: 45px;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .formulario-contacto .content-formulario-contacto form {
+    margin-bottom: 45px;
+  }
+}
+.formulario-contacto .content-formulario-contacto form .content-inputs, .formulario-contacto .content-formulario-contacto form .mensaje-pta {
+  background-color: #fff;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: -220px auto 50px;
+  padding: 52px 63px;
+  position: relative;
+  width: 768px;
+  -moz-box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.3);
+}
+@media only screen and (max-width: 576px) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs, .formulario-contacto .content-formulario-contacto form .mensaje-pta {
+    margin: 30px auto 50px;
+    width: 100%;
+    padding: 25px 30px;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs, .formulario-contacto .content-formulario-contacto form .mensaje-pta {
+    margin: 30px auto 50px;
+    width: 100%;
+    padding: 25px 30px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs, .formulario-contacto .content-formulario-contacto form .mensaje-pta {
+    margin: 30px auto 50px;
+    width: 100%;
+    padding: 25px 30px;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs, .formulario-contacto .content-formulario-contacto form .mensaje-pta {
+    margin: 30px auto 50px;
+    width: 100%;
+    padding: 25px 30px;
+  }
+}
+.formulario-contacto .content-formulario-contacto form .content-inputs h2, .formulario-contacto .content-formulario-contacto form .mensaje-pta h2 {
+  font-family: "ClanOt";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 110%;
+  text-align: center;
+  color: #D52B1E;
+}
+@media only screen and (max-width: 576px) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs h2, .formulario-contacto .content-formulario-contacto form .mensaje-pta h2 {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs h2, .formulario-contacto .content-formulario-contacto form .mensaje-pta h2 {
+    font-size: 24px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs h2, .formulario-contacto .content-formulario-contacto form .mensaje-pta h2 {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs h2, .formulario-contacto .content-formulario-contacto form .mensaje-pta h2 {
+    font-size: 24px;
+  }
+}
+.formulario-contacto .content-formulario-contacto form .content-inputs img, .formulario-contacto .content-formulario-contacto form .mensaje-pta img {
+  margin: 10px;
+  max-width: 70px;
+}
+.formulario-contacto .content-formulario-contacto form .content-inputs > p, .formulario-contacto .content-formulario-contacto form .mensaje-pta > p {
+  font-family: ClanOT;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 154%;
+  text-align: center;
+  color: #404040;
+  margin-top: 20px;
+  margin-bottom: 45px;
+}
+@media only screen and (max-width: 576px) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs > p, .formulario-contacto .content-formulario-contacto form .mensaje-pta > p {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs > p, .formulario-contacto .content-formulario-contacto form .mensaje-pta > p {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs > p, .formulario-contacto .content-formulario-contacto form .mensaje-pta > p {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .formulario-contacto .content-formulario-contacto form .content-inputs > p, .formulario-contacto .content-formulario-contacto form .mensaje-pta > p {
+    font-size: 14px;
+  }
+}
+.formulario-contacto .content-formulario-contacto form .content-inputs > p a, .formulario-contacto .content-formulario-contacto form .mensaje-pta > p a {
+  color: #D52B1E;
+}
+.formulario-contacto .content-formulario-contacto form .content-inputs .control-group .input-control, .formulario-contacto .content-formulario-contacto form .mensaje-pta .control-group .input-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  margin-bottom: 45px;
+}
+.formulario-contacto .content-formulario-contacto form .content-inputs .control-group .input-control label, .formulario-contacto .content-formulario-contacto form .mensaje-pta .control-group .input-control label {
+  font-family: "ClanOt", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14.5px;
+  line-height: 143%;
+  color: #404040;
+}
+.formulario-contacto .content-formulario-contacto form .content-inputs .control-group .input-control input, .formulario-contacto .content-formulario-contacto form .mensaje-pta .control-group .input-control input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #a4a4a4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #404040;
+  font-family: "ClanOt", sans-serif;
+  font-size: 15.3px;
+  font-weight: normal;
+  line-height: 1.6;
+  outline: none;
+  padding: 1px 5px;
+}
+.formulario-contacto .content-formulario-contacto form .content-inputs .control-group .input-control textarea, .formulario-contacto .content-formulario-contacto form .mensaje-pta .control-group .input-control textarea {
+  border: 1px solid #a4a4a4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #404040;
+  display: block;
+  font-family: "ClanOt", sans-serif;
+  font-family: 15px;
+  font-weight: normal;
+  height: 200px;
+  line-height: 1.3;
+  margin: 20px 0 0;
+  outline: none;
+  padding: 10px;
+  resize: none;
+  width: 100%;
+}
+.formulario-contacto .content-formulario-contacto form .actions p {
+  font-family: "ClanOt";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 141%;
+  text-align: center;
+  color: #404040;
+  margin-bottom: 25px;
+}
+.formulario-contacto .content-formulario-contacto form .actions p a {
+  color: #D52B1E;
+}
+.formulario-contacto .content-formulario-contacto form .actions .enviarMsj {
+  font-family: "ClanOt";
+  font-weight: bold;
+  background-color: transparent;
+  border: 3px solid #d52b1e;
+  border-radius: 6px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #d52b1e;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  overflow: hidden;
+  outline: none;
+  padding: 14px 16px 12px;
+  position: relative;
+  width: 180px;
+  z-index: 1;
+  -webkit-transition: color 0.3s ease-in;
+  transition: color 0.3s ease-in;
+}
+.formulario-contacto .content-formulario-contacto form .actions .enviarMsj:hover {
+  color: #FFF;
+}
+.formulario-contacto .content-formulario-contacto form .actions .enviarMsj:hover:before {
+  opacity: 1;
+  width: 102%;
+}
+.formulario-contacto .content-formulario-contacto form .actions .enviarMsj:before {
+  content: "";
+  background-color: #d52b1e;
+  height: 102%;
+  left: -1%;
+  opacity: 0;
+  position: absolute;
+  top: -1%;
+  width: 0;
+  z-index: -1;
+  -webkit-transition: opacity 0.3s, width 0.3s;
+  transition: opacity 0.3s, width 0.3s;
+}
+.formulario-contacto .content-formulario-contacto form .actions .enviarMsj:active {
+  -webkit-transform: scale(0.96);
+          transform: scale(0.96);
+}
+
+.modal-terminos-condiciones {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.modal-terminos-condiciones .contenedor-modal-terminos-condiciones {
+  background-color: #fff;
+  left: 50%;
+  max-height: 95%;
+  max-width: 1200px;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 95%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 33px;
+}
+.modal-terminos-condiciones .contenedor-modal-terminos-condiciones .tecerrar {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-family: "ClanOt";
+  font-weight: 600;
+  font-size: 20px;
+  cursor: pointer;
+}
+.modal-terminos-condiciones .contenedor-modal-terminos-condiciones > h2 {
+  color: #d52b1e;
+  font-family: "ClanOt";
+  font-size: 25px;
+  font-weight: bold;
+  margin: 25px 0 20px;
+  text-align: center;
+}
+.modal-terminos-condiciones .contenedor-modal-terminos-condiciones .body-modal-terminos-condiciones {
+  overflow: auto;
+  max-height: 490px;
+  padding-right: 20px;
+  color: #454545;
+  font-family: "ClanOt";
+  font-size: 14px;
+  font-weight: 500;
+  text-align: justify;
+}
+.modal-terminos-condiciones .contenedor-modal-terminos-condiciones .body-modal-terminos-condiciones h2, .modal-terminos-condiciones .contenedor-modal-terminos-condiciones .body-modal-terminos-condiciones h3, .modal-terminos-condiciones .contenedor-modal-terminos-condiciones .body-modal-terminos-condiciones h4, .modal-terminos-condiciones .contenedor-modal-terminos-condiciones .body-modal-terminos-condiciones h5, .modal-terminos-condiciones .contenedor-modal-terminos-condiciones .body-modal-terminos-condiciones h6 {
+  color: #333;
+  font-family: "ClanOt";
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: left;
+}
+.modal-terminos-condiciones .contenedor-modal-terminos-condiciones .body-modal-terminos-condiciones p {
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+.modal-terminos-condiciones .contenedor-modal-terminos-condiciones .body-modal-terminos-condiciones p strong {
+  color: #333;
+  font-size: 16px;
+}
+.modal-terminos-condiciones .contenedor-modal-terminos-condiciones .body-modal-terminos-condiciones ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+.modal-terminos-condiciones .contenedor-modal-terminos-condiciones .body-modal-terminos-condiciones ul li {
+  margin-bottom: 10px;
+}
+.modal-terminos-condiciones .contenedor-modal-terminos-condiciones .body-modal-terminos-condiciones a {
+  color: initial;
+  text-decoration: underline;
+}

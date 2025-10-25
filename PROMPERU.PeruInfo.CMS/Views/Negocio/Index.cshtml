@@ -1,0 +1,245 @@
+﻿@using System.Configuration
+@{ ViewBag.Title = "Negocios (Restaurantes)";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"]; }
+
+@section Scripts
+{
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/Negocio.js"></script>
+
+    <script>
+    var editar = true;
+        var eliminar = true;</script>
+}
+
+<div class="l-contents">
+
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Negocios (Restaurantes)</h1>
+        </div>
+
+        <nav class="cont-icons">
+            <a id="btnNuevo" href="javascript:" class="cont-icons-new">
+                <span class="fas icon-plus">
+                </span><span>Nuevo</span>
+            </a>
+        </nav>
+
+        <div class="cont-table">
+            <table id="gridBloques" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1000px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 5%"></th>
+                        <th data-title="NombreIdioma" style="width: 5%">
+                            <input type="text" id="gridNegocio_txtB_NombreIdioma">
+                        </th>
+                        <th data-title="PaisNombre" style="width: 10%">
+                            <input type="text" id="gridNegocio_txtB_PaisNombre">
+                        </th>
+                        <th data-title="Titulo" style="width: 10%">
+                            <input type="text" id="gridNegocio_txtB_Titulo">
+                        </th>
+                        <th data-title="Activo" style="width: 10%">
+                            <input type="text" id="gridNegocio_txtB_Activo">
+                        </th>
+                        <th data-title="Ciudad" style="width: 10%">
+                            <input type="text" id="gridNegocio_txtB_Ciudad">
+                        </th>
+                        <th data-title="FechaPublicacion" style="width: 10%">
+                            <input type="text" id="gridNegocio_txtB_FechaPublicacion">
+                        </th>
+                        <th data-title="" style="width: 10%" align="center">
+                            <div class="accion-box">
+                                <a href="" title="Editar">
+                                    <span class="fas fa-search"></span>
+                                </a>
+
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 5%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th style="width: 5%;">
+                            <a id="a_NombreIdioma">Idioma</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_PaisNombre">País</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Titulo">Titulo</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Activo">Activo</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Ciudad">Ciudad</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_FechaPublicacion">Fecha de Publicación</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_"></a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="reveal-modal-bg">
+        <div class="modal-registrar">
+            <h2 id="lblRegistro">Crear Negocio</h2>
+
+            <input type="hidden" id="hdnNegocioId" />
+            <input type="hidden" id="hdnNegocioTraduccionId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Idioma:</label>
+                <select id="ddlIdioma" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Idioma--</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">País:</label>
+                <select id="ddlPais" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione País--</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Nombre Restaurante:</label>
+                <input id="txtTitulo" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Resumen:</label>
+                <div style="width: 553px;">
+                    <textarea id="txtResumen" class="cont-box-input" rows="4" onkeyup="countChars(this);"></textarea>
+                    <p id="charNum" style="text-align: right;">500 caracteres restantes</p>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Detalle:</label>
+                <textarea id="txtDetalle" class="cont-box-input" rows="5"></textarea>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagen3" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Formato: JPG / PNG. Dimensiones: 343px X 235px</span>
+                    <input type="hidden" id="txtImagen3" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagen3" class="w-50" alt="" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Alt Imagen:</label>
+                <input id="txtAltImagen" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Fecha de Publicación:</label>
+                <input id="txtFechaPublicacion" type="date" class="cont-box-input" maxlength="25">
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">¿Está destacado?</label>
+
+                <input type="checkbox" id="chkDestacado" class="input-checkbox" checked="">
+                <label for="chkDestacado" class="input-checkbox-lab"> </label>
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">Activo:</label>
+
+                <input type="checkbox" id="chkActivo" class="input-checkbox" checked="">
+                <label for="chkActivo" class="input-checkbox-lab"> </label>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Direccion Web:</label>
+                <input id="txtDireccionWeb" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <small class="d-block text-start w-100">Ingresar link de la web con http:// o https://</small>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Telefono:</label>
+                <input id="txtTelefono" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Ciudad:</label>
+                <input id="txtCiudad" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Direccion:</label>
+                <input id="txtDireccion" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Título SEO:</label>
+                <input id="txtTituloSEO" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">KeyWords:</label>
+                <input id="txtKeyWords" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Descripcion SEO:</label>
+                <div style="width: 553px;">
+                    <textarea id="txtDescripcionSEO" class="cont-box-input" rows="4" onkeyup="countCharsSEO(this);"></textarea>
+                    <p id="charNumSEO" style="text-align: right;">255 caracteres restantes</p>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <button id="btnGuardar" class="cont-box-submit">
+                    <label>Registrar</label>
+                </button>
+            </div>
+            <div class="cont-box">
+                <button id="btnCancelar" class="cont-box-cancel close">
+                    <label>Cancelar</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>

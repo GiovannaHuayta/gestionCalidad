@@ -1,0 +1,159 @@
+﻿@using System.Configuration
+@{ ViewBag.Title = "Deportistas";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"]; }
+@section Scripts
+{
+    <<script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/Deportistas.js"></script>
+    <script>
+    var editar = true;
+        var eliminar = true;</script>
+}
+<div class="l-contents">
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Deportistas</h1>
+        </div>
+        <div class="cont-table">
+            <table id="gridBloques" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1440px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 5%"></th>
+                        <th data-title="Nombre del Deportista" style="width: 5%">
+                            <input type="text" id="gridDeportistas_txtB_NombreDeportista">
+                        </th>
+                        <th data-title="Imagen Desktop" style="width: 10%">
+                            <input type="text" id="gridDeportistas_txtB_ImagenDesktop">
+                        </th>
+                        <th data-title="Imagen Movil" style="width: 10%">
+                            <input type="text" id="gridDeportistas_txtB_ImagenMovil">
+                        </th>
+                        <th data-title="Disciplina" style="width: 10%">
+                            <input type="text" id="gridDeportistas_txtB_Desciplina">
+                        </th>
+                        <th data-title="Link de Nota" style="width: 10%">
+                            <input type="text" id="gridDeportistas_txtB_LinkNota">
+                        </th>
+                        <th data-title="Estado" style="width: 10%">
+                            
+                        </th>
+                        <th data-title="" style="width: 10%" align="center">
+                            <div class="accion-box">
+                                <a href="" title="Editar">
+                                    <span class="fas fa-search"></span>
+                                </a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 3%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th style="width: 20%;">
+                            <a id="a_NombreDeportista">Nombre del Deportista</a>
+                        </th>
+                        <th style="width: 15%;">
+                            <a id="a_ImagenDesktop">Imagen Desktop</a>
+                        </th>
+                        <th style="width: 15%;">
+                            <a id="a_ImagenMovil">Imagen de Móvil</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Disciplina">Disciplina</a>
+                        </th>
+                        <th style="width: 20%;">
+                            <a id="a_LinkNota">Link de Nota</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Estado">Estado</a>
+                        </th>
+                        <th style="width: 3%;">
+                            <a id="a_"></a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="reveal-modal-bg">
+        <div class="modal-registrar">
+            <h2 id="lblRegistro">Editar Deportistas</h2>
+            <input type="hidden" id="hdnDeportistaId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Nombre Deportista:</label>
+                <input id="txtNombreDeportista" type="text" class="cont-box-input" maxlength="255">
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen de Desktop:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagenDesktop" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Formato: JPG / PNG. Dimensiones: 246px X 2384px</span>
+                    <input type="hidden" id="txtImagenDesktop" />
+                </div>
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagenDesktop" class="w-50" alt="" />
+                </div>
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen de Móvil:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagenMovil" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Formato: JPG / PNG. Dimensiones: 120px X 140px</span>
+                    <input type="hidden" id="txtImagenMovil" />
+                </div>
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagenMovil" class="w-50" alt="" />
+                </div>
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Disciplina:</label>
+                <input id="txtDisciplina" type="text" class="cont-box-input" maxlength="255">
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">Link de Nota:</label>
+                <input id="txtLinkNota" type="text" class="cont-box-input" maxlength="255">
+            </div>
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">Activo:</label>
+                <input type="checkbox" id="chkActivo" class="input-checkbox" checked="">
+                <label for="chkActivo" class="input-checkbox-lab"> </label>
+            </div>
+            <div class="cont-box">
+                <button id="btnGuardar" class="cont-box-submit">
+                    <label>Actualizar</label>
+                </button>
+            </div>
+            <div class="cont-box">
+                <button id="btnCancelar" class="cont-box-cancel close">
+                    <label>Cancelar</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>

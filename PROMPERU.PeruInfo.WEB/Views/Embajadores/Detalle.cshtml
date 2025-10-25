@@ -1,0 +1,227 @@
+﻿@using System.Configuration
+@using PROMPERU.PeruInfo.Domain.Entities
+@model PersonaBE
+
+@{
+    string culture = ViewBag.Culture;
+    int idioma = culture == "es-pe" ? 1 : 2;
+
+    Layout = null;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@strUrl/css/peru-info.components.css">
+    <link rel="stylesheet" href="@strUrl/css/plantilla-detalle-embajador.css">
+
+    <title>@Model.TituloSeo</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <base href="@strUrl">
+    <link rel="shortcut icon" href="@strUrl/img/favicon_PeruInfo.ico" />
+    <link rel="canonical" href="@absoluteUrl">
+    <meta name="description" content="@Model.DescripcionSeo" />
+    <meta name="author" content="Peru.info">
+    <meta name="distribution" content="global" />
+    <meta name="keywords" content="@Model.Keywords" />
+    <meta property="og:locale" content="@culture" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@Model.TituloSeo" />
+    <meta property="og:description" content="@Model.DescripcionSeo" />
+    <meta property="og:url" content="@absoluteUrl" />
+    <meta property="og:site_name" content="Perú Info" />
+    <meta property="og:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@Model.DescripcionSeo" />
+    <meta name="twitter:title" content="@Model.TituloSeo" />
+    <meta name="twitter:site" content="https://twitter.com/marcaPERU" />
+    <meta name="twitter:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")" />
+    @if (idioma == 1)
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6PS60QLG"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GB6PS60QLG');
+        </script>
+    }
+    else
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5R15JNKSP"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-E5R15JNKSP');
+        </script>
+    }
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDQMLXQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Código de seguimiento de Hotjar de -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 4938555, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    @Html.Partial("~/Views/Shared/Partials/_WidgetsLayout.cshtml")
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMLXQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------------------- BLOCK HEADER ----------------------->
+    <!-- <header class="header-peru-info active-scroll-header"> -->
+    <header class="header-peru-info">
+        <div class="contenedor-header-peru-info">
+            <div class="contenedor-logo-peru">
+                <a href="/">
+                    <!-- <img src="@strUrl/img/home/header/logo-peru.png" alt=""> -->
+                    <img src="@strUrl/img/home/header/logo-peru-gris.svg" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                </a>
+            </div>
+
+            @{
+                Html.RenderAction("HeaderMenu", "Home");
+            }
+
+        </div>
+
+        <!-- <div class="menu-lateral mostrar-menu-lateral"> -->
+        @{
+            Html.RenderAction("PageMenu", "Home");
+        }
+    </header>
+    <!-------------------- /BLOCK HEADER ----------------------->
+    <!-------------------- BLOCK MODALES-HEADER ----------------------->
+    @Html.Partial("Partials/_ModalsHeader")
+
+    <!-------------------- /BLOCK MODALES-HEADER ----------------------->
+
+
+    <main>
+        <!-------------------- BLOCK PAGINADO ----------------------->
+        <section class="contenedor-embajadores-paginado">
+            <div class="content-embajadores-paginado blockv3-container">
+
+                <div class="contenedor-paginado">
+                    <div class="box-btn-paginado">
+                        <a href="/@culture/@Model.CategoriaSlug">@Model.CategoriaNombre</a>
+                    </div>
+                    <span>
+                        <img src="@strUrl/img/plantilla-embajadores/icon-arrow.png" alt="">
+                    </span>
+                    <div class="box-subcategoria-paginado">
+                        <a href="/@culture/@Model.CategoriaSlug/@Model.SubcategoriaSlug">@Model.SubcategoriaNombre</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-------------------- /BLOCK PAGINADO ----------------------->
+        <!-------------------- BLOCK DETALLE-EMBAJADOR ----------------------->
+        <section class="contenedor-detalle-embajador">
+            <div class="content-detalle-embajador blockv3-container">
+
+                <div class="contenedor-info-embajador">
+                    <h1>@Model.Nombre</h1>
+
+                    <div class="contenedor-banner-txt">
+                        <div class="contenedor-banner-rrss">
+                            @if (!string.IsNullOrEmpty(Model.Imagen2))
+                            {
+                                <div class="box-logo">
+                                    <img src="@strUrl/archivos/persona/@Model.Imagen2" alt="@Model.AltImagen">
+                                    <img src="@strUrl/archivos/persona/@Model.Imagen2" alt="@Model.AltImagen">
+                                </div>
+                            }
+
+                            @if (!string.IsNullOrEmpty(Model.Facebook) || !string.IsNullOrEmpty(Model.Twitter))
+                            {
+                                <p>Conoce más de este embajador</p>
+                                <div class="box-rrss">
+                                    @if (!string.IsNullOrEmpty(Model.Facebook))
+                                    {
+                                        <a href="@Model.Facebook">
+                                            <img src="@strUrl/img/plantilla-detalle-embajador/icon-face.png" alt="@Model.Nombre">
+                                        </a>
+                                    }
+                                    @if (!string.IsNullOrEmpty(Model.Twitter))
+                                    {
+                                        <a href="@Model.Twitter">
+                                            <img src="@strUrl/img/plantilla-detalle-embajador/icon-twitter.png" alt="@Model.Nombre">
+                                        </a>
+                                    }
+                                </div>
+                            }
+                        </div>
+
+                        <div class="contenedor-txt-info">
+                            <p>@Html.Raw(Model.Detalle)</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-------------------- BLOCK DETALLE-EMBAJADOR ----------------------->
+
+
+    </main>
+
+
+    <!-------------------- BLOCK FOOTER ----------------------->
+    @{
+        Html.RenderAction("PageMenu", "Home", new { footer = true });
+    }
+    <!-------------------- /BLOCK FOOTER ----------------------->
+    <script>
+        let baseDomain = '@strUrl';
+    </script>
+    <script src="@strUrl/js/jquery.min.js"></script>
+    <script src="@strUrl/js/slick.min.js"></script>
+    <script src="@strUrl/js/peru-info.components.js"></script>
+    @* <script src="@strUrl/js/plantilla-detalle-embajador.js"></script> *@
+    <script>
+    let culture = "@culture";
+    let idioma = @idioma;
+    </script>
+    <script src="@strUrl/js/search.js"></script>
+</body>
+</html>

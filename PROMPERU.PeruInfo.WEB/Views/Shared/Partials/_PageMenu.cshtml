@@ -1,0 +1,52 @@
+﻿@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model List<PaginaBE>
+
+@{
+    string culture = ViewBag.Culture;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<div class="menu-lateral">
+    <div class="contenedor-menu-lateral">
+        <div class="content-icon-cerrar-menu">
+            @*<img src="@strUrl/img/home/header/icon-cerrar.png" alt="" class="cerrar-menu-lateral">*@
+            <span class="sprite bg-icon_cerrar cerrar-menu-lateral"></span>
+        </div>
+        <nav class="contenedor-lista-menu-lateral">
+            <ul class="lista-menu-lateral">
+                @foreach (PaginaBE item in Model.Where(x => x.IdPadre == 0).ToList())
+                {
+                    <li class="item-menu-lateral">
+                        <div class="contenedor-title-submenu-lateral">
+                            <a class="title-sublista-menu-lateral">
+                                @if (!string.IsNullOrEmpty(item.LinkExterno))
+                                {
+                                    <a href="@item.LinkExterno" target="_blank">@item.Nombre</a>
+                                }
+                                else
+                                {
+                                    @item.Nombre
+                                }
+                            </a>
+                            <!-- <ul class="sublista-menu-lateral active-sublista-lateral"> -->
+                            <ul class="sublista-menu-lateral">
+                                @foreach (PaginaBE subitem in Model.Where(x => x.IdPadre == item.Id && x.Nombre != "Embajadores" && x.Nombre != "Ambassadors"))
+                                {
+                                    <li class="subitem-menu-lateral">
+                                        <a href="@Html.Raw(!string.IsNullOrEmpty(subitem.LinkExterno) ? $"{subitem.LinkExterno}" : $"/{culture}/{subitem.Slug}" )"
+                                           @Html.Raw(!string.IsNullOrEmpty(subitem.LinkExterno) ? "target='_blank'" : "")>@subitem.Nombre</a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <span></span>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+</div>

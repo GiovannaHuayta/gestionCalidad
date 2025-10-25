@@ -1,0 +1,418 @@
+﻿@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model dynamic
+
+@{
+    SubcategoriaBE subcategoria = Model.Subcategoria;
+    List<PersonaBE> personas = Model.Personas;
+    List<PersonaTipoBE> tipos = Model.PersonaTipo;
+    GaleriaBE galeria = Model.Galeria;
+
+    string culture = ViewBag.Culture;
+    int idioma = culture == "es-pe" ? 1 : 2;
+
+    Layout = null;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@strUrl/css/peru-info.components.css">
+    <link rel="stylesheet" href="@strUrl/css/plantilla-embajadores.css">
+    <title>@subcategoria.TituloSeo</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <base href="@strUrl">
+    <link rel="shortcut icon" href="@strUrl/img/favicon_PeruInfo.ico" />
+    <link rel="canonical" href="@absoluteUrl">
+    <meta name="description" content="@subcategoria.DescripcionSeo" />
+    <meta name="author" content="Peru.info">
+    <meta name="distribution" content="global" />
+    <meta name="keywords" content="@subcategoria.Keywords" />
+    <meta property="og:locale" content="@culture" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@subcategoria.TituloSeo" />
+    <meta property="og:description" content="@subcategoria.DescripcionSeo" />
+    <meta property="og:url" content="@absoluteUrl" />
+    <meta property="og:site_name" content="Perú Info" />
+    <meta property="og:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@subcategoria.DescripcionSeo" />
+    <meta name="twitter:title" content="@subcategoria.TituloSeo" />
+    <meta name="twitter:site" content="https://twitter.com/marcaPERU" />
+    <meta name="twitter:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")" />
+    @if (idioma == 1)
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6PS60QLG"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GB6PS60QLG');
+        </script>
+    }
+    else
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5R15JNKSP"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-E5R15JNKSP');
+        </script>
+    }
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDQMLXQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Código de seguimiento de Hotjar de -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 4938555, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+    @Html.Partial("~/Views/Shared/Partials/_WidgetsLayout.cshtml")
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMLXQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------------------- BLOCK HEADER ----------------------->
+    <header class="header-peru-info">
+        <div class="contenedor-header-peru-info">
+            <div class="contenedor-logo-peru">
+                <a href="#">
+                    <img src="@strUrl/img/home/header/logo-peru.png" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                    <img src="@strUrl/img/home/header/logo-peru-gris.svg" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                </a>
+            </div>
+
+            @{
+                Html.RenderAction("HeaderMenu", "Home");
+            }
+
+        </div>
+
+        @{
+            Html.RenderAction("PageMenu", "Home");
+        }
+    </header>
+    <!-------------------- /BLOCK HEADER ----------------------->
+    <!-------------------- BLOCK MODALES-HEADER ----------------------->
+    @Html.Partial("Partials/_ModalsHeader")
+    <!-------------------- /BLOCK MODALES-HEADER ----------------------->
+    <!-------------------- BLOCK BANNER-EMBAJADORES ----------------------->
+    <section class="contenedor-banner-embajadores">
+        <div class="content-banner-embajadores">
+            <div class="box-banner-logo">
+                <img src="@strUrl/archivos/subcategoria/@galeria.RutaDekstop" alt="@galeria.TextoAlternativo">
+                <img src="@strUrl/archivos/subcategoria/@galeria.RutaMovil" alt="@galeria.TextoAlternativo">
+            </div>
+
+
+            <div class="box-banner-txt">
+                <div class="content-box-txt">
+                    <h1>
+                        @subcategoria.Nombre
+                    </h1>
+                    <p>
+                        @subcategoria.Subtitulo
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-------------------- /BLOCK BANNER-EMBAJADORES ----------------------->
+
+
+    <main>
+
+
+        <!-------------------- BLOCK PAGINADO ----------------------->
+        <section class="contenedor-embajadores-paginado">
+            <div class="content-embajadores-paginado blockv3-container">
+
+                <div class="contenedor-paginado">
+                    <div class="box-btn-paginado">
+                        <a href="/@culture/@subcategoria.CategoriaSlug">@subcategoria.CategoriaNombre</a>
+                    </div>
+                    <span>
+                        <img src="@strUrl/img/plantilla-embajadores/icon-arrow.png" alt="">
+                    </span>
+                    <div class="box-subcategoria-paginado">
+                        <a href="#">@subcategoria.Nombre</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-------------------- /BLOCK PAGINADO ----------------------->
+        <!-------------------- BLOCK BUSCADOR ----------------------->
+        <section class="container-buscador-embajadores">
+            <div class="content-buscador-embajadores blockv3-container">
+
+                <div class="contenedor-buscador-cards">
+                    <div class="content-buscador-cards">
+
+                        <div class="contenedor-buscar-filtros">
+                            <div class="content-buscar-filtros">
+                                <div class="input-buscador">
+                                    <p>@Resource.buscar_para:</p>
+                                    <div class="item-buscar">
+                                        <input id="txtNombre" placeholder="@Resource.buscar_por_nombre">
+                                        <div class="icon-lupa" id="lupa">
+                                            <img src="@strUrl/img/plantilla-embajadores/lupa-buscar.png" alt="">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                @if (subcategoria.Slug == "embajadores" || subcategoria.Slug == "ambassadors")
+                                {
+                                    <div class="select-tipos-embajadores">
+
+                                        <div class="title-select">
+                                            <h5>@Resource.filtrar_busqueda</h5>
+                                            <div class="icon-despegable">
+                                                <img src="@strUrl/img/plantilla-embajadores/buscar-filtros/icon-desplegar.png" alt="">
+                                            </div>
+                                        </div>
+
+                                        <div class="content-items-select">
+                                            <div class="box-item-categoria">
+                                                <div class="icon-sector">
+                                                    <img src="@strUrl/img/plantilla-embajadores/buscar-filtros/icon-todos.png" alt="">
+                                                </div>
+                                                <h4>@Resource.filtrar_busqueda_todos</h4>
+                                                <div class="icon-arrow-right">
+                                                    <img src="@strUrl/img/plantilla-embajadores/buscar-filtros/icon-arrow-right.png" alt="">
+                                                    <img src="@strUrl/img/plantilla-embajadores/buscar-filtros/icon-arrow-right-red.png" alt="">
+                                                </div>
+                                            </div>
+
+                                            @foreach (PersonaTipoBE tipo in tipos)
+                                            {
+                                                <div class="box-item-categoria" data-id="@tipo.Id">
+                                                    <div class="icon-sector">
+                                                        <img src="@strUrl/img/plantilla-embajadores/buscar-filtros/@tipo.Icono" alt="@tipo.Nombre">
+                                                    </div>
+                                                    <h4>@tipo.Nombre</h4>
+                                                    <div class="icon-arrow-right">
+                                                        <img src="@strUrl/img/plantilla-embajadores/buscar-filtros/icon-arrow-right.png" alt="">
+                                                        <img src="@strUrl/img/plantilla-embajadores/buscar-filtros/icon-arrow-right-red.png" alt="">
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="contenedor-cards-grid">
+                            <ul id="contenedor-personas" class="contenedor-lista-cards">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-------------------- /BLOCK BUSCADOR ----------------------->
+        <!-------------------- BLOCK ICONS-DECORATOR ----------------------->
+        <section class="contenedor-icons-decorator">
+            <div class="icons-decorator blockv3-container">
+                <div class="box-icons icons-21">
+
+                    <img src="@strUrl/img/home/icons/iconos-1024.png" style="width:100% !important" alt="">
+                    @* <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">*@
+                </div>
+
+                <div class="box-icons icons-10">
+                    <img src="@strUrl/img/home/icons/iconos-768.png" style="width:100%" alt="">            
+    
+    @*    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+                    <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+                    <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">*@
+                </div>
+            </div>
+        </section>
+        <!-------------------- /BLOCK ICONS-DECORATOR ----------------------->
+
+
+    </main>
+
+
+    <!-------------------- BLOCK FOOTER ----------------------->
+    @{
+        Html.RenderAction("PageMenu", "Home", new { footer = true });
+    }
+    <!-------------------- /BLOCK FOOTER ----------------------->
+    <script>
+        let baseDomain = '@strUrl';
+    </script>
+    <script src="@strUrl/js/jquery.min.js"></script>
+    <script src="@strUrl/js/slick.min.js"></script>
+    <script src="@strUrl/js/peru-info.components.js"></script>
+    <script src="@strUrl/js/plantilla-embajadores.js"></script>
+    <script>
+    let culture = "@culture";
+    let idioma = @idioma;
+    </script>
+    <script src="@strUrl/js/search.js"></script>
+    <script>
+    $(document).ready(function() {
+        callToApi();
+
+        $("#lupa").on("click",
+            e => {
+                e.preventDefault();
+
+                let nombre = null;
+                let tipo = null;
+
+
+                if ($("#txtNombre").val() !== "") {
+                    nombre = $("#txtNombre").val();
+                }
+
+                callToApi(nombre, tipo);
+            });
+
+        $(".box-item-categoria").on("click",
+            e => {
+                e.preventDefault();
+
+                let nombre = null;
+                let tipo = null;
+
+                if (e.target.closest("div").dataset.id !== "") {
+                    tipo = e.target.closest("div").dataset.id;
+                }
+
+                if ($("#txtNombre").val() !== "") {
+                    nombre = $("#txtNombre").val();
+                }
+
+                callToApi(nombre, tipo);
+            });
+    });
+
+    function callToApi(nombre = null, tipo = null) {
+        let url = `@strUrl/${culture}/api/personas?persona=@subcategoria.Slug&idioma=${idioma}`;
+
+        if (nombre !== null) {
+            url = `${url}&nombre=${nombre}`;
+        }
+
+        if (tipo !== null) {
+            url = `${url}&tipo=${tipo}`;
+        }
+
+        $.get(url)
+            .done(result => {
+                $("#contenedor-personas").html("");
+
+                if (result.data.length > 0) {
+                    result.data.forEach(item => {
+                        let icono = "";
+
+                        if (item.SubcategoriaSlug === "embajadores" || item.SubcategoriaSlug === "ambassadors") {
+                            icono = `<div class="icon-categoria">
+                                                <!-- imagen de categoria por background -->
+                                    </div>
+                                    <span>${item.Anio}</span>`;
+                        }
+
+                        icono = '';
+
+                        $("#contenedor-personas").append(
+                            `<li class="contenedor-item-card icon-artista">
+                              <a class="box-item-card-link" href="/@culture/${item.CategoriaSlug}/${item.SubcategoriaSlug}/${item.Slug}">
+                                  <div class="logo-card">
+                                      <img src="@strUrl/archivos/persona/${item.Imagen}" alt="${item.AltImagen}">
+                                  </div>
+                                  <div class="icon-arrow">
+                                      <img src="@strUrl/img/plantilla-embajadores/card-logo-icon/arrow-diagonal.png" alt="">
+                                  </div>
+                                  <div class="contenedor-info-personaje">
+                                      ${icono}
+                                      <div class="box-info-txt">
+                                          <h4>${item.Nombre}</h4>
+                                          <blockquote>${item.Resumen}</blockquote>
+                                      </div>
+                                  </div>
+                              </a>
+                          </li>`
+                        );
+                    });
+                }
+            });
+    }
+    </script>
+</body>
+</html>

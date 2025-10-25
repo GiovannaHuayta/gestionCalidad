@@ -1,0 +1,72 @@
+﻿@using System.Configuration
+@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model dynamic
+
+@{
+    string culture = ViewBag.Culture;
+
+    List<PaginaBE> paginas = Model.Paginas;
+    List<ComunicadoBE> alertas = Model.Alertas;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+<link href="~/css/css_sprites.css" rel="stylesheet" />
+<span class="bg-alert"></span>
+<div class="contenedor-menu-header">
+    <ul class="lista-menu-header">
+        @foreach (PaginaBE item in paginas)
+        {
+            <li class="item-lista-menu">
+                <a href="/@culture/@item.Slug" class="link-item-menu">@item.Nombre</a>
+            </li>
+        }
+        <li class="item-lista-menu">
+            <div class="content-icon-lista alert">
+                <div class="icon-lista-alert">
+                    @*<img src="@strUrl/img/home/header/ico-campana.png" alt="" class="animate__animated animate__swing animate__slow animate__infinite">*@
+                    <span class="sprite bg-ico_campana animate__animated animate__swing animate__slow animate__infinite"></span>
+                </div>
+                @{
+                    Html.RenderAction("Alertas", "Base");
+                }
+            </div>
+
+            @if (alertas.Any() && alertas.Count > 0)
+            {
+                <div class="content-cantidad-alertas">
+                    <span>@alertas.Count</span>
+                </div>
+            }
+        </li>
+        <li class="item-lista-menu">
+            <div class="content-icon-lista">
+                @*<img src="@strUrl/img/home/header/icon-buscar.png" alt="" class="icon-lista-buscar">
+        <img src="@strUrl/img/home/header/icon-buscar-gris.png" alt="" class="icon-lista-buscar">*@
+                <span class="sprite bg-icon_buscar icon-lista-buscar"></span>
+                <span class="sprite bg-icon_buscar_gris icon-lista-buscar"></span>
+            </div>
+        </li>
+        <li class="item-lista-menu">
+            <div class="content-icon-lista">
+                @*<img src="@strUrl/img/home/header/icon-idioma.png" alt="" class="icon-lista-idioma">
+        <img src="@strUrl/img/home/header/icon-idioma-gris.png" alt="" class="icon-lista-idioma">*@
+                <span class="sprite bg-icon_idioma icon-lista-idioma"></span>
+                <span class="sprite bg-icon_idioma_gris icon-lista-idioma"></span>
+            </div>
+            @{
+                Html.RenderAction("LanguageMenu", "Home");
+            }
+        </li>
+        <li class="item-lista-menu">
+            <div class="content-icon-lista">
+                @*<img src="@strUrl/img/home/header/icon-bars.png" alt="" class="icon-lista-barras">
+        <img src="@strUrl/img/home/header/icon-bars-gris.png" alt="" class="icon-lista-barras">*@
+                <span class="sprite bg-icon_barss icon-lista-barras"></span>
+                <span class="sprite bg-icon_barss_gris icon-lista-barras"></span>
+            </div>
+        </li>
+    </ul>
+</div>

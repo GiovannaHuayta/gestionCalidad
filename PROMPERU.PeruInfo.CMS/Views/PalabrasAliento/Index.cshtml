@@ -1,0 +1,187 @@
+﻿@using System.Configuration
+@{ ViewBag.Title = "Palabras de Aliento";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"]; }
+@section Scripts
+{
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/PalabrasAliento.js"></script>
+    <script>
+    var editar = true;
+        var eliminar = true;</script>
+}
+<div class="l-contents">
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Palabras de Aliento</h1>
+        </div>
+        <div class="cont-table">
+            <table id="gridBloques" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1100px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 5%"></th>
+                        <th data-title="Fecha de Registo" style="width: 5%">
+                            <input type="text" id="gridPalabrasAliento_txtB_FechaRegistro">
+                        </th>
+                        <th data-title="Palabra de Aliento" style="width: 10%">
+                            <input type="text" id="gridPalabrasAliento_txtB_PalabraAliento">
+                        </th>
+                        <th data-title="Estado de Aprobacion" style="width: 10%">
+                            
+                        </th>
+                        <th data-title="Estado" style="width: 10%">
+                            
+                        </th>
+                        <th data-title="" style="width: 10%" align="center">
+                            <div class="accion-box">
+                                <a href="" title="Editar">
+                                    <span class="fas fa-search"></span>
+                                </a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 3%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th style="width: 20%;">
+                            <a id="a_FechaRegistro">Fecha de Registro</a>
+                        </th>
+                        <th style="width: 20%;">
+                            <a id="a_PalabrasAliento">Palabras de Aliento</a>
+                        </th>
+                        <th style="width: 15%;">
+                            <a id="a_EstadoAprobacion">Estado de Aprobación</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Estado">Estado</a>
+                        </th>
+                        <th style="width: 3%;">
+                            <a id="a_"></a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="reveal-modal-bg">
+        <div class="modal-registrar">
+            <h2 id="lblRegistro">Palabras de aliento</h2>
+            <input type="hidden" id="hdnPalabraAlientoId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Estado de aprobación:</label>
+                <select id="ddlEstadoAprobacion" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Estado--</option>
+                    <option value="1" class="option-disabled">Aprobar</option>
+                    <option value="2" class="option-disabled">Rechazar</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Motivo:</label>
+                <div style="width: 553px;">
+                    <textarea id="txtMotivo" class="cont-box-input" rows="4" onkeyup="countChars(this);"></textarea>
+                    <p id="charNum" style="text-align: right;">500 caracteres restantes</p>
+                </div>
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">Activo:</label>
+                <input type="checkbox" id="chkActivo" class="input-checkbox" checked="">
+                <label for="chkActivo" class="input-checkbox-lab"> </label>
+            </div>
+            <div class="cont-box">
+                <button id="btnGuardar" class="cont-box-submit">
+                    <label>Actualizar</label>
+                </button>
+            </div>
+            <div class="cont-box">
+                <button id="btnCancelar" class="cont-box-cancel close">
+                    <label>Cancelar</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .dataTables_paginate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+        .dataTables_paginate a,
+        .dataTables_paginate span {
+            margin: 0 5px;
+            padding: 8px 12px;
+            text-decoration: none;
+            color: inherit; 
+            background-color: transparent;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            .dataTables_paginate a:hover,
+            .dataTables_paginate .paginate_button:hover {
+                background-color: #212529;
+                color: #fff;
+            }
+
+        .dataTables_paginate .disabled {
+            pointer-events: none;
+            color: #6c757d;
+            background-color: transparent;
+            border: 1px solid #dee2e6;
+        }
+
+        .dataTables_paginate .current {
+            color: #fff;
+            background-color: #d52b1d;
+            border: none; 
+        }
+
+        .dataTables_paginate .first,
+        .dataTables_paginate .last,
+        .dataTables_paginate .previous,
+        .dataTables_paginate .next {
+            display: inline-block;
+        }
+
+            .dataTables_paginate .first.disabled,
+            .dataTables_paginate .last.disabled,
+            .dataTables_paginate .previous.disabled,
+            .dataTables_paginate .next.disabled {
+                pointer-events: none;
+            }
+
+        .dataTables_paginate .first,
+        .dataTables_paginate .previous,
+        .dataTables_paginate .next,
+        .dataTables_paginate .last {
+            padding: 8px 12px;
+        }
+
+        .dataTables_paginate span {
+            display: flex;
+        }
+
+        .dataTables_paginate .paginate_button {
+            margin: 0 2px;
+            border: none; 
+        }
+
+
+    .dataTables_info {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>

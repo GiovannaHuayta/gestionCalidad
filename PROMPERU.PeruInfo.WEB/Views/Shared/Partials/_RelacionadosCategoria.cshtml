@@ -1,0 +1,45 @@
+﻿@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model List<PublicacionBE>
+
+@{
+    string culture = ViewBag.Culture;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<section class="contenedor-cards-mas-reciente">
+    <div class="content-cards-mas-reciente blockv3-container">
+
+        <div class="contenedor-cards-tittle">
+            <p>@Resource.titulo_lo_mas_reciente</p>
+            <div class="contenedor-cards-items">
+                @foreach (PublicacionBE publicacion in Model)
+                {
+                    <div class="contenedor-item-card card-inversiones categoria-@publicacion.CategoriaSlug">
+                        <a href="/@culture/@publicacion.CategoriaSlug/@Resource.link_noticias/@publicacion.CategoriaId/@publicacion.SubcategoriaId/@publicacion.Slug" class="content-card">
+                            <div class="box-logo-card">
+                                <img src="@strUrl/archivos/publicacion/@publicacion.Imagen" alt="@publicacion.AltImagen">
+                            </div>
+                            <div class="box-txt-card categoria-@publicacion.CategoriaColor">
+                                <span>@publicacion.FechaPublicacion.ToString("dd/MM/yyyy")</span>
+                                <h5>@publicacion.Titulo</h5>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="content-mas-noticias">
+            <a href="#" target="_blank" class="item-info-link">
+                <div class="icon-arrow">
+                    <img src="/img/plantilla-notas-noticias/icon-arrow-left.png" alt="">
+                </div>
+                <span>@Resource.boton_volver_a_noticias</span>
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,1654 @@
+@import 'model/slick.scss';
+@import 'model/_config.scss';
+@import 'model/_reset.scss';
+@import 'model/_font.scss';
+
+
+// ********** ********** MI ********** **********
+
+
+// Icon-txt-Link
+.item-info-link{
+    display: flex;
+    align-items: center;
+    .icon-arrow{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: rgb(var(--color-categoria));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{}
+    }
+    span{
+        font-family: $font-clanOt;
+        font-weight: 700;
+        font-size: 13px;
+        // line-height: 36px;
+        color: #3a3a3a;
+        padding-left: 10px;
+    }
+}
+// -/Icon-txt-Link
+
+
+
+// BLOCK BANNER-SUBCATEGORIA
+.contenedor-banner-subcategoria{
+    width: 100%;
+    .content-banner-subcategoria{
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            // background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 24.23%);
+            background: linear-gradient(360deg, rgba(0, 0, 0, 0.9) 14.59%, rgba(0, 0, 0, 0) 50%);
+        }
+        width: 100%;
+        // height: 454px;
+        position: relative;
+        // margin-bottom: 58px;
+        @include respondto(minxs) {
+            // height: 454px;
+        }
+        @include respondto(maxxs) {
+            // height: 454px;
+        }
+        @include respondto(sm) {
+            // height: 454px;
+        }
+        @include respondto(md) {
+        }
+        @include respondto(lg) {
+            // height: var(--v-width-banner);
+        }
+        @include respondto(xlg) {
+            // height: var(--v-width-banner);
+        }
+        .box-banner-logo{
+            width: 100%;
+            // height: 100%;
+            display: flex;
+            img{
+                width: 100%;
+                // height: 100%;
+                object-fit: cover;
+                &:nth-child(2){
+                    display: none;
+                }
+                @include respondto(minxs) {
+                    &:nth-child(1){
+                        display: none;
+                    }
+                    &:nth-child(2){
+                        display: block;
+                    }
+                }
+                @include respondto(maxxs) {
+                    &:nth-child(1){
+                        display: none;
+                    }
+                    &:nth-child(2){
+                        display: block;
+                    }
+                }
+                @include respondto(sm) {
+                    &:nth-child(1){
+                        display: none;
+                    }
+                    &:nth-child(2){
+                        display: block;
+                    }
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+        
+        .box-banner-txt{
+            position: absolute;
+            width: 100%;
+            top: calc(50% - 35px);
+            left: 50%;
+            transform: translate(-50%);
+            @include respondto(minxs) {
+                transform: translate(-50%);
+            }
+            @include respondto(maxxs) {
+                transform: translate(-50%);
+            }
+            @include respondto(sm) {
+                max-width: 96%;
+                transform: translate(-50%);
+            }
+            @include respondto(md) {
+                max-width: 96%;
+                // top: 48%;
+            }
+            @include respondto(lg) {
+                max-width: 1220px;
+            }
+            @include respondto(xlg) {
+                max-width: 1500px;
+            }
+            .btn-banner-categoria{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding-bottom: 30px;
+                @include respondto(minxs) {
+                    padding-bottom: 19px;
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                    padding-bottom: 25px;
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+                .content-btn-banner{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgb(var(--color-categoria));
+                    padding: 10px 20px 9px 20px;
+                    border-radius: 30px;
+                    span{
+                        font-family: $font-breePeru;
+                        font-weight: 400;
+                        font-size: 14px;
+                        text-align: center;
+                        color: #ffffff;
+                    }
+                }
+            }
+            .content-box-txt{
+                text-align: center;
+                color: #ffffff;
+                // text-shadow: 2px 3px 6px #484845;
+                padding: 0 22px;
+                h1{
+                    font-family: $font-breePeru;
+                    font-weight: 700;
+                    font-size: 60px;
+                    line-height: 1;
+                    padding-bottom: 20px;
+                    @include respondto(minxs) {
+                        font-size: 40px;
+                        padding: 0 13px 13px 13px;
+                    }
+                    @include respondto(maxxs) {
+                        font-size: 45px;
+                        padding: 0 13px 17px 13px;
+                    }
+                    @include respondto(sm) {
+                        font-size: 50px;
+                        padding: 0 13px 17px 13px;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                        font-size: 66px;
+                    }
+                }
+                p{
+                    font-family: $font-clanOt;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 1;
+                    text-shadow: 0 4px 4px rgba(0, 0, 0, .3);
+                    margin-left: auto;
+                    margin-right: auto;
+                    @include respondto(minxs) {
+                        max-width: 333px;
+                        font-weight: 400;
+                        line-height: 20px;
+                    }
+                    @include respondto(maxxs) {
+                        max-width: 500px;
+                        font-weight: 400;
+                        line-height: 20px;
+                    }
+                    @include respondto(sm) {
+                        max-width: 560px;
+                        line-height: 20px;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                        font-size: 17.5px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+// -/BLOCK-BANNER-SUBCATEGORIA
+
+
+
+// BLOCK SLIDER-UNILINEA
+.contenedor-unilinea-subcategoria{
+    width: 100%;
+    .content-unilinea-subcategoria{
+        display: flex;
+        justify-content: center;
+        padding-bottom: 80px;
+        @include respondto(minxs) {
+            padding-top: 50px;
+            padding-bottom: 25px;
+            margin-bottom: 55px;
+        }
+        @include respondto(maxxs) {
+            padding-top: 50px;
+            padding-bottom: 25px;
+            margin-bottom: 55px;
+        }
+        @include respondto(sm) {
+            padding-top: 50px;
+            padding-bottom: 35px;
+            margin-bottom: 55px;
+        }
+        @include respondto(md) {
+            padding-bottom: 55px;
+            margin-bottom: 55px;
+        }
+        @include respondto(lg) {
+        }
+        @include respondto(xlg) {
+        }
+        .contenedor-slider-unilinea{
+            width: 90%;
+            @include respondto(minxs) {
+            }
+            @include respondto(maxxs) {
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+                width: 85%;
+            }
+            .content-slider-unilinea{
+                width: 100%;
+                // margin-bottom: 18px;
+                .slick-arrow{
+                    position: absolute;
+                    top: 20%;
+                    transform: translateY(-50%);
+                    font-size: 0;
+                    border: none;
+                    background-color: transparent;
+                    width: 15px;
+                    height: 30px;
+                    cursor: pointer;
+                    @include respondto(minxs) {
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                        top: 27%;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                    &.slick-prev{
+                        right: 100%;
+                        svg{
+                            path{
+                                fill: rgb(var(--color-categoria));
+                            }
+                        }
+                    }
+                    &.slick-next{
+                        left: 100%;
+                        svg{
+                            path{
+                                fill: rgb(var(--color-categoria));
+                            }
+                        }
+                    }
+                }
+
+                .slick-list{
+                    @include respondto(minxs) {
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                        overflow-y: initial;
+                        overflow-x: clip;
+                    }
+                    @include respondto(lg) {
+                        overflow-y: initial;
+                        overflow-x: clip;
+                    }
+                    @include respondto(xlg) {
+                        overflow-y: initial;
+                        overflow-x: clip;
+                    }
+                    .slick-track{
+                        .contenedor-item-slider{
+                            @include respondto(minxs) {
+                                padding: 0 14px;
+                            }
+                            @include respondto(maxxs) {
+                                padding: 0 9px;
+                            }
+                            @include respondto(sm) {
+                                padding: 0 12px;
+                            }
+                            @include respondto(md) {
+                                padding: 0 10px;
+                            }
+                            @include respondto(lg) {
+                                padding: 0 13px;
+                            }
+                            @include respondto(xlg) {
+                                padding: 0 15px;
+                            }
+                            .contenedor-card-slider{
+                                width: 100%;
+                                &.box-no-linkear{
+                                    pointer-events: none;
+                                    .box-card-slider-link{
+                                        width: 100%;
+                                        .box-logo-card{
+                                            .logo-card{
+                                                img{
+                                                }
+                                            }
+                                            .icon-arrow{
+                                                opacity: 0;
+                                                img{
+                                                }
+                                            }
+                                        }
+                                        .descripcion-card{
+                                            h3{
+                                            }
+                                            p{
+                                            }
+                                        }
+                                    }
+                                }
+                                .box-card-slider-link{
+                                    width: 100%;
+                                    &:hover {
+                                        .box-logo-card{
+                                            .logo-card{
+                                                img{
+                                                }
+                                            }
+                                            .icon-arrow{
+                                                // transition: all .4s ease;
+                                                // opacity: 1;
+                                                img{
+                                                }
+                                            }
+                                        }
+                                        .descripcion-card{
+                                            h3{
+                                            }
+                                            p{ 
+                                            }
+                                        }
+                                    }
+                                    .box-logo-card{
+                                        width: 100%;
+                                        position: relative;
+                                        margin-bottom: 24px;
+                                        @include respondto(minxs) {
+                                        }
+                                        @include respondto(maxxs) {
+                                        }
+                                        @include respondto(sm) {
+                                        }
+                                        @include respondto(md) {
+                                            height: 170px;
+                                        }
+                                        @include respondto(lg) {
+                                            height: 200px;
+                                        }
+                                        @include respondto(xlg) {
+                                            height: 220px;
+                                        }
+                                        .logo-card{
+                                            width: 100%;
+                                            @include respondto(minxs) {
+                                            }
+                                            @include respondto(maxxs) {
+                                            }
+                                            @include respondto(sm) {
+                                            }
+                                            @include respondto(md) {
+                                                position: absolute;
+                                                bottom: 0;
+                                                left: 0;
+                                            }
+                                            @include respondto(lg) {
+                                                position: absolute;
+                                                bottom: 0;
+                                                left: 0;
+                                            }
+                                            @include respondto(xlg) {
+                                                position: absolute;
+                                                bottom: 0;
+                                                left: 0;
+                                            }
+                                            img{
+                                                width: 100%;
+                                                object-fit: cover;
+                                            }
+                                        }
+                                        .icon-arrow{
+                                            position: absolute;
+                                            bottom: 7px;
+                                            right: 7px;
+                                            width: 30px;
+                                            height: 30px;
+                                            border-radius: 50%;
+                                            background-color: rgb(var(--color-categoria));
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center; 
+                                            // opacity: 0;
+                                            transition: all .4s ease;
+                                            img{
+                                            }
+                                        }
+                                    }
+                                    .descripcion-card{
+                                        width: 100%;
+                                        text-align: center;
+                                        // overflow: hidden;
+                                        padding: 0 25px;
+                                        @include respondto(minxs) {
+                                        }
+                                        @include respondto(maxxs) {
+                                            padding: 0 4px;
+                                        }
+                                        @include respondto(sm) {
+                                        }
+                                        @include respondto(md) {
+                                            padding: 0 15px;
+                                        }
+                                        @include respondto(lg) {
+                                        }
+                                        @include respondto(xlg) {
+                                            padding: 0 35px;
+                                        }
+                                        h3{
+                                            font-family: $font-breePeru;
+                                            font-weight: 700;
+                                            font-size: 16px;
+                                            line-height: 20.1px;
+                                            color: #565656;
+                                            padding-bottom: 10px;
+                                            @include respondto(minxs) {
+                                            }
+                                            @include respondto(maxxs) {
+                                                font-size: 15px;
+                                            }
+                                            @include respondto(sm) {
+                                            }
+                                            @include respondto(md) {
+                                                font-size: 15.5px;
+                                            }
+                                            @include respondto(lg) {
+                                            }
+                                            @include respondto(xlg) {
+                                                font-size: 18px;
+                                                line-height: 22px;
+                                            }
+                                        }
+                                        p{
+                                            font-family: $font-clanOt;
+                                            font-weight: 400;
+                                            font-size: 11px;
+                                            line-height: 18px;
+                                            color: #545454;
+                                            // display: block;
+                                            // display: -webkit-box;
+                                            // -webkit-line-clamp: 3;
+                                            // -webkit-box-orient: vertical;
+                                            // overflow: hidden;
+                                            // text-overflow: ellipsis;
+                                
+                                            // @include ajustatrespuntosmultiline(12px, 1.8, 3);
+                                
+                                            @include respondto(minxs) {
+                                                padding: 0 15px;
+                                            }
+                                            @include respondto(maxxs) {
+                                                font-size: 10.5px;
+                                                padding: 0 8px;
+                                            }
+                                            @include respondto(sm) {
+                                                padding: 0 22px;
+                                            }
+                                            @include respondto(md) {
+                                                padding: 0 14px;
+                                            }
+                                            @include respondto(lg) {
+                                                padding: 0 26px;
+                                            }
+                                            @include respondto(xlg) {
+                                                font-size: 12.5px;
+                                                line-height: 20px;
+                                                padding: 0 30px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+
+                .slick-dots{
+                    width: 90%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 80px;
+                    position: relative;
+                    flex-wrap: wrap; 
+                    margin:auto;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 35%;
+                        height: 1px;
+                        left: 5%;
+                        bottom: 8px;
+                        background-color: #c4c4c4;
+                        @include respondto(minxs) {
+                            display: none;
+                        }
+                        @include respondto(maxxs) {
+                            display: none;
+                        }
+                        @include respondto(sm) {
+                            display: none;
+                        }
+                        @include respondto(md) {
+                            left: 4%;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        width: 35%;
+                        height: 1px;
+                        right: 5%;
+                        bottom: 8px;
+                        background-color: #c4c4c4;
+                        @include respondto(minxs) {
+                            display: none;
+                        }
+                        @include respondto(maxxs) {
+                            display: none;
+                        }
+                        @include respondto(sm) {
+                            display: none;
+                        }
+                        @include respondto(md) {
+                            right: 4%;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                    li{
+                        margin: 0 5px;
+                        &.slick-active{
+                            button{
+                                &:after {
+                                    content: '';
+                                    background-color: rgb(var(--color-categoria));
+                                }
+                            }
+                        }
+                        button{
+                            width: 0;
+                            height: 0;
+                            border: none;
+                            font-size: 0;
+                            background-color: transparent;
+                            position: relative;
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 11px;
+                                height: 11px;
+                                border-radius: 50%;
+                                background-color: #c4c4c4;
+                                cursor: pointer;
+                                transition: all .4s ease;
+                            }
+                            &:hover {
+                                &:after {
+                                    transition: all .4s ease;
+                                    background-color: rgb(var(--color-categoria));
+                                    opacity: .7;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+}
+// -/BLOCK SLIDER-SUBCATEGORIAS
+
+
+
+// BLOCK SLIDER-MULTIFILA
+.contenedor-multifila {
+    width: 100%;
+
+    .content-multifila {
+        padding-top: 50px;
+        padding-bottom: 10px;
+
+        @include respondto(minxs) {
+            padding-bottom: 15px;
+        }
+
+        @include respondto(maxxs) {
+            padding-bottom: 30px;
+        }
+
+        @include respondto(sm) {
+            padding-bottom: 30px;
+        }
+
+        @include respondto(md) {
+            padding-bottom: 45px;
+        }
+
+        @include respondto(lg) {
+        }
+
+        @include respondto(xlg) {
+        }
+
+        .contenedor-slider-multifila {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .content-slider-multifila {
+                width: 90%;
+                position: relative;
+                margin-bottom: 18px;
+
+                @include respondto(minxs) {
+                }
+
+                @include respondto(maxxs) {
+                }
+
+                @include respondto(sm) {
+                }
+
+                @include respondto(md) {
+                }
+
+                @include respondto(lg) {
+                }
+
+                @include respondto(xlg) {
+                    width: 85%;
+                }
+
+                .slick-arrow {
+                    position: absolute;
+                    // top: 45%;
+                    top: 38%;
+                    transform: translateY(-50%);
+                    border: none;
+                    background-color: transparent;
+                    width: 15px;
+                    height: 30px;
+                    cursor: pointer;
+
+                    &.slick-prev {
+                        right: 100%;
+
+                        svg {
+                            path {
+                                fill: rgb(var(--color-categoria));
+                            }
+                        }
+                    }
+
+                    &.slick-next {
+                        left: 100%;
+
+                        svg {
+                            path {
+                                fill: rgb(var(--color-categoria));
+                            }
+                        }
+                    }
+                }
+
+                .slick-list {
+                    .slick-track {
+                        .slick-slide {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 60px;
+                            padding: 0 20px;
+
+                            @include respondto(minxs) {
+                                padding: 0;
+                                gap: 40px;
+                            }
+
+                            @include respondto(maxxs) {
+                                padding: 0;
+                                gap: 40px;
+                            }
+
+                            @include respondto(sm) {
+                            }
+
+                            @include respondto(md) {
+                                padding: 0 5px;
+                            }
+
+                            @include respondto(lg) {
+                            }
+
+                            @include respondto(xlg) {
+                            }
+
+                            > div {
+                                .contenedor-item-slider {
+                                    padding: 0 15px;
+
+                                    @include respondto(minxs) {
+                                    }
+
+                                    @include respondto(maxxs) {
+                                        padding: 0 10px;
+                                    }
+
+                                    @include respondto(sm) {
+                                    }
+
+                                    @include respondto(md) {
+                                    }
+
+                                    @include respondto(lg) {
+                                        padding: 0 22px;
+                                    }
+
+                                    @include respondto(xlg) {
+                                        padding: 0 33px;
+                                    }
+
+                                    .box-card-slider {
+                                        width: 100%;
+                                        text-align: center;
+                                        overflow: hidden;
+
+                                        h3 {
+                                            font-family: $font-breePeru;
+                                            font-weight: 700;
+                                            font-size: 16px;
+                                            line-height: 20.1px;
+                                            color: #565656;
+                                            padding-bottom: 10px;
+
+                                            @include respondto(minxs) {
+                                                max-width: 270px;
+                                                margin-left: auto;
+                                                margin-right: auto;
+                                            }
+
+                                            @include respondto(maxxs) {
+                                                max-width: 270px;
+                                                margin-left: auto;
+                                                margin-right: auto;
+                                                font-size: 15px;
+                                            }
+
+                                            @include respondto(sm) {
+                                                max-width: 270px;
+                                                margin-left: auto;
+                                                margin-right: auto;
+                                            }
+
+                                            @include respondto(md) {
+                                                font-size: 15.2px;
+                                            }
+
+                                            @include respondto(lg) {
+                                            }
+
+                                            @include respondto(xlg) {
+                                                font-size: 18px;
+                                                line-height: 22px;
+                                            }
+                                        }
+
+                                        p {
+                                            font-family: $font-clanOt;
+                                            font-weight: 400;
+                                            font-size: 11px;
+                                            line-height: 18px;
+                                            color: #545454;
+                                            padding: 0 22px 15px 22px;
+                                            // display: block;
+                                            // display: -webkit-box;
+                                            // -webkit-line-clamp: 3;
+                                            // -webkit-box-orient: vertical;
+                                            // overflow: hidden;
+                                            // text-overflow: ellipsis;
+                                            // @include ajustatrespuntosmultiline(12px, 1.8, 3);
+
+                                            @include respondto(minxs) {
+                                                max-width: 260px;
+                                                padding: 0 15px 15px 15px;
+                                                margin-left: auto;
+                                                margin-right: auto;
+                                            }
+
+                                            @include respondto(maxxs) {
+                                                max-width: 233px;
+                                                margin-left: auto;
+                                                margin-right: auto;
+                                                font-size: 10.5px;
+                                                padding: 0 10px 15px 10px;
+                                            }
+
+                                            @include respondto(sm) {
+                                                max-width: 265px;
+                                                margin-left: auto;
+                                                margin-right: auto;
+                                            }
+
+                                            @include respondto(md) {
+                                                padding: 0 10px 15px 10px;
+                                            }
+
+                                            @include respondto(lg) {
+                                            }
+
+                                            @include respondto(xlg) {
+                                                font-size: 12.5px;
+                                                line-height: 20px;
+                                                padding: 0 27px 15px 27px;
+                                            }
+                                        }
+
+                                        a {
+                                            font-family: $font-clanOt;
+                                            font-weight: 700;
+                                            font-size: 11px;
+                                            line-height: 14px;
+                                            color: rgb(var(--color-categoria));
+                                            text-decoration: underline;
+
+                                            @include respondto(minxs) {
+                                            }
+
+                                            @include respondto(maxxs) {
+                                            }
+
+                                            @include respondto(sm) {
+                                            }
+
+                                            @include respondto(md) {
+                                            }
+
+                                            @include respondto(lg) {
+                                            }
+
+                                            @include respondto(xlg) {
+                                                font-size: 12.5px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .slick-dots {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 80px;
+                    position: relative;
+                    flex-wrap: wrap;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        width: 35%;
+                        height: 1px;
+                        left: 5%;
+                        bottom: 8px;
+                        background-color: #c4c4c4;
+
+                        @include respondto(minxs) {
+                            display: none;
+                        }
+
+                        @include respondto(maxxs) {
+                            display: none;
+                        }
+
+                        @include respondto(sm) {
+                            display: none;
+                        }
+
+                        @include respondto(md) {
+                            left: 4%;
+                        }
+
+                        @include respondto(lg) {
+                        }
+
+                        @include respondto(xlg) {
+                        }
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        width: 35%;
+                        height: 1px;
+                        right: 5%;
+                        bottom: 8px;
+                        background-color: #c4c4c4;
+
+                        @include respondto(minxs) {
+                            display: none;
+                        }
+
+                        @include respondto(maxxs) {
+                            display: none;
+                        }
+
+                        @include respondto(sm) {
+                            display: none;
+                        }
+
+                        @include respondto(md) {
+                            right: 4%;
+                        }
+
+                        @include respondto(lg) {
+                        }
+
+                        @include respondto(xlg) {
+                        }
+                    }
+
+                    li {
+                        margin: 0 5px;
+
+                        &.slick-active {
+                            button {
+                                &:after {
+                                    content: '';
+                                    background-color: rgb(var(--color-categoria));
+                                }
+                            }
+                        }
+
+                        button {
+                            width: 0;
+                            height: 0;
+                            border: none;
+                            font-size: 0;
+                            background-color: transparent;
+                            position: relative;
+
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 11px;
+                                height: 11px;
+                                border-radius: 50%;
+                                background-color: #c4c4c4;
+                                transition: all .4s ease;
+                            }
+
+                            &:hover {
+                                &:after {
+                                    transition: all .4s ease;
+                                    background-color: rgb(var(--color-categoria));
+                                    opacity: .85;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// -/BLOCK SLIDER-MULTIFILA
+
+
+
+// BLOCK SLIDER-CATEGORIA
+.contenedor-categoria{
+    width: 100%;
+    .content-categoria{
+        width: 100%;
+        padding-bottom: 55px;
+        @include respondto(minxs) {
+            padding-bottom: 30px;
+        }
+        @include respondto(maxxs) {
+            padding-bottom: 30px;
+        }
+        @include respondto(sm) {
+        }
+        @include respondto(md) {
+        }
+        @include respondto(lg) {
+        }
+        @include respondto(xlg) {
+        }
+        .content-slider-categoria{
+            width: 100%;
+            background-color: #000000;
+            position: relative;
+            .slick-arrow{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 0;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+                z-index: 9;
+                &.slick-prev{
+                    left: 13%;
+                    &:hover{
+                        &:after{
+                            width: 37px;
+                            height: 37px;
+                            background-size: 37px;
+                        }
+                    }
+                    @include respondto(minxs) {
+                        left: 9%;
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                        left: 10%;
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                        &:hover{
+                            &:after{
+                                width: 41px;
+                                height: 41px;
+                                background-size: 41px;
+                            }
+                        }
+                    }
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        top: -18px;
+                        left: 0;
+                        width: 36px;
+                        height: 36px;
+                        background-image: url('../img/plantilla-categoria/slider-categoria/icon-arrow-left.png');
+                        background-repeat: no-repeat;
+                        background-size: 36px;
+                        @include respondto(minxs) {
+                        }
+                        @include respondto(maxxs) {
+                        }
+                        @include respondto(sm) {
+                        }
+                        @include respondto(md) {
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                            width: 40px;
+                            height: 40px;
+                            background-size: 40px;
+                        }
+                    }
+                }
+                &.slick-next{
+                    right: 13%;
+                    &:hover{
+                        &:after{
+                            width: 37px;
+                            height: 37px;
+                            background-size: 37px;
+                        }
+                    }
+                    @include respondto(minxs) {
+                        right: 9%;
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                        right: 10%;
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                        &:hover{
+                            &:after{
+                                width: 41px;
+                                height: 41px;
+                                background-size: 41px;
+                            }
+                        }
+                    }
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        top: -18px;
+                        right: 0;
+                        width: 36px;
+                        height: 36px;
+                        background-image: url('../img/plantilla-categoria/slider-categoria/icon-arrow-right.png');
+                        background-repeat: no-repeat;
+                        background-size: 36px;
+                        @include respondto(minxs) {
+                        }
+                        @include respondto(maxxs) {
+                        }
+                        @include respondto(sm) {
+                        }
+                        @include respondto(md) {
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                            width: 40px;
+                            height: 40px;
+                            background-size: 40px;
+                        }
+                    }
+                }
+            } 
+            .slick-list{
+                .slick-track{
+                    .contenedor-slider-item-card{
+                        width: 100%;
+                        // height: 335px;
+                        border: none;
+                        position: relative;
+                        @include respondto(minxs) {
+                            // height: 335px;
+                        }
+                        @include respondto(maxxs) {
+                            // height: 335px;
+                        }
+                        @include respondto(sm) {
+                            // height: 335px;
+                        }
+                        @include respondto(md) {
+                        }
+                        @include respondto(lg) {
+                            // height: var(--v-width-banner);
+                        }
+                        @include respondto(xlg) {
+                            // height: var(--v-width-banner);
+                        }
+                        .box-slider-logo{
+                            width: 100%;
+                            // height: 100%;
+                            img{
+                                width: 100%;
+                                // height: 100%;
+                                object-fit: cover;
+                                display: flex;
+                                &:nth-child(2){
+                                    display: none;
+                                }
+                                @include respondto(minxs) {
+                                    &:nth-child(1){
+                                        display: none;
+                                    }
+                                    &:nth-child(2){
+                                        display: block;
+                                    }
+                                }
+                                @include respondto(maxxs) {
+                                    &:nth-child(1){
+                                        display: none;
+                                    }
+                                    &:nth-child(2){
+                                        display: block;
+                                    }
+                                }
+                                @include respondto(sm) {
+                                    &:nth-child(1){
+                                        display: none;
+                                    }
+                                    &:nth-child(2){
+                                        display: block;
+                                    }
+                                }
+                                @include respondto(md) {
+                                }
+                                @include respondto(lg) {
+                                }
+                                @include respondto(xlg) {
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+    }
+}
+// -/BLOCK SLIDER-CATEGORIA
+
+
+
+// BLOCK ICONS-DECORATOR
+.contenedor-icons-decorator{
+    width: 100%;
+    margin: 55px 0;
+    .icons-decorator{
+        display: flex;
+        justify-content: center;
+        .box-icons{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            img{
+                width: 35px;
+                height: 35px;
+            }
+        }
+        .icons-21{
+            @include respondto(minxs) {
+                display: none;
+            }
+            @include respondto(maxxs) {
+                display: none;
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+                width: 85%;
+            }
+            img{
+                @include respondto(minxs) {
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                    &.icon-2do{
+                        display: none;
+                    }
+                }
+                @include respondto(md) {
+                    &.icon-2do{
+                        display: none;
+                    }
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+        .icons-10{
+            @include respondto(minxs) {
+            }
+            @include respondto(maxxs) {
+            }
+            @include respondto(sm) {
+                display: none;
+            }
+            @include respondto(md) {
+                display: none;
+            }
+            @include respondto(lg) {
+                display: none;
+            }
+            @include respondto(xlg) {
+                display: none;
+            }
+            img{
+                @include respondto(minxs) {
+                    &.icon-2do{
+                        display: none;
+                    }
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+    }
+}
+// -/BLOCK ICONS-DECORATOR
+
+
+
+// BLOCK SLIDER-NOTICIAS
+.contenedor-noticias{
+    width: 100%;
+    height: 100%;
+    .content-noticias{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 80px;
+        @include respondto(minxs) {
+            padding-bottom: 45px;
+        }
+        @include respondto(maxxs) {
+            padding-bottom: 60px;
+        }
+        @include respondto(sm) {
+        }
+        @include respondto(md) {
+        }
+        @include respondto(lg) {
+        }
+        @include respondto(xlg) {
+        }
+        .box-title-noticias{
+            width: 100%;
+            padding-bottom: 27px;
+            h3{
+                font-family: $font-breePeru;
+                font-size: 33px;
+                line-height: 1;
+                font-weight: 500;
+                text-align: center;
+                color: rgb(var(--color-categoria));
+                @include respondto(minxs) {
+                    font-size: 27px;
+                }
+                @include respondto(maxxs) {
+                    // font-size: 33px;
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+
+        .contenedor-slider-noticias{
+            width: 100%;
+            .content-slider-noticias{
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                position: relative;
+                margin-bottom: 18px;
+                @include respondto(minxs) {
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                    width: 85%;
+                }
+                .slick-arrow{
+                    position: absolute;
+                    top: 34%;
+                    transform: translateY(-50%);
+                    font-size: 0;
+                    border: none;
+                    background-color: transparent;
+                    width: 15px;
+                    height: 30px;
+                    cursor: pointer;
+                    &.slick-prev{
+                        right: 100%;
+                        svg{
+                            path{
+                                fill: rgb(var(--color-categoria));
+                            }
+                        }
+                    }
+                    &.slick-next{
+                        left: 100%;
+                        svg{
+                            path{
+                                fill: rgb(var(--color-categoria));
+                            }
+                        }
+                    }
+                }
+
+                .slick-list{
+                    .slick-track{
+
+                        .contenedor-item-noticia{
+                            padding: 0 13px;
+                            @include respondto(minxs) {
+                                padding: 0 14px;
+                            }
+                            @include respondto(maxxs) {
+                                padding: 0 9px;
+                            }
+                            @include respondto(sm) {
+                                padding: 0 12px;
+                            }
+                            @include respondto(md) {
+                                padding: 0 10px;
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                                padding: 0 15px;
+                            }
+                            .box-card-noticia{
+                                width: 100%;
+                                    .card-logo{
+                                        width: 100%;
+                                        position: relative;
+                                        min-height:212px;
+                                        img{
+                                            width: 100%;
+                                            object-fit: cover;
+                                        }
+                                        a{
+                                            position: absolute;
+                                            bottom: 0;
+                                            right: 0;
+                                            font-family: $font-breePeru;
+                                            font-weight: 700;
+                                            font-size: 14px;
+                                            text-align: center;
+                                            color: #ffffff;
+                                            background-color: rgb(var(--color-categoria));
+                                            padding: 8px 20px;
+                                        }
+                                    }
+                                    .card-descripcion{
+                                        width: 100%;
+                                        // display: flex;
+                                        // align-items: center;
+                                        // background-color: #e6e7e8;
+                                        overflow: hidden;
+                                        padding: 18px 7px 0 7px;
+                                        @include respondto(minxs) {
+                                        }
+                                        @include respondto(maxxs) {
+                                            padding: 17px 5px 0 4px;
+                                        }
+                                        @include respondto(sm) {
+                                        }
+                                        @include respondto(md) {
+                                        }
+                                        @include respondto(lg) {
+                                            // padding: 18px 7px;
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                        p{
+                                            font-family: $font-clanOt;
+                                            font-weight: 700;
+                                            // font-size: 12px;
+                                            // line-height: 19.5px;
+                                            color: #939598;
+                                            
+                                            // display: block;
+                                            // display: -webkit-box;
+                                            // -webkit-line-clamp: 3;
+                                            // -webkit-box-orient: vertical;
+                                            // overflow: hidden;
+                                            // text-overflow: ellipsis;
+
+
+                                            @include ajustatrespuntosmultiline(12px, 1.8, 3);
+
+
+                                            @include respondto(minxs) {
+                                            }
+                                            @include respondto(maxxs) {
+                                            }
+                                            @include respondto(sm) {
+                                            }
+                                            @include respondto(md) {
+                                            }
+                                            @include respondto(lg) {
+                                            }
+                                            @include respondto(xlg) {
+                                            }
+                                        }
+                                    }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .content-mas-noticias{
+            width: 85%;
+            padding-top: 38px;
+            display: flex;
+            justify-content: center;
+            .item-info-link{
+                .icon-arrow{
+                    img{}
+                }
+                span{
+                }
+            }
+
+        }
+        
+    }
+}
+// -/BLOCK SLIDER-NOTICIAS
+
+
+
+
+
+// ********** ********** /MI ********** **********
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ********** ********** MA ********** **********
+
+
+// ********** ********** /MA ********** **********

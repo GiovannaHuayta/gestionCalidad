@@ -1,0 +1,166 @@
+﻿@using System.Configuration
+@{ ViewBag.Title = "Peru en París";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"]; }
+@section Scripts
+{    
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/GaleriaPeruParis.js"></script>
+    <script>
+    var editar = true;
+    var eliminar = true;</script>
+}
+<div class="l-contents">
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Perú en París</h1>
+        </div>
+        <nav class="cont-icons">
+            <a id="btnNuevo" href="javascript:" class="cont-icons-new">
+                <span class="fas icon-plus">
+                </span><span>Nuevo</span>
+            </a>
+        </nav>
+        <div class="cont-table">
+            <table id="gridBloques" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1440px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 5%"></th>
+                        <th data-title="Titulo" style="width: 10%">
+                            <input type="text" id="gridPeruenParis_txtB_Titulo">
+                        </th>
+                        <th data-title="Descripcion" style="width: 10%">
+                            <input type="text" id="gridPeruenParis_txtB_Descripcion">
+                        </th>
+                        <th data-title="Tipo" style="width: 10%">
+                            <input type="text" id="gridPeruenParis_txtB_Tipo">
+                        </th>
+                        <th data-title="Archivo" style="width: 10%">
+                        </th>
+                        <th data-title="Estado" style="width: 10%">
+
+                        </th>
+                        <th data-title="" style="width: 10%" align="center">
+                            <div class="accion-box">
+                                <a href="" title="Editar">
+                                    <span class="fas fa-search"></span>
+                                </a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 3%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th style="width: 20%;">
+                            <a id="a_Titulo">Título</a>
+                        </th>
+                        <th style="width: 20%;">
+                            <a id="a_Descripcion">Descripción</a>
+                        </th>
+                        <th style="width: 15%;">
+                            <a id="a_Tipo">Tipo</a>
+                        </th>
+                        <th style="width: 15%;">
+                            <a id="a_Archivo">Archivo</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Estado">Estado</a>
+                        </th>
+                        <th style="width: 3%;">
+                            <a id="a_"></a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="reveal-modal-bg">
+        <div class="modal-registrar">
+            <h2 id="lblRegistro">Editar Registro</h2>
+            <input type="hidden" id="hdnGaleriaPeruParisId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Título:</label>
+                <input id="txtTitulo" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Descripcion:</label>
+                <textarea id="txtDescripcion" class="cont-box-input" rows="4"></textarea>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Tipo:</label>
+                <select id="ddlTipoArchivo" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Tipo--</option>
+                    <option value="imagen" class="option-disabled">Imagen</option>
+                    <option value="video" class="option-disabled">Video</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label id="lblArchivo" class="cont-box-label"></label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileArchivo" type="file" class="cont-box-input" maxlength="500">
+                    <span id="lblNota" class="text-start small py-1"></span>
+                    <input type="hidden" id="txtArchivo" />
+                </div>
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgArchivo" class="w-50" alt="" style="display: none;"/>
+                </div>
+            </div>
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div id="videoPreviewContainer" class="d-flex flex-column w-100 pb-3" style="display: none !important;">
+                    <video id="videoArchivo" class="w-50" controls>
+                        <source id="videoSource" type="video/mp4">
+                        Su navegador no soporta el elemento
+                        <code>video</code>.
+                    </video>
+                </div>
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">Activo:</label>
+                <input type="checkbox" id="chkActivo" class="input-checkbox" checked="">
+                <label for="chkActivo" class="input-checkbox-lab"> </label>
+            </div>
+            <div class="cont-box">
+                <button id="btnGuardar" class="cont-box-submit">
+                    <label>Registrar</label>
+                </button>
+            </div>
+            <div class="cont-box">
+                <button id="btnCancelar" class="cont-box-cancel close">
+                    <label>Cancelar</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+</style>

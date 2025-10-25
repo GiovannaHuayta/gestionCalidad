@@ -1,0 +1,169 @@
+﻿@using System.Configuration
+@{ ViewBag.Title = "Campaña Galería";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"]; }
+
+@section Scripts
+{
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/CampaniaGaleria.js"></script>
+
+    <script>
+        const editar = true;
+        const eliminar = true;
+    </script>
+}
+
+<div class="l-contents">
+
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Galería</h1>
+        </div>
+
+        <nav class="cont-icons">
+            <a id="btnNuevo" href="javascript:" class="cont-icons-new">
+                <span class="fas icon-plus">
+                </span><span>Nuevo</span>
+            </a>
+        </nav>
+
+        <div class="cont-table">
+            <table id="gridBloques" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1000px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 5%"></th>
+                        <th data-title="IdiomaNombre" style="width: 10%">
+                            <input type="text" id="gridCategoria_txtB_IdiomaNombre">
+                        </th>
+                        <th data-title="CampaniaNombre" style="width: 10%">
+                            <input type="text" id="gridCategoria_txtB_CampaniaNombre">
+                        </th>
+                        <th data-title="CodigoYoutube" style="width: 10%">
+                            <input type="text" id="gridCategoria_txtB_CodigoYoutube">
+                        </th>
+                        <th data-title="" style="width: 10%" align="center">
+                            <div class="accion-box">
+                                <a href="" title="Editar">
+                                    <span class="fas fa-search"></span>
+                                </a>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 5%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_NombreIdioma">Idioma</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_CampaniaNombre">Campaña</a>
+                        </th>
+                        <th style="width: 5%;">
+                            <a id="a_CodigoYoutube">Cod. Youtube</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_"></a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="reveal-modal-bg">
+        <div class="modal-registrar">
+            <h2 id="lblRegistro">Crear Galería</h2>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Idioma:</label>
+                <select id="ddlIdioma" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Idioma--</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Campaña:</label>
+                <select id="ddlCampania" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Campaña--</option>
+                </select>
+            </div>
+
+            <input type="hidden" id="hdnCampaniaId" name="hdnCampaniaId" />
+            <input type="hidden" id="hdnImagenId" name="hdnImagenId" />
+            <input type="hidden" id="hdnImagenTraduccionId" name="hdnImagenTraduccionId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Imagen:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileImagenDesktop" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">Dimensiones: 120px X 80px</span>
+                    <input type="hidden" id="txtImagenDesktop" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <img id="imgImagenDesktop" class="w-50" alt="" />
+                </div>
+            </div>
+
+            @*<div class="cont-box">
+                    <label class="cont-box-label">Imagen Cabecera Movil:</label>
+                    <div class="d-flex flex-column w-100">
+                        <input id="fileImagenMovil" type="file" class="cont-box-input" maxlength="255">
+                        <span class="text-start small py-1">Dimensiones: 390px X 454px</span>
+                        <input type="hidden" id="txtImagenMovil" />
+                    </div>
+                </div>
+
+                <div class="cont-box">
+                    <label class="cont-box-label">&nbsp;</label>
+                    <div class="d-flex flex-column w-100 pb-3">
+                        <img id="imgImagenMovil" class="w-50" alt="" />
+                    </div>
+                </div>*@
+
+            <div class="cont-box">
+                <label class="cont-box-label">Texto Alternativo:</label>
+                <input id="txtImagenTextoAlternativo" type="text" class="cont-box-input" maxlength="250">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Código Youtube:</label>
+                <input id="txtCodigoYoutube" type="text" class="cont-box-input" maxlength="250">
+            </div>
+
+            <div class="cont-box">
+                <button id="btnGuardar" class="cont-box-submit">
+                    <label>Registrar</label>
+                </button>
+            </div>
+            <div class="cont-box">
+                <button id="btnCancelar" class="cont-box-cancel close">
+                    <label>Cancelar</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>

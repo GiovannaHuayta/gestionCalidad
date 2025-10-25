@@ -1,0 +1,70 @@
+﻿@using System.Configuration;
+@{
+    ViewBag.Title = "Términos y Condiciones";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"];
+}
+
+@section Scripts
+{
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/TerminosCondiciones.js"></script>
+
+    <script>
+        var editar = true;
+        var eliminar = true;
+    </script>
+}
+
+<div class="cont-header">
+    <h1 class="cont-header-h1"> @ViewBag.Title</h1>
+</div>
+
+<div style="max-width: 800px;">
+    <div>
+
+        <input type="hidden" id="hdnBloqueId" />
+        <input type="hidden" id="hdnBloqueTraduccionId" />
+
+        <div class="cont-box">
+            <label class="cont-box-label">Idioma:</label>
+            <select id="ddlIdioma" class="cont-box-select" style="width: 800px">
+                <option disabled="disabled" selected="selected" class="option-disabled" value="0">--Seleccione Idioma--</option>
+            </select>
+        </div>
+
+        <div class="cont-box">
+            <label class="cont-box-label">Contenido Información Útil:</label>
+            <textarea id="txtContenido" class="cont-box-input" rows="4" style="width: 800px"></textarea>
+        </div>
+
+        <div class="cont-box" style="width: 186px">
+            <label class="cont-box-label">Activo:</label>
+
+            <input type="checkbox" id="chkActivo" class="input-checkbox" checked="">
+            <label for="chkActivo" class="input-checkbox-lab"> </label>
+        </div>
+
+        <div class="cont-box">
+            <button id="btnGuardar" class="cont-box-submit">
+                <label>Actualizar</label>
+            </button>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>

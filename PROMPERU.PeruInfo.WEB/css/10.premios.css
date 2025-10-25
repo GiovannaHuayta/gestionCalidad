@@ -1,0 +1,714 @@
+/**************** RESPONSIVE *********************/
+/**************** /RESPONSIVE *********************/
+/***** Dark theme Material Design *****/
+/***** /Dark theme Material Design *****/
+/****** Light theme Material Design ******/
+/****** /Light theme Material Design ******/
+/********* Constants de fuente Info-Peru ***********/
+/********* /Constants de fuente Info-Peru ***********/
+/********* PALETTE COLORS ***********/
+/********* /PALETTE COLORS ***********/
+/**************** RESPONSIVE *********************/
+/**************** /RESPONSIVE *********************/
+/* Inicio iframe responsive */
+/* Fin iframe responsive */
+/* Inicio ajustar texto a la caja usa tres puntos suspensivos al final y en una sola linea */
+/* Fin ajustar texto a la caja usa tres puntos suspensivos al final y en una sola linea */
+/* Inicio ajustar texto a la caja usa tres puntos suspensivos al final y en varias lineas */
+/* Example: @include ajustatrespuntosmultiline(17px, 1.1, 3); */
+/* Fin ajustar texto a la caja usa tres puntos suspensivos al final y en varias lineas */
+/* Inicio ajustar texto a la caja */
+/* Fin ajustar texto a la caja */
+/* Inicio convierte imagen a escala de grises por css y svg 
+*  Para asegurar mayor compatibilidad agrgar en cualquier parte de la pagina el siguiente code:
+* 	<div style="width:0;height:0;"><svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg"><filter id="grayscale"><fecolormatrix type="matrix" values="0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"/></filter></svg></div>
+*/
+/* Fin convierte imagen a escala de grises por css y svg  */
+/* Inicio scroll design */
+/* Example: @include scroll-design(#f5f5f5,#630496,#662c91,rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)) */
+/* Fin scroll design */
+/* Inicio animacion shadow */
+/* Fin animacion shadow */
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+@media only screen and (max-width: 768px) {
+  body.overflow-hidden {
+    overflow: hidden;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  body.overflow-hidden {
+    overflow: hidden;
+  }
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+span {
+  margin: 0;
+}
+
+img {
+  vertical-align: baseline;
+  max-width: none;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+form {
+  margin: 0;
+}
+
+.input-number-no-bottom {
+  -moz-appearance: textfield;
+  margin: 0;
+}
+.input-number-no-bottom::-webkit-inner-spin-button, .input-number-no-bottom::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-searchbox-no-style::-webkit-search-decoration, .input-searchbox-no-style::-webkit-search-cancel-button, .input-searchbox-no-style::-webkit-search-results-button, .input-searchbox-no-style::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+.clear-input {
+  border: 0;
+}
+.clear-input:focus {
+  outline: 0px;
+}
+
+.blockv3-container {
+  width: 96%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (min-width: 1701px) {
+  .blockv3-container {
+    max-width: 1450px;
+  }
+}
+
+/* ClanOt */
+@font-face {
+  font-family: "ClanOt";
+  font-weight: 400;
+  font-style: normal;
+  src: local("clanOt 400"), local("clanOt-400"), url("../fonts/font-clan/clanOt-400.otf") format("opentype");
+}
+@font-face {
+  font-family: "ClanOt";
+  font-style: normal;
+  font-weight: 500;
+  src: local("clanOt 500"), local("clanOt-500"), url("../fonts/font-clan/clanOt-500.otf") format("opentype");
+}
+@font-face {
+  font-family: "ClanOt";
+  font-style: normal;
+  font-weight: 700;
+  src: local("clanOt 700"), local("clanOt-700"), url("../fonts/font-clan/clanOt-700.otf") format("opentype");
+}
+@font-face {
+  font-family: "ClanOt";
+  font-style: normal;
+  font-weight: 900;
+  src: local("clanOt 900"), local("clanOt-900"), url("../fonts/font-clan/clanOt-900.otf") format("opentype");
+}
+/* Bree */
+@font-face {
+  font-family: "BreePeru";
+  font-style: normal;
+  font-weight: 400;
+  src: local("bree 400"), local("bree-400"), url("../fonts/font-bree/breeperu_light.otf") format("opentype");
+}
+@font-face {
+  font-family: "BreePeru";
+  font-style: italic;
+  font-weight: 400;
+  src: local("bree 400"), local("bree-400"), url("../fonts/font-bree/breeperu_lightoblique.otf") format("opentype");
+}
+@font-face {
+  font-family: "BreePeru";
+  font-style: normal;
+  font-weight: 500;
+  src: local("bree 500"), local("bree-500"), url("../fonts/font-bree/breeperu_regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "BreePeru";
+  font-style: italic;
+  font-weight: 500;
+  src: local("bree 500"), local("bree-500"), url("../fonts/font-bree/breeperu_regularoblique.otf") format("opentype");
+}
+@font-face {
+  font-family: "BreePeru";
+  font-style: normal;
+  font-weight: 700;
+  src: local("bree 700"), local("bree-700"), url("../fonts/font-bree/breeperu_bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "BreePeru";
+  font-style: italic;
+  font-weight: 700;
+  src: local("bree 700"), local("bree-700"), url("../fonts/font-bree/breeperu_boldoblique.otf") format("opentype");
+}
+/* Roboto */
+@font-face {
+  font-family: "Roboto";
+  font-weight: 300;
+  font-style: normal;
+  src: local("roboto 300"), local("roboto-300"), url("../fonts/font-roboto/roboto-light.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  src: local("roboto 400"), local("roboto-400"), url("../fonts/font-roboto/roboto-regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: local("roboto 500"), local("roboto-500"), url("../fonts/font-roboto/roboto-medium.ttf") format("opentype");
+}
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: local("roboto 700"), local("roboto-700"), url("../fonts/font-roboto/roboto-bold.ttf") format("opentype");
+}
+.header-peru-info .contenedor-header-peru-info .contenedor-menu-header .lista-menu-header .item-lista-menu .link-item-menu {
+  color: #8A8A8A;
+}
+.header-peru-info .contenedor-header-peru-info .contenedor-menu-header .lista-menu-header .item-lista-menu .content-icon-lista .icon-lista-buscar:first-child {
+  display: none;
+}
+.header-peru-info .contenedor-header-peru-info .contenedor-menu-header .lista-menu-header .item-lista-menu .content-icon-lista .icon-lista-buscar:last-child {
+  display: block;
+}
+.header-peru-info .contenedor-header-peru-info .contenedor-menu-header .lista-menu-header .item-lista-menu .content-icon-lista .icon-lista-idioma:first-child {
+  display: none;
+}
+.header-peru-info .contenedor-header-peru-info .contenedor-menu-header .lista-menu-header .item-lista-menu .content-icon-lista .icon-lista-idioma:last-child {
+  display: block;
+}
+.header-peru-info .contenedor-header-peru-info .contenedor-menu-header .lista-menu-header .item-lista-menu .content-icon-lista .icon-lista-barras:first-child {
+  display: none;
+}
+.header-peru-info .contenedor-header-peru-info .contenedor-menu-header .lista-menu-header .item-lista-menu .content-icon-lista .icon-lista-barras:last-child {
+  display: block;
+}
+.alinear-izquierda {
+  margin-right: 50%;
+  text-align: right;
+}
+.alinear-izquierda label {
+  border-radius: 7px 0 0 7px;
+}
+.alinear-izquierda .box-nombre-premio {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+@media only screen and (max-width: 576px) {
+  .alinear-izquierda {
+    margin-right: 0;
+    text-align: center;
+  }
+  .alinear-izquierda label {
+    border-radius: 7px 7px 7px 7px;
+  }
+  .alinear-izquierda .box-nombre-premio-mobile {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .alinear-izquierda .box-nombre-premio-mobile .title-premio {
+    padding-bottom: 12px;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .alinear-izquierda {
+    margin-right: 0;
+    text-align: center;
+  }
+  .alinear-izquierda label {
+    border-radius: 7px 7px 7px 7px;
+  }
+  .alinear-izquierda .box-nombre-premio-mobile {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .alinear-izquierda .box-nombre-premio-mobile .title-premio {
+    padding-bottom: 12px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .alinear-izquierda {
+    margin-right: 0;
+    text-align: center;
+  }
+  .alinear-izquierda label {
+    border-radius: 7px 7px 7px 7px;
+  }
+  .alinear-izquierda .box-nombre-premio-mobile {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .alinear-izquierda .box-nombre-premio-mobile .title-premio {
+    padding-bottom: 12px;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .alinear-izquierda {
+    margin-right: 0;
+    text-align: center;
+  }
+  .alinear-izquierda label {
+    border-radius: 7px 7px 7px 7px;
+  }
+  .alinear-izquierda .box-nombre-premio-mobile {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .alinear-izquierda .box-nombre-premio-mobile .title-premio {
+    padding-bottom: 12px;
+  }
+}
+.alinear-derecha {
+  margin-left: 50%;
+  text-align: left;
+}
+.alinear-derecha label {
+  border-radius: 0 7px 7px 0;
+}
+.alinear-derecha .box-nombre-premio .title-premio {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+@media only screen and (max-width: 576px) {
+  .alinear-derecha {
+    margin-left: 0;
+    text-align: center;
+  }
+  .alinear-derecha label {
+    border-radius: 7px 7px 7px 7px;
+  }
+  .alinear-derecha .box-nombre-premio-mobile {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .alinear-derecha .box-nombre-premio-mobile .logo-premio {
+    margin-bottom: 12px;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .alinear-derecha {
+    margin-left: 0;
+    text-align: center;
+  }
+  .alinear-derecha label {
+    border-radius: 7px 7px 7px 7px;
+  }
+  .alinear-derecha .box-nombre-premio-mobile {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .alinear-derecha .box-nombre-premio-mobile .logo-premio {
+    margin-bottom: 12px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .alinear-derecha {
+    margin-left: 0;
+    text-align: center;
+  }
+  .alinear-derecha label {
+    border-radius: 7px 7px 7px 7px;
+  }
+  .alinear-derecha .box-nombre-premio-mobile {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .alinear-derecha .box-nombre-premio-mobile .logo-premio {
+    margin-bottom: 12px;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .alinear-derecha {
+    margin-left: 0;
+    text-align: center;
+  }
+  .alinear-derecha label {
+    border-radius: 7px 7px 7px 7px;
+  }
+  .alinear-derecha .box-nombre-premio-mobile {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .alinear-derecha .box-nombre-premio-mobile .logo-premio {
+    margin-bottom: 12px;
+  }
+}
+.contenedor-premios-honores {
+  width: 100%;
+}
+.contenedor-premios-honores .content-premios-honores {
+  width: 95%;
+  max-width: 1200px;
+  padding: 160px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 576px) {
+  .contenedor-premios-honores .content-premios-honores {
+    padding: 107px 0;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .contenedor-premios-honores .content-premios-honores {
+    padding: 107px 0;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .contenedor-premios-honores .content-premios-honores {
+    padding: 107px 0;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .contenedor-premios-honores .content-premios-honores {
+    padding: 107px 0;
+  }
+}
+.contenedor-premios-honores .content-premios-honores h1 {
+  font-family: "BreePeru", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #D52B1E;
+  text-align: center;
+  padding-bottom: 39px;
+}
+@media only screen and (max-width: 576px) {
+  .contenedor-premios-honores .content-premios-honores h1 {
+    font-size: 37.7px;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .contenedor-premios-honores .content-premios-honores h1 {
+    font-size: 37.7px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .contenedor-premios-honores .content-premios-honores h1 {
+    font-size: 37.7px;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .contenedor-premios-honores .content-premios-honores h1 {
+    font-size: 37.7px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .contenedor-premios-honores .content-premios-honores h1 {
+    background-color: aqua;
+  }
+}
+.contenedor-premios-honores .content-premios-honores h1 span {
+  font-family: "ClanOt", sans-serif;
+  font-weight: 700;
+  font-size: 40.7px;
+}
+@media only screen and (max-width: 576px) {
+  .contenedor-premios-honores .content-premios-honores h1 span {
+    font-size: 38px;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .contenedor-premios-honores .content-premios-honores h1 span {
+    font-size: 38px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .contenedor-premios-honores .content-premios-honores h1 span {
+    font-size: 38px;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .contenedor-premios-honores .content-premios-honores h1 span {
+    font-size: 38px;
+  }
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo {
+  width: 100%;
+  min-height: 50vh;
+  position: relative;
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .linea-divisora-tiempo {
+  position: absolute;
+  top: 0;
+  left: 49.795%;
+  width: 0.405%;
+  height: 100%;
+  background-color: #D52B1E;
+}
+@media only screen and (max-width: 576px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .linea-divisora-tiempo {
+    display: none;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .linea-divisora-tiempo {
+    display: none;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .linea-divisora-tiempo {
+    display: none;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .linea-divisora-tiempo {
+    display: none;
+  }
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .box-btn-anio {
+  margin-bottom: 96px;
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .box-btn-anio label {
+  width: 121px;
+  height: 58px;
+  background-color: #D52B1E;
+  font-family: "BreePeru", sans-serif;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 58px;
+  padding: 1px 36px 0 36px;
+  color: #ffffff;
+  display: inline-block;
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios {
+  padding: 0 16px;
+  margin-bottom: 16px;
+  margin-top: -48px;
+}
+@media only screen and (max-width: 576px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios {
+    margin-bottom: 70px;
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios {
+    margin-bottom: 70px;
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios {
+    margin-bottom: 48px;
+    margin-top: 0;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios {
+    margin-bottom: 48px;
+    margin-top: 0;
+  }
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 16px;
+}
+@media only screen and (max-width: 576px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile {
+    margin-bottom: 14px;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile {
+    margin-bottom: 14px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile {
+    margin-bottom: 14px;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile {
+    margin-bottom: 14px;
+  }
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio .title-premio h3,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile .title-premio h3 {
+  font-family: "BreePeru", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFAC26;
+  padding: 0 16px;
+}
+@media only screen and (max-width: 576px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio .title-premio h3,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile .title-premio h3 {
+    width: 100%;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio .title-premio h3,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile .title-premio h3 {
+    width: 100%;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio .title-premio h3,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile .title-premio h3 {
+    width: 100%;
+    padding: 0;
+  }
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio .title-premio h3 br,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile .title-premio h3 br {
+    display: none;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio .title-premio h3,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile .title-premio h3 {
+    width: 100%;
+    padding: 0;
+  }
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio .title-premio h3 br,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile .title-premio h3 br {
+    display: none;
+  }
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio .logo-premio,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile .logo-premio {
+  width: 96px;
+  height: 96px;
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio .logo-premio img,
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile .logo-premio img {
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-width: 576px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio {
+    display: none;
+  }
+}
+@media only screen and (max-width: minxspx) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio {
+    display: none;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio {
+    display: none;
+  }
+}
+@media only screen and (max-width: maxxspx) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio {
+    display: none;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile {
+    display: none;
+  }
+}
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1201px) and (max-width: 1700px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1701px) {
+  .contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-premio-mobile {
+    display: none;
+  }
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-organizador .content-box-organizador {
+  padding-bottom: 5px;
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-organizador .content-box-organizador h4 {
+  font-family: "BreePeru", sans-serif;
+  font-weight: 700;
+  font-size: 17.3px;
+  line-height: 20px;
+  color: #D52B1E;
+}
+.contenedor-premios-honores .content-premios-honores .contenedor-premios-tiempo .contenedor-item-premios .box-nombre-organizador .content-box-organizador p {
+  font-family: "BreePeru", sans-serif;
+  font-weight: 500;
+  font-size: 15.7px;
+  line-height: 19px;
+  color: #B1B1B1;
+}

@@ -1,0 +1,295 @@
+// @import 'model/slick.scss';
+@import 'model/_config.scss';
+@import 'model/_reset.scss';
+@import 'model/_font.scss';
+
+
+// ********** ********** Banner App ********** **********
+
+.banner-apps {
+	.contenedor-banner-apps {
+		position: relative;
+		.content-banner {
+			width: 100%;
+		    height: 100vh;
+		    position: relative;
+		    overflow: hidden;
+		    @include respondto(xs) {
+		        height: 340px;
+		    }
+			img {
+				width: 100%;
+			    height: 100%;
+			    object-fit: cover;
+			    object-position: center;
+			}
+		}
+		.content-text-banner {
+			position: absolute;
+		    top: 0;
+		    z-index: 5;
+		    left: 0;
+		    background-color: rgba(0,0,0,.7);
+		    width: 100%;
+		    height: 100%;
+		    .container-text {
+		    	position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%, -50%);
+			    width: calc(100% - 16em);
+			    @include respondto(xs) {
+			        width: 85%;
+			    }
+		    	h1 {
+		    		color: #fff;
+				    font-family: $font-breePeru;
+				    font-size: 91px;
+				    font-weight: bold;
+				    letter-spacing: 4.8px;
+				    line-height: 86px;
+				    padding-bottom: 35px;
+				    margin-bottom: 35px;
+				    width: 100%;
+				    border-bottom: 2px solid #FFFFFF;
+				    @include respondto(xs) {
+					    font-size: 25px;
+					    letter-spacing: 1px;
+					    padding-bottom: 20px;
+					    margin-bottom: 20px;
+					    line-height: 1;
+				    }
+				}
+				.categoria {
+					position: relative;
+    				padding-left: 15px;
+    				@include respondto(xs) {
+				        padding-left: 10px;
+				    }
+    				&:before {
+					    background-color: #006ab4;
+					    content: ' ';
+					    height: 80%;
+					    left: 0;
+					    pointer-events: none;
+					    position: absolute;
+					    top: 5%;
+					    width: 0.4em;
+					    z-index: 1;
+					    @include respondto(xs) {
+						    height: 90%;
+						    top: 4%;
+						    width: 5px;
+					    }
+					}
+					p {
+						font-family: $font-breePeru;
+					    font-style: normal;
+					    font-weight: bold;
+					    font-size: 24px;
+					    line-height: 93%;
+					    display: flex;
+					    align-items: center;
+					    color: #FFFFFF;
+					    margin-bottom: 15px;
+					    @include respondto(xs) {
+					        font-size: 12px;
+					    }
+					}
+				}
+				.bajada {
+					p {
+						font-family: $font-clanOt;
+					    font-style: normal;
+					    font-weight: normal;
+						font-size: 24px;
+					    line-height: 112%;
+					    letter-spacing: 1.568px;
+					    color: #FFFFFF;
+					    @include respondto(xs) {
+					        font-size: 10.5px;
+							text-align: center;
+						    letter-spacing: 1px;
+					    }
+					    br {
+					    	@include respondto(xs) {
+						        display: none;
+						    }
+					    }
+					}
+				}
+		    }
+		}
+	}
+}
+
+
+// ********** ********** scroll btn ********** **********
+.scroll-boton{
+    cursor: pointer;
+    left: 50%;
+    position: absolute;
+    top: calc(100vh - 84px);
+    transform: translateX(-50%);
+    z-index: 5;
+    @include respondto(xs) {
+        display: none;
+    }
+    @include respondto(sm) {}
+    @include respondto(md) {}
+    @include respondto(lg) {}
+    @include respondto(xlg) {}
+    .scroll-cont{
+        border: 1.5px solid #fff;
+        border-radius: 60px;
+        height: 36px;
+        width: 18px;
+        .scroll-circ{
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-name: deslizar;
+            animation-timing-function: ease-in-out;
+            background-color: #fff;
+            border-radius: 50%;
+            height: 6px;
+            left: 50%;
+            position: absolute;
+            transform: translateX(-50%);
+            top: 4.8px;
+            width: 6px;
+        }
+    }
+}
+@keyframes deslizar {
+    0%   {top: 0.4em;}
+    50%  {top: calc(100% - .9em);}
+    100% {top: 0.4em;}
+}
+
+
+// ********** ********** Container Apss ********** **********
+
+.container-apps {
+	.content-apps {
+		.list-apps {
+			margin: 120px auto;
+		    display: flex;
+		    flex-wrap: wrap;
+		    justify-content: flex-start;
+		    // align-items: flex-start;
+		    // align-content: center; 
+		    @include respondto(xs) {
+				margin: 50px auto;
+			    width: 80%;
+		    }
+			.item-app {
+				width: 45%;
+			    margin: 0 2%;
+			    margin-bottom: 55px;
+				display: flex;
+				flex-direction: column;
+			    @include respondto(xs) {
+			        width: 100%;
+    				margin: 0 auto;
+    				margin-bottom: 55px;
+			    }
+			    &:last-child {
+				    margin-bottom: 0;
+				}
+				.image-app {
+					width: 100%;
+				    overflow: hidden;
+				    position: relative;
+				    height: 280px;
+				    @include respondto(xs) {
+				        height: 150px;
+				    }
+					img {
+						width: 100%;
+					    height: 100%;
+					    object-fit: cover;
+					    object-position: center;
+					}
+				}
+				.description-app {
+					background: #F9F8F8;
+				    padding: 30px 35px;
+				    margin-bottom: 15px;
+					display: flex;
+					flex-direction: column;
+					flex: 1;
+				    @include respondto(xs) {
+				        padding: 20px;
+				    }
+					h2 {
+						font-family: $font-breePeru;
+					    font-style: normal;
+					    font-weight: bold;
+					    font-size: 32px;
+					    line-height: 80%;
+					    letter-spacing: 1.28px;
+					    text-transform: uppercase;
+					    color: #404040;
+					    margin-bottom: 15px;
+					    @include respondto(xs) {
+					        font-size: 16px;
+						    letter-spacing: 0.5px;
+					    }
+					}
+					p {
+						font-family: $font-clanOt;
+					    font-style: normal;
+					    font-weight: 300;
+					    font-size: 16px;
+					    line-height: 114%;
+					    color: #404040;
+					    @include respondto(xs) {
+					        font-size: 12px;
+					    }
+					}
+				}
+				.btns-download {
+					margin-top: auto;
+					a {
+						display: inline-block;
+					    margin-right: 10px;
+					    width: 160px;
+					    @include respondto(xs) {
+					        width: 110px;
+					    }
+						img {
+							width: 100%;
+						}
+					}
+					p {
+						font-family: $font-clanOt;
+					    font-style: normal;
+					    font-weight: bold;
+					    font-size: 23px;
+					    line-height: 22px;
+					    letter-spacing: 1.12px;
+					    color: #404040;
+					    margin-bottom: 10px;
+					    @include respondto(xs) {
+					        font-size: 18px;
+						    line-height: 20px;
+						    letter-spacing: 0.3px;
+					    }
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+// ********** ********** MA ********** **********
+
+
+// ********** ********** /MA ********** **********

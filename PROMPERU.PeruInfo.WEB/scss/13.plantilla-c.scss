@@ -1,0 +1,874 @@
+@import 'model/slick.scss';
+@import 'model/_config.scss';
+@import 'model/_reset.scss';
+@import 'model/_font.scss';
+
+
+// ********** ********** MI ********** **********
+
+
+// BOTON
+.content-pc-btn{
+    display: inline-flex;
+    justify-content: center;
+    a{
+        padding: 8px 30px;
+        border: 3px solid #d52b1e;
+        border-radius: 7px;
+        position: relative;
+        // overflow: hidden;
+        transition: .35s ease all;
+        &:after{
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            top: 0;
+            left: -1px;
+            background-color: #d52b1e;
+            z-index: 1;
+            transition: .35s ease-in-out all;
+        }
+        &:hover{
+            &:after{
+                width: calc(100% + 2px);
+                transition: .35s ease-in-out all;
+            }
+            h4{
+                color: #ffffff;
+                transition: .4s ease-in-out all;
+            }
+        }
+        h4{
+            font-family: $font-clanOt;
+            font-size: 15px;
+            font-weight: 700;
+            text-align: center;
+            color: #d52b1e;
+            position: relative;
+            z-index: 5;
+            transition: .4s ease-in-out all;
+        }
+    }
+
+}
+// /BOTON
+
+
+
+// BLOCK BANNER-PLANTILLA-C
+.banner-plantilla-c{
+    width: 100%;
+    .contenedor-banner-pc{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../img/13.plantilla-c/logo-pc.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        @include respondto(minxs) {
+            height: 320px;
+        }
+        @include respondto(maxxs) {
+        }
+        @include respondto(sm) {
+        }
+        @include respondto(md) {
+        }
+        @include respondto(lg) {
+        }
+        @include respondto(xlg) {
+        }
+        .box-text-banner{
+            width: 46%;
+            text-align: center;
+            color: #ffffff;
+            // text-shadow: 2px 3px 6px #484845;
+            text-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+            @include respondto(minxs) {
+                // width: 67%;
+                width: 80%;
+                padding-top: 40px;
+            }
+            @include respondto(maxxs) {
+                width: 65%;
+            }
+            @include respondto(sm) {
+                width: 53%;
+            }
+            @include respondto(md) {
+                width: 63%;
+            }
+            @include respondto(lg) {
+                padding-bottom: 30px;
+            }
+            @include respondto(xlg) {
+                padding-bottom: 30px;
+            }
+            .btn-banner-categoria{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding-bottom: 30px;
+                @include respondto(minxs) {
+                    padding-bottom: 19px;
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                    padding-bottom: 25px;
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+                .content-btn-banner{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgb(var(--color-categoria));
+                    padding: 10px 20px 9px 20px;
+                    border-radius: 30px;
+                    span{
+                        font-family: $font-breePeru;
+                        font-weight: 400;
+                        font-size: 14px;
+                        text-align: center;
+                        color: #ffffff;
+                    }
+                }
+            }
+            h2{
+                font-family: $font-breePeru;
+                font-weight: 500;
+                font-size: 43px;
+                padding-bottom: 15px;
+                @include respondto(minxs) {
+                    font-size: 23px;
+                }
+                @include respondto(maxxs) {
+                    // background-color: aquamarine;
+                    font-size: 30px;
+                }
+                @include respondto(sm) {
+                    font-size: 36px;
+                }
+                @include respondto(md) {
+                    font-size: 40px;
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+            p{
+                font-family: $font-clanOt;
+                font-weight: 500;
+                font-size: 22px;
+                line-height: 1.2;
+                @include respondto(minxs) {
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+                @include respondto(maxxs) {
+                    font-size: 19px;
+                }
+                @include respondto(sm) {
+                    font-size: 20px;
+                }
+                @include respondto(md) {
+                    font-size: 21px;
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+
+    }
+}
+// /BLOCK BANNER-PLANTILLA-C
+
+
+
+// BLOCK DEDICADO-MUNDO
+.campana-dedicado-mundo{
+    width: 100%;
+    .contenedor-dedicado-mundo{
+        display: flex;
+        justify-content: center;
+        
+        .contenedor-info-multislider-dedicado{
+            display: flex;
+            padding-top: 87px;
+            padding-bottom: 75px;
+            @include respondto(minxs) {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 10px 50px 10px;
+            }
+            @include respondto(maxxs) {
+                width: 90%;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 55px;
+            }
+            @include respondto(sm) {
+                width: 85%;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 55px;
+            }
+            @include respondto(md) {
+                width: 95%;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding-top: 55px;
+            }
+            @include respondto(lg) {
+                width: 90%;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            @include respondto(xlg) {
+                width: 85%;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .contenedor-info-dedicado{
+                width: 48%;
+                padding-top: 12px;
+                @include respondto(minxs) {
+                    width: 100%;
+                }
+                @include respondto(maxxs) {
+                    width: 100%;
+                }
+                @include respondto(sm) {
+                    width: 100%;
+                }
+                @include respondto(md) {
+                    width: 48.5%;
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+                .box-info-launch{
+                    width: 50%;
+                    background-color: #E6E7E8;
+                    padding: 30px 0 47px 15px;
+                    margin-bottom: 12px;
+                    @include respondto(minxs) {
+                        width: 100%;
+                        padding: 20px 0 17px 17px;
+                    }
+                    @include respondto(maxxs) {
+                        width: 100%;
+                        padding: 25px 0 20px 20px;
+                    }
+                    @include respondto(sm) {
+                        width: 100%;
+                        padding: 25px 0 20px 20px;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                    p{
+                        // font-family: $font-breePeru;
+                        font-family: $font-clanOt;
+                        font-weight: 700;
+                        // font-size: 13px;
+                        font-size: 12px;
+                        line-height: 18.5px;
+                        color: #7b7684;
+                        // padding-bottom: 15px;
+                        span{
+                            font-weight: 400;
+                            font-size: 12px;
+                        }
+                    }
+                }
+                .box-info-detail{
+                    width: 100%;
+                    padding-bottom: 45px;
+                    @include respondto(minxs) {
+                        padding-bottom: 70px;
+                    }
+                    @include respondto(maxxs) {
+                        padding-bottom: 60px;
+                    }
+                    @include respondto(sm) {
+                        padding-bottom: 60px;
+                    }
+                    @include respondto(md) {
+                        padding-bottom: 35px;
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                    blockquote{
+                        // font-family: $font-breePeru;
+                        font-family: $font-clanOt;
+                        font-weight: 500;
+                        // font-size: 12.5px;
+                        font-size: 11.5px;
+                        line-height: 19.5px;
+                        color: #9f9ca6;
+                        margin: 0;
+                        @include respondto(minxs) {
+                            font-size: 12px;
+                        }
+                        @include respondto(maxxs) {
+                        }
+                        @include respondto(sm) {
+                        }
+                        @include respondto(md) {
+                            font-size: 12px;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                    }
+                }
+                .content-pc-btn{
+                    @include respondto(minxs) {
+                        display: none;
+                    }
+                    @include respondto(maxxs) {
+                        display: none;
+                    }
+                    @include respondto(sm) {
+                        display: none;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                    a{
+                        h4{}
+                    }
+                }
+            }
+    
+            .contenedor-multislider-videos{
+                width: 48%;
+                @include respondto(minxs) {
+                    width: 100%;
+                }
+                @include respondto(maxxs) {
+                    width: 100%;
+                }
+                @include respondto(sm) {
+                    width: 100%;
+                }
+                @include respondto(md) {
+                    width: 48.5%;
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+                .content-multislider-videos{
+                    width: 100%;
+                    @include respondto(minxs) {
+                        padding-bottom: 35px;
+                    }
+                    @include respondto(maxxs) {
+                        padding-bottom: 40px;
+                    }
+                    @include respondto(sm) {
+                        padding-bottom: 40px;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                    .contenedor-slider-top{
+                        width: 100%;
+                        padding-bottom: 15px;
+                        .content-slider-video{
+                            width: 100%;
+                            .slick-list{
+                                width: 100%;
+                                .slick-track{
+                                    .item-slider-video{
+                                        width: 100%;
+                                        .box-slider-video{
+                                            @include iframe4by3;
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+    
+                    .contenedor-slider-bottom{
+                        width: 100%;
+                        .content-slider-miniaturas{
+                            width: calc(100% + 14px);
+                            margin: 0 -7px 0 -7px;
+                            @include respondto(minxs) {
+                                width: calc(100% + 6px);
+                                margin: 0 -3px 0 -3px;
+                            }
+                            @include respondto(maxxs) {
+                                width: calc(100% + 10px);
+                                margin: 0 -5px 0 -5px;
+                            }
+                            @include respondto(sm) {
+                            }
+                            @include respondto(md) {
+                                width: calc(100% + 8px);
+                                margin: 0 -4px 0 -4px;
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+                            .slick-list{
+                                
+                                .slick-track{
+                                    
+                                    .item-slider-mini{
+                                        width: 100%;
+                                        padding: 0 7px;
+                                        @include respondto(minxs) {
+                                            padding: 0 3px;
+                                        }
+                                        @include respondto(maxxs) {
+                                            padding: 0 5px;
+                                        }
+                                        @include respondto(sm) {
+                                        }
+                                        @include respondto(md) {
+                                            padding: 0 4px;
+                                        }
+                                        @include respondto(lg) {
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                        .box-slider-mini{
+                                            width: 100%;
+                                            position: relative;
+                                            cursor: pointer;
+                                            &:after{
+                                                content: '';
+                                                width: 100%;
+                                                height: 100%;
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                opacity: .7;
+                                                background-image: url('../img/13.plantilla-c/icon-play.png');
+                                                background-repeat: no-repeat;
+                                                background-position: center;
+                                                background-color: rgba(21, 23, 23, 0.7);
+                                            }
+                                            img{
+                                                width: 100%;
+                                                object-fit: cover;
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .content-pc-btn{
+                &.btn-mobile{
+                    @include respondto(minxs) {
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                        display: none;
+                    }
+                    @include respondto(lg) {
+                        display: none;
+                    }
+                    @include respondto(xlg) {
+                        display: none;
+                    }
+                    a{
+                        h4{}
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+// /BLOCK DEDICADO-MUNDO
+
+
+
+// BLOCK GALERIA-SLIDER 
+.galeria-fotos-pc{
+    width: 100%;
+    .contenedor-galeria-pc{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .content-title-galeria-pc{
+            padding-bottom: 30px;
+            text-align: left;
+            @include respondto(minxs) {
+                text-align: center;
+            }
+            @include respondto(maxxs) {
+                text-align: center;
+            }
+            @include respondto(sm) {
+                text-align: center;
+            }
+            @include respondto(md) {
+                width: 95%;
+            }
+            @include respondto(lg) {
+                width: 90%;
+            }
+            @include respondto(xlg) {
+                width: 85%;
+            }
+            h3{
+                font-family: $font-breePeru;
+                font-weight: 700;
+                font-size: 22px;
+                color: #ee1c24;
+                @include respondto(minxs) {
+                    font-size: 21px;
+                    color: #939598;
+                }
+                @include respondto(maxxs) {
+                    color: #939598;
+                }
+                @include respondto(sm) {
+                    color: #939598;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+
+        .contenedor-galeria-desktop{
+            @include respondto(minxs) {
+                display: none;
+            }
+            @include respondto(maxxs) {
+                display: none;
+            }
+            @include respondto(sm) {
+                display: none;
+            }
+            @include respondto(md) {
+                width: 95%;
+            }
+            @include respondto(lg) {
+                width: 90%;
+            }
+            @include respondto(xlg) {
+                width: 85%;
+            }
+            .content-galeria-desktop{
+                padding-bottom: 27px;
+                @include respondto(minxs) {                      
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+
+                .box-galeria-desktop{
+                    display: grid;
+                    grid-template-columns: repeat(4,1fr);
+                    grid-template-rows: repeat (2,260px);
+                    grid-gap: 16px;
+                    @include respondto(minxs) {
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                        grid-gap: 12px;
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                    .conten-box-card{
+                        width: 100%;
+                        height: 100%;
+                        &:first-child{
+                            grid-column: span 2;
+                            grid-row: span 2;
+                        }
+                        a{
+                            width: 100%;
+                            height: 100%;
+                            .logo-card{
+                                width: 100%;
+                                height: calc(100% - 90px);
+                                img{
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                            }
+                            .txt-card{
+                                background-color: #e9e8ec;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                padding: 0 10px;
+                                height: 90px;
+                                p{
+                                    font-family: $font-breePeru;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 1.2;
+                                    color: #939598;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+
+                }     
+            }
+        }
+
+        .contenedor-slider-galeria{
+            width: 100%;
+            margin-bottom: 27px;
+            @include respondto(minxs) {
+                width: 90%;
+                margin-bottom: 15px;
+            }
+            @include respondto(maxxs) {
+                width: 90%;
+                margin-bottom: 15px;
+            }
+            @include respondto(sm) {
+                width: 85%;
+                margin-bottom: 20px;
+            }
+            @include respondto(md) {
+                display: none;
+            }
+            @include respondto(lg) {
+                display: none;
+            }
+            @include respondto(xlg) {
+                display: none;
+            }
+            .content-slider-galeria{
+                width: calc(100% + 14px);
+                margin: 0 -7px;
+                @include respondto(minxs) {  
+                    width: 100%;
+                    margin: 0;
+                    padding: 0 10px;
+                }
+                @include respondto(maxxs) {
+                    width: calc(100% + 8px);
+                    margin: 0 -4px;
+                }
+                @include respondto(sm) {
+
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+
+                .slick-arrow{
+                    position: absolute;
+                    top: 34%;
+                    transform: translateY(-50%);
+                    font-size: 0;
+                    border: none;
+                    background-color: transparent;
+                    width: 15px;
+                    height: 30px;
+                    cursor: pointer;
+                    &.slick-prev{
+                        right: 100%;
+                        svg{
+                            path{
+                                fill: #939598;
+                            }
+                        }
+                    }
+                    &.slick-next{
+                        left: 100%;
+                        svg{
+                            path{
+                                fill: #939598;
+                            }
+                        }
+                    }
+                }
+
+                .slick-list{
+                    .slick-track{
+
+                        .item-galeria-slider{
+                            @include respondto(minxs) {
+                                padding: 0 4px;                        
+                            }
+                            @include respondto(maxxs) {
+                                padding: 0 4px;
+                            }
+                            @include respondto(sm) {
+                                padding: 0 7px;
+                            }
+                            @include respondto(md) {
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+        
+                            .contenedor-card-galeria{
+                                width: 100%;
+                                a{
+                                    width: 100%;
+                                    .logo-card{
+                                        width: 100%;
+                                        @include respondto(minxs) {
+                                            height: 210px;
+                                        }
+                                        @include respondto(maxxs) {
+                                            height: 210px;
+                                        }
+                                        @include respondto(sm) {
+                                            height: 230px;
+                                        }
+                                        @include respondto(md) {
+                                        }
+                                        @include respondto(lg) {
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                        img{
+                                            width: 100%;
+                                            height: 100%;
+                                            object-fit: cover;
+                                        }
+                                    }
+                                    .txt-card{
+                                        width: 100%;
+                                        height: 90px;
+                                        background-color: #e9e8ec;
+                                        display: flex;
+                                        align-items: center;
+                                        padding: 0 10px;
+                                        p{
+                                            font-family: $font-breePeru;
+                                            font-weight: 400;
+                                            // font-size: 14px;
+                                            line-height: 1.2;
+                                            color: #939598;
+                                            @include respondto(minxs) {
+                                                font-size: 14px;
+                                            }
+                                            @include respondto(maxxs) {
+                                                font-size: 14.5px;
+                                            }
+                                            @include respondto(sm) {
+                                            }
+                                            @include respondto(md) {
+                                            }
+                                            @include respondto(lg) {
+                                            }
+                                            @include respondto(xlg) {
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                        }
+
+                    }
+                }
+                
+            }
+        }
+
+        .content-volver-campanas{
+            width: 100%;
+            text-align: center;
+            padding-bottom: 25px;
+            a{
+                font-family: $font-breePeru;
+                font-weight: 700;
+                font-size: 17px;
+                line-height: 1.2;
+                color: #939598;
+                span{
+                    code{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+    }
+}
+// /BLOCK GALERIA-SLIDER 
+
+
+// ********** ********** /MI ********** **********
+
+
+
+
+
+
+
+
+
+
+// ********** ********** MA ********** **********
+
+
+// ********** ********** /MA ********** **********

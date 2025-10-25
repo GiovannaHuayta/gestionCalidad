@@ -1,0 +1,236 @@
+﻿@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model PaginaBE
+
+@{
+    string culture = ViewBag.Culture;
+    int idioma = culture == "es-pe" ? 1 : 2;
+
+    Layout = null;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@strUrl/css/peru-info.components.css">
+    <link rel="stylesheet" href="@strUrl/css/plantilla-notas-noticias.css">
+    <title>Error</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <base href="@strUrl">
+    <link rel="shortcut icon" href="@strUrl/img/favicon_PeruInfo.ico" />
+    <link rel="canonical" href="@absoluteUrl">
+    <meta name="description" content="@Resource.seo_descripcion_privacidad" />
+    <meta name="author" content="Peru.info">
+    <meta name="distribution" content="global" />
+    <meta name="keywords" content="@Resource.seo_keywords_privacidad" />
+    <meta property="og:locale" content="@culture" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@Resource.seo_titulo_privacidad" />
+    <meta property="og:description" content="@Resource.seo_descripcion_privacidad" />
+    <meta property="og:url" content="@absoluteUrl" />
+    <meta property="og:site_name" content="Perú Info" />
+    <meta property="og:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@Resource.seo_descripcion_privacidad" />
+    <meta name="twitter:title" content="@Resource.seo_titulo_privacidad" />
+    <meta name="twitter:site" content="https://twitter.com/marcaPERU" />
+    <meta name="twitter:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")" />
+    @if (idioma == 1)
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6PS60QLG"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GB6PS60QLG');
+        </script>
+    }
+    else
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5R15JNKSP"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-E5R15JNKSP');
+        </script>
+    }
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDQMLXQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Código de seguimiento de Hotjar de -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 4938555, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+</head>
+
+<body class="categoria-marca-peru">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMLXQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------------------- BLOCK HEADER ----------------------->
+    <!-- <header class="header-peru-info active-scroll-header"> -->
+    <header class="header-peru-info">
+        <div class="contenedor-header-peru-info">
+            <div class="contenedor-logo-peru">
+                <a href="/">
+                    <!-- <img src="@strUrl/img/home/header/logo-peru.png" alt=""> -->
+                    <img src="@strUrl/img/home/header/logo-peru-gris.svg" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                </a>
+            </div>
+
+            @{
+                Html.RenderAction("HeaderMenu", "Home");
+            }
+
+        </div>
+
+        <!-- <div class="menu-lateral mostrar-menu-lateral"> -->
+        @{
+            Html.RenderAction("PageMenu", "Home");
+        }
+    </header>
+    <!-------------------- /BLOCK HEADER ----------------------->
+    <!-------------------- BLOCK MODALES-HEADER ----------------------->
+    @Html.Partial("Partials/_ModalsHeader")
+    <!-------------------- /BLOCK MODALES-HEADER ----------------------->
+
+
+    <main>
+        <!-------------------- BLOCK PAGINADO ----------------------->
+        <section class="contenedor-notas-paginado">
+            <div class="content-notas-paginado blockv3-container">
+                <div class="contenedor-paginado">
+
+                </div>
+            </div>
+        </section>
+        <!-------------------- /BLOCK PAGINADO ----------------------->
+        <!-------------------- BLOCK HEADER-NOTAS ----------------------->
+        <section class="contenedor-header-notas-noticias">
+            <div class="content-header-notas-noticias blockv3-container">
+                <div class="box-header-title">
+                    <h1>¡UPS!</h1>
+                </div>
+            </div>
+        </section>
+        <!-------------------- BLOCK HEADER-NOTAS ----------------------->
+        <!-------------------- BLOCK INFO-NOTAS ----------------------->
+        <section class="contenedor-info-notas">
+            <div class="content-info-notas blockv3-container">
+                <div class="contenedor-rrss-body">
+                    <div class="contenedor-body-noticia">
+                        <div class="box-body-noticia">
+                            @Html.Raw(Resource.contenido_error)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-------------------- BLOCK INFO-NOTAS ----------------------->
+        <!-------------------- BLOCK ICONS-DECORATOR ----------------------->
+        <section class="contenedor-icons-decorator">
+            <div class="icons-decorator blockv3-container">
+                <div class="box-icons icons-21">
+
+                    <img src="@strUrl/img/home/icons/iconos-1024.png" style="width:100% !important" alt="">
+                    @* <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">*@
+                </div>
+
+                <div class="box-icons icons-10">
+
+                    <img src="@strUrl/img/home/icons/iconos-768.png" style="width:100%" alt="">
+
+                    @*<img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-3.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-4.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-5.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-6.png" alt="">
+        <img src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-7.png" alt="">
+
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-8.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-1.png" alt="">
+        <img class="icon-2do" src="@strUrl/img/plantilla-categoria/icons-decorator/icon-decorator-2.png" alt="">*@
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-------------------- BLOCK FOOTER ----------------------->
+    @{
+        Html.RenderAction("PageMenu", "Home", new { footer = true });
+    }
+    <!-------------------- /BLOCK FOOTER ----------------------->
+    <script>
+        let baseDomain = '@strUrl';
+    </script>
+    <script src="@strUrl/js/jquery.min.js"></script>
+    <script src="@strUrl/js/peru-info.components.js"></script>
+
+    <script src="@strUrl/js/plantilla-notas-noticias.js"></script>
+    <script>
+    let culture = "@culture";
+    let idioma = @idioma;
+    </script>
+    <script src="@strUrl/js/search.js"></script>
+</body>
+</html>

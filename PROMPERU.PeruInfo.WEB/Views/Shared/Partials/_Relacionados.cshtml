@@ -1,0 +1,37 @@
+﻿@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model List<PublicacionBE>
+
+@{
+    string culture = ViewBag.Culture;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<section class="contenedor-cards-interesar">
+    <div class="content-cards-interesar blockv3-container">
+
+        <div class="contenedor-title-cards">
+
+            <p>@Resource.titulo_podria_interesarte</p>
+            <div class="contenedor-items-cards">
+
+                @foreach (PublicacionBE publicacion in Model)
+                {
+                    <div class="contenedor-item-card categoria-@publicacion.CategoriaSlug">
+                        <a href="/@culture/@publicacion.CategoriaSlug/@Resource.link_noticias/@publicacion.CategoriaId/@publicacion.SubcategoriaId/@publicacion.Slug" class="content-card">
+                            <div class="box-logo-card">
+                                <img src="@strUrl/archivos/publicacion/@publicacion.Imagen" alt="@publicacion.AltImagen">
+                            </div>
+                            <div class="box-txt-card">
+                                <h4>@publicacion.Titulo</h4>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

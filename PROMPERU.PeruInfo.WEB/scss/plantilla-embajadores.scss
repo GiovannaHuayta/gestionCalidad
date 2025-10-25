@@ -1,0 +1,1663 @@
+@import 'model/slick.scss';
+@import 'model/_config.scss';
+@import 'model/_reset.scss';
+@import 'model/_font.scss';
+
+
+// ********** ********** MI ********** **********
+
+
+// BLOCK BANNER-EMBAJADORES
+.contenedor-banner-embajadores{
+    width: 100%;
+    .content-banner-embajadores{
+        &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        width: 100%;
+        // height: 454px;
+        position: relative;
+        // margin-bottom: 58px;
+        @include respondto(minxs) {
+            // height: 454px;
+        }
+        @include respondto(maxxs) {
+            // height: 454px;
+        }
+        @include respondto(sm) {
+            // height: 454px;
+        }
+        @include respondto(md) {
+        }
+        @include respondto(lg) {
+            // height: var(--v-width-banner);
+        }
+        @include respondto(xlg) {
+            // height: var(--v-width-banner);
+        }
+        .box-banner-logo{
+            width: 100%;
+            // height: 100%;
+            display: flex;
+            img{
+                width: 100%;
+                // height: 100%;
+                object-fit: cover;
+                &:nth-child(2){
+                    display: none;
+                }
+                @include respondto(minxs) {
+                    &:nth-child(1){
+                        display: none;
+                    }
+                    &:nth-child(2){
+                        display: block;
+                    }
+                }
+                @include respondto(maxxs) {
+                    &:nth-child(1){
+                        display: none;
+                    }
+                    &:nth-child(2){
+                        display: block;
+                    }
+                }
+                @include respondto(sm) {
+                    &:nth-child(1){
+                        display: none;
+                    }
+                    &:nth-child(2){
+                        display: block;
+                    }
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+        
+        .box-banner-txt{
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%);
+            @include respondto(minxs) {
+                top: 40%;
+                transform: translate(-50%);
+            }
+            @include respondto(maxxs) {
+                transform: translate(-50%);
+            }
+            @include respondto(sm) {
+                max-width: 96%;
+                transform: translate(-50%);
+            }
+            @include respondto(md) {
+                max-width: 96%;
+            }
+            @include respondto(lg) {
+                max-width: 1220px;
+            }
+            @include respondto(xlg) {
+                max-width: 1500px;
+            }
+            .content-box-txt{
+                text-align: center;
+                color: #ffffff;
+                padding: 0 22px;
+                h1{
+                    font-family: $font-breePeru;
+                    font-weight: 700;
+                    font-size: 50px;
+                    line-height: 1;
+                    padding-bottom: 20px;
+                    @include respondto(minxs) {
+                        font-size: 39px;
+                        padding: 0 13px 13px 13px;
+                    }
+                    @include respondto(maxxs) {
+                        font-size: 44px;
+                        padding: 0 20px 17px 20px;
+                    }
+                    @include respondto(sm) {
+                        padding: 0 13px 17px 13px;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                        font-size: 56px;
+                    }
+                }
+                p{
+                    font-family: $font-clanOt;
+                    font-weight: 400;
+                    // font-size: 16px;
+                    font-size: 14px;
+                    line-height: 22px;
+                    text-shadow: 0 4px 4px rgba(0, 0, 0, .3);
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 57%;
+                    @include respondto(minxs) {
+                        max-width: 333px;
+                        font-weight: 400;
+                        line-height: 20px;
+                    }
+                    @include respondto(maxxs) {
+                        max-width: 480px;
+                        font-weight: 400;
+                        line-height: 20px;
+                    }
+                    @include respondto(sm) {
+                        max-width: 560px;
+                        line-height: 20px;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                        font-size: 17.5px;
+                        line-height: 26px;
+                        max-width: 50%;
+                    }
+                }
+            }
+        }
+
+    }
+}
+// -/BLOCK-BANNER-EMBAJADORES
+
+
+
+// BLOCK PAGINADO
+.contenedor-embajadores-paginado{
+    width: 100%;
+    @include respondto(minxs) {
+        display: none;
+    }
+    @include respondto(maxxs) {
+        display: none;
+    }
+    @include respondto(sm) {
+        display: none;
+    }
+    @include respondto(md) {
+    }
+    @include respondto(lg) {
+    }
+    @include respondto(xlg) {
+    }
+    .content-embajadores-paginado{
+        display: flex;
+        justify-content: center;
+        .contenedor-paginado{
+            width: 90%;
+            display: flex;
+            align-items: center;
+            @include respondto(minxs) { 
+            }
+            @include respondto(maxxs) {
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+                padding: 35px 0 40px 0;
+            }
+            @include respondto(lg) {
+                padding: 35px 0 40px 0;
+            }
+            @include respondto(xlg) {
+                width: 85%;
+                padding: 35px 0 45px 0;
+            }
+            .box-btn-paginado{
+                a{
+                    font-family: $font-breePeru;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #ffffff;
+                    padding: 10px 24px 8px 24px;
+                    background-color: #D52B1E;
+                    border-radius: 30px;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                    @include respondto(minxs) { 
+                        font-size:12px;
+                    }
+                    @include respondto(maxxs) {
+                        font-size:12px;
+                    }
+                    @include respondto(sm) {
+                        font-size:12px;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                }
+            }
+            span{
+                width: 6x;
+                margin: 0 10px;
+                img{
+                    width: 100%;
+                }
+            }
+            .box-subcategoria-paginado{
+                a{
+                    font-family: $font-breePeru;
+                    font-weight: 400;
+                    font-size: 14px;
+                    // line-height: 18.7px;
+                    color: #939598;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                    @include respondto(minxs) { 
+                        font-size:12px;
+                    }
+                    @include respondto(maxxs) {
+                        font-size:12px;
+                    }
+                    @include respondto(sm) {
+                        font-size:12px;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                }
+            }
+        }
+    }
+}
+// /BLOCK PAGINADO
+
+
+
+// BLOCK BUSCADOR
+.container-buscador-embajadores{
+    width: 100%;
+    .content-buscador-embajadores{
+        display: flex;
+        justify-content: center;
+        .contenedor-buscador-cards{
+            width: 90%;
+            @include respondto(minxs) { 
+                padding-top: 50px;
+            }
+            @include respondto(maxxs) {
+                padding-top: 50px;
+            }
+            @include respondto(sm) {
+                padding-top: 50px;
+            }
+            @include respondto(md) {
+                padding-bottom: 20px;
+            }
+            @include respondto(lg) {
+                padding-bottom: 20px;
+            }
+            @include respondto(xlg) {
+                width: 85%;
+                padding-bottom: 20px;
+            }
+            .content-buscador-cards{
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                @include respondto(minxs) { 
+                    flex-direction: column;
+                }
+                @include respondto(maxxs) {
+                    flex-direction: column;
+                }
+                @include respondto(sm) {
+                    flex-direction: column;
+                    padding: 0 5px ;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+                .contenedor-buscar-filtros{
+                    width: 325px;
+                    padding-right: 60px;
+                    @include respondto(minxs) {   
+                        width: 88%;
+                        padding: 0 0 35px 0;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                    @include respondto(maxxs) {
+                        width: 100%;
+                        padding: 0 0 35px 0;
+                    }
+                    @include respondto(sm) {
+                        width: 100%;
+                        padding: 0 0 35px 0;
+                    }
+                    @include respondto(md) {
+                        padding-right: 15px;
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                        width: 350px;
+                    }
+                    .content-buscar-filtros{
+                        width: 265px;
+                        overflow: hidden;
+                        @include respondto(minxs) { 
+                            width: 100%;
+                            padding: 0 10px 0 10px;
+                        }
+                        @include respondto(maxxs) {
+                            width: 100%;
+                            padding: 0 20px 0 20px;
+                        }
+                        @include respondto(sm) {
+                            width: 100%;
+                            padding: 0 10px 0 10px;
+                        }
+                        @include respondto(md) {
+                            width: 230px;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                            width: 290px;
+                        }
+                        .input-buscador{
+                            width: 100%; 
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            @include respondto(minxs) { 
+                                width: 100%;
+                                height: 100%;
+                            }
+                            @include respondto(maxxs) {
+                                width: 100%;
+                                height: 100%;
+                            }
+                            @include respondto(sm) {
+                                // display: block;
+                                // flex-direction: column;
+                                width: 100%;
+                                height: 100%;
+                            }
+                            @include respondto(md) {
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+
+                            p{
+                                font-family: $font-breePeru;
+                                font-weight: 400;
+                                font-size: 14px;
+                                color: #c4c4c4;
+                                padding-bottom: 16px;
+                                @include respondto(minxs) {
+                                    padding-left: 17px;
+                                    padding-bottom: 12px;
+                                }
+                                @include respondto(maxxs) {
+                                    padding-left: 17px;
+                                }
+                                @include respondto(sm) {
+                                    padding-left: 17px;
+                                }
+                                @include respondto(md) {
+                                }
+                                @include respondto(lg) {
+                                }
+                                @include respondto(xlg) {
+                                }
+                            }
+                            .item-buscar{
+                                width: 100%;
+                                height: 46px;
+                                margin-bottom: 35px;
+                                position: relative;
+                                @include respondto(minxs) {
+                                    height: 52px;
+                                }
+                                @include respondto(maxxs) {
+                                    height: 52px;
+                                }
+                                @include respondto(sm) {
+                                    height: 52px;
+                                }
+                                @include respondto(md) {
+                                    height: 44px;
+                                }
+                                @include respondto(lg) {
+                                }
+                                @include respondto(xlg) {
+                                }
+                                input{
+                                    height: 100%;
+                                    width: 100%;
+                                    border: none;
+                                    font-family: $font-breePeru;
+                                    font-weight: 500;
+                                    font-size: 18px;
+                                    color: #D52B1E;
+                                    padding: 2px 52px 0 33px;
+                                    border-radius: 30px;
+                                    background-color: #E6E7E8;
+                                    @include respondto(minxs) {
+                                        padding: 2px 49px 0 21px;
+                                    }
+                                    @include respondto(maxxs) {
+
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                        font-size: 17px;
+                                        padding: 2px 47px 0 28px;
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    &:focus-visible{
+                                        // border: none;
+                                        outline: none;
+                                    }
+                                    &::placeholder{
+                                        font-family: $font-breePeru;
+                                        font-weight: 400;
+                                        font-size: 18px;
+                                        color: #9D9D9D;
+                                        @include respondto(minxs) {
+                                        }
+                                        @include respondto(maxxs) {
+                                        }
+                                        @include respondto(sm) {
+                                        }
+                                        @include respondto(md) {
+                                            font-size: 17px;
+                                        }
+                                        @include respondto(lg) {
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                    }
+                                }
+                                .icon-lupa{
+                                    position: absolute;
+                                    // top: 14px;
+                                    top: 50%;
+                                    transform: translateY(-47%);
+                                    right: 25px;
+                                    height: 20px;
+                                    width: 20px;
+                                    cursor: pointer;
+                                    @include respondto(minxs) {
+                                        right: 22px;
+                                    }
+                                    @include respondto(maxxs) {
+                                        right: 14px;
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                        right: 20px;
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    img{}
+                                }
+                                
+                            }
+                        }
+
+                        .select-tipos-embajadores{
+                            width: 100%;
+                            padding: 0 10px;
+                            @include respondto(minxs) {
+                            }
+                            @include respondto(maxxs) {
+                            }
+                            @include respondto(sm) {
+                            }
+                            @include respondto(md) {
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                            }
+                            .title-select{
+                                display: flex;
+                                align-items: center;
+                                padding-bottom: 11px;
+                                margin-bottom: 15px;
+                                border-bottom: 1px solid #ececec;
+                                @include respondto(minxs) {
+                                    justify-content: center;
+                                    margin-bottom: 0;
+                                    padding-bottom: 20px;
+                                    cursor: pointer;
+                                }
+                                @include respondto(maxxs) {
+                                    justify-content: center;
+                                    margin-bottom: 0;
+                                    padding-bottom: 20px;
+                                    cursor: pointer;
+                                }
+                                @include respondto(sm) {
+                                    justify-content: center;
+                                    margin-bottom: 0;
+                                    padding-bottom: 20px;
+                                    cursor: pointer;
+                                }
+                                @include respondto(md) {
+                                }
+                                @include respondto(lg) {
+                                }
+                                @include respondto(xlg) {
+                                }
+                                h5{
+                                    font-family: $font-breePeru;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    color: #b1b1b1;
+                                    padding-left: 9px;
+                                    @include respondto(minxs) {
+                                    }
+                                    @include respondto(maxxs) {
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                }
+                                .icon-despegable{
+                                    margin-left: 12px;
+                                    @include respondto(minxs) {
+                                    }
+                                    @include respondto(maxxs) {
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                        display: none;
+                                    }
+                                    @include respondto(lg) {
+                                        display: none;
+                                    }
+                                    @include respondto(xlg) {
+                                        display: none;
+                                    }
+                                    img{
+                                    }
+                                }
+                            }
+
+                            .content-items-select{
+                                width: 100%;
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                grid-template-rows: repeat(11, 36px);
+                                transition: all .4s ease;
+                                max-height: 450px;
+                                padding: 0 9px;
+                                @include respondto(minxs) { 
+                                    grid-template-columns: 1fr;
+                                    grid-template-rows: repeat(11, 36px);
+                                    row-gap: 2px;
+                                    opacity: 0;
+                                    max-height: 0;
+                                    padding: 0;
+                                    &.mostrar-menu-categorias{
+                                        max-height: 450px;
+                                        padding-top: 20px;
+                                        opacity: 1;
+                                        transition: all .4s ease;
+                                        .item-embajadores{
+                                        }
+                                    }
+                                }
+                                @include respondto(maxxs) {
+                                    grid-template-columns: repeat(2, 1fr);
+                                    grid-template-rows: repeat(6, 36px );
+                                    row-gap: 6px;
+                                    opacity: 0;
+                                    max-height: 0;
+                                    padding: 0;
+                                    &.mostrar-menu-categorias{
+                                        max-height: 450px;
+                                        padding-top: 20px;
+                                        opacity: 1;
+                                        transition: all .4s ease;
+                                        .item-embajadores{
+                                        }
+                                    }
+                                }
+                                @include respondto(sm) {
+                                    grid-template-columns: repeat(3, 1fr);
+                                    grid-template-rows: repeat(3, 36px);
+                                    row-gap: 7px;
+                                    opacity: 0;
+                                    max-height: 0;
+                                    padding: 0;
+                                    &.mostrar-menu-categorias{
+                                        max-height: 450px;
+                                        padding-top: 20px;
+                                        opacity: 1;
+                                        transition: all .4s ease;
+                                        .item-embajadores{
+                                        }
+                                    }
+                                }
+                                @include respondto(md) {
+                                }
+                                @include respondto(lg) {
+                                }
+                                @include respondto(xlg) {
+                                }
+                                .box-item-categoria{
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    transition: all .6s ease;
+                                    cursor: pointer;
+                                    &:hover{
+                                        padding-left: 5px;
+                                        transition: all .4s ease;
+                                        .icon-sector{
+                                            img{
+                                            }
+                                        }
+                                        h4{
+                                            color: #D52B1E;
+                                        }
+                                        .icon-arrow-right{
+                                            img{
+                                                &:nth-child(1){
+                                                    display: none;
+                                                }
+                                                &:nth-child(2){
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.active-item-categoria{
+                                        padding-left: 5px;
+                                        transition: all .4s ease;
+                                        .icon-sector{
+                                            img{
+                                            }
+                                        }
+                                        h4{
+                                            color: #D52B1E;
+                                        }
+                                        .icon-arrow-right{
+                                            img{
+                                                &:nth-child(1){
+                                                    display: none;
+                                                }
+                                                &:nth-child(2){
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .icon-sector{
+                                        width: 23px;
+                                        height: 21px;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                        margin-right: 15px;
+                                        img{
+                                            width: 21px;
+                                            height: 100%;
+                                        }
+                                    }
+                                    h4{
+                                        font-family: $font-breePeru;
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                        color: #636466;
+                                        padding-right: 8px;
+                                    }
+                                    .icon-arrow-right{
+                                        display: flex;
+                                        align-items: center;
+                                        img{
+                                            &:nth-child(2){
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                .contenedor-cards-grid{
+                    width: 100%;
+                    @include respondto(minxs) { 
+                        display: flex;
+                        justify-content: center;
+                    }
+                    @include respondto(maxxs) {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    @include respondto(sm) {
+                        display: flex;
+                        justify-content: center;
+                    }
+                    @include respondto(md) {
+                    }
+                    @include respondto(lg) {
+                    }
+                    @include respondto(xlg) {
+                    }
+                    .contenedor-lista-cards{
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        grid-gap: 16px 13px;
+                        @include respondto(minxs) {
+                            width: 88%;
+                            grid-template-columns: 1fr;
+                            grid-gap: 26px;
+                        }
+                        @include respondto(maxxs) {
+                            grid-template-columns: 1fr 1fr;
+                        }
+                        @include respondto(sm) {
+                        }
+                        @include respondto(md) {
+                            grid-gap: 13px 10px;
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                            grid-gap: 18px 15px;
+                        }
+                        .contenedor-item-card{
+                            position: relative;
+                            height: 390px;
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                top: 0;
+                                left: 0;
+                                background-color: rgba(0, 0, 0, .7);
+                                opacity: 0;
+                                transition: all .4s ease;
+                                pointer-events: none;
+                            }
+                            &:hover {
+                                &:before {
+                                    transition: all .4s ease;
+                                    opacity: 1;
+                                }
+                                .box-item-card-link{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                                    .icon-arrow{
+                                        transition: all .6s ease;
+                                        opacity: 1;
+                                        img{}
+                                    }
+                                    .contenedor-info-personaje{
+                                        .icon-categoria{
+                                        }
+                                        span{
+                                        }
+                                        .box-info-txt{
+                                        }
+                                    }
+                                }
+                            }
+                            @include respondto(minxs) {
+                                height: 360px;
+                            }
+                            @include respondto(maxxs) {
+                                height: 360px;
+                            }
+                            @include respondto(sm) {
+                            }
+                            @include respondto(md) {
+                                height: 360px;
+                            }
+                            @include respondto(lg) {
+                            }
+                            @include respondto(xlg) {
+                                height: 475px;
+                            }
+                            &.icon-artista{
+                                .box-item-card-link{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                                    .icon-arrow{
+                                        img{}
+                                    }
+                                    .contenedor-info-personaje{
+                                        .icon-categoria{
+                                            background-image: url('../img/plantilla-embajadores/card-logo-icon/icon-blanco-artista.png');
+                                        }
+                                        span{
+                                        }
+                                        .box-info-txt{
+                                        }
+                                    }
+                                }
+                            }
+                            &.icon-ciencia{
+                                .box-item-card-link{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                                    .icon-arrow{
+                                        img{}
+                                    }
+                                    .contenedor-info-personaje{
+                                        .icon-categoria{
+                                            background-image: url('../img/plantilla-embajadores/card-logo-icon/icon-blanco-ciencia.png');
+                                        }
+                                        span{
+                                        }
+                                        .box-info-txt{
+                                        }
+                                    }
+                                }
+                            }
+                            &.icon-cine{
+                                .box-item-card-link{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                                    .icon-arrow{
+                                        img{}
+                                    }
+                                    .contenedor-info-personaje{
+                                        .icon-categoria{
+                                            background-image: url('../img/plantilla-embajadores/card-logo-icon/icon-blanco-cine.png');
+                                        }
+                                        span{
+                                        }
+                                        .box-info-txt{
+                                        }
+                                    }
+                                }
+                            }
+                            &.icon-actuacion{
+                                .box-item-card-link{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                                    .icon-arrow{
+                                        img{}
+                                    }
+                                    .contenedor-info-personaje{
+                                        .icon-categoria{
+                                            background-image: url('../img/plantilla-embajadores/card-logo-icon/icon-blanco-actuacion.png');
+                                        }
+                                        span{
+                                        }
+                                        .box-info-txt{
+                                        }
+                                    }
+                                }
+                            }
+                            &.icon-deporte{
+                                .box-item-card-link{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                                    .icon-arrow{
+                                        img{}
+                                    }
+                                    .contenedor-info-personaje{
+                                        .icon-categoria{
+                                            background-image: url('../img/plantilla-embajadores/card-logo-icon/icon-blanco-deporte.png');
+                                        }
+                                        span{
+                                        }
+                                        .box-info-txt{
+                                        }
+                                    }
+                                }
+                            }
+                            &.icon-gastronomia{
+                                .box-item-card-link{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                                    .icon-arrow{
+                                        img{}
+                                    }
+                                    .contenedor-info-personaje{
+                                        .icon-categoria{
+                                            background-image: url('../img/plantilla-embajadores/card-logo-icon/icon-blanco-gastronomia.png');
+                                        }
+                                        span{
+                                        }
+                                        .box-info-txt{
+                                        }
+                                    }
+                                }
+                            }
+                            &.icon-literatura{
+                                .box-item-card-link{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                                    .icon-arrow{
+                                        img{}
+                                    }
+                                    .contenedor-info-personaje{
+                                        .icon-categoria{
+                                            background-image: url('../img/plantilla-embajadores/card-logo-icon/icon-blanco-literatura.png');
+                                        }
+                                        span{
+                                        }
+                                        .box-info-txt{
+                                        }
+                                    }
+                                }
+                            }
+                            &.icon-moda{
+                                .box-item-card-link{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                                    .icon-arrow{
+                                        img{}
+                                    }
+                                    .contenedor-info-personaje{
+                                        .icon-categoria{
+                                            background-image: url('../img/plantilla-embajadores/card-logo-icon/icon-blanco-moda.png');
+                                        }
+                                        span{
+                                        }
+                                        .box-info-txt{
+                                        }
+                                    }
+                                }
+                            }
+                            &.icon-musica{
+                                .box-item-card-link{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                                    .icon-arrow{
+                                        img{}
+                                    }
+                                    .contenedor-info-personaje{
+                                        .icon-categoria{
+                                            background-image: url('../img/plantilla-embajadores/card-logo-icon/icon-blanco-musica.png');
+                                        }
+                                        span{
+                                        }
+                                        .box-info-txt{
+                                        }
+                                    }
+                                }
+                            }
+                            &.icon-turismo{
+                                .box-item-card-link{
+                                    .logo-card{
+                                        img{
+                                        }
+                                    }
+                                    .icon-arrow{
+                                        img{}
+                                    }
+                                    .contenedor-info-personaje{
+                                        .icon-categoria{
+                                            background-image: url('../img/plantilla-embajadores/card-logo-icon/icon-blanco-turismo.png');
+                                        }
+                                        span{
+                                        }
+                                        .box-info-txt{
+                                        }
+                                    }
+                                }
+                            }
+                            .box-item-card-link{
+                                .logo-card{
+                                    width: 100%;
+                                    height: 100%;
+                                    img{
+                                        width: 100%;
+                                        height: 100%;
+                                        object-fit: cover;
+                                    }
+                                }
+                                .icon-arrow{
+                                    position: absolute;
+                                    width: 30px;
+                                    height: 30px;
+                                    top: 7px;
+                                    right: 7px;
+                                    border-radius: 50%;
+                                    background-color: #D52B1E;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    opacity: 0;
+                                    transition: all .4s ease;
+                                    img{}
+                                }
+                                .contenedor-info-personaje{
+                                    width: 100%;
+                                    position: absolute;
+                                    bottom: 14px;
+                                    left: 0;
+                                    padding: 0 14px;
+                                    @include respondto(minxs) {
+                                        width: 92%;
+                                        padding: 0 19px;
+                                    }
+                                    @include respondto(maxxs) {
+                                    }
+                                    @include respondto(sm) {
+                                    }
+                                    @include respondto(md) {
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    .icon-categoria{
+                                        width: 26px;
+                                        height: 24px;
+                                        // background-image: url();
+                                        background-repeat: no-repeat;
+                                        // background-size: 100%;
+                                        margin-bottom: 3px;
+                                    }
+                                    span{
+                                        font-family: $font-breePeru;
+                                        font-weight: 700;
+                                        font-size: 16px;
+                                        line-height: 22px;
+                                        color: #ffffff;
+                                    }
+                                    .box-info-txt{
+                                        color: #ffffff;
+                                        h4{
+                                            font-family: $font-breePeru;
+                                            font-weight: 700;
+                                            font-size: 22px;
+                                            line-height: 24.6px;
+                                            padding-bottom: 7px;
+                                            @include ajustacontrespuntos;
+                                            @include respondto(minxs) {
+                                            }
+                                            @include respondto(maxxs) {
+                                            }
+                                            @include respondto(sm) {
+                                            }
+                                            @include respondto(md) {
+                                                font-size: 21px;
+                                            }
+                                            @include respondto(lg) {
+                                            }
+                                            @include respondto(xlg) {
+                                            }
+                                        }
+                                        blockquote{
+                                            font-family: $font-clanOt;
+                                            font-weight: 700;
+                                            // font-size: 11px;
+                                            // line-height: 14px;
+                                            margin: 0;
+                                            @include ajustatrespuntosmultiline(11px, 1.3, 4);
+                                            @include respondto(minxs) {
+                                                padding-right: 22px;
+                                            }
+                                            @include respondto(maxxs) {
+                                            }
+                                            @include respondto(sm) {
+                                            }
+                                            @include respondto(md) {
+                                                @include ajustatrespuntosmultiline(10.5px, 1.3, 4);
+                                            }
+                                            @include respondto(lg) {
+                                            }
+                                            @include respondto(xlg) {
+                                            }
+                                        }
+                                    }
+    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// /BLOCK BUSCADOR
+
+
+
+// BLOCK ICONS-DECORATOR
+.contenedor-icons-decorator{
+    width: 100%;
+    margin: 55px 0;
+    .icons-decorator{
+        display: flex;
+        justify-content: center;
+        .box-icons{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            img{
+                width: 35px;
+                height: 35px;
+            }
+        }
+        .icons-21{
+            @include respondto(minxs) {
+                display: none;
+            }
+            @include respondto(maxxs) {
+                display: none;
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+                width: 85%;
+            }
+            img{
+                @include respondto(minxs) {
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                    &.icon-2do{
+                        display: none;
+                    }
+                }
+                @include respondto(md) {
+                    &.icon-2do{
+                        display: none;
+                    }
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+        }
+        .icons-10{
+            @include respondto(minxs) {
+            }
+            @include respondto(maxxs) {
+            }
+            @include respondto(sm) {
+                display: none;
+            }
+            @include respondto(md) {
+                display: none;
+            }
+            @include respondto(lg) {
+                display: none;
+            }
+            @include respondto(xlg) {
+                display: none;
+            }
+            img{
+                @include respondto(minxs) {
+                    &.icon-2do{
+                        display: none;
+                    }
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                }
+                @include respondto(xlg) {
+                }
+            }
+        }
+    }
+}
+// -/BLOCK ICONS-DECORATOR
+
+
+
+// BLOCK MAS-VISTO
+.seccion-mas-visto{
+    width: 100%;
+    background-color: #f2f2f2;
+    .contenedor-mas-visto{
+        padding: 55px 0;
+        @include respondto(minxs) {
+            padding: 40px 0;
+        }
+        @include respondto(maxxs) {
+            padding: 45px 0;
+        }
+        @include respondto(sm) {
+            padding: 40px 30px 20px 30px;
+        }
+        @include respondto(md) {
+        }
+        @include respondto(lg) {
+        }
+        @include respondto(xlg) {
+        }
+        .content-mas-visto{
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            @include respondto(minxs) {
+            }
+            @include respondto(maxxs) {
+            }
+            @include respondto(sm) {
+            }
+            @include respondto(md) {
+            }
+            @include respondto(lg) {
+            }
+            @include respondto(xlg) {
+                width: 85%;
+            }
+            h5{
+                font-family: $font-breePeru;
+                font-weight: 700;
+                font-size: 18px;
+                padding-bottom: 25px;
+                color: #282828;
+                margin-left: 1.8%;
+                @include respondto(minxs) {
+                    text-align: center;
+                }
+                @include respondto(maxxs) {
+                    text-align: center;
+                }
+                @include respondto(sm) {
+                    text-align: center;
+                    font-size: 20px;
+                }
+                @include respondto(md) {
+                }
+                @include respondto(lg) {
+                    font-size: 20px;
+                }
+                @include respondto(xlg) {
+                    font-size: 22px;
+                }
+            }
+            .contenedor-slider-syncing{
+                @include respondto(minxs) {
+                }
+                @include respondto(maxxs) {
+                }
+                @include respondto(sm) {
+                }
+                @include respondto(md) {
+                    display: flex;
+                    justify-content: space-around;
+                }
+                @include respondto(lg) {
+                    display: flex;
+                    justify-content: space-around;
+                }
+                @include respondto(xlg) {
+                    display: flex;
+                    justify-content: space-around;
+                }
+                .contenedor-slider-top{
+                    padding-bottom: 15px;
+                    @include respondto(minxs) {
+                        padding-bottom: 20px;
+                    }
+                    @include respondto(maxxs) {
+                        padding-bottom: 20px;
+                    }
+                    @include respondto(sm) {
+                        padding-bottom: 20px;
+                    }
+                    @include respondto(md) {
+                        width: 74%;
+                    }
+                    @include respondto(lg) {
+                        width: 71.5%;
+                    }
+                    @include respondto(xlg) {
+                        width: 71.5%;
+                    }
+                    .content-slider-video{
+                        width: 100%;
+                        .slick-list{
+                            width: 100%;
+                            .slick-track{
+                                .item-slider-video{
+                                    width: 100%;
+                                    .box-slider-video{
+                                        @include iframe16by9;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+        
+                .contenedor-slider-bottom{
+                    @include respondto(minxs) {
+                    }
+                    @include respondto(maxxs) {
+                    }
+                    @include respondto(sm) {
+                    }
+                    @include respondto(md) {
+                        width: 19.5%;
+                    }
+                    @include respondto(lg) {
+                        width: 21.5%;
+                    }
+                    @include respondto(xlg) {
+                        width: 21.5%;
+                    }
+                    .content-slider-bottom{
+                        width: 100%;
+                        @include respondto(minxs) {
+                        }
+                        @include respondto(maxxs) {
+                        }
+                        @include respondto(sm) {
+                        }
+                        @include respondto(md) {
+                        }
+                        @include respondto(lg) {
+                        }
+                        @include respondto(xlg) {
+                        }
+                        .slick-list{
+                            
+                            .slick-track{
+                                width: 100% !important;
+                                display: flex;
+                                margin-left: 0;
+                                margin-right: 0;
+                                @include respondto(minxs) {
+                                    justify-content: space-between;
+                                }
+                                @include respondto(maxxs) {
+                                    justify-content: space-between;
+                                }
+                                @include respondto(sm) {
+                                    justify-content: space-between;
+                                }
+                                @include respondto(md) {
+                                    flex-direction: column;
+                                }
+                                @include respondto(lg) {
+                                    flex-direction: column;
+                                }
+                                @include respondto(xlg) {
+                                    flex-direction: column;
+                                }
+                                .item-slider-bottom{
+                                    width: 100% !important;
+                                    @include respondto(minxs) {
+                                        width: 46% !important;
+                                    }
+                                    @include respondto(maxxs) {
+                                        width: 42% !important;
+                                    }
+                                    @include respondto(sm) {
+                                        width: 30% !important;
+                                    }
+                                    @include respondto(md) {
+                                    }
+                                    @include respondto(lg) {
+                                    }
+                                    @include respondto(xlg) {
+                                    }
+                                    .card-slider-mini{
+                                        padding-bottom: 23px;
+                                        cursor: pointer;
+                                        @include respondto(minxs) {
+                                            width: 100%;
+                                            padding-bottom: 5px;
+                                        }
+                                        @include respondto(maxxs) {
+                                            width: 100%;
+                                            padding-bottom: 5px;
+                                        }
+                                        @include respondto(sm) {
+                                            width: 100%;
+                                            padding-bottom: 5px;
+                                        }
+                                        @include respondto(md) {
+                                            padding-bottom: 17px;
+                                        }
+                                        @include respondto(lg) {
+                                        }
+                                        @include respondto(xlg) {
+                                        }
+                                        .box-logo-mini{
+                                            position: relative;
+                                            margin-bottom: 11px;
+                                            &:before {
+                                                content: '';
+                                                width: 100%;
+                                                height: 100%;
+                                                position: absolute;
+                                                background-color: rgba(0, 0, 0, .2);
+                                            }
+                                            &:after {
+                                                content: '';
+                                                position: absolute;
+                                                width: 100%;
+                                                height: 100%;
+                                                top: 0;
+                                                left: 0;
+                                                background-image: url('../img/plantilla-embajadores/mas-visto/icon-play.png');
+                                                background-repeat: no-repeat;
+                                                background-position: center;
+                                            }
+                                            @include respondto(minxs) {
+                                            }
+                                            @include respondto(maxxs) {
+                                            }
+                                            @include respondto(sm) {
+                                            }
+                                            @include respondto(md) {
+                                                width: 166px;
+                                                min-width: 166px;
+                                                height: 94px;
+                                            }
+                                            @include respondto(lg) {
+                                                width: 166px;
+                                                min-width: 166px;
+                                                height: 94px;
+                                            }
+                                            @include respondto(xlg) {
+                                                width: 166px;
+                                                min-width: 166px;
+                                                height: 94px;
+                                            }
+                                            img{
+                                                width: 100%;
+                                                height: 100%;
+                                                object-fit: cover;
+                                            }
+                                        }
+                                        .box-txt-mini{
+                                            font-family: $font-breePeru;
+                                            color: #282828;
+                                            position: relative;
+                                            // padding-left: 16px;
+                                            padding-top: 18px;
+                                            &:before {
+                                                content: '';
+                                                position: absolute;
+                                                width: 122px;
+                                                height: 6px;
+                                                top: 0;
+                                                left: 0;
+                                                background-color: #F59D15;
+                                            }
+                                            @include respondto(minxs) {
+                                            }
+                                            @include respondto(maxxs) {
+                                            }
+                                            @include respondto(sm) {
+                                            }
+                                            @include respondto(md) {
+                                            }
+                                            @include respondto(lg) {
+                                            }
+                                            @include respondto(xlg) {
+                                            }
+                                            h4{
+                                                font-weight: 500;
+                                                font-size: 16px;
+                                                padding-bottom: 4px;
+                                                line-height: 1.1;
+                                                @include respondto(minxs) {
+                                                    font-size: 13.8px;
+                                                    padding-bottom: 3px;
+                                                }
+                                                @include respondto(maxxs) {
+                                                    font-size: 15px;
+                                                }
+                                                @include respondto(sm) {
+                                                    font-size: 17px;
+                                                }
+                                                @include respondto(md) {
+                                                    font-size: 18px;
+                                                }
+                                                @include respondto(lg) {
+                                                }
+                                                @include respondto(xlg) {
+                                                    font-size: 18px;
+                                                }
+                                            }
+                                            p{
+                                                font-weight: 400;
+                                                font-size: 14px;
+                                                line-height: 21px;
+                                                @include respondto(minxs) {
+                                                    font-size: 11px;
+                                                    line-height: 15px;
+                                                }
+                                                @include respondto(maxxs) {
+                                                    font-size: 12.5px;
+                                                    line-height: 18px;
+                                                }
+                                                @include respondto(sm) {
+                                                    font-size: 13.5px;
+                                                    line-height: 20px;
+                                                }
+                                                @include respondto(md) {
+                                                    font-size: 13px;
+                                                }
+                                                @include respondto(lg) {
+                                                }
+                                                @include respondto(xlg) {
+                                                    font-size: 15.5px;
+                                                }
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// /BLOCK MAS-VISTO
+
+
+
+
+
+// ********** ********** /MI ********** **********
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ********** ********** MA ********** **********
+
+
+// ********** ********** /MA ********** **********

@@ -1,0 +1,257 @@
+﻿@using System.Configuration
+@using PROMPERU.PeruInfo.Domain.Entities
+@{
+    Layout = null;
+
+    string culture = ViewBag.Culture;
+    int idioma = culture == "es-pe" ? 1 : 2;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+
+    List<PaginaBE> paginas = ViewBag.Paginas;
+
+    var descripcionSeo = "";
+    var tituloSeo = "";
+    var canonicalSeo = "";
+
+    descripcionSeo = Resource.seo_descripcion_home;
+    tituloSeo = Resource.seo_titulo_home;
+    canonicalSeo = absoluteUrl;
+
+    foreach (var pagina in paginas)
+    {
+        descripcionSeo = pagina.DescripcionSeo;
+        tituloSeo = pagina.TituloSeo;
+        canonicalSeo = pagina.CanonicalSeo;
+    }
+
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@strUrl/css/peru-info.components.css">
+    <link rel="stylesheet" href="@strUrl/css/05.apps.css">
+
+    <title>@tituloSeo</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <base href="@strUrl">
+    <link rel="shortcut icon" href="@strUrl/img/favicon_PeruInfo.ico" />
+    <link rel="canonical" href="@canonicalSeo">
+    <meta name="description" content="@descripcionSeo" />
+    <meta name="author" content="Peru.info">
+    <meta name="distribution" content="global" />
+    <meta name="keywords" content="@Resource.seo_keywords_apps" />
+    <meta property="og:locale" content="@culture" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@tituloSeo" />
+    <meta property="og:description" content="@descripcionSeo" />
+    <meta property="og:url" content="@absoluteUrl" />
+    <meta property="og:site_name" content="Perú Info" />
+    <meta property="og:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@descripcionSeo" />
+    <meta name="twitter:title" content="@tituloSeo" />
+    <meta name="twitter:site" content="https://twitter.com/marcaPERU" />
+    <meta name="twitter:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")" />
+    @if (idioma == 1)
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6PS60QLG"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GB6PS60QLG');
+        </script>
+    }
+    else
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5R15JNKSP"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-E5R15JNKSP');
+        </script>
+    }
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDQMLXQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Código de seguimiento de Hotjar de -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 4938555, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    @Html.Partial("~/Views/Shared/Partials/_WidgetsLayout.cshtml")
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMLXQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------------------- BLOCK HEADER ----------------------->
+    <!-- <header class="header-peru-info active-scroll-header"> -->
+    <header class="header-peru-info">
+        <div class="contenedor-header-peru-info">
+            <div class="contenedor-logo-peru">
+                <a href="/">
+                    <img src="@strUrl/img/home/header/logo-peru.png" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                    <img src="@strUrl/img/home/header/logo-peru-gris.svg" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                </a>
+            </div>
+
+            @{
+                Html.RenderAction("HeaderMenu", "Home");
+            }
+
+        </div>
+
+        <!-- <div class="menu-lateral mostrar-menu-lateral"> -->
+        @{
+            Html.RenderAction("PageMenu", "Home");
+        }
+    </header>
+    <!-------------------- /BLOCK HEADER ----------------------->
+    <!-------------------- BLOCK MODALES-HEADER ----------------------->
+    @Html.Partial("Partials/_ModalsHeader")
+    <!-------------------- /BLOCK MODALES-HEADER ----------------------->
+    <!-------------------- BLOCK BANNER ----------------------->
+    <section class="banner-apps">
+        <div class="contenedor-banner-apps">
+            <div class="content-banner">
+                <img src="@strUrl/img/apps/banner-apps.jpg" alt="">
+            </div>
+            <div class="content-text-banner">
+                <div class="container-text">
+                    <div class="categoria">
+                        <p>Recursos</p>
+                    </div>
+                    <h1>Nuestras apps</h1>
+                    <div class="bajada">
+                        <p>Conoce y descarga nuestras apps oficiales desde el App Store o Play Store de tu celular, donde podrás encontrar todo lo que necesitas saber de Perú. ¿Qué esperas?</p>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-boton">
+                <div class="scroll-cont">
+                    <div class="scroll-circ"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container-apps">
+        <div class="content-apps blockv3-container">
+            <div class="list-apps">
+                <div class="item-app">
+                    <div class="image-app">
+                        <img src="@strUrl/img/apps/app_pisco-spirit-of-peru.jpg" alt="Pisco Spirit of Peru">
+                    </div>
+                    <div class="description-app">
+                        <h2>Pisco Spirit of Peru</h2>
+                        <p>¡Diviértete jugando y aprendiendo todo acerca del Pisco! Pisco Perú es un juego donde tendrás que girar una ruleta para ir descubriendo diferentes recetas de cócteles hechos a base de esta increíble bebida. Aprenderás cómo hacer un delicioso Chilcano o conocerás la fórmula secreta para lograr un exquisito Pisco Sour. Y tú, ¿te atreves a descargar esta aplicación que tiene un sabor a Pisco?</p>
+                    </div>
+                    <div class="btns-download">
+                        <p>Descárgala en</p>
+                        <a href="https://apps.apple.com/pe/app/pisco/id1539213077" target="_blank">
+                            <img src="@strUrl/img/apps/btn_appstore.png" alt="App Store">
+                        </a>
+                        <a>
+                            <img src="@strUrl/img/apps/btn-googleplay.png" alt="Google Play">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="item-app">
+                    <div class="image-app">
+                        <img src="@strUrl/img/apps/app_peru-brochure.jpg" alt="Perú Brochure">
+                    </div>
+                    <div class="description-app">
+                        <h2>Perú Brochure</h2>
+                        <p>Nuestro renovado aplicativo oficial Perú Brochures te permite descargar las publicaciones digitales para la promoción del turismo a través de cualquier dispositivo Android y IOS. Con esta información podrás repotenciar la promoción de nuestros destinos prioritarios y darle continuidad a la campaña de promoción del Perú en el mercado receptivo.</p>
+                    </div>
+                    <div class="btns-download">
+                        <p>Descárgala en</p>
+                        <a href="https://apps.apple.com/pe/app/peru-brochures/id1241219681" target="_blank">
+                            <img src="@strUrl/img/apps/btn_appstore.png" alt="App Store">
+                        </a>
+                        <a href="https://play.google.com/store/apps/details?id=com.promperu.brochure" target="_blank">
+                            <img src="@strUrl/img/apps/btn-googleplay.png" alt="Google Play">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="item-app">
+                    <div class="image-app">
+                        <img src="@strUrl/img/apps/app_habla-quechua.jpg" alt="Habla Quechua">
+                    </div>
+                    <div class="description-app">
+                        <h2>Habla Quechua</h2>
+                        <p>Conéctate con la magia de la lengua de nuestros ancestros. “Habla Quechua” es la aplicación que PROMPERÚ lanza con el apoyo de la Academia Mayor de Lengua Quechua. ¡Descárgala ya!</p>
+                    </div>
+                    <div class="btns-download">
+                        <p>Descárgala en</p>
+                        <a href="https://apps.apple.com/pe/app/habla-quechua/id654843382" target="_blank">
+                            <img src="@strUrl/img/apps/btn_appstore.png" alt="App Store">
+                        </a>
+                        <a>
+                            <img src="@strUrl/img/apps/btn-googleplay.png" alt="Google Play">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-------------------- BLOCK FOOTER ----------------------->
+    @{
+        Html.RenderAction("PageMenu", "Home", new { footer = true });
+    }
+    <!-------------------- /BLOCK FOOTER ----------------------->
+    <script>
+        let baseDomain = '@strUrl';
+    </script>
+    <script src="@strUrl/js/jquery.min.js"></script>
+    <script src="@strUrl/js/peru-info.components.js"></script>
+    <script src="@strUrl/js/05.apps.js"></script>
+    <script>
+        let culture = "@culture";
+        let idioma = @idioma;
+    </script>
+    <script src="@strUrl/js/search.js"></script>
+</body>
+</html>

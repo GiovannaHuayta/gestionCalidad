@@ -1,0 +1,23 @@
+﻿@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model List<ComunicadoBE>
+
+@{
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+}
+
+<div class="modal-informativo-archivo2">
+    <div class="contenedor-modal-informativo">
+        <h4>@Resource.titulo_alertas</h4>
+        @foreach (ComunicadoBE item in Model)
+        {
+            <div class="box-archivo">
+                <p class="fecha">@item.FechaCreacion.ToString("dd/MM")</p>
+                <p>@item.Titulo</p>
+                <a href="@strUrl/archivos/comunicado/@item.ArchivoDescarga" target="_blank">@Resource.ver_mas</a>
+            </div>
+        }
+    </div>
+</div>

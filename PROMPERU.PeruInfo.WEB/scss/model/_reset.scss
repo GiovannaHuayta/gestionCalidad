@@ -1,0 +1,104 @@
+// Usar asi: @import '_base.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  &.overflow-hidden {
+    @include respondto(xs) {
+      overflow: hidden;
+    }
+    @include respondto(sm) {
+      overflow: hidden;
+    }
+    @include respondto(md) {}
+    @include respondto(lg) {}
+  }
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+span {
+  margin: 0;
+}
+img {
+  vertical-align: baseline;
+  max-width: none;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  &:link {
+      text-decoration: none;
+  }
+  &:focus{
+      outline: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+form {
+  margin: 0;
+}
+// Number Input Styles
+// input[type="number"]{}
+.input-number-no-bottom {
+  -moz-appearance:textfield;
+  margin: 0;
+  &::-webkit-inner-spin-button, 
+  &::-webkit-outer-spin-button {
+      -webkit-appearance: none; 
+      margin: 0;
+  }
+}
+// Searchbox Input Styles
+// input[type="search"]{}
+.input-searchbox-no-style {
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+      -webkit-appearance:none;
+  }
+}
+
+.clear-input {
+  border: 0;
+  &:focus {
+      outline: 0px;
+  }
+}
+
+.blockv3-container {
+  width: 96%;
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  @include respondto(xlg) {
+    max-width: 1450px;
+  }
+}

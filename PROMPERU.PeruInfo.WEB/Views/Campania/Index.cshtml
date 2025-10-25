@@ -1,0 +1,273 @@
+﻿@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model dynamic
+
+@{
+    string culture = ViewBag.Culture;
+    int idioma = culture == "es-pe" ? 1 : 2;
+
+    CampaniaBE campania = Model.Campania;
+    List<GaleriaBE> galeria = Model.Galeria;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}";
+
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="@culture">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="@strUrl/css/peru-info.components.css">
+    <link rel="stylesheet" href="@strUrl/css/13.plantilla-c.css">
+    <title>@campania.TituloSeo</title>
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-image-preview:large">
+    <base href="@strUrl">
+    <link rel="shortcut icon" href="@strUrl/img/favicon_PeruInfo.ico" />
+    <link rel="canonical" href="@absoluteUrl">
+    <meta name="description" content="@campania.DescripcionSeo" />
+    <meta name="author" content="Peru.info">
+    <meta name="distribution" content="global" />
+    <meta name="keywords" content="@campania.Keywords" />
+    <meta property="og:locale" content="@culture" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@campania.TituloSeo" />
+    <meta property="og:description" content="@campania.DescripcionSeo" />
+    <meta property="og:url" content="@absoluteUrl" />
+    <meta property="og:site_name" content="Perú Info" />
+    <meta property="og:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="@campania.DescripcionSeo" />
+    <meta name="twitter:title" content="@campania.TituloSeo" />
+    <meta name="twitter:site" content="https://twitter.com/marcaPERU" />
+    <meta name="twitter:image" content="@Html.Raw($"{strUrl}/img/share-peruinfo.jpg")" />
+    @if (idioma == 1)
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GB6PS60QLG"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-GB6PS60QLG');
+        </script>
+    }
+    else
+    {
+
+        <!-- Google tag (gtag.js) migra2023 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E5R15JNKSP"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-E5R15JNKSP');
+        </script>
+    }
+    <!-- Google Tag Manager -->
+
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MDQMLXQ');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Código de seguimiento de Hotjar de -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+            h._hjSettings = { hjid: 4938555, hjsv: 6 };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    @Html.Partial("~/Views/Shared/Partials/_WidgetsLayout.cshtml")
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDQMLXQ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-------------------- BLOCK HEADER ----------------------->
+    <header class="header-peru-info">
+        <div class="contenedor-header-peru-info">
+            <div class="contenedor-logo-peru">
+                <a href="/">
+                    <img src="@strUrl/img/home/header/logo-peru.png" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                    <img src="@strUrl/img/home/header/logo-peru-gris.svg" alt="@(idioma == 1 ? "Logo Marca Perú en gris" : "Peru Brand Logo in gray")">
+                </a>
+            </div>
+
+            @{
+                Html.RenderAction("HeaderMenu", "Home");
+            }
+
+        </div>
+
+        @{
+            Html.RenderAction("PageMenu", "Home");
+        }
+    </header>
+    <!-------------------- /BLOCK HEADER ----------------------->
+    <!-------------------- BLOCK MODALES-HEADER ----------------------->
+    @Html.Partial("Partials/_ModalsHeader")
+    <!-------------------- /BLOCK MODALES-HEADER ----------------------->
+    <!-------------------- BLOCK BANNER-PLANTILLA-C ----------------------->
+    <section class="banner-plantilla-c">
+        <div class="contenedor-banner-pc categoria-marca-peru" style="background-image: url('@strUrl/archivos/campania/@campania.ImagenDesktop') !important;">
+
+            <div class="box-text-banner">
+
+                <div class="btn-banner-categoria">
+                </div>
+
+                <h2>
+                    @campania.Nombre
+                </h2>
+                <p>
+                    El Perú tiene para ofrecer un pequeño mundo a todas las personas.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <!-------------------- /BLOCK BANNER-PLANTILLA-C ----------------------->
+
+
+    <main>
+
+
+        <!-------------------- BLOCK DEDICADO-MUNDO ----------------------->
+        <section class="campana-dedicado-mundo">
+            <div class="contenedor-dedicado-mundo blockv3-container">
+
+                <div class="contenedor-info-multislider-dedicado">
+
+                    <div class="contenedor-info-dedicado">
+
+                        <div class="box-info-launch">
+                            <p>
+                                Año: <span>@campania.Anio</span>
+                            </p>
+                            <p>
+                                Público: <span>@campania.Publico</span>
+                            </p>
+                            <p>
+                                Ubicación: <span>@campania.Ubicacion</span>
+                            </p>
+                        </div>
+                        <div class="box-info-detail">
+                            <blockquote>
+                                @Html.Raw(campania.Descripcion)
+                            </blockquote>
+                        </div>
+                        @if (!string.IsNullOrEmpty(campania.Link))
+                        {
+                            <div class="content-pc-btn">
+                                <a href="@campania.Link" target="_blank">
+                                    <h4>
+                                        Ir a la página de la campaña
+                                    </h4>
+                                </a>
+                            </div>
+                        }
+
+                    </div>
+
+                    @if (galeria.Any())
+                    {
+                        <div class="contenedor-multislider-videos">
+                            <div class="content-multislider-videos">
+
+                                <div class="contenedor-slider-top">
+                                    <div class="content-slider-video">
+
+                                        @foreach (GaleriaBE item in galeria)
+                                        {
+                                            <div class="item-slider-video">
+                                                <div class="box-slider-video">
+                                                    <iframe src="https://www.youtube.com/embed/@item.CodigoYoutube" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="contenedor-slider-bottom">
+                                    <div class="content-slider-miniaturas">
+
+                                        @foreach (GaleriaBE item in galeria)
+                                        {
+                                            <div class="item-slider-mini">
+                                                <div class="box-slider-mini">
+                                                    <img src="@strUrl/archivos/galeria/@item.RutaDekstop" alt="@item.TextoAlternativo">
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(campania.Link))
+                    {
+                        <div class="content-pc-btn btn-mobile">
+                            <a href="@campania.Link" target="_blank">
+                                <h4>
+                                    Ir a la página de la campaña
+                                </h4>
+                            </a>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </section>
+        <!-------------------- /BLOCK DEDICADO-MUNDO ----------------------->
+
+    </main>
+
+
+    <!-------------------- BLOCK FOOTER ----------------------->
+    @{
+        Html.RenderAction("PageMenu", "Home", new { footer = true });
+    }
+    <!-------------------- /BLOCK FOOTER ----------------------->
+
+    <script>
+        let baseDomain = '@strUrl';
+    </script>
+    <script src="@strUrl/js/jquery.min.js"></script>
+    <script src="@strUrl/js/slick.min.js"></script>
+    <script src="@strUrl/js/peru-info.components.js"></script>
+    <script src="@strUrl/js/13.plantilla-c.js"></script>
+    <script>
+    let culture = "@culture";
+    let idioma = @idioma;
+    </script>
+    <script src="@strUrl/js/search.js"></script>
+</body>
+</html>

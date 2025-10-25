@@ -1,0 +1,55 @@
+﻿@using PROMPERU.PeruInfo.Domain.Entities
+@using System.Configuration
+@model List<PublicacionBE>
+
+@{
+    string culture = ViewBag.Culture;
+
+    string strPathAndQuery = HttpContext.Current.Request.Url.PathAndQuery;
+    string strUrl = ConfigurationManager.AppSettings.Get("DominioAbsoluto");
+    string absoluteUrl = $"{strUrl}{strPathAndQuery}".ToLower();
+}
+
+@if (Model.Any())
+{
+    <section class="contenedor-noticias">
+        <div class="content-noticias blockv3-container">
+            <div class="box-title-noticias">
+                <h3>@Resource.noticias</h3>
+            </div>
+
+            <div class="contenedor-slider-noticias">
+                <div class="content-slider-noticias">
+                    @foreach (PublicacionBE item in Model.Take(6).ToList())
+                    {
+                        <div class="contenedor-item-noticia">
+
+                            <div class="box-card-noticia">
+                                <div class="card-logo">
+                                    <img src="@strUrl/archivos/publicacion/@item.Imagen" alt="@item.AltImagen">
+                                    <a href="/@culture/@item.CategoriaSlug/@Resource.link_noticias/@item.CategoriaId/@item.SubcategoriaId/@item.Slug">
+                                        @Resource.boton_ver_noticias &#62;
+                                    </a>
+                                </div>
+                                <div class="card-descripcion">
+                                    <p>
+                                        @item.Resumen
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="content-mas-noticias">
+                <a href="/@culture/@Model.First().CategoriaSlug/@Resource.link_noticias/@Model.First().CategoriaId" class="item-info-link">
+                    <div class="icon-arrow">
+                        <img src="/img/plantilla-categoria/principal-info/arrow-diagonal.png" alt="">
+                    </div>
+                    <span>@Resource.boton_ver_mas_noticias</span>
+                </a>
+            </div>
+        </div>
+    </section>
+}

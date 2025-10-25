@@ -1,0 +1,198 @@
+﻿@using System.Configuration
+@{ ViewBag.Title = "Comunicado Covid y Alertas";
+    string vDominioAbsoluto = ConfigurationManager.AppSettings["dominioAbsoluto"]; }
+
+@section Scripts
+{
+    <script src="@vDominioAbsoluto/ScriptsForms/Admin/Mantenimientos/Comunicado.js"></script>
+
+    <script>
+    var editar = true;
+        var eliminar = true;</script>
+}
+
+<div class="l-contents">
+
+    <div class="cont-cont">
+        <div class="cont-header">
+            <h1 class="cont-header-h1">Comunicado Covid y Alertas</h1>
+        </div>
+
+        <nav class="cont-icons">
+            <a id="btnNuevo" href="javascript:" class="cont-icons-new">
+                <span class="fas icon-plus">
+                </span><span>Nuevo</span>
+            </a>
+        </nav>
+
+        <div class="cont-table">
+            <table id="gridBloques" class="cont-left tableResponsive" style="width: 100%; min-width: 400px; max-width: 1000px;">
+                <thead>
+                    <tr class="filter">
+                        <th data-title="Nº" style="width: 5%"></th>
+                        <th data-title="IdiomaNombre" style="width: 5%">
+                            <input type="text" id="gridComunicado_txtB_IdiomaNombre">
+                        </th>
+                        <th data-title="Titulo" style="width: 20%">
+                            <input type="text" id="gridComunicado_txtB_Titulo">
+                        </th>
+                        <th data-title="ArchivoDescarga" style="width: 10%">
+                            <input type="text" id="gridComunicado_txtB_ArchivoDescarga">
+                        </th>
+                        <th data-title="Alerta" style="width: 10%">
+                            <input type="text" id="gridComunicado_txtB_Alerta">
+                        </th>
+                        <th data-title="Activo" style="width: 10%">
+                            <input type="text" id="gridComunicado_txtB_Activo">
+                        </th>
+                        <th data-title="FechaPublicacion" style="width: 10%">
+                            <input type="text" id="gridComunicado_txtB_FechaPublicacion">
+                        </th>
+                        <th data-title="" style="width: 10%" align="center">
+                            <div class="accion-box">
+                                <a href="" title="Editar">
+                                    <span class="fas fa-search"></span>
+                                </a>
+
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="width: 5%;">
+                            <a id="a_RowNumber">Nº</a>
+                        </th>
+                        <th style="width: 5%;">
+                            <a id="a_IdiomaNombre">Idioma</a>
+                        </th>
+                        <th style="width: 20%;">
+                            <a id="a_Titulo">Título</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_ArchivoDescarga">Archivo de Descarga</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Alerta">¿Es Alerta?</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_Activo">Activo</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_FechaPublicacion">Fecha de Publicación</a>
+                        </th>
+                        <th style="width: 10%;">
+                            <a id="a_"></a>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="reveal-modal-bg">
+        <div class="modal-registrar">
+            <h2 id="lblRegistro">Crear Comunicado</h2>
+
+            <input type="hidden" id="hdnComunicadoId" />
+            <input type="hidden" id="hdnComunicadoTraduccionId" />
+
+            <div class="cont-box">
+                <label class="cont-box-label">Idioma:</label>
+                <select id="ddlIdioma" class="cont-box-select">
+                    <option value="0" disabled="disabled" selected="selected" class="option-disabled">--Seleccione Idioma--</option>
+                </select>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Fecha Publicación:</label>
+                <input id="txtFechaPublicacion" type="date" class="cont-box-input" maxlength="25">
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">Activo:</label>
+
+                <input type="checkbox" id="chkActivo" class="input-checkbox" checked="">
+                <label for="chkActivo" class="input-checkbox-lab"> </label>
+            </div>
+
+            <div class="cont-box" style="width: 186px">
+                <label class="cont-box-label">Alerta:</label>
+
+                <input type="checkbox" id="chkAlerta" class="input-checkbox" checked="">
+                <label for="chkAlerta" class="input-checkbox-lab"> </label>
+
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <span class="text-start small" style="width: 100%; display: block;">
+                    Activar solo para Alerta y dejar desactivado para Comunicado Covid
+                </span>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Título:</label>
+                <input id="txtTitulo" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Descripción:</label>
+                <textarea id="txtDescripcion" class="cont-box-input" maxlength="500" rows="5"></textarea>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">Archivo Descarga:</label>
+                <div class="d-flex flex-column w-100">
+                    <input id="fileArchivoDescarga" type="file" class="cont-box-input" maxlength="255">
+                    <span class="text-start small py-1">
+                        <b>Formato</b>: PDF. Tamaño Máximo: 3MB@*<br>
+                            <b>Formato Alerta</b>: JPG / PNG. Dimensiones: 960px de ancho*@
+                    </span>
+                    <input type="hidden" id="txtArchivoDescarga" />
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">&nbsp;</label>
+                <div class="d-flex flex-column w-100 pb-3">
+                    <a id="btnArchivoDescarga" title="Descargar" target="_blank"></a>
+                </div>
+            </div>
+
+            <div class="cont-box">
+                <label class="cont-box-label">KeyWords:</label>
+                <input id="txtKeyWords" type="text" class="cont-box-input" maxlength="255">
+            </div>
+
+            <div class="cont-box">
+                <button id="btnGuardar" class="cont-box-submit">
+                    <label>Registrar</label>
+                </button>
+            </div>
+            <div class="cont-box">
+                <button id="btnCancelar" class="cont-box-cancel close">
+                    <label>Cancelar</label>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    .dataTables_info {
+        display: none;
+    }
+
+    .paginate_button {
+        display: none;
+    }
+
+    .dataTables_length {
+        display: none;
+    }
+
+    .dataTables_filter {
+        display: none;
+    }
+</style>
