@@ -9,6 +9,7 @@ namespace PROMPERU.PeruInfo.ApplicationService
     {
         public ApplicationServiceProfile()
         {
+        
             CreateMap<ComunicadoBE, ComunicadoDTO>();
             CreateMap<PublicacionBE, PublicacionDTO>();
             CreateMap<NegocioBE, NegocioDTO>();
